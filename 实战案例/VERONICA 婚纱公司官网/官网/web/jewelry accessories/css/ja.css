@@ -1,0 +1,203 @@
+.content {
+    height: 1375px;
+    background-color: #ffffff;
+   }
+   .content-c {
+       height: 1275px;
+   }
+ .down {
+    height: 470px;
+    /* background-color: #a4a4a4; */
+    background-color: rgba(164, 164, 164, 0.5);
+ }
+ .down-c {
+     height: 470px;
+ }
+ .content-c {
+    padding-top: 100px;
+ }
+ .content-c,
+ .down-c {
+     width: 1200px;
+     margin: 0 auto;
+  }
+ .content-c-1 {
+      height: 475px;
+      width: 709px;
+      float: left;
+      margin-right: 75px;
+      background:url("../img/j1-1.png")no-repeat;
+  }
+  .content-c-1a7 {
+      width: 1px;
+      height: 70px;
+      background-color: #454545;
+  }
+ .content-c-1a {
+     float: left;
+      width: 416px;
+      height: 475px;
+ }
+ .content-c-1a2 {
+       width: 250px;
+       height: 30px;
+       color: #2a2a2a;
+       font-size: 30px;
+       margin-left: 50px;
+       margin-top: 20px;
+ }
+ .content-c-1a3 {
+       width: 80px;
+       height: 20px;
+       color: #585858;
+       font-size: 16px;
+       margin-left: 165px;
+       margin-top: -10px;
+ }
+ .content-c-1a4 {
+     width: 80px;
+       height: 17px;
+       color: #c5c5c5;
+       font-size: 16px;
+       margin-left: 165px;
+       margin-top: 30px;
+ }
+ .content-c-1a5 {
+     width: 360px;
+       height: 40px;
+       color: #d5d5d5;
+       font-size: 14px;
+       margin-left: 45px;
+       margin-top: 50px;
+       margin-bottom: 78px;
+ }
+ .content-c-1a6 {
+        display: block;
+        width: 150px;
+        height: 45px;
+        text-align: center;
+        margin: 0 auto;
+        line-height: 45px;
+        color: #2d2d2d;
+        font-size: 12px;
+        border: 1px solid rgba(40, 40, 40, 0.1);
+ }
+ .content-c-2a {
+     float: left;
+      width: 709px;
+      height: 475px;
+      margin-top: 50px;
+      background:url("../img/j1-2.png")no-repeat;
+  }
+  .content-c-3a {
+      float: left;
+      width: 709px;
+      height: 200px;
+      margin-top: 50px;
+  }
+  .content-c-3a1 {
+      width: 709px;
+      height: 40px;
+      font-size: 14px;
+      color: #747474;
+      margin-bottom: 65px;
+  }
+  .content-c-3a2s1 {
+         width: 150px;
+         height: 20px;
+         font-size: 16px;
+         color: #6a6a6a;
+  }
+  .content-c-3a22 {
+         width: 150px;
+         height: 20px;
+         font-size: 16px;
+         margin-top: 10px;
+         color: #6a6a6a;
+  }
+  .down-c-1 {
+
+      width: 200px;
+      height: 30px;
+      padding-top: 100px;
+  }
+  .down-c-1 li{
+      width: 40px;
+      height: 30px;
+      float: left;
+      text-align: center;
+      background-color: #f7f5f5;
+      /* padding-top: 9px; */
+      line-height: 28px;
+  }
+  .down-c-1a a,.down-c-1b a,.down-c-1c a{
+    font-size: 12px;
+   
+    color: #6a6a6a;
+  }
+  .down-c-1b {
+      margin-right: 40px;
+      margin-left: 40px;
+  }
+  .down-c-2 {
+      position: relative;
+      margin-top: 40px;
+      height: 140px;
+      margin-bottom: 60px;
+  }
+  .down-c-2 li {
+      width:215px;
+      height: 140px;
+      float: left;
+  }
+  .down-c-2a {
+     margin-right: 30px;
+      background: url("../img/j2-1.png") no-repeat;
+  }
+  .down-c-2b {
+     margin-right: 30px;
+      background: url("../img/j2-2.png") no-repeat;
+  }
+  .down-c-2c {
+     margin-right: 30px;
+      background: url("../img/j2-3.png") no-repeat;
+  }
+  .down-c-2d {
+     margin-right: 30px;
+      background: url("../img/j2-4.png") no-repeat;
+  }
+  .down-c-2e {
+      background: url("../img/j2-5.png") no-repeat;
+  }
+  .down-c-2f {
+      position:absolute;
+      top: 45px;
+      left: -40px;
+      width: 25px;
+      height: 50px;
+      background: url("../img/j左.png") no-repeat;
+  }
+  .down-c-2g {
+      position:absolute;
+      top: 45px;
+      right: -40px;
+      width: 25px;
+      height: 50px;
+      background: url("../img/j右.png") no-repeat;
+  }
+  .down-c-3 {
+      border: 1px solid #bbbaba;
+      text-align: center;
+      padding: 15px 55px;
+      font-size: 12px;
+      color: rgba(194, 193, 193, 5);
+      margin-left: 527px;
+      margin-top: 60px;
+  }
+  .msg {
+       background-color: #4d4d4d;
+        color: #ffffff;
+     }
+   .msg-c-1,.msg-c-2,.msg-c-2 a {
+       color: #ffffff;
+      }

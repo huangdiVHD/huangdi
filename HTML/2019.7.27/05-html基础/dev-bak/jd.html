@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .header {
+            height: 80px;
+        }
+
+        .header-c {
+            position: relative;
+            width: 990px;
+            height: 100%;
+            margin: 0 auto;
+        }
+
+        .header .logo {
+            float: left;
+            width: 170px;
+            height: 100%;
+            background: url(img/logo.png) no-repeat center;
+        }
+
+        .header .wel {
+            float: left;
+            margin: 30px 0 0 20px;
+        }
+
+        .header .ask {
+            position: absolute;
+            right: 0;
+            bottom: 10px;
+            font-size: 14px;
+            color: gray;
+            background: url(img/q-icon.png) no-repeat left;
+            text-indent: 22px;
+        }
+
+        .header .ask:hover {
+            text-decoration: underline;
+
+        }
+
+        /* 公共样式/ */
+        .tips {
+            height: 38px;
+            background-color: #FFF8F0;
+            text-align: center;
+        }
+
+        .tips .title {
+            display: inline-block;
+            height: 100%;
+            line-height: 38px;
+            font-size: 12px;
+            color: gray;
+            background: url(img/icon-tips.png) no-repeat left;
+            text-indent: 22px;
+        }
+
+        .main {
+            height: 475px;
+            background-color: #E93854;
+        }
+
+        .main-c {
+            position: relative;
+            width: 990px;
+            height: 100%;
+            margin: 0 auto;
+            background: url(img/bg.png) no-repeat center;
+        }
+
+        .main-c .login-block {
+            position: absolute;
+            right: 0;
+            top: 5px;
+            width: 347px;
+            height: 400px;
+            background-color: #fff;
+        }
+
+        .login-block .login-tabs {
+            height: 54px;
+            border-bottom: 1px solid #F4F4F4;
+        }
+
+        .login-tabs .tab {
+            float: left;
+            width: 173px;
+            font-size: 18px;
+            text-align: center;
+            height: 20px;
+            line-height: 20px;
+            margin: 17px 0;
+            cursor: pointer;
+            /* height: 100%;
+            line-height: 54px; */
+        }
+
+        .login-tabs .tab:hover {
+            color: #E32522;
+            font-weight: bolder;
+        }
+
+        /* 标识位 */
+        .login-tabs .tab.active {
+            color: #E32522;
+            font-weight: bolder;
+        }
+
+        .login-tabs .tab.qr-tab {
+            border-right: 1px solid #F4F4F4;
+        }
+
+        .login-block .login-form {
+            width: 306px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .login-block .login-bar {
+            width: 304px;
+            height: 38px;
+            border: 1px solid gray;
+            margin-top: 40px;
+        }
+
+        .login-block .login-bar.password {
+            margin-top: 20px;
+        }
+
+        .login-bar .icon {
+            float: left;
+            width: 37px;
+            height: 38px;
+            border-right: 1px solid gray;
+            background: url(img/pwd-icons-new.png) no-repeat 0 -48px;
+
+        }
+
+        .login-bar.password .icon {
+            background-position: -48px -48px;
+        }
+
+        .login-bar input {
+            float: left;
+            width: 266px;
+            height: 38px;
+            /* 边框 */
+            border: none;
+            /* 蓝色 */
+            outline: none;
+            text-indent: 20px;
+        }
+
+        .login-form .forget {
+            display: block;
+            margin-top: 20px;
+            text-align: right;
+            font-size: 14px;
+            color: gray;
+        }
+
+        .login-form .btn {
+            color: #fff;
+            background-color: #E93854;
+            font-size: 18px;
+            height: 33px;
+            line-height: 33px;
+            text-align: center;
+            font-weight: bolder;
+            margin-top: 20px;
+        }
+
+        .login-block .login-footer {
+            height: 50px;
+            background-color: #fcfcfc;
+            margin-top: 25px;
+        }
+
+        .login-footer .login-links {
+            position: relative;
+            width: 306px;
+            height: 100%;
+            margin: 0 auto;
+        }
+
+        .login-links .link-item {
+            float: left;
+        }
+
+        .link-item .icon {
+            float: left;
+            width: 20px;
+            height: 50px;
+            background: url(img/qq-wx.png) no-repeat 0 center;
+        }
+
+        .link-item a {
+            float: left;
+            height: 12px;
+            line-height: 12px;
+            font-size: 14px;
+            color: #333;
+            margin-left: 4px;
+            padding-right: 20px;
+            border-right: 1px solid gray;
+            margin-right: 10px;
+            margin-top: 19px;
+        }
+
+        .link-item.wx a {
+            border-right: none;
+            background-position: -20px center;
+        }
+
+        .link-item.wx .icon {
+
+            background-position: -20px center;
+        }
+
+        /* 立即注册 */
+        .link-item.reg {
+            position: absolute;
+            right: 0;
+            top: 0;
+
+        }
+
+        .link-item.reg .icon {
+            height: 20px;
+            margin-top: 15px;
+            background: url(img/pwd-icons-new.png) no-repeat -100px -72px;
+        }
+
+        .link-item.reg a {
+            padding-right: 0;
+            margin-right: 0;
+            border-right: none;
+        }
+
+        .footer {
+            /* height: 80px; */
+            padding-bottom: 50px;
+        }
+
+        .footer-c {
+            width: 990px;
+            height: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+            font-size: 14px;
+            color: gray;
+
+        }
+
+        .footer-c .links {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .footer-c .links a {
+            color: gray;
+            margin: 0 10px;
+        }
+
+        .footer-c .copyright {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <!-- 头部版心 -->
+        <div class="header-c">
+            <a href="#" class="logo"></a>
+            <img class="wel" src="img/wel.png" alt="">
+            <a href="#" class="ask">欢迎登录,调查问卷</a>
+        </div>
+    </div>
+    <div class="tips">
+        <div class="title">
+            依据《网络安全法》，为保障您的账户安全和正常使用，请尽快完成手机号验证！ 新版<a href="">《京东隐私政策》</a>已上线，将更有利于保护您的个人隐私。
+        </div>
+    </div>
+    <div class="main">
+        <div class="main-c">
+            <div class="login-block">
+                <div class="tips">
+                    <div class="title">
+                        京东不会以任何理由要求您转账汇款，谨防诈骗。
+                    </div>
+                </div>
+                <div class="login-tabs">
+                    <div class="tab qr-tab">
+                        扫码登录
+                    </div>
+                    <div class="tab user-tab active">
+                        账号登录
+                    </div>
+                </div>
+                <div class="login-form">
+                    <div class="login-bar user">
+                        <div class="icon">
+
+                        </div>
+                        <!-- 用户名输入框 -->
+                        <input type="text" placeholder="请输入用户名">
+                    </div>
+                    <div class="login-bar password">
+                        <div class="icon">
+
+                        </div>
+                        <!-- 密码输入框 -->
+                        <input type="password" placeholder="请输入密码">
+                    </div>
+                    <a href="#" class="forget">忘记密码</a>
+                    <div class="btn">登&nbsp;&nbsp;&nbsp;&nbsp;录</div>
+                </div>
+                <div class="login-footer">
+                    <div class="login-links">
+                        <div class="link-item qq">
+                            <div class="icon">
+
+                            </div>
+                            <a href="#">QQ</a>
+                        </div>
+                        <div class="link-item wx">
+                            <div class="icon">
+
+                            </div>
+                            <a href="#">微信</a>
+                        </div>
+                        <div class="link-item reg">
+                            <div class="icon">
+
+                            </div>
+                            <a href="#">立即注册</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-c">
+            <div class="links">
+                <a href="#">关于我们</a>
+                |
+                <a href="#">联系我们</a>
+                |
+                <a href="#">关于我们</a>
+                |
+                <a href="#">关于我们</a>
+                |
+                <a href="#">关于我们</a>
+                |
+                <a href="#">关于我们</a>
+                |
+                <a href="#">关于我们</a>
+                |
+                <a href="#">关于我们</a>
+                |
+                <a href="#">关于我们</a>
+                |
+                <a href="#">关于我们</a>
+                |
+                <a href="#">关于我们</a>
+            </div>
+            <div class="copyright">
+                Copyright © 2004-2019 京东JD.com 版权所有
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

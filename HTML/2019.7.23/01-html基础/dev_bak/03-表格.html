@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- 表格 -->
+	<table align="center" border="1" bgcolor="red" cellspacing="10" cellpadding="20">
+		<!-- align left | center | right 表格的位置
+border 表格边框 同时为td(单元格)生成边框
+bgcolor 表格背景色
+cellspacing 单元格与单元格之间的距离
+cellpadding 文字和单元格之间的距离 -->
+		<caption>课程表</caption>
+		<!-- tr 表示 表格的 行  -->
+		<tr bgcolor="green">
+
+<!-- align left | center | right 文字对齐方式
+bgcolor 当前行的背景色 -->
+			<th>周一愿意因</th>
+			<th>周二二人若若</th>
+			<th>周三</th>
+			<th>周四</th>
+			<th>周五</th>
+		</tr>
+		<tr align="center">
+			<!-- ctrl + z  撤销操作-->
+
+<!-- colspan 单元格所占据的列
+rowspan 单元格所占据的行 -->
+			<td>数学</td>
+			<td>语文</td>
+			<td>英语</td>
+			<td colspan="2">语文</td>
+			<!-- <td>语文</td> -->
+		</tr>
+		<tr>
+			<td>语文</td>
+			<td>数学</td>
+			<td>英语</td>
+			<td>英语</td>
+			<td rowspan="2">语文</td>
+		</tr>
+		<tr>
+			<td>体育</td>
+			<td>品德</td>
+			<td>音乐</td>
+			<td>健康</td>
+			<!-- <td>语文</td> -->
+		</tr>
+	</table>
+</body>
+</html>

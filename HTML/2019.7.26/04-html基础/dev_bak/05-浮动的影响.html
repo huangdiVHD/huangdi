@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.main{
+			width: 1200px;
+			/*height: 300px;*/
+			background-color: orange;
+			margin: 0 auto;
+			/*清除了浮动带来的影响*/
+			/*overflow: hidden;*/
+		}
+		.main .side{
+			float: left;
+			width: 200px;
+			height: 400px;
+			background-color: pink;
+		}
+		.main .content{
+			float: left;
+			width: 800px;
+			height: 500px;
+			background-color: red;
+		}
+		.main .d1{
+			float: left;
+			width: 500px;
+			height: 100px;
+			background-color: pink;
+		}
+		.clr{
+			/*清除浮动影响*/
+			clear: both;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		
+		<div class="side">
+			
+		</div>
+		<div class="content">
+			
+		</div>
+		<div class="d1">
+			
+		</div>
+		<!-- 浮动元素最后追加一个空的div -->
+		<div class="clr">
+			
+		</div>
+	</div>
+</body>
+</html>

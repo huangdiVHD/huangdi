@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			ul {
+				list-style: none;
+			}
+
+			a {
+				text-decoration: none;
+			}
+
+			.zx {
+				position: fixed;
+				right: 10px;
+				bottom: 50px;
+			}
+
+			.zx .zx-item {
+				position: relative;
+				width: 38px;
+				height: 38px;
+				cursor: pointer;
+			}
+
+			.zx .zx-item.top {
+				margin-top: 5px;
+				background: #646464 url(img/up.png) no-repeat center;
+			}
+
+			.zx .zx-item.wx {
+				background: #32af2c url(img/wx.png) no-repeat center;
+			}
+
+			.zx .zx-item.qq {
+				background: #6872b9 url(img/qq.png) no-repeat center;
+			}
+
+			.zx .wx .qr {
+				display: none;
+				position: absolute;
+				left: -119px;
+				top: 0;
+				width: 119px;
+				height: 119px;
+				background: url(img/qr.png) no-repeat center;
+			}
+
+			.zx .wx:hover .qr {
+				display: block;
+			}
+
+			.zx .qq-detail {
+				/* display: none; */
+				position: absolute;
+				bottom: 0;
+				right: -180px;
+				width: 170px;
+				height: 185px;
+				background-color: #fff;
+				transition: all ease 0.4s;
+			}
+
+			.zx .zx-item:hover .qq-detail {
+				/* display: block; */
+				right: 0;
+			}
+
+			.zx .zx-item .qq-item {
+				height: 35px;
+				line-height: 35px;
+				padding-left: 20px;
+			}
+
+			.zx .zx-item .qq-item.title {
+				position: relative;
+				background-color: #6872b9;
+			}
+
+			.zx-item .title .icon {
+				position: absolute;
+				top: 12px;
+				right: 10px;
+				width: 16px;
+				height: 16px;
+				background: url(img/X.png) no-repeat center;
+				background-size: 12px 12px;
+			}
+
+			.zx-item .title .icon:hover {
+				/* css3  过渡效果 */
+				transition: all ease 0.4s;
+				transform: rotate(180deg);
+			}
+
+			.zx .zx-item .qq-item.teacher {
+				transition: all ease 0.4s;
+				text-indent: 30px;
+				background: #e8e8e8 url(img/qq.png) no-repeat 20px center;
+			}
+
+			.zx .zx-item .qq-item.teacher:hover {
+				height: 42px;
+				line-height: 42px;
+				background-color: #333;
+				color: #fff;
+			}
+
+			.zx .zx-item .qq-item.tel {
+				height: 73px;
+			}
+
+			.zx .zx-item .qq-item.tel p {
+				height: 40px;
+				text-indent: 30px;
+				background: url(img/tel.png) no-repeat 0 center;
+			}
+
+			.zx .zx-item .qq-item.tel span {
+				display: block;
+				height: 20px;
+				line-height: 20px;
+				/* text-indent: 0; */
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="zx">
+			<div class="zx-item qq">
+				<ul class="qq-detail">
+					<li class="qq-item title">
+						在线咨询
+						<span class="icon"> </span>
+					</li>
+					<li class="qq-item teacher">
+						张老师
+					</li>
+					<li class="qq-item teacher">
+						王老师
+					</li>
+					<li class="qq-item tel">
+						<p>联系电话</p>
+						<span>0371-66666666</span>
+					</li>
+				</ul>
+			</div>
+			<div class="zx-item wx">
+				<div class="qr"></div>
+			</div>
+			<div class="zx-item top"></div>
+		</div>
+	</body>
+</html>

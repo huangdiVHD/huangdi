@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .A {
+        width: 200px;
+        height: 100px;
+        background-color: red;
+    }
+    .A:hover {
+        transition: background-color 2s ;
+        /* transition-property:  background-color;
+        transition-delay: 2s; */
+        background-color: black;
+    }
+    .B {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        border: 20px solid transparent;
+        background-clip: content-box;
+        margin: 0 auto;
+        border-radius: 50%;
+    }
+    .B:hover {
+        background-color: black;
+        border-color: goldenrod;;
+    }
+    </style>
+</head>
+<body>
+    <div class="A"></div>
+    <div class="B"></div>
+</body>
+</html>

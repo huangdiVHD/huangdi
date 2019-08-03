@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 初始化样式 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            /* 列表前边的 远点  序号 */
+            list-style: none;
+        }
+
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: red;
+            /* background-color: #fff; */
+            /* margin-top: 20px; */
+            overflow: hidden;
+            /* 字面意思  超出部分隐藏 */
+            /* 用在这里  可以解决 嵌套崩塌 */
+            /* padding-top: 0.1px; */
+            /* border-top: 1px solid; */
+        }
+
+        .box .inner-box {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin-left: 20px;
+            margin-top: 50px;
+            /* 子类盒子设置的 margin-top   作用到了父类盒子上边  
+            嵌套崩塌 */
+        }
+
+        /* 解决办法 */
+        /* 1. 给父类盒子 设置 overflow:hidden */
+        /* 2. 给父类 盒子 设置一个极小的padding  或者 border */
+
+        .li-item {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 20px;
+
+            /* 垂直方向上的 margin 会出现重叠现象/  不会累加 */
+            /* 谁大  用谁 */
+        }
+
+        .li2 {
+            /* margin-top: 50px; */
+            margin-top: 10px;
+        }
+
+        span {
+            background-color: red;
+            display: inline-block;
+            margin: 20px;
+        }
+
+        .li {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            display: inline-block;
+            /* 间隙 是由  换行符造成的 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="inner-box">
+
+        </div>
+    </div>
+
+
+    <ul>
+        <li class="li-item">
+            GV梵蒂冈
+        </li>
+        <li class="li-item li2">
+            高度
+        </li>
+        <li class="li-item">
+            是否
+        </li>
+    </ul>
+
+    <span>不凡学院</span>
+    <span>天气很好</span>
+    <ul>
+        <li class="li_1 li"></li
+        ><li class="li_2 li"></li>
+        <li class="li_3 li"></li>
+        <li class="li_4 li"></li>
+    </ul>
+    <p>
+        官方客户端上飞机类似的减肥了第三方撒个谎放大看是否交代理费对符合法规和规范集合国际规划局带来更好的浪费更多的国家的法律关键
+    </p>
+</body>
+
+</html>

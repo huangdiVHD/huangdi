@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	html  由三部分组成   结构(html)  表现(css)  行为(js)
+	标签 <开始标签 附加属性>标签的内容(文本,其他标签)</结束标签>
+		属性名="属性值" key=value
+	
+	head标签 不会在网页当中展示 用于辅助浏览器解析页面
+	<meta charset="UTF-8">   指定字符集编码
+	关键字 keywords
+	网站的描述信息   description
+
+	常见标签 
+
+	标题标签 h1(一级标题)---h6
+	段落标签 <p></p> 每一个段落 标签 都会换行
+	图片  <img src="" alt="图片未找到">
+	src 路径  绝对路径 (本地,网络资源)
+			相对路径 (相对当前文件的位置)
+			同一级目录 :  xxx.jpg
+			下一级目录: img/xxx.jpg
+			上一级目录: ../xxx.jpg
+			上两级目录: ../../xx.jpg
+	
+	超链接 <a href="" target="">跳转</a>
+	href 跳转的 地址 
+	target 跳转的方式  当前窗口跳转 _self 默认
+					新窗口跳转  _blank
+
+	换行   <br>
+	分割线  <hr>
+
+
+	列表  
+	无序列表 ul li
+	有序列表 ol li
+	自定义列表 dl dt/dd	
+
+	字体标签  <em></em>
+	<strong></strong>
+
+	<i></i>
+	<b></b>
+
+	上标  <sup></sup>
+	下标  <sub></sub>
+
+	删除线 <del></del>
+	下划线 <ins></ins>
+	
+	<!-- cellspacing 单元格和单元格之间的距离
+	ccellpadding 文字和单元格之间的距离 -->
+	<table align="" bgcolor="" border="" cellpadding="" cellspacing="">
+		<tr align="" bgcolor="">
+			<th>周一</th>
+			<th>周二</th>
+		</tr>
+		<tr>
+			<td colspan="">数学</td>
+			<td rowspan="">语文</td>
+		</tr>
+	</table>
+
+	表单 
+	<form action="">
+		<!-- type类型 -->
+		<input type="text">
+		<input type="password">
+
+		<!-- 单选 -->
+		男:	<input type="radio" name="sex">
+		nv: <input type="radio" name="sex">
+
+		多选 type=checkBox
+		文件上传 type = file
+
+		下拉选择框
+		<select name="" id="">
+			<option value=""></option>
+			<option value=""></option>
+
+		</select>
+
+		<textarea name="" id="" cols="30" rows="10"></textarea>
+
+		提交按钮  <input type="submit">
+
+		readOnly 只读属性
+		disabled 禁用
+		默认选中  checked  selected
+	</form>
+
+
+	html 语法规范
+</body>
+</html>

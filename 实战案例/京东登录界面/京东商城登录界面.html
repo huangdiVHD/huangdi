@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    ul{
+        list-style: none;
+    }
+    a{
+        text-decoration: none;
+    }
+    a:hover{
+        text-decoration: underline;
+    }
+    .header-c,.main-c,.footer-c{
+        width: 990px;
+        height: 100%;
+        margin: 0 auto;
+    }
+    .header{
+        height: 60px;
+        background-color: #FFFFFF;
+        margin: 0 auto;
+    }
+    .header-c{
+        position: relative;
+    }
+    .header .header-logo{
+        float: left;
+        width: 170px;
+        height: 60px;
+        background: url("img/logo.png") no-repeat center;
+    }
+    .header-c .header-img1{
+        margin-left: 60px;
+        margin-top: 20px;
+   }
+   .header-c .header-s{
+       height: 100%;
+   }
+   .header-c .header-s a{
+        position: absolute;
+        top: 12px;
+        right: 10px;
+        font-size: 12px;
+        text-align:right;
+        line-height: 60px;
+        text-indent:20px;
+        color: gray;
+        background: url("img/q-icon.png") no-repeat left ;
+   }
+   .header-c .header-s a:hover{
+       color: red;
+   }
+    .tips{
+        height: 30px;
+        background-color: #FFF8F0;
+         text-align: center;
+    }
+    .tips .title{
+        display: inline-block;
+        height: 100%;
+        line-height: 30px;
+        text-indent: 20px;
+        font-size: 12px;
+        color: gray;
+        background: url("img/icon-tips.png") no-repeat left ;
+    }
+    .main{
+        height: 475px;
+        background-color: #E93854;
+    }
+    .main .main-c{
+        position: relative;
+        background: url("img/bg.png") no-repeat;
+    }
+    .main .main-c .login{
+        position: absolute;
+        top: 15px;
+        right: 3px;
+        width: 347px;
+        height: 400px;
+        background-color: white;
+    }
+    .main-c .login .login-tips{
+        height:38px;
+        text-align: center;
+        background-color: #FFF8F0;
+    }
+    .login .login-tips .login-tips-1{
+        display: inline-block;
+        font-size: 12px;
+        color: gray;
+        text-indent:20px;
+        line-height: 38px;
+        background:url("img/icon-tips.png") no-repeat left;
+    }
+    .login .log-reg{
+        position: relative;
+        height: 55px;
+        margin: 0 auto;
+        border-bottom:  gray 1px solid;
+    }
+    .login .tab{
+            float: left;
+            width: 173px;
+            font-size: 18px;
+            text-align: center;
+            height: 20px;
+            line-height: 20px;
+            margin: 17px 0;
+            /* cursor: pointer; */
+    }
+    .login .tab:hover a{
+        color: #E93854;
+    }
+    .login .tab.active a{
+        color: #E93854;
+    }
+    .log-reg .log {
+        border-right: gray 1px solid;
+    }
+    .log-reg.log a{
+        color: black;
+    }
+  .cte{
+      height: 241px;
+  }
+  .kg{
+      width: 306px;
+      height: 23px;
+  }
+    .bar{
+      width: 304px;
+      height: 38px;
+      margin: 0 auto;
+      border:1px solid gray;
+      margin: 25px 20px;
+    }
+    .bar .bar-1{
+      float: left;
+      width: 39px;
+      height: 38px;
+      border-right: 1px solid gray;
+    }
+    .bar input{
+            width: 264px;
+            height: 38px;
+            border: none;
+            outline: none;
+            text-indent: 10px;
+    }
+    .bar .img2{
+        background: url('img/pwd-icons-new.png') no-repeat 0 -48px;
+    }
+    .bar .img3{
+        background: url('img/pwd-icons-new.png') no-repeat -48px -48px;
+    }
+   .a2{
+        display: block;
+        width: 306px;
+        font-size: 12px;
+        color: black;
+        text-align: right;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+   .a2:hover{
+        color:red;
+    }
+    .cte .dl{
+        width: 304px;
+        height: 33px;
+        color:white;
+        font-size: 12px;
+        text-align: center;
+        line-height: 33px;
+        margin: 0 auto;
+        background-color: red;
+    }
+    .mdown{
+            position: relative;
+            height: 61px;
+            background-color: #FCFCFC;
+            font-size: 12px
+    }
+    .mdown .mdown2{
+            float: left;
+            height: 21px;
+            margin: 20px 20px;
+    }
+    .mdown .mdown2 .mdown1{
+            float: left;
+            width: 19px;
+            height: 100%;
+            /* margin: 0 5px; */
+    }
+    .qq{
+        padding-right: 0px
+    }
+    .qq a{
+        padding-right: 20px;
+        border-right: gray 1px solid;
+    }
+    .qq .mdown1{
+        margin-right: 10px;
+        background: url("img/qq-wx.png") no-repeat -1px;
+    }
+    .wx .mdown1{
+        margin-right: 10px;
+        background: url('img/qq-wx.png') no-repeat -19.5px center;
+    }
+
+    .mdown3{
+        position: absolute;
+        top :20px;
+        right: 20px;
+        height: 77px;
+        height: 100%;
+    }
+    .mdown3 .zc{
+        float: left;
+        width: 16px;
+        height: 20px;
+        /* margin-top: 2px; */
+        margin-right: 5px;
+        background: url('img/pwd-icons-new.png') no-repeat -104px -73px;
+    }
+    .footer{
+        height: 86px;
+    }
+    .footer-c {
+            width: 990px;
+            height: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+            font-size: 14px;
+    }
+    .footer-c1{
+        text-align: center;
+        margin-top: 30px;
+    }
+    .footer-c1 a{
+        color: gray;
+    }
+    .footer-c2{
+            width: 990px;
+            height: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+            font-size: 14px;
+            color: gray;
+            text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <div class="header">
+            <div class="header-c">
+             <a class="header-logo" href="#"></a>
+             <img class="header-img1" src="img/wel.png" alt="欢迎登陆">
+             <div class="header-s">
+                 <a  href="#">
+                     登录页面，调查问卷
+                 </a>
+             </div>
+            </div>
+    </div>
+    <div class="tips">
+        <div class="title">
+                    依据《网络安全法》，为保障您的账户安全和正常使用，请尽快完成手机号验证！ 新版《京东隐私政策》已上线，将更有利于保护您的个人隐私。
+        </div>
+    </div>
+    <div class="main">
+        <div class="main-c">
+          <div class="login">
+            <div class="login-tips">
+                <div class="login-tips-1">
+                        京东不会以任何理由要求您转账汇款，谨防诈骗。
+                   </div>
+                   <div class="log-reg">
+                        <div class="tab log ">
+                        <a href="#">扫码登录</a>
+                        </div>
+                        <div class="tab reg active">
+                        <a href="#">帐号登录</a>
+                        </div>
+                    </div>
+                   <div class="cte">
+                        <div class="kg"> </div>
+
+                        <div class="bar">
+                         <div class="bar-1 img2"></div>
+                         <input type="text" placeholder="请使用帐号密码登录">
+                        </div>
+                        <div class="bar">
+                        <div class="bar-1 img3"></div>
+                         <input type="text" placeholder="请输入密码">
+                        </div>
+                        <a class="a2" href="#">忘记密码</a>
+                        <div class="dl">登&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录</div>
+                   </div>
+
+                   <div class="mdown">
+
+                       <div class="mdown2 qq">
+                            <div class="mdown1"></div>
+                            <a href="#">QQ</a>
+                       </div>
+
+                      <div class="mdown2 wx">
+                            <div class="mdown1 ">
+                             </div>
+                                <a href="#">微信</a>
+                      </div>
+
+                    <div class="mdown3 li">
+                        <div class=" zc">
+                         </div>
+                         <a href="#">立即注册</a>
+                    </div>
+                   </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-c">
+                  <div class="footer-c1">
+                        <a href="#">关于我们</a>
+                        |
+                        <a href="#">联系我们</a>
+                        |
+                        <a href="#">关于我们</a>
+                        |
+                        <a href="#">关于我们</a>
+                        |
+                        <a href="#">关于我们</a>
+                        |
+                        <a href="#">关于我们</a>
+                        |
+                        <a href="#">关于我们</a>
+                        |
+                        <a href="#">关于我们</a>
+                        |
+                        <a href="#">关于我们</a>
+                        |
+                        <a href="#">关于我们</a>
+                        |
+                        <a href="#">关于我们</a>
+                  </div>
+              <div class="footer-c2">
+                    Copyright © 2004-2019  京东JD.com 版权所有
+              </div>
+        </div>
+    </div>
+</body>
+</html>

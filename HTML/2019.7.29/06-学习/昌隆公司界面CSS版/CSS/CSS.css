@@ -1,0 +1,388 @@
+*{
+    margin: 0px;
+    padding: 0px;
+ }
+ ul{
+     list-style: none;
+ }
+ a{
+     text-decoration: none;
+ }
+ .header{
+     height: 38px;
+     background-color: #2e3139;
+ }
+ .nav{
+     height: 99px;
+     background-color: #ffffff;
+ }
+ .new{
+     height: 400px;
+     background-color: #19588c;
+ }
+ .content{
+     height: 830px;
+     background-color: #f2f2f2;
+ }
+ .footer{
+     height: 204px;
+     background-color: #2e3139;
+ }
+ .header-c,
+ .nav-c,
+ .new-c,
+ .content-c1,
+ .footer-c{
+     width: 1000px;
+     height: 1569px;
+     margin: 0 auto;
+ }
+ /* 导航 */
+ .header-c {
+     position: relative;
+     line-height: 38px;
+     color: #8b8b8c;
+     font-size: 15px;
+ }
+ .header-c .header-c-right{
+     position: absolute;
+     top: 0px;
+     right: 0px;;
+     height: 100px;
+     text-align: center;
+ }
+ .header-c .header-c-right .sc{
+       float: left;
+       height: 100%;
+       margin-right: 20px;
+
+ }
+ .header-c .header-c-right .sx{
+     float: left;
+     width: 1px;
+     height: 15px;
+     margin-top: 12px;
+     background-color: #3e3f44;
+ }
+ .header-c .header-c-right .sy{
+       float: left;
+       height: 100%;
+       margin-left: 20px;
+ }
+ /* logo */
+ .nav-c{
+     position: relative;
+ }
+ .nav-c .logo{
+     width: 190px;
+     height: 100px;
+     background: url("../img/logo.png") no-repeat center;
+ }
+ .nav-c  .nav-c-ul{
+     position: absolute;
+     top: 0px;
+     right: 0px;
+     height: 100px;
+     line-height: 100px;
+     margin: 0 auto;
+ }
+ .nav-c .nav-c-li{
+     position: relative;
+     float: left;
+     height: 100px;
+     margin: 0 25px;
+     text-align: center;
+ }
+ .nav-c .nav-c-li a{
+     font-size: 16px;
+      color: #8b8b8c;
+ }
+ .nav-c-ul .nav-c-li.lx{
+     margin-right: 0px;
+ }
+ .nav-c-ul .nav-c-li.sy2{
+     width: 64px;
+     height: 100%;
+ }
+ .nav-c-ul .nav-c-li.sy2 .active{
+     display: block;
+ }
+ .nav-c-ul .nav-c-li .xh{
+     position: absolute;
+     left: -13px;
+     bottom: 30px;
+     display: none;
+     width: 90px;
+     height: 2px;
+     background-color: #1669ad;
+ }
+ .nav-c{
+     height: 100%;
+     margin: 0 auto;
+ }
+ /* 标题公共 */
+ .content-c1 .content-c-title{
+     position: relative;
+     height: 31px;
+     padding-top: 40px;
+     line-height: 15px;
+     border-bottom: 2px solid #cfcfcf;
+ }
+ .content-c1 .content-c-title .d{
+     float: left;
+     height: 100%;
+     margin-left: 2px;
+ }
+ .content-c-title .d .sp1{
+     display: block;
+     width: 6px;
+     height: 6px;
+     background-color: #11589d;
+ }
+ .content-c-title .d .sp2{
+     display: block;
+     margin-top: 4px;
+     margin-bottom: 11px;
+     width: 6px;
+     height: 6px;
+     background-color: #11589d;
+ }
+ .content-c1 .content-c-title .cz{
+     float: left;
+     color: #5a5a5a;
+     font-size: 18px;
+     margin-left: 14px;
+     margin-right: 20px;
+ }
+ .content-c1 .content-c-title .pro{
+     float: left;
+     font-size: 15px;
+     color: rgba(200, 200, 200, 5);
+ }
+ .content-c1 .content-c-title .more{
+     position: absolute;
+     bottom: 6px;
+     right: 0px;
+     height: 21px;
+     border: 1px solid #cfcfcf;
+     text-align: center;
+     padding: 6px 2px 6px 9px;
+     font-size: 14px;
+     color: #767676;
+ }
+ /* 产品中心 */
+ .content-c-1{
+     height: 180px;
+     margin: 0 auto;
+     margin-top: 10px;
+     font-size: 15px;
+ }
+ .content-c-1 .img2,.img3,.img4{
+     position: relative;
+     float: left;
+     width: 244px;
+     height: 154px;
+     margin-right: 8px;
+     text-align: center;
+     background-color: #ffffff;
+ }
+ .img2-1{
+     height: 151px;
+     background: url("../img/硅酸钠.png") no-repeat center;
+ }
+ .img3-1{
+     height: 151px;
+     background: url("../img/固体.png") no-repeat center;
+ }
+ .img4-1{
+     height: 151px;
+     background: url("../img/水玻璃.png") no-repeat center;
+ }
+ .img5{
+     float: left;
+     width: 244px;
+     height: 154px;
+     text-align: center;
+     background-color: #ffffff;
+ }
+ .img5-1{
+     height: 151px;
+     background: url("../img/硅溶胶.png") no-repeat center;
+ }
+ /* 公司介绍 */
+ .content-c-3{
+     margin: 0 auto;
+     height: 171px;
+     margin-bottom: 55px;
+ }
+ .content-c-3 .content-img6{
+     float: left;
+     width: 300px;
+     height: 171px;
+     background-color:#ffffff;
+     background:url("../img/楼.png") no-repeat center;
+ }
+ .content-c-3 .content-z{
+    float: left;
+    width: 700px;
+    height: 171px;
+    /* background-color: gold; */
+  }
+  .content-z .content-z-title{
+      width: 230px;
+      height: 21px;
+      font-weight: bolder;
+      font-size: 15px;
+      color: #888888;
+  }
+  .content-z .content-z-c{
+      height: 150px;
+      color: #bbbbbb;
+      font-size: 14px;
+      line-height: 25px;
+      text-indent: 50px;
+  }
+/* 底部新闻 */
+  .content-down{
+      height: 295px;
+      margin: 0 auto;
+      /* margin-bottom: 60px; */
+  }
+  .content-down .content-down-1{
+      float: left;
+      width: 300px;
+      height: 235px;
+  }
+  .content-down-1-1{
+     height: 30px;
+     line-height: 30px;
+     border-bottom:1px solid #cfcfcf;
+ }
+ .content-down-1-1-1{
+     float: left;
+
+ }
+ .sp6{
+     display: block;
+     width: 6px;
+     height: 6px;
+     margin-top: 7px;
+     background-color: #11589d;
+ }
+ .sp7{
+     display: block;
+     margin-top: 4px;
+     /* margin-bottom: 11px; */
+     width: 6px;
+     height: 6px;
+     background-color: #11589d;
+ }
+ .content-down-1-1-2{
+     float: left;
+     color: #5a5a5a;
+     font-size: 18px;
+     margin-left: 14px;
+     margin-right: 20px
+ }
+ .content-down-1-1-3{
+     float: left;
+     font-size: 15px;
+     color: rgba(200, 200, 200, 5);
+ }
+
+ .content-down-1-2, .content-down-2-1{
+     height: 205px;
+ }
+ .content-down-1-2, .content-down-2-1 li{
+     font-size: 15px;
+     color: #acacac;
+     line-height: 40px;
+ }
+  .content-down .content-down-2{
+      position: relative;
+      float: left;
+      width: 675px;
+      height: 235px;
+      margin-left: 25px;
+  }
+  .content-down-1-1--4{
+     position: absolute;
+     top: 0px;
+     right: 0px;
+     width: 55px;
+     height: 22px;
+     border: 1px solid #cfcfcf;
+     text-align: center;
+     padding: -5px 1px 5px 0px;
+     font-size: 14px;
+     color: #767676;
+ }
+ .content-down-2-2{
+     position: relative;
+ }
+ .content-down-2-3{
+   position: absolute;
+   top: 0px;
+   right: 0px;
+ }
+ .content-down-2-3 li{
+     line-height: 40px;
+     font-size: 14px;
+     color: #767676;
+ }
+ .content-down-2-1 li span{
+     display: inline-block;
+     width: 4px;
+     height: 4px;
+     margin: 5px 10px 5px 1px;
+    background-color: #b2b2b2;
+ }
+
+ /* 底部备案 */
+ .footer-c{
+    padding: 40px 0;
+ }
+ .footer-c-1{
+     font-size: 14px;
+     line-height: 30px;
+     color: #989ca7;
+     text-align: center;
+ }
+/* 广告 */
+ .banner{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin-left: 513px;
+        width: 142px;
+        height: 183px;
+        line-height: 30px;
+        text-align: center;
+        padding: 20px 0;
+        font-size: 15px;
+        color: #616161;
+        border: 1px solid #cfcfcf;
+        background-color: #ffffff;
+  }
+  .banner-2{
+      height: 36px;
+      background: url("../img/QQ点击.png") no-repeat center;
+  }
+  .banner-3{
+     width: 95px;
+     height: 25px;
+     margin: 0 auto;
+  }
+  .banner-3-1{
+      float: left;
+      width: 33px;
+      height:100%;
+      margin-left: 12px;
+      background: url("../img/电话.png") no-repeat center;
+  }
+  .banner-3-2{
+      float:left;
+      width: 44px;
+      color: blue;
+      height: 100%;
+  }

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* .inner-box {
+            color: red;
+        } */
+        /* ctrl+/ */
+        .red {
+            color: red;
+        }
+
+        /* 后代选择器器 */
+        /* box 里边的 inner-box */
+        /* 空格隔开 */
+        .box .inner-box {
+            font-size: 30px;
+        }
+
+        /* 并集选择器 */
+        p,
+        span,
+        h1 {
+            color: green;
+        }
+
+        /* 交集选择器器 */
+        .nav .nav-item {
+            color: orange;
+        }
+
+        /* nav 里边  同时具有nav-item 和 red 这两个类名的 元素 */
+        /* 中间没有空格 */
+        .nav .nav-item.red {
+            color: red;
+        }
+
+        /* 通配符 */
+        /* 选中所有标签 */
+        * {
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- class命名要求  语义化 -->
+    <!-- 类名可以有很多个 -->
+    <!-- 后代选择器 -->
+    <p class="title">我是标题</p>
+    <p class="text">我是文本内容</p>
+    <div class="box">
+        <div class="inner-box red">
+            我是box里边的 innerbox
+        </div>
+    </div>
+    <div class="inner-box">
+        我是外边的innerbox
+    </div>
+    <span>我是span标签</span>
+    <h1>我是h1</h1>
+    <ul class="nav">
+        <!-- 首页字体颜色和其他不一样 -->
+        <li class="nav-item red">
+            首页
+        </li>
+        <li class="nav-item">
+            关于
+        </li>
+        <li class="nav-item">
+            活动
+        </li>
+        <li class="nav-item">
+            新闻
+        </li>
+    </ul>
+</body>
+
+</html>

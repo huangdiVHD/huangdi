@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			list-style: none;
+		}
+		a{
+			text-decoration: none;
+		}
+		.banner{
+			position: relative;
+			width: 1226px;
+			height: 460px;
+			margin: 0 auto;
+			margin-top: 100px;
+		}
+		.banner .img{
+			width: 100%;
+			height: 100%;
+		}
+		.banner .sidebar{
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 236px;
+			height: 100%;
+			background-color: rgba(0,0,0,.3);
+		}
+		.banner .list{
+			width: 100%;
+			height: 420px;
+			margin: 20px 0;
+		}
+		.banner .list .list-item{
+			width: 100%;
+			height: 42px;
+		}
+		.list .list-item a{
+			display: block;
+			width: 100%;
+			height: 100%;
+			color: #fff;
+			line-height: 42px;
+			text-indent: 30px;
+			background: url(arrow.png) no-repeat 200px center;
+		}
+		.list .list-item a:hover{
+			background-color: #FF6700;
+		}
+		.banner .arr{
+			position: absolute;
+			display: block;
+			width: 40px;
+			height: 70px;
+		}
+		.banner .arr.next{
+			/*块状元素垂直居中的办法*/
+			right: 0;
+			top: 50%;
+			margin-top: -35px;
+			background: url(next.png) no-repeat center;
+		}
+		.banner .arr.prev{
+			/*块状元素垂直居中的办法*/
+			left: 236px;
+			top: 50%;
+			margin-top: -35px;
+			background: url(prev.png) no-repeat center;
+		}
+		.banner .arr:hover {
+			background-color: rgba(0,0,0,.3);
+		}
+		.banner .dots{
+			position: absolute;
+			right: 20px;
+			bottom: 20px;
+			/*width: 64px;*/
+			height: 8px;
+
+		}
+		.banner .dots .dot-item{
+			float: left;
+			width: 8px;
+			height: 8px;
+			margin: 0 4px;
+			background-color: gray;
+			border-radius: 50%;
+			/*变成圆形*/
+		}
+		.banner .dots .dot-item a{
+			display: block;
+			width: 6px;
+			height: 6px;
+			background-color: #333;
+			margin: 1px;
+			border-radius: 50%;
+		}
+		.banner .dots .dot-item a:hover{
+			background-color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<div class="banner">
+		<img class="img" src="banner.jpg" alt="">
+		<div class="sidebar">
+			<ul class="list">
+				<li class="list-item">
+					<a href="#">手机 电话卡</a>
+				</li>
+				<li class="list-item">
+					<a href="#">手机 电话卡</a>
+				</li>
+				<li class="list-item">
+					<a href="#">手机 电话卡</a>
+				</li>
+				<li class="list-item">
+					<a href="#">手机 电话卡</a>
+				</li>
+				<li class="list-item">
+					<a href="#">手机 电话卡</a>
+				</li>
+			</ul>
+		</div>
+		<!-- 左右箭头 -->
+		<a class="arr next" href="#"></a>
+		<a class="arr prev" href="#"></a>
+		<!-- 分页器 -->
+		<ul class="dots">
+			<li class="dot-item">
+				<a href="#"></a>
+			</li>
+			<li class="dot-item">
+				<a href="#"></a>
+				
+			</li>
+			<li class="dot-item">
+				<a href="#"></a>
+				
+			</li>
+			<li class="dot-item">
+				<a href="#"></a>
+				
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

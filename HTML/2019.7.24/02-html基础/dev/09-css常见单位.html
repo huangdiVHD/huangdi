@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        p {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            font-size: 24px;
+        }
+
+        .box {
+            width: 600px;
+            height: 400px;
+            background-color: orange;
+        }
+
+        .inner-box {
+            /* 通常是父类元素的百分比 */
+            width: 50%;
+            height: 50%;
+            background-color: pink;
+            /* 首行缩进 */
+            /* 当前字体的倍数 */
+            text-indent: 2em;
+            /* text-indent: 32px; */
+        }
+
+        .color {
+            width: 100px;
+            height: 100px;
+            /* background-color: #47B3FF; */
+            background-color: rgb(71, 179, 255, .5);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1. 像素单位 -->
+    <p>不凡学院</p>
+    <div class="box">
+        <div class="inner-box">
+            不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院
+        </div>
+    </div>
+    <div class="color">
+
+    </div>
+    <!-- 颜色单位: 预定义的颜色 red green blue
+    红 绿 蓝
+    十六进制表示颜色 #333333;
+    rgb(0,0,0) -->
+
+    <!-- 将十六进制 转换成 rgb() -->
+    <!-- 47B3FF ==> rgb() -->
+    <!-- 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+    0 1 2 3 4 5 6 7 8 9 a b c d e f
+
+    47 ==> 4*16+7 = 71
+    B3 ==> 11*16+3 == 179
+    ff==> 15*16+15 ==>255 -->
+    <!-- rgba(0,0,0,.5)  a表示透明度 -->
+</body>
+
+</html>

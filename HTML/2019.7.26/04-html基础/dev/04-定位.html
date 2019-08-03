@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.box {
+				position: relative;
+				/* 相对定位  */
+
+				/* 相对元素本身的位置定位。  */
+
+				/* 不会脱离文档流  依然占据位置 */
+				/* 元素特性不变  不写宽度的话,依然继承父类元素宽度 100% */
+				/* 相对定位会使元素的层级提升，使元素可以覆盖文本流中的元素。 */
+				left: 50px;
+				top: 100px;
+				width: 100px;
+				height: 100px;
+				background-color: red;
+			}
+
+			.box2 {
+				width: 600px;
+				height: 500px;
+				background-color: #333;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- position 属性可以把一个元素放置到网页中的任何位置。 -->
+		<!-- 开启定位 -->
+		<!-- left right  控制水平方向位置
+        top botom  控制垂直方向位置 -->
+
+		<!-- position :   static 默认
+
+        releative(相对定位)
+        absolute(绝对定位)
+        fixed 固定定位
+        sticky  粘性定位 -->
+		<div class="box"></div>
+		<div class="box2"></div>
+	</body>
+</html>

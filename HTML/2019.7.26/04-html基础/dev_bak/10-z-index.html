@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			z-index: 10;
+		}
+		.w-box{
+			position: absolute;
+			left: 10px;
+			top: 10px;
+			width: 80px;
+			height: 80px;
+			background-color: pink;
+			z-index: 9;
+		}
+		.inner-box{
+			position: absolute;
+			left: 10px;
+			top: 10px;
+			width: 50px;
+			height: 50px;
+			background-color: green;
+		}
+		.w-box .d1{
+			position: absolute;
+			left: 5px;
+			top: 5px;
+			width: 30px;
+			height: 20px;
+			background-color: #333;
+			z-index: 9999;
+			/*子类盒子的层级 突破不了给父类盒子*/
+		}
+	</style>
+</head>
+<body>
+	<!-- 当元素开启定位以后就可以设置z-index这个属性。 -->
+	<div class="box">
+	
+	</div>
+	<div class="w-box">
+		<div class="d1"></div>
+	</div>
+	<div class="inner-box">
+		
+	</div>
+</body>
+</html>

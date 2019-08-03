@@ -1,0 +1,144 @@
+* {
+    margin: 0px;
+    padding: 0px;
+ }
+ ul {
+     list-style: none;
+ }
+ a {
+     text-decoration: none;
+ }
+ .header {
+     height: 80px;
+     background-color: #ffffff;
+ }
+ .msg {
+     height: 100px;
+     background-color: #ffffff;
+ }
+ .header-c,
+ .msg-c {
+     width: 1200px;
+     margin: 0 auto;
+ }
+ /* 头部 */
+ .header-c-logo {
+     float: left;
+     width: 185px;
+     height:80px;
+     background: url("../img/logo.png") no-repeat center;
+ }
+ .header-c-ul {
+     position: relative;
+     float: left;
+     width: 675px;
+     height:80px;
+     margin-left: 220px;
+     margin-right: 12px;
+ }
+ .header-c-li {
+     float: left;
+     height: 100%;
+     margin:0 43px;
+ }
+ .header-c-ul .li1{
+     margin-right: 0px;
+ }
+ .header-c-li a {
+     font-size: 16px;
+     color: #adadad;
+     line-height: 80px;
+ }
+ .header-c-sp {
+     position: absolute;
+     bottom: 25px;
+     display: none;
+     width: 60px;
+     height: 1px;
+     background-color: #b9ab77;
+ }
+ .header-c-sp2 {
+    position: absolute;
+    bottom: 25px;
+    display: none;
+    width: 30px;
+    height: 1px;
+    background-color: #b9ab77;
+}
+.header-c-ul .header-c-li .active {
+    display: block;
+}
+.header-c-ul .header-c-li:hover .header-c-sp2{
+    display: block;
+}
+
+ .header-c-ul .header-c-li:hover .header-c-sp {
+    display: block;
+ }
+ .header-c-ul .header-c-li .active1 {
+    display: block;
+}
+.header-c-ul .header-c-li .active2 {
+    display: block;
+}
+.header-c-ul .header-c-li .active3 {
+    display: block;
+}
+.header-c-ul .header-c-li .active4 {
+    display: block;
+}
+/* 底部 */
+.msg-c-1 {
+    float: left;
+    width: 350px;
+    height: 40px;
+    margin-top: 40px;
+    color: #323232;
+    font-size: 12px;
+}
+.msg-c-1 span{
+    height: 12px;
+    line-height: 12px;
+}
+.msg-c-2 {
+    float:right;
+    margin-top: 45px;
+    width: 439px;
+    height: 30px;
+    line-height: 30px;
+    color: #323232;
+    font-size: 12px;
+    /* overflow: hidden; */
+}
+.msg-c-2 li {
+    float: left;
+}
+.msg-c-2a {
+    width: 168px;
+    height: 100%;
+}
+.msg-c-2a1 {
+    float: left;
+    width: 11px;
+    height: 12px;
+    margin-top: 9px;
+    margin-right: 7px;
+    background: url("../img/商标.png") no-repeat;
+}
+.msg-c-2a2 {
+    float: left;
+    width: 150px;
+    height: 12px;
+
+}
+.msg-c-2b {
+    width: 70px;
+    height: 100%;
+    margin-left: 70px;
+    margin-right: 60px;
+}
+.msg-c-2c {
+    width: 70px;
+    height: 100%;
+    margin-right: 0px;
+}

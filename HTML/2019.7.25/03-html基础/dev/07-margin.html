@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            /* 设置的宽高 是内容区域的 宽高 */
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+            border: 10px solid #333;
+            /* 设置margin */
+            /* 外边距 */
+            /* 一个值 上下左右 都是 50px */
+            /* margin: 50px; */
+            /* 设置方法同padding 一样 */
+            /* margin: 20px 50px; */
+            /* margin: 20px 30px 40px; */
+            margin: 10px 20px 30px 40px;
+
+            /* 单独的设置某个方向 */
+            /* margin-top /margin-bottom /margin-right / margin-left */
+
+            background-color: red;
+        }
+
+        .main {
+            width: 800px;
+            height: 200px;
+            background-color: black;
+            /* 剩余空间 平分 */
+            margin: 0 auto;
+            margin-top: 100px;
+        }
+
+        button {
+            width: 100px;
+            height: 50px;
+            background-color: green;
+            margin: 0 50px;
+        }
+
+        span {
+            /* 行内元素  margin-top / margin-bottom 无效 */
+            margin-top: 50px;
+            /* 有效 */
+            margin-left: 100px;
+            /* 有效 */
+            padding-left: 50px;
+            /*行内元素 padding-top 存在 ,并没有对页面产生效果 */
+            padding-top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        不凡学院
+    </div>
+    <div class="main">
+
+    </div>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <br>
+    <span>span1</span>
+    <span>span2</span>
+
+</body>
+
+</html>

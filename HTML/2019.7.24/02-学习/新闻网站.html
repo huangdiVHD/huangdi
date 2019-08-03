@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        .main{
+            width: 640px;
+            height: 800px;
+            /* background-color: aquamarine; */
+            font: '楷体';
+            margin: 0 auto;
+        }
+        .navigation{
+            width: 640px;
+            height:50px;
+            background-color: black;
+            color: white;
+            line-height: 3em;
+            text-align: center;
+        }
+        /* .navigation-0 .navigation-1{
+            display: inline;
+        } */
+       .navigation .navigation-0{
+            display: inline-block;
+            width: 100px;
+            height: 50px;
+            background-color:crimson;
+        }
+        .navigation .navigation-1{
+             display:inline-block;
+             width:50px;
+             height:50px;
+             background-color:black;
+        }
+        .navigation .navigation-1 a{
+            color: white;
+             background-color:black;
+        }
+        .navigation .navigation-1 a:hover{
+            color: blue;
+        }
+       .title-1{
+           display: block;
+           /* width: 800px;
+           height: 50px; */
+           /* background-color: wheat; */
+           text-align: center;
+           font: bolder 20px/3 '黑体';
+       }
+       .title-2{
+           display: block;
+           /* width: 800px;
+           height: 50px; */
+           /* background-color: wheat; */
+           text-align: left;
+           font: 10px/3 '黑体';
+       }
+       .text{
+           text-indent: 2em;
+       }
+       .bottom{
+           text-align:center;
+       }
+       .bottom-1-1{
+           font: bolder 20/3 '黑体';
+           color: red;
+       }
+       .Individua{
+        text-align: right;
+       }
+       .Individua-1{
+           font: 5px/3 '楷体';
+           
+       }
+    </style>
+</head>
+<body>
+       <div class="main">
+            <div class="navigation">
+                <ul>
+                    <li class="navigation-0"> 新闻头条</li>
+                    <li class="navigation-1"><a href="#"> 推荐</a></li>
+                    <li class="navigation-1"><a href="#"> 社会</a></li>
+                    <li class="navigation-1"><a href="#"> 娱乐</a></li>
+                    <li class="navigation-1"><a href="#"> 国内</a></li>
+                    <li class="navigation-1"><a href="#"> 国际</a></li>
+                    <li class="navigation-1"><a href="#"> 军事</a></li>
+                    <li class="navigation-1"><a href="#"> 体育</a></li>
+                    <li class="navigation-1"><a href="#"> 健康</a></li>
+                    <li class="navigation-1"><a href="#"> 笑话</a></li>
+                </ul>
+            </div>
+            <div class="title">
+                <!-- <h1>中国第一条不限速的高速将诞生，满载黑科技，全程没有收费站</h1> -->
+                    <span class="title-1">中国第一条不限速的高速将诞生，满载黑科技，全程没有收费站</span> 
+                    <span class="title-2">2019-07-24 17:06:23 草叶</span>
+            </div>
+            <div class="img">
+                <img src="https://imgcdn.toutiaoyule.com/20190724/20190724160304506075a.jpg" alt="车">
+            </div>
+            <div class="text">
+                <p> 众所周知，高速公路是陆路运输的重要交通方式。世界上第一条高速公路诞生于德国，全长30公里，位于科隆与波恩之间，于1932年正式开通。到目前为止，世界各国都建设了无数条高速公路，其中美国的高速公路最多，而中国大陆的第一条高速公路则在1988年正式开通，也就是上海的沪嘉高速公路。</p>
+            </div>
+            <div class="bottom">
+                <input type="button" value="首页">
+                <input type="button" value="上一页">
+                <input type="button" value="1">
+                <input type="button" value="2">
+                <input type="button" value="3">
+                <input type="button" value="下一页">
+                <input type="button" value="末页">
+            </div>
+            <div class="bottom-1">
+                <span class="bottom-1-1">热门推荐:</span>
+                <hr>
+            </div>
+            <div class="Individua">
+                <span class="Individua-1">
+                    独梦寒风<a href="https://codepen.io/huangdiVHD/">作品集</a>
+                </span>
+            </div>
+       </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		/*转换为块状标签*/
+		a{
+			display: block;
+			width: 100px;
+			height: 200px;
+		}
+		div{
+			/*块状标签 宽度不写  继承父类的100%*/
+			/*转换成 行内元素*/
+			display: inline;
+			width: 200px;
+			height: 30px;
+			background-color: green;
+		}
+		ul{
+			list-style: none;
+		}
+		ul li{
+			/*转换成行内块元素*/
+			/*注意间隙问题*/
+			display: inline-block;
+			width: 100px;
+			height: 50px;
+			background-color: orange;
+		}
+	</style>
+</head>
+<body>
+	<a class="a1" href="http://www.bufanui.com/">不凡学院</a>
+	<a href="">百度</a>
+
+	<div class="box">
+		我是一个div
+	</div>
+	<div class="box2">
+		我是box2
+	</div>
+	<ul>
+		<li>首页</li
+		><li>关于</li
+		><li>活动</li>
+	</ul>
+</body>
+</html>

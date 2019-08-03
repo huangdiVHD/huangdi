@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+        }
+        ul {
+            list-style: none;
+        }
+        .nav {
+            position: relative;
+            width: 1200px;
+            height: 70px;
+            background-color: #333;
+            margin: 0 auto;
+        }
+        .nav .logo {
+            float: left;
+            width: 160px;
+            height: 70px;
+            background: url('img/logo.png') no-repeat center;
+            display: block;
+        }
+        .ul1{
+            position:absolute;
+            right: 0;
+            top: 0;
+            height: 70px;
+        }
+        .ul1 .ul1-1{
+            float: left;
+            width: 107px;
+            height: 70px;
+        }
+        .ul1 .ul1-1 a{
+            display: block;
+            width: 107px;
+            height: 70px;
+            color: white;
+            text-align: center;
+            line-height: 70px;
+        }
+        .ul1 .ul1-1 a:hover{
+            color: red;
+        }
+        .ul1 .ul1-1 .ul2 {
+            display: none;
+            position: absolute;
+            left: 107px;
+            top: 70px;
+            width: 107px;
+            background-color: aqua;
+        }
+        .ul1 .ul1-1 .ul2 {
+            display: none;
+            color: #333;
+            height: 60px;
+            text-align: center;
+            line-height: 30px;
+        }
+        .ul1 .ul1-1:hover .ul2{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+        <div class="nav">
+                <a class="logo" href="#"></a>
+                <ul class="ul1">
+                    <li class="ul1-1"><a  href="#">首页</a></li>
+                    <li class="ul1-1">
+                        <a  href="#">关于</a>
+                        <ul class="ul2">
+                            <li class="ul-2">公司</li>
+                            <li class="ul-2">员工</li>
+                        </ul>
+                    </li>
+                    <li class="ul1-1"><a  href="#">分类</a></li>
+                    <li class="ul1-1"> <a  href="#">登录</a></li>
+                </ul>
+        </div>
+</body>
+</html>

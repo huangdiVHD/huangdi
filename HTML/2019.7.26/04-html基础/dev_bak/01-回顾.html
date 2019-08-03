@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 200px;
+			height: 300px;
+			/*background-color: red;*/
+			background: red url(avatar.jpg) no-repeat top center fixed;
+			/*background-attachment: fixed;*/
+		}
+		.box2{
+			width: 1200px;
+			height: 2000px;
+			background-color: green;
+		}
+		span{
+			padding-left: 20px;
+			background-color: red;
+			padding-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<!-- 背景图片 
+	background-color : 颜色
+	background-image: url('图片路径')
+	background-repeat: repeat/no-repeat/repeat-x/repeat-y
+	background-position:left center / 20px 30px
+	background-attachment: scroll/fixed -->
+
+	<!-- 盒子模型 content(设置的width/height)  padding(内边距)  border(边框) margin(外边距)
+	padding: 一个值/四个值(上右下左)/三个值(上 左右 下)/两个值(上下 左右)
+	margin: 同上
+	border: 1px solid #333;(四条边边框) / border-right
+
+	padding 和 border 都会影响盒子的大小
+	margin 外边距  透明
+
+	嵌套崩塌  设置子类盒子的margin-top,反而作用在了父类盒子上 (给父类盒子设置overflow:hidden//给父类盒子一个极小的padding/border)
+
+	垂直方向上的 margin  重叠现象  谁大谁生效
+
+
+	行内元素  margin-bottom/top  无效   padding-bottom/top  也是无效 -->
+
+
+	<!-- 隐藏  display:none;  消失 不占据原来位置
+		visibility:hidden; 隐藏,占据原来的位置
+	显示 display: block; -->
+	<div class="box">
+		
+	</div>
+	<div class="box2">
+		
+	</div>
+
+	<span>woshispan1</span>
+	<span>woshispan2</span>
+
+</body>
+</html>

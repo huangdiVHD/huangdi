@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        a{
+            text-decoration: none;
+        }
+        ul{
+            list-style: none;
+        }
+    .A{
+        position: relative;
+        width: 900px;
+        height: 400px;
+        background-color: aqua;
+        margin: 0 auto;
+
+    }
+    .A .kong{
+        float: left;
+        width: 100px;
+        height: 50px;
+        visibility: hidden;
+        background-color: black;
+    }
+    .logo{
+        float: left;
+    }
+    .sub{
+        width: 850px;
+        height: 100px;
+    }
+    .sub .ul-1{
+        width: 850px;
+        height: 100px;
+    }
+    .sub .ul-1 .li-1{
+        float: left;
+        width: 84px;
+        height: 88px;
+        text-align: center;
+        margin-top: 10px;
+    }
+    .sub .ul-1 .li-1 a{
+         color: olivedrab;
+         font-size: 30px;
+          /* width: 100%;
+          height: 100%; */
+    }
+    .sub .ul-1 .li-1:hover a{
+       color: red;
+    }
+    .A .search{
+         position: absolute;
+         top: 0px;
+         right: 0px;;
+          width: 296px;
+          height: 80px;
+          background-color: gold;
+    }
+    .A .search .form{
+        float: left;
+        width: 100px;
+        height: 60px;
+    }
+    </style>
+</head>
+<body>
+    <div class="A">
+            <div class="logo">
+                    <img src="img/mi-logo.png" alt="logo">
+                </div>
+                <div class="kong"></div>
+                <div class="sub">
+                    <ul class="ul-1">
+                        <li class="li-1">
+                            <a href="#"> 小米</a>
+                        </li>
+                        <li class="li-1">
+                                <a href="#"> 红米</a>
+                            </li>
+                            <li class="li-1">
+                                    <a href="#"> note</a>
+                                </li>
+                                <li class="li-1">
+                                        <a href="#"> 平板</a>
+                                    </li>
+                                    <li class="li-1">
+                                            <a href="#"> 家电</a>
+                                        </li>
+                    </ul>
+                </div>
+                <div class="search">
+                <form class="form" action="#">
+                    <input type="text" placeholder="小米">
+                     <!-- <input type="text" value="img/搜索.png"> -->
+                </form>
+                
+                </div>
+                <!-- <button value="img/搜索.png"></button> -->
+    </div>
+    
+</body>
+</html>

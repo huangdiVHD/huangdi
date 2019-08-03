@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 800px;
+            height: 600px;
+            background-color: red;
+        }
+
+        .box div {
+            float: left;
+            /* 有浮动用的很少 改变元素顺序*/
+            width: 200px;
+            height: 100px;
+            background-color: blue;
+
+        }
+
+        .box .d4 {
+            /* 当一个块级元素浮动以后，宽度会默认被内容撑开，
+            所以当漂浮一个块级元素时我们都会为其指定一个宽度。 */
+            float: left;
+            height: 100px;
+            width: 500px;
+            background-color: pink;
+        }
+
+        /* 行内元素浮动 */
+        .box span {
+            /* display: inline; */
+            float: left;
+
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+
+        .w-box {
+
+            width: 600px;
+            height: 1000px;
+            background-color: orange;
+        }
+
+        .w-box .d1 {
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        .w-box .d2 {
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div>
+            d1
+        </div>
+        <div>
+            d2
+        </div>
+        <div>
+            d3
+        </div>
+        <span></span>
+        <p class="d4">
+            不凡
+        </p>
+    </div>
+    <!-- 浮动的表现形式 -->
+    <div class="w-box">
+        <div class="d1">
+
+        </div>
+        <div class="d2">
+            不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院
+        </div>
+    </div>
+</body>
+
+</html>

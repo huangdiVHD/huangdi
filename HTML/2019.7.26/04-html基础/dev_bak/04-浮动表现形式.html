@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 1200px;
+			height: 400px;
+			background-color: pink;
+		}
+		.d1{
+			float: left;
+			width: 100px;
+			height: 50px;
+			background-color: red;
+			 /*浮动会使元素完全脱离文本流，也就是不再在文档中在占用位置。*/
+			/*当一个元素浮动以后，其下方的元素会上移。*/
+
+			/*元素设置浮动以后，会一直向上漂浮直到遇到父元素的边界或者其他
+		浮动元素。*/
+
+			/*margin-top: 20px;*/
+
+			/*文字环绕*/
+		}
+		.d2{
+			width: 200px;
+			height: 200px;
+			background: green;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="d1">
+			我是d1
+		</div>
+		<div class="d2">
+			我是d2我是d2我是d2我是d2我是d2我是d2我是d2我是d2我是d2
+		</div>
+		
+	</div>
+</body>
+</html>

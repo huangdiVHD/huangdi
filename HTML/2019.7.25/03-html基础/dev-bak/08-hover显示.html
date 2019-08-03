@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 400px;
+            background-color: red;
+            /* 隐藏 */
+
+            /* 消失 */
+            /* display: none; */
+            margin: 10px;
+        }
+
+        /* 鼠标放上去的时候 */
+        .w-box:hover .box {
+            /* 显示 */
+            /* 只要不是 none  都会显示出来 */
+            display: block;
+        }
+
+        /* hover状态下  你们可以 修改 他自己的样式  也可以实现 修改它后代的样式 */
+        .w-box:hover {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="w-box">
+        显示
+        <div class="box">
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>

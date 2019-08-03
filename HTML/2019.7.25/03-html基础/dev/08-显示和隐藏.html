@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .box {
+            /* 隐藏元素 */
+            /* 消失 */
+            /* 不在占据位置了 */
+            /* display: none; */
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+
+        /* display  不为  none   ,就会显示出来 */
+        .d1 {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /* 隐藏 */
+            /* 依然占据位置 */
+            visibility: hidden;
+        }
+
+        /* visibility: visible; */
+
+        .main {
+            width: 500px;
+            height: 500px;
+            background-color: red;
+        }
+
+        .main .d2 {
+            display: none;
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            margin: 0 auto;
+        }
+
+        /* 鼠标悬停在main上时 */
+        .main:hover .d2 {
+            display: block;
+            width: 400px;
+        }
+
+        .main:hover {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        不凡学院
+    </div>
+    <div class="d1">
+
+
+    </div>
+
+    <div class="main">
+        <div class="d2">我是d2</div>
+    </div>
+</body>
+
+</html>

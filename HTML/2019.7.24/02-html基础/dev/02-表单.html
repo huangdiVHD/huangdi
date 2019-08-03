@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="https://www.baidu.com" method="post">
+        <fieldset>
+            <legend>基本信息</legend>
+            <!-- 提交方式分为两种 get 和post -->
+            <!-- 表单域 -->
+            <!-- 表单控件 -->
+            <!-- 对于input  可以设置不同的type值 来实现不同的功能 -->
+            <label for="user">用户名:</label> <input autofocus id="user" name="username" type="text"> <br>
+            <!-- disabled 禁用 -->
+            <!-- readonly 只读 -->
+            <!-- autofocus 元素应该自动获得焦点 -->
+            密码: <input placeholder="请输入密码" name="password" type="password"> <br>
+            <!-- 想实现单选 需要设置相同的name -->
+            性别: <br>
+            <!-- checked 默认选中 -->
+            男: <input checked type="radio" name="sex" value="1">
+            女: <input type="radio" name="sex" value="0">
+            <br>
+            <!-- 多选框 -->
+            爱好: <br>
+            篮球: <input name="like" type="checkbox" value="1">
+            足球: <input name="like" type="checkbox" value="2">
+            乒乓球: <input name="like" type="checkbox" value="3">
+            <br>
+        </fieldset>
+
+        <input multiple type="file">
+        <br>
+        <textarea name="text" cols="30" rows="10"></textarea>
+        <br>
+
+        <!-- selected 默认选中 -->
+        工作经验: <select name="exp" id="">
+            <option value="0">无经验</option>
+            <option selected value="1">1-3年经验</option>
+            <option value="2">3-5年经验</option>
+            <option value="3">5年以上经验</option>
+        </select>
+        <br>
+        <!-- name 的作用 -->
+        <!-- 按钮 -->
+        <input type="button" value="普通按钮">
+        <input type="submit" value="提交按钮">
+        <input type="reset" value="重置按钮">
+        <input type="image" src="bf.png">
+    </form>
+</body>
+
+</html>

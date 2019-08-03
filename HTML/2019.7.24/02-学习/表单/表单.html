@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="www.baidu.com" method="POST">
+    <fieldset>
+      <legend>基本信息</legend>
+       用户名: <input type="text" name="yonghu" placeholder="请填写用户名"><br>
+       密码: &nbsp;&nbsp;&nbsp;<input type="password" name="mima" placeholder="请填写密码"><br>
+       性别:  &nbsp;
+       <input type="radio" name="xingbie" value="0">男
+       <input type="radio" name="xingbie"value="1"> 女 <br>       
+       爱好: &nbsp;
+       <input type="checkbox" name="aihao" value="0">跑步
+       <input type="checkbox" name="aihao" value="1">爬山
+       <input type="checkbox" name="aihao" value="2">骑车
+       <input type="checkbox" name="aihao" value="3">游泳<br>
+       工作经验:
+       <select name="xiala" >
+           <option selected>无</option>
+           <option>1-3年</option>
+           <option>3年以上</option>
+       </select><br>
+       自我介绍: <br>
+       <textarea name="wenben"  cols="10" rows="3" placeholder="请控制在30字以内"></textarea>
+    </fieldset>
+    <fieldset>
+        <legend>其它</legend> 
+        文件: <input type="file"><br><br>
+        <!--
+        <input type="button" value="button">
+        -->
+        <input type="submit" value="提交">
+        <input type="reset" value="重置">
+      </fieldset>
+    </form>
+</body>
+</html>

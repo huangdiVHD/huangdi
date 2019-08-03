@@ -1,0 +1,119 @@
+.banner {
+   height: 270px;
+   background-color: #000000;
+}
+.banner-c,
+.footer-c {
+   width: 1200px;
+   margin: 0 auto;
+}
+.footer {
+   height: 940px;
+   background-color: #ffffff;
+}
+.banner-c {
+   position: relative;
+}
+.banner-c-img {
+   position: absolute;
+   top: 0px;
+   right: 35px;
+   height: 270px;
+   width: 765px;
+   background: url("../img/设计师背景.png") no-repeat center;
+}
+
+/* 设计师 */
+.footer-c-1{
+  height: 50px;
+  text-align: center;
+  margin-bottom: 60px;
+  margin-top: 100px;
+}
+.footer-c-1a {
+  color: #a8a8a8;
+  font-size: 26px;
+}
+.footer-c-1b {
+  font-size: 16px;
+  color: #999999;
+}
+.footer-c-2 {
+    height: 745px;
+}
+.footer-c-2 a{
+    color: #bebebe;
+}
+.footer-c-2 li{
+    float: left;
+    height: 756px;
+}
+.footer-c-2a {
+    position: relative;
+    margin-right: 150px;
+    border-bottom: 1px solid #b9ab77;
+}
+.footer-c-2b {
+    margin-right: 150px;
+}
+.footer-c-2a1 {
+    width: 300px;
+    height: 450px;
+    margin: 0 auto;
+    background: url("../img/s1-1.png") no-repeat ;
+}
+.footer-c-2b1 {
+   width: 300px;
+    height: 450px;
+    margin: 0 auto;
+    background: url("../img/s1-2.png") no-repeat ;
+}
+.footer-c-2v1 {
+    width: 300px;
+    height: 450px;
+    margin: 0 auto;
+    background: url("../img/s1-3.png") no-repeat ;
+}
+.footer-c-2a2 {
+    width: 240px;
+    height: 60px;
+    margin-left:30px;
+    margin-top: 40px;
+    text-align: center;
+}
+.footer-c-1a {
+    font-size: 18px;
+    color: #2e2e2e;
+}
+.footer-c-1b {
+    font-size: 14px;
+    color: #ababab;
+}
+.footer-c-title1-3 {
+    width: 300px;
+    height: 45px;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #a4a4a4;
+}
+.footer-c-2m {
+    width: 145px;
+    height: 45px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 45px;
+    margin-left: 75px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    border: 1px solid #b9ab77;
+}
+.footer-c-2m a {
+      color: #b9ab77;
+}
+.msg {
+    background-color: #4d4d4d;
+    color: #ffffff;
+   }
+   .msg-c-1,.msg-c-2,.msg-c-2 a {
+    color: #ffffff;
+   }

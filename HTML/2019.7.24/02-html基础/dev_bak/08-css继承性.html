@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			font-size: 30px;
+			color: red;
+		}
+		/*没有对inner-box 设置样式 ,但是他具备了box里边的某些样式
+		说明样式存在继承*/
+
+		/*什么样式能实现继承呢 ?
+		和字体相关的样式都会实现继承*/
+	</style>
+</head>
+<body>
+	<div class="box">
+		我是外部盒子
+		<div class="inner-box">
+			我是内部盒子
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- cellspacing 单元格和单元格之间的距离 -->
+    <!-- cellpadding 单元格内容 同单元格边框之间的间距 -->
+    <!-- 这些属性都已经废弃不用了 -->
+    <table border="10" cellspacing="10" cellpadding="20" width="600" height="400" align="center" bgcolor="red">
+        <!-- 表格的每一行 -->
+        <tr>
+            <!-- <th></th>' 表头一般位于表格的第一行或第一列 -->
+            <th>周一</th>
+            <th>周二</th>
+            <th>周三</th>
+            <th>周四</th>
+        </tr>
+        <tr bgcolor="green">
+            <!-- <td></td>' 用于定义表格中的单元格 -->
+            <td>数学</td>
+            <td>语文</td>
+            <td>英语</td>
+            <td>数学</td>
+        </tr>
+        <tr align="center">
+            <td>语文</td>
+            <td>数学</td>
+            <td colspan="2">语文</td>
+            <!-- <td>语文</td> -->
+        </tr>
+        <tr>
+            <td rowspan="2">数学</td>
+            <td>语文</td>
+            <td>英语</td>
+            <td>数学</td>
+        </tr>
+        <tr>
+            <!-- <td>数学</td> -->
+            <td>语文</td>
+            <td>英语</td>
+            <td>数学</td>
+        </tr>
+
+
+    </table>
+</body>
+
+</html>

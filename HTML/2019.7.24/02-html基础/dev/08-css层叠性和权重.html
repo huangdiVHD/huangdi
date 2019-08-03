@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            color: blueviolet;
+        }
+
+        /* 共同作用的效果 */
+        #p1 {
+            font-size: 30px;
+            color: blue;
+        }
+
+        .title {
+            background-color: green;
+            color: orange;
+        }
+
+        p {
+            color: red;
+        }
+
+
+
+
+
+        /* 样式冲突   看权重 */
+
+        /* 行内样式1000>id选择器 100 >class选择器 10>标签选择器 1>通配符/继承属性0*/
+
+        /* 复杂选择器权重 */
+        .box {
+            color: #333;
+        }
+
+        .box.blue {
+            color: blue;
+        }
+
+        .box.red {
+            color: red;
+        }
+
+        #d1 {
+            color: pink;
+        }
+
+        /* 权重相同时  后写的生效 */
+    </style>
+</head>
+
+<body>
+    <p style="color:pink;" id="p1" class="title">不凡学院</p>
+    <div id="d1" class="box red blue">
+        我是一个box
+    </div>
+</body>
+
+</html>

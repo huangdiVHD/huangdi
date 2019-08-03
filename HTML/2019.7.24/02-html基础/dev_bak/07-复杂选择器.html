@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		/*同时对div 和 p 标签设置相同样式*/
+		/*并集选择器 同时选中 p div*/
+		/*p,div{
+
+		}*/
+		.text,
+		.box{
+			color: green;
+		}
+
+		/*交集选择器*/
+		/*既具有 text类名 又具有danger类名的  元素*/
+		.text.danger{
+			color: red;
+		}
+
+		.inner-box{
+			color: red;
+		}
+		/*后代选择器  选中box 里边的 inner-box*/
+		.box .inner-box{
+			color: orange;
+		}
+
+		/*通配符 **/
+		*{
+			/*选中所有元素*/
+			/*一个 很大的 并集选择器*/
+		}
+	</style>
+</head>
+<body>
+	<p class="text danger">我是一个p标签</p>
+	<p class="text">我是又一个p标签</p>
+	<div class="box">我是一个div标签</div>
+
+	<div class="box">
+		我是一个盒子
+		<div class="inner-box">
+			我也是一个盒子,但是我在内部
+		</div>
+	</div>
+	<div class="inner-box">
+		我也是一个内部盒子
+	</div>
+</body>
+</html>

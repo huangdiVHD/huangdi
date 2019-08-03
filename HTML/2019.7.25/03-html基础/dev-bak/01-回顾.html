@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+	</head>
+	<body>
+		<!-- 补充标签 div (常用来布局 宽高有效 会自动换行) span 常用来照顾一些特殊内容 设置宽高无效 不会自动换行 iframe
+		内联框架 a target _self _blank _parent _top 标签的 常用属性 id 唯一标识(不能重复) class 类 语义化
+		可以设置多个类名 title 属性 css 层叠样式表 设置样式 选中元素 选择器 标签选择器 p class选择器 .text id选择器 #p1
+        { 样式名:样式值; 样式名:样式值; } 
+        
+        
+        css 书写的位置 行内样式
+        <p style="color:red;font-size:12px;"></p>
+        定位很准确 严重耦合
+        
+        内部书写  head标签里边 写一个 style 标签   所有的样式 写在 style 标签里边
+        不能复用
+
+
+        外链  外部引入  需要写在  head  标签里边   多个页面 复用 -->
+
+		<!-- 复杂选择器 
+        后代选择器   中间是空格
+        交集选择器    没有空格  .title.text  p.title 
+        并集选择器   同时选中多个  逗号隔开  
+        .box p,
+        .box a{
+
+        }
+
+        通配符  *  选中所有标签
+
+
+        css继承性  字体相关 文本相关的一些属性(text-align  line-height text-indent)
+
+        样式冲突 看权重 行内样式1000  id 100  class   10   标签  1  */继承   0 -->
+		<!-- 权重一样  就近 -->
+
+		<!-- css 单位 px像素
+         em 基于当前字体的倍数 
+         百分数 通常 是 父类的 百分比 
+         color 预定义颜色 
+         十六进制 #ffffff; #fff;
+        rgb(255,0,0)
+        rgba(0,0,0,.5) -->
+
+		<!-- 常用属性
+
+        width 宽
+        height  高
+        color 字体颜色
+        background-color  背景颜色
+        font-size 
+        font-style 
+        font-family 
+        font-weight 
+        line-height  行间距
+        text-align  文本对齐方式
+
+        font: style weight size/line-height  family; -->
+
+		<!-- 表现形式 块级元素(设置宽高有效 自动换行) (block) 
+        行内元素(设置快高无效 不会自动换行)(inline)
+        行内块元素(设置宽高有效 不会自动换行)(inline-block) 
+        通过 display:block/inline/inline-block; -->
+	</body>
+</html>

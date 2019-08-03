@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width: 10em;
+			height: 200px;
+			font-size: 30px;
+			/*背景色*/
+			background-color: rgb(134,219,73);
+			/*background-color: rgba(134,219,73,.7);*/
+
+			/*首行缩进*/
+			text-indent: 2em;
+		}
+		.box .inner-box{
+			width: 80%;
+			height: 50%;
+			background-color: #092940;
+		}
+	</style>
+</head>
+<body>
+	<!-- 1. 像素单位 px -->
+	<!-- 2. em  基于当前字体倍数 -->
+	<!-- 3. 百分比  80%; 通常相对于父元素 -->
+	<!-- 4.颜色 -->
+	<!-- 预定义 : red orange black blue green   -->
+	<!-- 十六进制表示颜色 -->
+	<!-- rgb表示颜色 red(0-255) green blue -->
+	<!-- rgba() -->
+
+	<!-- 十六进制   rgb() 转换 -->
+	<!-- #96A5A8 -->
+
+	<!-- 0 1 2  3  4  5  6  7  8  9  10  11  12  13  14  15
+		0 1 2  3  4  5  6  7  8  9  a   b   c   d   e   f -->
+	<!-- 96 对应red   换成十进制  9*16 + 6 ===> 150
+	a5对应 green 换成十进制  10*16+5 ===>165
+	a8 对应 blue 10*16 + 8 ===> 168 -->
+	<div class="box">
+		我是一个盒子我是一个盒子我是一个盒子我是一个盒子我是一个盒子
+		<div class="inner-box">
+			
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			position: absolute;
+			left: 20px;
+			top: 50px;
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			/*margin: 10px;*/
+		}
+		.w-box{
+			position: relative;
+			width: 80px;
+			height: 80px;
+			background-color: pink;
+			margin: 10px;
+		}
+		.inner-box{
+			position: absolute;
+			/*宽度由内容撑开*/
+			left: 50px;
+			top: 50px;
+			/*width: 50px;*/
+			/*height: 50px;*/
+			background-color: orange;
+		}
+		/*•	绝对定位会使元素完全脱离文本流。*/
+		.d1{
+			width: 500px;
+			height: 500px;
+			background-color: green;
+		}
+		span{
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 200px;
+			height: 20px;
+			background-color: #333;
+		}
+	</style>
+</head>
+<body>
+	<!-- 绝对定位也需要参照物 -->
+	<!-- 参照物是 相对于html元素或离他最近的祖先定位元素进行定位 -->
+	<div class="box">
+		<div class="w-box">
+			<div class="inner-box">
+			我
+			</div>
+		</div>
+	</div>
+	<!-- 子绝父相 -->
+
+	<!-- •	一般使用绝对定位时会同时为其父元素指定一个相对定位，以确保元素可以相对于父元素进行定位。 -->
+	<div class="d1"></div>
+	<span>我是行内元素</span>
+</body>
+</html>

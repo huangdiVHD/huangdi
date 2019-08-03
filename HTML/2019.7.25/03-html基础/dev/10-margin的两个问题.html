@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 300px;
+            height: 500px;
+            background-color: red;
+            overflow: hidden;
+            /* margin-top: 100px; */
+            /* padding-top: 1px; */
+        }
+
+        .box .inner-box {
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            margin-top: 50px;
+            /* 嵌套崩塌 */
+            /* 这里 给 内部盒子 设置的margin-top  作用到了 父类盒子身上 */
+
+            /* 解决办法:  1 给父类盒子 设置 overflow:hidden */
+            /* 2. 给父类盒子 设置 极小的 padding  或者border */
+        }
+
+        .d1,
+        .d2,
+        .d3 {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            margin: 20px;
+
+            /* 垂直方向上的margin  重叠 */
+            /* 谁大  显示谁的 margin */
+        }
+
+        .d2 {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="inner-box">
+
+        </div>
+    </div>
+
+    <div class="d1">
+        d1
+    </div>
+    <div class="div" style="overflow: hidden;">
+        <div class="d2">
+            d2
+        </div>
+    </div>
+
+    <div class="d3">
+        d3
+    </div>
+</body>
+
+</html>

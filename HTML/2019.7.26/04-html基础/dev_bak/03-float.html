@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 1200px;
+			height: 400px;
+			background-color: pink;
+		}
+		.d1,.d2,.d3{
+			float: left;
+			width: 100px;
+			height: 50px;
+			background-color: red;
+			margin-top: 20px;
+		}
+		/*当一个行内元素浮动以后将会自动变为一个块级元素*/
+		/*浮动元素默认会变为块元素，即使设置display:inline以后其依然是个
+块元素*/
+
+		span{
+			float: right;
+			display: inline;
+			/*少用,元素顺序发生变化*/
+			width: 200px;
+			height: 200px;
+			background-color: green;
+		}
+		.d4{
+			float: left;
+			/*当一个块级元素浮动以后，宽度会默认被内容撑开，所以当漂浮一个块级元
+素时我们都会为其指定一个宽度。*/
+
+			background-color: green;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="d1">
+			我是d1
+		</div>
+		<div class="d2">
+			我是d2
+		</div>
+		<div class="d3">
+			woshid3
+		</div>
+		<span>我是一个span</span>
+		<div class="d4">
+			我是d4
+		</div>
+	</div>
+</body>
+</html>

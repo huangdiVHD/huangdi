@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#p1{
+			color: green;
+		}
+		.text{
+			color: orange;
+		}
+
+		p{
+			color: red;
+		}
+		
+		/*说明 行内样式权重(1000) > id选择器权重(100) > class选择器权重(10) > 标签选择器权重(1) 
+		> * 继承属性 (0)*/
+		
+		/*复杂选择器权重计算  累加*/
+		#p2{
+			color: orange;
+		}
+		.p1.danger{
+			color: black;
+		}
+
+		.danger{
+			color: green;
+		}
+
+		.p1{
+			color: red;
+		}
+		
+		/*权重相同时  遵循就近原则(后写的生效)*/
+	</style>
+</head>
+<body>
+	<p style="color: black;" id="p1" class="text">不凡学院</p>
+	<p id="p2" class="p1 danger">我是p1标签</p>
+</body>
+</html>

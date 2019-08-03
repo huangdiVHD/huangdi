@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            position: absolute;
+            left: 50px;
+            /* top: 200px; */
+            bottom: 40px;
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        .footer {
+            height: 2000px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 浮动的 影响 (高度塌陷) -->
+    <!-- 清除浮动的影响  
+    1. 严格计算父类高度
+    2. 给父类设置 overflow:hidden;
+    3. 在所有浮动元素之后.添加一个空的 div ,设置  clear:both -->
+
+    <!-- 定位
+    相对定位 相对自身位置 没有脱离文档流
+    固定定位 相对浏览器 脱离文档流
+    绝对定位 相对 距离自己最近的具有定位属性的祖先元素 找不到的话 HTML
+    粘性定位 sticky 头部header
+
+    层级的概念
+    z-index 值越大 层级越高 -->
+    <div class="box">
+
+    </div>
+    <div class="footer">
+
+    </div>
+</body>
+
+</html>
