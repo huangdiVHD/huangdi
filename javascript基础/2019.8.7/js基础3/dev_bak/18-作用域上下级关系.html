@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var a = 12; // 全局变量
+
+        function foo() {
+            var x = 10; // 局部变量 foo内部
+
+            function bar() {
+                var y = 20; // 局部变量 bar
+                var a = 200;
+                console.log(a); // 200
+                console.log(x); // 10
+            }
+
+            function sum() {
+                var b = 100; // 局部变量 sum
+                // 在某个地方想使用变量时
+                console.log(a); // 向上查找 在全局找到了变量a
+                console.log(c); // is not defined
+            }
+            sum();
+            bar();
+            // 全局变量 a  和 bar 函数内部的变量a 是独立的  不冲突
+        }
+        foo();
+        // 作用域查找规则
+        // 就近原则
+        // 当在函数作用域操作一个变量时，它会先在自身作用域中寻找，如果有就直接使用（就近原则）。如果没有则向上一级作用域中寻找，直到找到全局作用域；
+        // 如果全局作用域中依然没有找到，则会报错 ReferenceError。
+    </script>
+</body>
+
+</html>

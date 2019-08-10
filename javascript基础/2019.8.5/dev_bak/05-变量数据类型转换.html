@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 其它数据类型====> string
+        // 每一行代码 用分号来结尾
+        // 方法一：变量+"" 或者 变量+"abc"
+        var a = 123;
+        console.log(a);
+        a = a + '';
+        console.log(a);
+
+        // 方法二：调用 toString()方法
+        // 变量.toString()
+        var b = true;
+        console.log(b.toString()); // string类型
+        var c = 123;
+        console.log(c.toString(2));
+        // 注意：null 和 undefined 这两个值没有 toString()方法，
+        // 所以它们不能用方法二。如果调用，会报错。
+        // console.log(null.toString());
+
+
+        // 隐式转换 采用的是这个规则  记忆
+        // 方法三：使用 String()函数
+        // String(变量)
+        console.log(String(null)); // string类型
+        console.log(String(123)); // string类型
+
+
+        // 其它数据类型 ==>   number 类型
+
+        // 隐式转换 使用这个规则   记忆
+        // 方式一：使用 Number()函数
+        //         情况一：字符串 --> 数字
+
+        // 1.如果字符串中是纯数字，则直接将其转换为数字。
+
+        // 2.如果字符串中有非数字的内容，则转换为 NaN。（此处可以看到 Number()函数的局限性）
+
+        // 3.如果字符串是一个空串或者是一个全是空格的字符串，则转换为 0。
+
+        console.log(Number('123')); // number类型
+        console.log(Number('ab123')); // NaN
+        console.log(Number(' ')); // 0
+        console.log(Number('')); // 0
+
+        // 情况二：布尔 --> 数字
+        console.log(Number(true)); // 1
+        console.log(Number(false)); //0
+
+        // null --> 数字  0
+        console.log(Number(null)); // 0
+        // undefined ==>  数字   NaN
+        console.log(Number(undefined)); // NaN
+
+        // 方式二：parseInt()：字符串 -> 整数【重要】
+        console.log(parseInt('5'));
+        console.log(parseInt("  2019在公众号上写了6篇文章")); // 2019
+        console.log(parseInt("2019.01在公众号上写了6篇文章")); // 2019
+        console.log(parseInt("aaa2019.01在公众号上写了6篇文章")); // NaN
+        // 转换规则: 从第一个非空白字符（空格、换行、tab）开始转换，直到遇到一个非数字字符为止。
+
+        // 取整 不四舍五入
+        var d = parseInt(5.8) + parseInt(4.7);
+        console.log(d); // 9
+
+
+        // 如果对非 String使用 parseInt()或 parseFloat()，它会先将其转换为 String然后再操作。
+        // 隐式转换 
+        console.log(parseInt(true)); //打印结果：NaN （因为是先将a转为字符串"true"，然后然后再操作）
+
+        console.log(parseInt(null)); //打印结果：NaN  （因为是先将b转为字符串"null"，然后然后再操作）
+
+        console.log(parseInt(undefined)); //打印结果：NaN  （因为是先将b转为字符串"undefined"，然后然后再操作）
+
+        var e = 168.23;
+        console.log(parseInt(e)); //打印结果：168  （因为是先将c转为字符串"168.23"，然后然后再操作）
+
+        // parseFloat()：字符串 --> 浮点数（小数）
+        console.log(parseFloat('128.3')); // 128.3
+        console.log(parseFloat('12.98px')); // 12.98
+
+        // 其它数据类型 转换成  boolean类型
+        // Boolean()
+        console.log(Boolean(12)); //true
+        console.log(Boolean(0)); //false
+        console.log(Boolean(NaN)); //false
+
+        console.log(Boolean(null)); //false
+        console.log(Boolean(undefined)); //false
+
+        console.log(Boolean('不凡学院')); // true
+        console.log(Boolean('')); // false
+        console.log(Boolean(' ')); // true
+
+        console.log(Boolean({})); // true
+
+        // 什么情况下  转换为false
+        // null undefined 0  NaN 空字符串 
+    </script>
+
+</body>
+
+</html>

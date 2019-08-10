@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 添加元素 push()  从后添加
+        var arr = [2, 4, 6, 8];
+        // 在arr 后边 追加元素 10
+        var a = arr.push(10);
+        // arr.push(10)
+        console.log(a);
+        console.log(arr); // 修改了原数组
+
+        // function add(x, y) {
+        //     x + y;
+        // }
+        // add(3, 5);
+
+        // pop()：删除数组中的最后一个元素，返回结果为被删除的元素。
+        var arr1 = [1, 3, 5, 7];
+        var b = arr1.pop();
+        // arr1.pop();
+        console.log(b);
+        console.log(arr1); // 修改了原数组
+
+        // unshift()：在数组最前面插入一个或多个元素，返回结果为该数组新的长度。
+        var arr3 = [1, 4, 6, 8];
+        arr3.unshift(10);
+        console.log(arr3); // 改变原数组
+
+        // shift()：删除数组中的第一个元素，返回结果为被删除的元素。
+
+        var arr4 = [2, 3, 4, 5];
+        arr4.shift();
+        console.log(arr4); // 修改原数组
+
+        // concat()：连接两个或多个数组，返回结果为新的数组。（不会改变原数组）
+
+        var newArr = arr3.concat(arr4); // 
+        console.log(arr3)
+        console.log(newArr);
+
+        // join()：将数组转换为字符串，返回结果为转换后的字符串（不会改变原来的数组）。
+        var nameArr = ['张三', '李四', '王五'];
+        // var nameArrStr = nameArr.join();
+        var nameArrStr = nameArr.join('@');
+
+        console.log(nameArrStr);
+
+        // split()：通过指定分隔符，如果省略，默认以逗号分隔，将字符串分割为字符串数组。
+        var email = "abc@163.com;cc@126.com;frg@qq.com";
+        var emialArr = email.split(';');
+        // console.log(email)
+        console.log(emialArr);
+    </script>
+</body>
+
+</html>

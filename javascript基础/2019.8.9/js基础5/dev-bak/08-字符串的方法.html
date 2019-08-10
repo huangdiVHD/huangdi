@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var str = 'how are you! aNd you?';
+        // charAt() 获取相应位置的字符
+        console.log(str.charAt(5)); // r
+        // charCodeAt() 指定位置字符 的 Unicode 编码
+        console.log(str.charCodeAt(5)); // 114
+
+        // indexOf() 返回字符在字符串中的位置
+        // lastIndexOf()
+        console.log(str.indexOf('o')); // 1
+        console.log(str.lastIndexOf('o')); // 18
+
+        // concat() 连接字符串
+        var str2 = '?????';
+        console.log(str.concat(str2));
+
+        // slice() 提取字符串的某个部分
+        console.log(str.slice(2, 9)); //w are y
+
+        // substr() 截取字符串 不会改变原字符串
+        console.log(str.substr(2, 9)); //w are you
+
+        // toUpperCase()
+        console.log(str.toUpperCase());
+        // toLowerCase()
+        var lowerStr = str.toLowerCase();
+        console.log(lowerStr);
+    </script>
+</body>
+
+</html>

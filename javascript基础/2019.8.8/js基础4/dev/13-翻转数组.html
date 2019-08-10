@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [1, 3, 5, 7, 9];
+        // 两两交换
+        function reverse(arr) {
+            var len = arr.length;
+            for (var i = 0; i < len / 2; i++) {
+           // arr[i] 和 arr[len-i-1] 交换,i最高不大于2假使i=1,则arr[i]=3,arr[len - 1 - i]=7
+           //i=0,则arr[i]=1,arr[len - 1 - i]=9
+           //进行互换
+                var temp = arr[i];
+                arr[i] = arr[len - 1 - i];
+                arr[len - 1 - i] = temp;
+            }
+        }
+        reverse(arr);
+        console.log(arr);
+
+    
+    
+//      var arr2 = [2, 4, 6, 8, 10];
+//      function reverse2(arr) {
+//          var tempArr = [];//设立新数组,每次将值添加在新数组第一个,新进的把原来的向后面排即完成翻转,最高循环4次
+//          for (var i = 0; i < arr.length; i++) {
+//              tempArr.unshift(arr[i]);
+//          }
+//          return tempArr;
+//      }
+//      console.log(reverse2(arr2));
+//      
+       
+    </script>
+</body>
+
+</html>

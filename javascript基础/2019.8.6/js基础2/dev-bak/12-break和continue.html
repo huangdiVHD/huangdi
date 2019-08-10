@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        for (var i = 0; i < 5; i++) {
+            if (i === 2) {
+                // 停止循环 或者 说 退出循环
+                break;
+                // 本次循环后边的代码也不会在执行了
+            }
+            console.log("i的值:" + i);
+        }
+
+        for (var i = 0; i < 5; i++) {
+            console.log("i的值:" + i);
+            if (i === 2) {
+                continue;
+                // 跳出循环
+            }
+            console.log('abc');
+            console.log('edf');
+            console.log('hhh');
+
+        }
+    </script>
+</body>
+
+</html>

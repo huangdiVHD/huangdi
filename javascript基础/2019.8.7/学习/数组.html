@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+//			var arr = [1,3,5,7,9,10,12];
+			//数组是以0开头计数
+//			arr[1]=5;//改
+//			arr[6]=16;//加
+//			console.log(arr[4]);
+//			console.log(arr);
+//         console.log(arr.length);
+        //请将数组中偶数找出来
+//      for(var i=1;i<arr.length;i++){
+        	//此处i代表数组的下标,即for将数组的下标(长度)给列举出来,然后用数组查(arr[i])找通过if判断来查找偶数
+//      	if(arr[i]%2===0){
+//      		console.log(arr[i]);
+//      	}
+//      }
+
+        //数组中比较大小
+        //i是的for是将数组的下标进行列出,好使arr[i]便于比较,j是数组循环的次数,冒泡排序只需要循环次数比数组长度少一就行即j<arr.length,而j每运行一轮就代表着数组里面长度减一,即一个数字排列好顺序,则i进行循环时也需要减去j,之所以用a=arr[i];是因为,arr[i]没经过一次循环都会变,不再是比较前的值,用a来固定即可.
+//      var arr =[51,12,6,9,10,18];
+//      for(var j=1;j<arr.length;j++){
+//      	for(var i=0;i<arr.length-j;i++){
+//      	if(arr[i]>arr[i+1]){
+//      		var a=arr[i];
+//      		arr[i]=arr[i+1];
+//      		arr[i+1]=a;
+//      	}
+//      }
+//      }
+//      console.log(arr);
+
+
+    	 var arr = [1,2,3,4,5,6];
+         for(var i=1; i<arr.length ;i++){
+         	
+	          arr[i]=arr[i+1];
+	          arr[i+1]=arr[i];
+            }
+         console.log(arr);
+ 
+		</script>
+	</body>
+</html>

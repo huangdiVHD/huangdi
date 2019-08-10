@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 封装冒泡排序
+        function bubbleSort(arr) {
+            for (var j = 0; j < arr.length - 1; j++) {
+                // 外层循环 控制 轮数
+                for (var i = 0; i < arr.length - 1 - j; i++) {
+                    // 内层循环  负责  找出本轮最大值
+                    // arr[i] arr[i+1]
+                    if (arr[i] > arr[i + 1]) {
+                        // 交换位置  找第三方
+                        var temp = arr[i];
+                        arr[i] = arr[i + 1];
+                        arr[i + 1] = temp;
+                    }
+                }
+                // console.log(arr);
+            }
+        }
+        var arr1 = [3, 2, 1];
+        var arr2 = [4, 6, 2, 7, 8];
+        bubbleSort(arr1);
+        bubbleSort(arr2);
+        console.log(arr1);
+        console.log(arr2);
+    </script>
+</body>
+
+</html>

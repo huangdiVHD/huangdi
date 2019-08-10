@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var a = 5;
+        a = a + 5; // 10
+        // 可以简写成:
+        a += 5; // 15
+        console.log(a); // 15
+
+        var b = 10;
+        b = b - 2;
+        // 简写成: b-=2;
+
+        // 同理还有  *=  /=
+
+        var c = 10;
+        // c = c + 1;
+        // 简写: c+=1;
+        // 还可以简写为 c++; 或者 ++c;
+        c++;
+        // ++c;
+        console.log(c);
+
+        // 同理 还有 c--;
+
+        // 自增1
+        // ++c  和  c++  的 区别
+        // 相同的地方    都让c  实现了 +1
+        var d = 20;
+        // 先赋值  ,再++
+        var n = d++;
+        console.log(n); // 20
+        console.log(d); // 21
+
+        var e = 30;
+        // 先++,在赋值
+        var n2 = ++e;
+        console.log(e); // 31
+        console.log(n2); // 31
+    </script>
+</body>
+
+</html>

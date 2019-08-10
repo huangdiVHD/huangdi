@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // + 还有一个 拼接字符串的功能
+        console.log(5 % 2); // 取余 1
+
+
+        // 当对非 Number 类型的值进行运算（包括+、-、*、/）时，会将这些值转换为 Number 然后再运算。
+        // （注：字符串 + Number、字符串 + 字符串是特例，稍后再讲）
+
+        console.log(true + 1); // 2
+        console.log(null + 1); // 1
+        // 任何数和 NaN  做运算  都得 NaN
+        console.log(undefined + 1); // NaN
+        console.log(100 - '11'); // 89
+        console.log(100 - '11a'); // NaN
+
+        // + 号特殊  ,有一方是字符串的时候 ,拼接作用
+        // 任何的值和字符串做加法运算，都会先转换为字符串，然后再做拼串操作
+        console.log(12 + '12'); // '1212'
+        console.log(true + '123'); // 'true123'
+
+
+        // 任何值做-、*、/运算时都会自动转换为 Number。
+        console.log(100 - '12'); // 88
+    </script>
+</body>
+
+</html>

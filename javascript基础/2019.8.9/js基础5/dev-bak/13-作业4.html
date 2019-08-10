@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 工资的数组[1500,1200,2000,2100,2100,1800],把工资超过2000的删除
+
+        var arr = [1500, 1200, 2000, 2100, 2100, 1800];
+        // a = 1;
+        // console.log(a);
+
+        // function foo() {
+        //     b = 1; // 声明成了全局变量
+        // }
+        // foo();
+        // console.log(b);
+        // console.log(window);
+
+
+        // for (var i = 0; i < arr.length; i++) {
+        //     if (arr[i] > 2000) {
+        //         arr.splice(i, 1);
+        //         i--;
+        //     }
+        // }
+        // console.log(arr)
+        var tempArr = [];
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] <= 2000) {
+                tempArr.push(arr[i])
+            }
+        }
+        console.log(tempArr)
+    </script>
+</body>
+
+</html>

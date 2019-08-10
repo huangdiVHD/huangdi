@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [12, 8, 4, 24, 10];
+        // 从小到大的排序
+        // 排序 : 冒泡排序  选择排序   快速排序   希尔排序
+
+        // 第一轮
+        for (var i = 0; i < arr.length - 1; i++) {
+            // arr[i] arr[i+1]
+            if (arr[i] > arr[i + 1]) {
+                // 交换位置  找第三方
+                var temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+            }
+        }
+        console.log(arr);
+        // 第二轮
+        for (var i = 0; i < arr.length - 1; i++) {
+            // arr[i] arr[i+1]
+            if (arr[i] > arr[i + 1]) {
+                // 交换位置  找第三方
+                var temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+            }
+        }
+        console.log(arr);
+
+        // 第三轮
+
+        for (var i = 0; i < arr.length - 1; i++) {
+            // arr[i] arr[i+1]
+            if (arr[i] > arr[i + 1]) {
+                // 交换位置  找第三方
+                var temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+            }
+        }
+        console.log(arr);
+
+        // 第四轮
+        for (var i = 0; i < arr.length - 1; i++) {
+            // arr[i] arr[i+1]
+            if (arr[i] > arr[i + 1]) {
+                // 交换位置  找第三方
+                var temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+            }
+        }
+        console.log(arr)
+    </script>
+</body>
+
+</html>

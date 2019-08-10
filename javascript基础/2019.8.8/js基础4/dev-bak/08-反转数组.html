@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [2, 4, 1, 8];
+        // [8,1,4,2]
+        function reverse(arr) {
+            var temp = [];
+            for (var i = 0; i < arr.length; i++) {
+                temp.unshift(arr[i]);
+            }
+            return temp;
+        }
+        console.log(reverse(arr));
+
+
+        var arr1 = [2, 3, 4, 5, 1]
+
+        function reverse2(arr) {
+            for (var i = 0; i < arr.length / 2; i++) {
+                // 0 arr.length-1
+                // 1 arr.length-2
+                // ...遍历一半
+                var temp = arr[i];
+                arr[i] = arr[arr.length - 1 - i];
+                arr[arr.length - 1 - i] = temp;
+            }
+            return arr;
+        }
+        // reverse2(arr1);
+        // console.log(arr1);
+        console.log(reverse2(arr1));
+    </script>
+</body>
+
+</html>

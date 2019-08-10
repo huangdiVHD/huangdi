@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // && 与(且) 两个真 才为真
+
+        // ||或 有一个真 即为 真
+        // !非 取反
+
+        // 判断一个人的年龄是否在 18-60 岁之间
+        // var age = prompt('请输入年龄');
+        var age = 20;
+        // 18<age<60 没有这种写法
+        // 大于18  并且  小于60
+        console.log(age > 18 && age < 60); // 
+
+        // 短路运算
+        // && 果第一个值为 false，则不会看第二个值
+        true && alert("看我出不出来！！"); // 弹出
+        false && alert("看我出不出来！！"); // 没有弹出
+        // && 遇到 false 就返回
+
+
+        // || 短路运算 遇到true 就返回
+        true || alert('第二个值');
+        false || alert('第二个值');
+
+        // 如果对非布尔值进行 非运算， 则会先将其转换为布尔值， 然后再操作。 举例：
+        var a = 10;
+        a = !a;
+
+        console.log(a); // false
+        console.log(typeof a); // boolean
+
+        // 非布尔值的 与 或  运算【重要】
+        // 非布尔值进行与或运算时，会先将其转换为布尔值，然后再运算，但返回结果是原值。比如说：
+        var result = 5 || 6; // 
+        console.log(result); // 5
+
+        console.log(5 && 6); // 6
+
+        console.log('' || 8); // 8
+    </script>
+</body>
+
+</html>

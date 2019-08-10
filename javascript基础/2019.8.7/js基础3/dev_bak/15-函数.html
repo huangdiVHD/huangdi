@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function foo() {
+            console.log('你好');
+            console.log('不凡学院');
+            console.log('天气很好');
+        }
+        // 不调用就不会执行
+        // 函数名()  调用函数
+        foo();
+
+
+        // 创建函数的方式一(具名函数)
+        // function 关键字
+        // 函数的命名规则 同变量命名一样
+        function bar() {
+
+        }
+
+        // 匿名函数 表达式
+        var a = function () {
+
+        }
+        a();
+
+        // a,b是这个函数的形参  给实参占位置
+        // 声明形参就相当于在函数内部声明了对应的变量，但是并不赋值。
+        function sum(a, b) {
+            console.log(a + b)
+        }
+        // 5,6 函数的实际参数
+        // 实际参数和形式参数的个数，要相同。
+        // 实参将会赋值给函数中对应的形参。
+        // 函数的实参可以是任意的数据类型。
+        sum(5, 6);
+        sum('你好', '不凡学院');
+
+        // 实参数量多于形参
+        sum(3, 5, 7);
+
+        // 实参数量小于形参
+        sum(3); // NaN
+
+        // 通常实际参数和形式参数的个数，要相同。
+    </script>
+</body>
+
+</html>

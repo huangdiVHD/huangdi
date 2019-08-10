@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 数组遍历for循环
+        var arr = [{
+                name: '张三',
+                age: 27
+            },
+            {
+                name: '李四',
+                age: 34
+            },
+            {
+                name: '王五',
+                age: 18
+            }
+        ];
+        // 数组遍历
+        arr.forEach(function (item) {
+            // 回调函数 里边的 形参 item 指的就是  数组当中的每一项
+            console.log(item);
+            item.age = 30;
+        })
+        console.log(arr);
+
+
+        // 对象的遍历
+        var obj = {
+            name: '张三',
+            age: 24,
+            sex: true,
+            like: ['篮球', '足球']
+        }
+        for (var key in obj) {
+            // key 是对象的 每一个 属性名
+            // 为什么 obj.key 是 undefined ?
+            // obj.key 你获取的是 obj的 key属性,没有这个属性  它的属性值就是undefined
+            // 对象.xx获取属性时.xx 是个变量 ,需要用这种形式获取 obj[xx]
+            console.log('属性名' + key + ',属性值' + obj[key] + '');
+        }
+    </script>
+</body>
+
+</html>

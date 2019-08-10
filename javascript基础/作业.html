@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+ <!-- 用户输入一个数字，然后判断这个数字能否被5、6整除，根据情况弹出下面4种警告框： -->
+    <script>
+    // var a = prompt('请输入');
+
+    // if(a%5===0||a%6===0){
+    //      alert('可以被整除');
+    // }else{
+    //     alert('不可以被整除');
+    // }
+
+// 找出1~1000之中，所有能被5整除，或者被6整除的数字。在控制台输出
+        //   for(var i =1;i<1000;i++){
+        //        if(i%5===0||i%6===0){
+        //            console.log(i);
+        //        }
+        //   }
+// 用户输入一个数字，列出所有它能够整除的数字。
+        // var a = prompt('请输入');
+        // for(var i = 0;i<=a;i++){
+        //     if(a%i===0){
+        //         console.log(i);
+        //     }
+        //     }
+// 报7游戏的安全数(1-60)
+        // for(var i=1;i<=60;i++){
+        //    if(i%7===0||i%10==7){
+        //        console.log(i);
+        //    }
+        // }
+// 水仙花数100~999之内
+    // for(var i=100;i<=999;i++){
+    //      var bai =parseInt(i/100);
+    //      var shi = parseInt(i/10)%10;
+    //      var ge = i%10;
+    //      var d= Math.pow(bai,3)+Math.pow(shi,3)+Math.pow(ge,3);
+    //      if(d===i){
+    //          console.log(i);
+    //      }
+    // }
+// 求1~100的和
+    // var a=0;//计数器
+    // for(var i=1;i<=100;i++){
+    //    a=a+i;
+    // }
+    // console.log(a);
+    // 求阶乘
+    // var a =1;
+    // for(var i=1;i<=13;i++){
+    //       a=a*i;
+    // }
+    // console.log(a);
+ // 用户输入一个数，输出所偶遇能够整除它的数字。
+    //    var a = prompt('请输入');
+    //     for(var i = 0;i<=a;i++){
+    //         if(a%i===0){
+    //             console.log(i);
+    //         }
+    //         }
+ // 质数：就是只能被1和自己整除。
+    // var a = prompt('请输入');
+    // var b=0;
+    // for(var i=1;i<=a;i++){
+    //       if(a%i==0){
+    //         b++;
+    //         //在这里用console.log(i);会把所有能够将其整除的数列举出来,而质素最多有2个,用b来计数,凡是能够在这里有2个的即为质数;
+    //       }
+       
+    // }
+    // if(b===2){
+    //     alert('是自述');
+    // }else{
+    //     alert('不是自述');
+    // }
+
+// 翻转数组
+    // var arr = [1,2,3,4,5,6,7];
+    // function ary(arr){
+    //     var a = [];
+    //     for(var i=1;i<arr.length;i++){
+    //           a.unshift(arr[i]);
+    //       }
+    //       return a;
+    //    }
+    // console.log(ary(arr));
+
+    // function hs(arr) {
+    //        var a = arr.length;
+    //        for(var i=0; i<a/2; i++){
+    //             var b= arr[i];//用b来代表arr[i]没变之前的值
+    //             arr[i]=arr[a-i-1];
+    //             arr[a-i-1]=b;
+    //        }
+    // }
+    // hs(arr);
+    // console.log(arr);
+
+// 用函数求5的阶乘
+// 5的阶乘即5*4*3*2*1,可看成5*4!(5*4的阶乘),但是要设置前提条件即a最小为0,弱势符合条件函数输出
+//      function jc(a){
+//          if(a==1){
+//              return 1;
+//          }
+//                return a*jc(a-1);
+//      }
+//    console.log(jc(5));
+    //    function jch(n) {
+    //         if (n === 1) {
+    //             return 1;
+    //         }
+    //         return jc(n) + jch(n - 1);
+    //     }
+    //     console.log(jch(4));
+// 1、求圆的周长和面积   Math.PI  = 3.1415…
+//      var a;//半径
+//      var b,c;
+//      function get(a){
+//       b=2*a* Math.PI;
+//       c=a*a*Math.PI;
+//       }
+//     get(4);
+//     console.log(b);
+//     console.log(c);
+
+//      2、求2个数中的最大值，求3个数中的最大值
+//          调用已经封装好的方法 来处理新的需求
+//    function get(a,b,c){
+//    	    if(a>b){
+//     	           if(a>c){
+//     		            console.log(a);
+//           	   }else {
+//     		            console.log(c);
+//            	         }
+//           }else {
+//       	        if(b>c){
+//     		            console.log(b);
+//               	}else{
+//     		               console.log(c);
+//     	            }
+//           }
+//      }
+//     get(7,5,6);
+
+//对数组排序，从小到大
+    //    var arr = [1,6,2,7,9];
+    //    function sz(arr){
+    //        for(var i=1;i<arr.length;i++){
+    //            //外for循环次数
+    //             for(var j=0;j<arr.length-i;j++){
+    //                 //内for找到数组下标
+    //                  if(arr[i]>arr[i+1]){
+    //                      //if判断大小
+    //                      var a=arr[i];
+    //                      arr[i]=arr[i+1];
+    //                       arr[i+1]=a;
+    //                    }
+    //              }
+    //          }
+    //    }
+    //    sz(arr);
+    //    console.log(arr);
+// 判断一个数是否是质数
+        // var a = prompt('请输入');
+        // zs(a);
+        // function zs(a){
+        //     var b=0;
+        //     for(var i=0;i<=a;i++){
+        //         if(a%i===0){
+        //          b++;
+        //          }
+        //     }
+        //     if(b===2){
+        //        alert('是质数');
+        //     }else{
+        //        alert('不是质数');
+        //      }
+        // }
+
+    </script>
+</body>
+</html>

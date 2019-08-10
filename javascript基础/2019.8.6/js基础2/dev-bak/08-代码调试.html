@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var type = '97';
+        var num = 30;
+        var price;
+        if (type === '92') {
+            if (num >= 20) {
+                price = num * 5.9;
+                alert(price);
+
+            } else {
+                price = num * 6;
+                alert(price);
+            }
+        } else if (type === '97') {
+            if (num >= 30) {
+                price = num * 6.95;
+                alert(price);
+            } else {
+                price = num * 7;
+                alert(price);
+            }
+        } else {
+            alert('请输入正确的汽油编号');
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var age = 17;
+        // 条件判断  如果 在 18-60 之间  弹出 你可以考驾照
+        // if (age > 18 && age < 60) {
+        //     // 符合条件就执行 true
+        //     alert('可以考驾照');
+        // }
+
+        // 不符合条件  告诉  它 不和条件
+
+        // 条件分支语句
+
+        // if (条件表达式) {
+        //     // 条件为真时，做的事情
+        // } else {
+        //     // 条件为假时，做的事情
+        // }
+        if (age > 18 && age < 60) {
+            alert('可以考驾照');
+        } else {
+            // 不符合条件时 执行
+            alert('不可以考驾照')
+        }
+
+        // 多分支条件语句
+        // if (条件表达式1) {
+        //     // 条件1为真时，做的事情
+        // } else if (条件表达式2) {
+        //     // 条件1不满足，条件2满足时，做的事情
+        // } else if (条件表达式3) {
+        //     // 条件1、2不满足，条件3满足时，做的事情
+        // } else {
+        //     // 条件1、2、3都不满足时，做的事情
+        // }
+
+        //     根据BMI（身体质量指数）显示一个人的体型。
+        // BMI指数，就是体重、身高的一个计算公式。公式是：
+        // BMI =体重÷身高的平方
+
+        // 比如，老师的体重是81.6公斤，身高是1.71米。
+        // 那么老师的BMI就是  81.6 ÷ 1.712     等于 27.906022365856163
+
+        // 过轻：低于18.5
+        // 正常：18.5-24.99999999
+        // 过重：25-27.9999999
+        // 肥胖：28-32
+        // 非常肥胖, 高于32
+
+        // 用JavaScript开发一个程序，让用户先输入自己的体重，然后输入自己的身高（弹出两次prompt框）。
+        // 计算它的BMI，根据上表，弹出用户的身体情况。比如“过轻” 、 “正常” 、“过重” 、 “肥胖” 、“非常肥胖”。
+        var w = prompt('请输入体重,单位kg');
+        var h = prompt('请输入身高,单位M');
+        var BMI = w / (h * h);
+        console.log(BMI)
+        if (BMI <= 18.5) {
+            alert('过轻')
+        } else if (BMI < 25) {
+            // 暗含了 不满足上边的条件
+            alert('正常')
+        } else if (BMI < 28) {
+            alert('GUOZHONG')
+        } else if (BMI < 32) {
+            alert('肥胖')
+        } else {
+            alert('非常肥胖')
+        }
+    </script>
+</body>
+
+</html>

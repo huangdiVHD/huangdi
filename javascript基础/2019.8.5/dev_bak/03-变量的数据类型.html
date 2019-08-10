@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 数据类型: 原始数据类型(简单/基本数据类型)  引用数据类型(复杂数据类型)
+
+        // 原始数据类型: string类型(字符串) number类型(数字) boolean类型(true和false) undefined null
+
+        // 引用数据类型: Object(对象类型)  数组  函数
+
+        // string类型 字符串
+        // 字符串需要使用引号引起来，使用双引号或单引号都可以，但是不要混着用。
+        // 引号不能嵌套：双引号里不能再放双引号，单引号里不能再放单引号。但是单引号里可以嵌套双引号。
+        var str = '不凡学院';
+        var str1 = "不凡学院";
+        // var str2 = '不凡学院";  错误写法
+        // var str3 = '不'凡'学院'; 错误
+        var str3 = '不"凡"学院';
+        // 转义字符：在字符串中我们可以使用\作为转义字符，当表示一些特殊符号时可以使用\进行转义。
+        console.log('不\'凡\'学院');
+
+        // number类型  数字(整数和小数(浮点数))
+
+        var num = 1;
+        console.log(num);
+        var num1 = 12.96;
+        console.log('1');
+        console.log(Number.MAX_VALUE * 99999999999); // Infinity
+        // 无穷大（正无穷）：Infinity
+        // 无穷小（负无穷）：-Infinity
+
+        // NaN：是一个特殊的数字，表示 Not a Number，非数值。比如：
+        console.log('abc' * 18); //NaN
+        // isNaN() :任何不能被转换为数值的值，都会让这个函数返回 true。
+        console.log(isNaN(12 * 'abc')); // true
+        console.log(isNaN('123abc')); // true
+        // 浮点数的运算
+        console.log(0.1 + 0.2); //0.30000000000000004
+
+
+        // boolean类型  布尔值  true 和  false
+        // 常用来做逻辑判断
+        var a = true;
+        var b = false;
+
+        // undefined 类型
+        // 声明了一个变量，但是没有赋值（例如：var a;），此时它的值就是 undefined。
+        var c;
+        console.log(c); // undefined
+
+        // null 空值  专门用来表示一个为空的对象
+        var d = null;
+
+
+        // 如何判断变量的数据类型
+        // typeof 变量名 
+        console.log(typeof str); // string
+        console.log(typeof num); //number
+        console.log(typeof a); //boolean
+        console.log(typeof c); //undefined
+        // 用 typeof 检测 null 的时候  返回 object
+        console.log(typeof d); // object
+
+
+        // 对象类型: object
+        // 封装信息 
+        // key:value 这种键值对  的  无序集合
+        // 属性值  可以是任意的数据类型
+        var obj = {
+            // 属性名:属性值,
+            // 属性名:属性值,
+            // ...
+            name: '张三',
+            age: 12,
+            sex: '男',
+            children: {
+                name: '小明',
+                age: 12
+            }
+        }
+
+
+        // 数组  array
+        // Array 数组是一组按顺序排列的集合，集合的每个值称为元素。
+        // 每个元素之间逗号隔开
+        // JavaScript 的数组可以包括任意数据类型。但是通常用来表示某一类数据的集合。
+        var arr = [1, 2, 4, 5, '不凡学院', true, undefined, [1, 2], {
+            name: '张三'
+        }];
+        var arr1 = [1, 2, 3, 4];
+
+
+        // 函数 function
+        // 通常用来封装功能
+        function foo() {
+
+        }
+
+        console.log(typeof obj);
+        console.log(typeof arr); // object
+        console.log(typeof foo); // function
+    </script>
+</body>
+
+</html>

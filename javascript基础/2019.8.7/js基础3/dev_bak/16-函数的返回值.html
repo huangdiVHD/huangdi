@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function sum(a, b) {
+            return a + b;
+            // 需要把计算的结果返回出去
+            // return 返回
+            console.log(10);
+        }
+        // 求任意两个数的和,并返回结果
+        // return 后的值将会作为函数的执行结果返回
+        // 通常需要用一个变量来接收 函数的返回值
+
+        // 在函数中 return 后的语句都不会执行（函数在执行完 return 语句之后停止并立即退出）
+
+        // 如果 return 语句后不跟任何值，就相当于返回一个 undefined
+
+        // 如果函数中不写 return，则也会返回 undefined
+
+        // 返回值可以是任意的数据类型，可以是对象，也可以是函数。
+        var a = sum(5, 6);
+        console.log(a);
+    </script>
+</body>
+
+</html>

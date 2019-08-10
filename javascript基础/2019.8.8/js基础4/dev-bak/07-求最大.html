@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function getMax(x, y) {
+            // if (x > y) {
+            //     return x
+            // } else {
+            //     return y
+            // }
+            return x > y ? x : y;
+        }
+
+        console.log(getMax(2, 5));
+
+        function getMax3(x, y, z) {
+            var temp = getMax(x, y);
+            return temp > z ? temp : z;
+        }
+
+        // 求数组当中的最大值 或者 最小值
+        function getArrMax(arr) {
+            var maxIndex = 0;
+            for (var i = 1; i < arr.length; i++) {
+                if (arr[maxIndex] < arr[i]);
+                maxIndex = i;
+            }
+            return arr[maxIndex];
+        }
+        var arr1 = [2, 4, 13, 24, 7, 89];
+        console.log(getArrMax(arr1));
+    </script>
+</body>
+
+</html>

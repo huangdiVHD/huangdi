@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 对象  复杂数据类型
+        // 对象 保存了很多信息,描述事物
+        // key value  键值对的 无序集合
+        var person = {
+            // 属性名:属性值,
+            name: '张三',
+            age: 24,
+            sex: true,
+            children: {
+                name: '小明',
+                age: 2
+            },
+            like: ['篮球', '乒乓球', '足球'],
+            say: function () {
+                alert('你好');
+            },
+            sayName: function () {
+                alert(this.name);
+                // 不调用时 this的指向是不明确的
+            }
+        }
+
+        // 对象具有属性 和 方法
+
+        var obj = person; // 这种赋值,只会把栈内存的地址赋值过去
+        obj.name = '李四';
+        console.log(person);
+        person.say();
+        person.sayName(); // this 指向调用者(.前边)
+
+
+
+        // 对象的分类:
+        //     内置对象: Math Object Number String Boolean
+        // 宿主对象: DOM BOM console
+        // 开发者自定义的对象
+    </script>
+</body>
+
+</html>

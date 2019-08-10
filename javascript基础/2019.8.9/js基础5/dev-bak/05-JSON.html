@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // JSON 轻量的数据交换格式  之前 使用 xml
+        // 网络间进行传输 是 文本形式 
+        // 普通对象
+        var obj = {
+            name: '张三',
+            age: 24
+        }
+        // JSON 对象
+        var objJson = {
+            "name": "李四",
+            "age": 36
+        }
+        console.log(objJson.name);
+        console.log(objJson);
+
+        var form = {
+            username: '王五',
+            password: '1234567',
+            sex: '男'
+        }
+
+        // 把对象传给后台,需要转换成Json字符串
+        // "{username:'王五',password: '1234567',sex:'男'}" 这是一个普通字符串
+        var str = "{username:'王五',password: '1234567',sex:'男'}";
+        var strJson = JSON.stringify(form); // json字符串
+        console.log(strJson); // {"username":"王五","password":"1234567","sex":"男"} 网络间传输的格式
+        // console.log(strJson.name)
+        // 后台接收到字符串 要把他变回对象
+        // "{username:'王五',password: '1234567',sex:'男'}" 这是个普通字符串,无法变回对象
+        // 只有json 字符串 才能转换为   JSON对象
+        var objForm = JSON.parse(strJson); // 转换为对象
+        console.log(objForm);
+        // console.log(JSON.parse(str)); // 报错
+
+
+        // 解决控制台 打印复杂数据的问题
+        var arr = [3, 4, 5, 6, 7];
+        console.log(JSON.stringify(arr)); // 想打印的是当前状态
+        arr[3] = 200;
+        console.log(arr);
+    </script>
+</body>
+
+</html>

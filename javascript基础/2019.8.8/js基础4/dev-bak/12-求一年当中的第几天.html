@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 2018年10月20日   这是当年的  第几天?
+        var monthArr = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        var date = new Date('2018-3-20');
+        console.log(date);
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var day = date.getDate();
+        var totalDay = 0;
+        for (var i = 0; i < month - 1; i++) {
+            totalDay += monthArr[i];
+        }
+        totalDay = totalDay + day;
+        // 判断是不是闰年?
+        // 四年一闰百年不润  
+        // 四百年再润
+        if (year % 4 === 0 && year % 100 !== 0 || year % 400 === 0) {
+            if (month >= 3) {
+                totalDay++;
+            }
+        }
+        console.log(totalDay);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="douban.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+             console.log(movies);
+        // 打印出 所有电影名字
+        var subjects = movies.subjects;
+    //    console.log(subjects[0].directors[0].name); //闫飞
+
+    //    var name1=subjects[0].directors[0];
+    //       console.log(name1.name);
+
+        // for (var i = 0; i < subjects.length; i++) {
+        //     console.log(subjects[i].title)
+        // }
+
+        // var name1=subjects[0].directors;
+        //   console.log(name1.name);
+
+        // for (var i=0;i<name1.length;i++){
+        //           console.log(name1[i].name);
+        //     }
+
+
+        for (var i = 0; i < subjects.length; i++) {
+            // console.log(subjects[i]);
+            var a = subjects[i].directors;
+            var c = subjects[i].title;
+            for (var j=0;j<a.length;j++){
+                //   console.log(a[j].name);
+                  var b =a[j].name;
+                //   var d =a[j-1].name;
+                // //   console.log(b);
+                 console.log('电影名字: '+c+','+'导演:'+b);
+            }
+        }
+        // 作业
+        // 打印 '电影名字:西红柿首富,导演:闫飞/彭大魔'
+    </script>
+</body>
+
+</html>

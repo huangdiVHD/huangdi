@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var num = 1;
+        // // 计数器
+        // var count = 0;
+        // for (var i = 1; i <= 48; i++) {
+        //     if (num % i === 0) {
+        //         console.log(i);
+        //         // count = count + 1;
+        //         count++;
+        //     }
+        // }
+        // if (count === 2) {
+        //     alert(num + '是一个质数');
+        // } else {
+        //     alert(num + '不是一个质数')
+        // }
+
+        var a = 17;
+        var isZhi = true;
+        for (var i = 2; i < a; i++) {
+            if (a % i === 0) {
+                isZhi = false;
+                break;
+            }
+        }
+        if (isZhi) {
+            alert(a + '是质数');
+        } else {
+            alert(a + '不是质数');
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 先声明后使用
+
+        // var声明变量的时候存在一个  声明提升 的特性
+        console.log(a); // undefined  说明 变量a 存在 只是没有赋值
+        var a = 24;
+
+
+        // 实际顺序
+        // var a;
+        // console.log(a);
+        // a = 24;
+
+        function foo() {
+            // 声明提升
+            console.log(b);
+            var b = 12;
+        }
+        foo();
+
+
+        // 函数也存在声明提升
+        // 只有function 关键字声明函数 才具备这个特性
+        add(3, 5);
+        bar();
+
+        function add(x, y) {
+            console.log(x + y);
+        }
+        var bar = function () {
+            console.log(1);
+        }
+    </script>
+</body>
+
+</html>

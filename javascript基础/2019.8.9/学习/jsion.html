@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+          var movie = {
+            title: "我不是药神",
+            casts: [{
+                    name: "徐峥",
+                    avatar: "http://xxxx.jpg",
+                    age: 45,
+                },
+                {
+                    name: "黄渤",
+                    avatar: "http://xxxx2.jpg",
+                    age: 42,
+                },
+            ],
+            pubDate: "2017-10-1",
+            rate: 5,
+        };
+        for(var c in movie){
+            //  console.log(c);拿到所有属性名
+            console.log(movie.c)//输出undefined,
+             console.log(movie[c]);//正确遍历方法
+        }
+        // console.log(movie);//控制台输出movie对象
+        // var a = JSON.stringify(movie);//将对象movie转换为字符串,便于传输
+        // console.log(a);
+        // var b = JSON.parse(a);//将字符串a转换为对象
+        // console.log(b);
+    </script>
+</body>
+</html>

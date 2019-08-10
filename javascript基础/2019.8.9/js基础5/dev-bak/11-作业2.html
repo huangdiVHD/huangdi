@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 找到数组中每个字母出现的次数["c", "a", "z", "a", "a"] -->
+
+    <script>
+        var arr = ["c", "a", "z", "a", "a"];
+        // 用来保存出现的字母
+        var wordArr = [];
+        // 用来保存字母出现的次数
+        var countArr = [];
+        for (var i = 0; i < arr.length; i++) {
+            var index = wordArr.indexOf(arr[i]);
+            if (index === -1) {
+                wordArr.push(arr[i]);
+                countArr.push(1);
+            } else {
+                countArr[index]++;
+            }
+        }
+        console.log(wordArr);
+        console.log(countArr);
+
+
+        // 一对象的形式来保存
+        // {
+        //     c:1,
+        //     a:3,
+        //     z:1
+        // }
+        var word = {};
+        for (var i = 0; i < arr.length; i++) {
+            if (word[arr[i]]) {
+                word[arr[i]]++;
+            } else {
+                word[arr[i]] = 1;
+            }
+        }
+        console.log(word);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 创建数组 字面量
+        var arr = [1, 2, 3, 4];
+        // 数组下标  从0 开始
+        // arr 对应的下标   0 ,1,2,3
+
+        // new 
+
+        var arr1 = new Array();
+        console.log(arr1)
+        // 数组通过索引(下标) 获取元素
+        console.log(arr[2]);
+        console.log(arr[0]);
+
+        console.log(arr[4]); // undefined
+
+        // 添加元素  通过下标
+        arr1[0] = 10;
+        arr1[1] = 20;
+        arr1[2] = 30;
+        arr1[4] = 50;
+        console.log(arr1);
+
+        //  修改元素 
+        arr[0] = 10;
+        console.log(arr);
+
+        // length属性  数组元素的个数
+        console.log(arr.length); // 4个元素
+        console.log(arr1.length); // 5
+
+        var arr2 = [15, 25, 35];
+        arr2.length = 6;
+        console.log(arr2);
+        var arr3 = [1, 2, 3, 4, 5];
+        arr3.length = 3;
+        console.log(arr3);
+    </script>
+</body>
+
+</html>

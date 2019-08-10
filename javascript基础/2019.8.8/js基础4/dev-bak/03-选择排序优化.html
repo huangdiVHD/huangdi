@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [24, 23, 12, 5, 78, 2];
+        // 从小到大
+        // 第一轮
+        //     [2, 23, 12, 5, 78, 24];
+        // var minIndex = 0;
+        // for (var i = 1; i < arr.length; i++) {
+        //     if (arr[minIndex] > arr[i]) {
+        //         minIndex = i;
+        //     }
+        // }
+        // // 交换位置
+        // var temp = arr[0];
+        // arr[0] = arr[minIndex];
+        // arr[minIndex] = temp;
+        // console.log(arr);
+
+        // 第二轮
+        // [2, 5, 12, 23, 78, 24];
+
+        // var arr1 = [2, 23, 12, 5, 78, 24];
+        // var minIndex = 1;
+        // for (var i = 2; i < arr1.length; i++) {
+        //     if (arr1[minIndex] > arr1[i]) {
+        //         minIndex = i;
+        //     }
+        // }
+        // // 交换位置
+        // var temp = arr1[1];
+        // arr1[1] = arr1[minIndex];
+        // arr1[minIndex] = temp;
+        // console.log(arr1);
+
+
+        // 第三轮
+        // [2, 5, 12, 23, 78, 24];
+
+        // 第四轮
+        // [2, 5, 12, 23, 78, 24];
+
+        // 第五轮
+        // [2, 5, 12, 23, 24, 78];
+        for (var j = 0; j < arr.length - 1; j++) {
+            var minIndex = j;
+            for (var i = j + 1; i < arr.length; i++) {
+                if (arr[minIndex] > arr[i]) {
+                    minIndex = i;
+                }
+            }
+            // 交换位置
+            var temp = arr[j];
+            arr[j] = arr[minIndex];
+            arr[minIndex] = temp;
+            console.log(arr);
+        }
+
+        function selectSort(arr) {
+            for (var j = 0; j < arr.length - 1; j++) {
+                var minIndex = j;
+                for (var i = j + 1; i < arr.length; i++) {
+                    if (arr[minIndex] > arr[i]) {
+                        minIndex = i;
+                    }
+                }
+                // 交换位置
+                var temp = arr[j];
+                arr[j] = arr[minIndex];
+                arr[minIndex] = temp;
+                console.log(arr);
+            }
+        }
+    </script>
+</body>
+
+</html>

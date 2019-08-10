@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Math 一些 数学方法的 工具库
+        // .ceil()  向上  取整  (天花板函数)
+        var a = Math.ceil(19.28);
+
+        console.log(a);
+
+        console.log(Math.ceil(19.99)); // 20
+
+        console.log(Math.ceil(-19.28)); // -19
+
+        // .floor()  向下取整  地板函数
+        console.log(Math.floor(19.28)); // 19
+        console.log(Math.floor(-19.28)); // -20
+
+        // .max()  取 多个数的  最大值
+
+        console.log(Math.max(9, 19, 23)); // 23
+
+        // .min()   取最小
+        console.log(Math.min(5, 9, 23)); // 5
+
+        // .pow(x,y)  x的 y次方
+
+        console.log(Math.pow(2, 8)); // 256
+
+        // Math.random()	生成 0-1 之间的随机数  [0,1)
+        console.log(Math.random())
+
+        // 生成 [1,10]  范围的随机数  整数
+        // [0,9] + 1
+        // Math.floor(Math.random() * 10) + 1;
+        console.log(Math.floor(Math.random() * 10) + 1);
+        // [5,10]
+        //[0,5]+5
+        console.log(Math.floor(Math.random() * 6) + 5);
+
+        // 规律: Math.floor(Math.random()*个数)+最小值
+
+
+        // Math.round()	四舍五入取整（正数四舍五入，负数五舍六入）
+        console.log(Math.round(2.4)); // 2
+        console.log(Math.round(2.9)); // 3
+        console.log(Math.round(2.4999999999)); // 2
+        console.log(Math.round(2.499999999999999999999999999999999999)); // 3
+        // 存在误差
+        console.log(2.499999999999999999999999999999999999); // 2.5
+    </script>
+</body>
+
+</html>

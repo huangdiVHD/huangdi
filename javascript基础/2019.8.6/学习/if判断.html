@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // var a = prompt ("请输入成绩");
+    //      if (a>=90) {
+    //           alert("优秀");
+    //      }else if (a>=80) {
+    //             alert("良好");
+    //      }else if (a>=70) {
+    //             alert("中等");
+    //      }else if (a>=60) {
+    //             alert("及格");
+    //      }else {
+    //          alert("不及格");
+    //      }
+
+    
+    // 今有人去加油站加油,有油97号和92号
+    // 97号超过20升每升5,不超过每升6
+
+    // 92号超过20升每升6.不超过每升7
+    // 问加油怎么划算
+
+
+    var petro = prompt("请输入要加几号汽油");//油号
+    var price ;//价格
+    if (petro==97) {
+        var rise = prompt("请输入要加几升汽油");//油号;//升数
+        if (rise>=20) {
+            price = 5;
+            }else {
+            price = 6;
+        }
+        alert('您这次购买了'+petro+'号汽油'+ rise+'升,共花费'+price*rise+'元');
+    }else if (petro==92) {
+        var rise = prompt("请输入要加几升汽油");//油号;//升数
+        if (rise>=20) {
+            price = 6;
+            }else {
+            price = 7;
+            }
+        alert('您这次购买了'+petro+'号汽油'+ rise+'升,共花费'+price*rise+'元');
+    }else{
+          alert('请输入正确的汽油编号');
+         }
+
+         
+    // var bianhao = parseInt(prompt("您想加什么油？填写92或者97"));
+    // var sheng = parseFloat(prompt("您想加多少升？"));
+
+    // //第二步，判断
+    //  if (bianhao == 92) {
+	// //编号是92的时候做的事情
+	// if (sheng >= 20) {
+	// 	var price = sheng * 5.9;
+	// } else {
+	// 	var price = sheng * 6;
+	// }
+    // } else if (bianhao == 97) {
+	// //编号是97的时候做的事情
+	// if (sheng >= 30) {
+	// 	var price = sheng * 6.95;
+	// } else {
+	// 	var price = sheng * 7;
+	// }
+    // } else {
+	// alert("对不起，没有这个编号的汽油！");
+    // }
+    // alert("价格是" + price);
+
+  
+    </script>
+</body>
+</html>

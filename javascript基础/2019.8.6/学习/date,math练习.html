@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var myDate =new Date();//获取时间
+       
+        var year = myDate.getUTCFullYear();
+        var month = myDate.getMonth()+1;
+        var day = myDate.getDate();//日
+        var week = myDate.getDay();//星期
+        // console.log(day);
+        var hour = myDate.getHours();
+        var min = myDate.getMinutes();
+        var mill = myDate.getMilliseconds();
+        var second = myDate.getSeconds();
+        console.log(year+'年'+month+'月'+day+'日'+hour+'小时'+min+'分'+mill+'秒'+second+'毫秒'+'星期'+week);
+        // 年月日小时分秒毫秒
+        // console.log(myDate);
+        // console.log(day);
+     
+        // 随机5-10的整数
+        console.log(Math.floor(Math.random()*6)+5);//math.random()在0-1之内随机取数不包括0,1,
+        //Math.floor()取天花板最低整数(比如2.4取2),先0-6.之间取数然后整体+5即5-10之间.
+        // Math.abs()取绝对值
+        console.log(Math.abs(-55));//55
+        //Math.round()	四舍五入取整（正数四舍五入，负数五舍六入）
+        console.log(Math.round(5.3));//5
+         // console.log(Math.round(2.43333333333333333333333));//2
+        // console.log(Math.round(2.49999999999999999999999));//3
+        //Math.max(x, y, z)	返回多个数中的最大值
+        console.log(Math.max(5,6,7,9,12));//12
+         //Math.min(x, y, z)	返回多个数中的最小值
+         console.log(Math.min(5,6,7,9,12));//5
+         //Math.pow(x,y)	返回 x 的 y 次幂
+         console.log(Math.pow(5,3));//125
+         //Math.sqrt()	对一个数进行开方运算
+         console.log(Math.sqrt(9));//3
+
+         console.log(5>6 && 5>4);
+         
+         var result = 5 && 6>8; // 运算过程：true && true;
+         console.log("result：" + result); // 打印结果：6（也就是说最后面的那个值。）
+
+         var result = 5>6 && 6  // false && true;
+         console.log("result：" + result); //6
+
+
+        //  var result = 5>6 || 6  // false || true;
+        //  console.log("result：" + result); //6
+         
+        //  var result = 7 || 6>7  // 运算过程：true && false;
+        //  console.log("result：" + result); //7
+        
+        </script>
+</body>
+</html>
