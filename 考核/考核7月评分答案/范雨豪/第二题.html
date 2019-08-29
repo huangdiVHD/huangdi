@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 150px;
+            /* background: linear-gradient(-210deg, red, blue); */
+            background: linear-gradient(150deg, red, blue);
+        }
+        
+        .img {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        
+        a {
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="img/camera-active.svg" alt="" class="img">
+    <a href="#0">我是#开头</a>
+    <a href="">我不是</a>
+    <a href="#1">我是#开头</a>
+    <a href="">我不是</a>
+    <a href="2#">我是#开头</a>
+    <script>
+        var div = document.createElement('div');
+        document.body.append(div);
+        for (var i = 0; i < 20; i++) {
+            var dd = document.createElement('div');
+            dd.className = 'box';
+            document.body.append(dd);
+        }
+        var them = document.querySelectorAll('div');
+        for (var i = 0; i < them.length; i++) {
+            them[i].onclick = function(e) {
+                if (e.target.tagName == 'IMG') {
+                    alert('yes');
+                } else {
+                    alert('No');
+                }
+            }
+        }
+        document.querySelector('.img').onclick = function(e) {
+            if (e.target.tagName == 'IMG') {
+                alert('yes');
+            } else {
+                alert('no');
+            }
+        }
+
+        var a = document.querySelectorAll('a');
+        // console.log(a[0].href.indexOf('#'));
+        for (var i = 0; i < a.length; i++) {
+            if (a[i].href.indexOf('#') == 137) {
+                a[i].style.backgroundColor = 'red'
+            }
+        }
+    </script>
+</body>
+
+</html>

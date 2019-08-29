@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				position: relative;
+				width: 200px;
+				height: 200px;
+				background-color: orange;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+		
+		<button class="btn1">点击跳到400px</button>
+		<button class="btn2">点击跳到800px</button>
+        
+        <script>
+            var box = document.querySelector('.box');
+            var btn1 = document.querySelector('.btn1');
+            var btn2 = document.querySelector('.btn2');
+
+            // 缓动动画的步长计算公式: step = (target - start) / 10;
+            // step = (0,1)的一位小数  起点与终点的距离是一个 < 10 的整数, 每次走 1
+            //缓速动画,其实就是运动不规则的动画,通过每次移动距离不同造成视觉上的差异,先快后慢(10为最佳比例,每次移动十分之几,都是剩下的十分之几)
+            btn1.onclick = function () {
+                //    var timer = setInterval(function () {
+                //         var start = box.offsetLeft;
+                //         var step = (400 - start) / 10;
+                //         // 缓速动画距离预期距离的距离越来越小但永远不可能到达,故进行判断,当小于一时,但有区间是{1,-1}, Math.floor(step)比如当她为-0.8时我们取地板值-1(多是返回时使用)
+                //         if (Math.abs(step) < 1) {
+                //             step = step > 0 ? 1 : Math.floor(step);
+                //         }
+                //         start += step;
+                //         box.style.left = start + 'px';
+                //         if(start == 400){
+                //             box.style.left = '400px';
+                //             clearInterval(timer);
+                //         }
+                //     }, 17);
+                movement(box, 400);
+            };
+            btn2.onclick = function () {
+                // var timer = setInterval(function(){
+                //     var start = box.offsetLeft;
+                //     var step = (800-start)/10;
+                //     if(Math.abs(step)<1){
+                //         step = step > 0 ?1:Math.floor(step);
+                //     }
+                //     start += step;
+                //     box.style.left = start + 'px';
+                //     if(start ==800){
+                //         box.style.left = '800px';
+                //         clearInterval(timer);
+                //     }
+                // },17);
+                movement(box, 800);
+            };
+            function movement(ele, target) {
+                var timer = setInterval(function () {
+                    var start = ele.offsetLeft;
+                    var step = (target - start) / 10;
+                    if (Math.abs(step) < 1) {
+                        step = step > 0 ? 1 : Math.floor(step);
+                    }
+                    start += step;
+                    ele.style.left = start + 'px';
+                    if (start == target) {
+                        ele.style.left = target + 'px';
+                        clearInterval(timer);
+                    }
+                }, 17);
+            }
+        </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>回到顶部</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				height: 2600px;
+			}
+			.back{
+				position: fixed;
+				top: 50%;
+				right: 150px;
+				/* display: none; */
+				width: 30px;
+				height: 105px;
+				padding-top: 5px;
+				text-align: center;
+				line-height: 24px;
+				cursor: pointer;
+				-webkit-user-select: none;
+				border: 1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="back">回到顶部</div>
+		<script>
+		var back = document.querySelector('.back');
+
+		back.onclick = function(){
+			// var highly = back.offsetTop;
+            // movement(window,highly)
+			// window.scroll(0,0);
+			movement(window,0);
+		}
+		function movement (ele,tag1){
+            clearInterval(ele.timer);
+			ele.timer = setInterval(function(){
+				var a =sct();//起始位置即距离页面的距离
+				var b = (tag1-a)/10
+				if(Math.abs(b)<1){
+                   b = b>0?1:Math.floor(b);
+				}
+				a+=b;
+				ele.scroll(0,a);
+				if(a == tag1){
+					clearInterval(ele.timer);
+				}
+			},17);
+		}
+
+		function sct() {
+            return document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+        }
+		</script>
+	</body>
+</html>

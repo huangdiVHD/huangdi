@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        <p></p>
+    </div>
+    <ul>
+        <li></li>
+        <li></li>
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        // 创建节点
+        var $span = $('<span>我是一个span</span>');
+
+
+        // 添加节点
+        // append() ;  参数 可以是 jq对象  dom对象   标签字符串
+        //         作用：在被选元素内部的最后一个子元素（或内容）后面插入。
+        //     - 如果是页面中存在的元素，那么调用 append()后，会把这个元素放到相应的目标元素里面去；但是，原来的这个元素，就不存在了。(剪切)
+        //  - 如果是给多个目标追加元素，那么方法的内部会复制多份这个元素，然后追加到多个目标里面去。
+        $('.box').append($span);
+        // $('.box').append($span[0]);
+        // $('.box').append('<span></span>');
+        $('li').append('<span></span>');
+
+
+        // appendTo
+        // $(selector).appendTo(node);
+        // 把$(selector)追加到node中去
+
+
+        //   prepend()
+        // 作用：在被选元素内部的第一个子元素前面追加内容或节点。（从前插入）
+
+
+        //         after()
+        // 作用：在被选元素之后，作为兄弟元素插入内容或节点
+
+        // $(selector).after(node);
+        // before()
+        // 作用：在被选元素之前，作为兄弟元素插入内容或节点
+        // $(selector).before(node);
+        $('.active').after('<p></p>')
+
+
+        // 删除节点
+        // $('ul').html('');
+        // $('ul').empty();
+        $('ul').remove(); // 把自己也删除了
+
+
+        // 复制节点
+        console.log($('.box').clone()); // jq对象 深复制
+    </script>
+</body>
+
+</html>

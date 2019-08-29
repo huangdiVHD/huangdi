@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        p {
+            width: 140px;
+            height: 20px;
+            overflow: hidden;
+            /* 省略号 */
+            text-overflow: ellipsis;
+            /* 不换行 */
+            white-space: nowrap;
+            font-size: 16px;
+            position: absolute;
+            margin: 0 0;
+            color: #C8CACE;
+            
+        }
+        .box {
+            width: 350px;
+            height: 100px;
+            cursor:pointer;
+        }
+        .inner-box {
+            width: 260px;
+            height: 18px;
+            margin: 10px auto;
+        }
+        .keyw {
+            float: right;
+            font-size: 12px
+        }
+        .box1 {
+            border: 1px solid blue;
+            color: blue
+        }
+        .box2 {
+            border: 1px solid red;
+            margin: 0px 5px;
+            color: red
+        }
+        .box3 {
+            border: 1px solid gray;
+            color: gray
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="inner-box">
+            <p>这次是一个新的故事sdfsdfssadfds</p>
+            <div class="box1 keyw">54.82万字</div>
+            <div class="box2 keyw">连载中</div>
+            <div class="box3 keyw">都市</div>
+        </div>
+        <div class="inner-box">
+            <p>穿越天地复苏的平行世界水电费水电费是的</p>
+            <div class="box1 keyw">1万字</div>
+            <div class="box2 keyw">完本</div>
+            <div class="box3 keyw">都市</div>
+        </div>
+        <div class="inner-box">
+            <p>修真十万年</p>
+            <div class="box1 keyw">1078.12万字</div>
+            <div class="box2 keyw">连载中</div>
+            <div class="box3 keyw">科幻</div>
+        </div>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .wrap {
+            width: 1000px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .item {
+            float: left;
+            width: 200px;
+            height: 460px;
+        }
+
+        .item img {
+            /* width: 200px; */
+            height: 460px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="wrap">
+        <li class="item">
+            <img src="img/m1.jpg" alt="">
+        </li>
+        <li class="item">
+            <img src="img/m2.jpg" alt="">
+        </li>
+        <li class="item">
+            <img src="img/m3.jpg" alt="">
+        </li>
+        <li class="item">
+            <img src="img/m4.jpg" alt="">
+        </li>
+        <li class="item">
+            <img src="img/m5.jpg" alt="">
+        </li>
+    </ul>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        var $currentLi;
+        // var $that;
+        var timer;
+        $('.item').mouseenter(function () {
+            // 每次进入之前 先把之前的 没有发生的定时器清除 
+            clearTimeout(timer);
+            // $(this).css('width', '600px');
+            var $that = $(this);
+            // $that = $(this);
+            timer = setTimeout(function () {
+
+                // console.log(this);
+                // 回调函数中 this 指向变化了
+                $currentLi = $that;
+                $that.siblings().animate({
+                    width: 100
+                })
+                $that.animate({
+                    width: 600
+                })
+            }, 200)
+
+            // $(this).siblings().css('width', '100px');
+        })
+        $('.wrap').mouseleave(function () {
+            // 先让 变宽的那个  变成200
+            // 如何获取 哪个li 变宽了
+            clearTimeout(timer);
+            $currentLi.animate({
+                width: 200
+            }, 200)
+            $currentLi.siblings().animate({
+                width: 200
+            }, 200)
+        })
+    </script>
+</body>
+
+</html>

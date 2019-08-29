@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    ul {
+        list-style: none;
+    }
+    .box {
+        width: 620px;
+        height: 420px;
+        margin: 0 auto;
+        border: 1px solid #5BADFF;
+    }
+    .box1 {
+        float: left;
+        width: 420px;
+        height: 420px;
+    }
+    .year {
+        width:420px;
+        height: 60px;
+        line-height: 60px;
+        border-bottom: 1px solid black;
+        margin: 0 auto;
+    }
+    .select2 {
+        width: 100px;
+        height: 30px;
+        float: left;
+        line-height: 30px;
+        margin-top: 15px;
+        margin-right: 5px;
+    }
+    .select1 {
+        width: 100%;
+        height: 100%;
+        border: 1px solid black;
+    }
+   .month2 {
+        float: left;
+        width: 56px;
+        height: 30px;
+        line-height: 30px;
+    }
+    .month1-left{
+        float: left;
+        margin-top: 1px;
+        width: 20px;
+        height: 30px;
+        background-color:#7A7AA2;
+        text-align: center;
+        line-height: 30px;
+    }
+    .bt1 {
+        width: 100px;
+        height: 30px;
+    }
+    .month {
+        width:420px;
+        height: 100%;
+        margin: 0 auto;
+    }
+    li {
+        float: left;
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        line-height: 50px;
+        box-sizing: border-box;
+        /* 使边框不再框外触发改成在框内触发 */
+    }
+    .span1 {
+        height: 25px;
+        display: block;
+        line-height:25px;
+        color: black;
+    }
+    .span2 {
+        height: 25px;
+        display: block;
+        line-height:25px;
+        color: grey;
+    }
+    .active {
+        border: 5px solid #FFBB00;
+        background-color:#FFBB00;
+    }
+    .active span{
+        color:white;
+    }
+    .date:hover{
+        border: 5px solid #FFBB00;
+    }
+    .festival:hover{
+        background-color:#FFBB00;
+    }
+    .date.festival:hover span{
+        color:white;
+    }
+    .week,.autumn {
+        color: red;
+    }
+    .detailed {
+        float: left;
+        width: 200px;
+        height: 420px;
+        background-color: #5BADFF;
+    }
+    .detailed-top {
+        width: 100%;
+        height: 20px;
+        margin:10px 0px;
+        font-size: 15px;
+        text-align: center;
+        color: white;
+    }
+
+    .detailed-middle {
+        width: 100%;
+        height: 200px;
+    }
+    .detailed-middle-1 {
+        width: 100px;
+        height: 100px;
+        background-color: #FFBB00;
+        text-align: center;
+        line-height: 100px;
+        margin: 10px 50px;
+    }
+    .detailed-middle-2 {
+        width: 100%;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        font-size: 15px;
+        color: white;
+    }
+
+    .middle-down {
+        width: 100%;
+        height: 150px;
+    }
+    .middle-down-1{
+        float: left;
+        width: 65px;
+        height: 130px;
+        margin: 10px 30px 0px 20px;
+        text-align: center;
+        font-size: 15px;
+        color: white;
+    }
+    .middle-down-2{
+        float: left;
+        width: 65px;
+        height: 130px;
+        margin-top: 10px;
+        text-align: center;
+        font-size: 15px;
+        color: white;
+    }
+    .span-3 {
+        font-size: 20px;
+    }
+    </style>
+</head>
+<body>
+    <!-- <input type="option" value="1"> -->
+<div class="box">
+    <div class="box1">
+        <div class="year">
+            <div class="select2">
+                <select class="select1">
+                    <option value="1">2017年</option>
+                    <option value="1">2018年</option>
+                    <option value="1">2019年</option>
+                </select>
+            </div>
+            <div class="select2">
+                <div class="month1-left"> ＜ </div>
+
+                <div class="month2">
+                    <select class="select1">
+                        <option value="1">8月</option>
+                        <option value="1">9月</option>
+                        <option value="1">10月</option>
+                    </select>
+                </div>
+                <div class="month1-left"> ＞ </div>
+            </div>
+            <div class="select2">
+                <select class="select1">
+                    <option value="1">假期安排</option>
+                    <option value="1">假期安排</option>
+                    <option value="1">假期安排</option>
+                </select>
+            </div>
+            <div class="select2">
+                <button class="bt1">返回今天</button>
+            </div>
+        </div>
+        <ul class="month">
+            <li>一</li>
+            <li>二</li>
+            <li>三</li>
+            <li>四</li>
+            <li>五</li>
+            <li class="week">六</li>
+            <li class="week">日</li>
+
+            <li class="date"><span class="span1">31</span><span class="span2">初九</span></li>
+            <li class="date festival active"><span class="span1">1</span><span class="span2">建军节</span></li>
+            <li class="date"><span class="span1">2</span><span class="span2">十一</span></li>
+            <li class="date"><span class="span1">3</span><span class="span2">十二</span></li>
+            <li class="date"><span class="span1">4</span><span class="span2">十三</span></li>
+            <li class="date"><span class="span1">5</span><span class="span2 week">十四</span></li>
+            <li class="date"><span class="span1">6</span><span class="span2 week">十五</span></li>
+
+            <li class="date festival"><span class="span1">7</span><span class="span2 autumn">立秋</span></li>
+            <li class="date"><span class="span1">8</span><span class="span2">十七</span></li>
+            <li class="date"><span class="span1">9</span><span class="span2">十八</span></li>
+            <li class="date"><span class="span1">10</span><span class="span2">十九</span></li>
+            <li class="date"><span class="span1">11</span><span class="span2">二十</span></li>
+            <li class="date"><span class="span1">12</span><span class="span2 week">廿一</span></li>
+            <li class="date"><span class="span1">13</span><span class="span2 week">廿二</span></li>
+
+            <li class="date"><span class="span1">14</span><span class="span2">廿三</span></li>
+            <li class="date"><span class="span1">15</span><span class="span2">廿四</span></li>
+            <li class="date"><span class="span1">16</span><span class="span2">廿五</span></li>
+            <li class="date"><span class="span1">17</span><span class="span2">廿六</span></li>
+            <li class="date"><span class="span1">18</span><span class="span2">廿七</span></li>
+            <li class="date"><span class="span1">19</span><span class="span2 week">廿八</span></li>
+            <li class="date"><span class="span1">20</span><span class="span2 week">廿九</span></li>
+
+            <li class="date"><span class="span1">21</span><span class="span2">三十</span></li>
+            <li class="date"><span class="span1">22</span><span class="span2">初一</span></li>
+            <li class="date festival"><span class="span1">23</span><span class="span2 autumn">处暑</span></li>
+            <li class="date"><span class="span1">24</span><span class="span2">初三</span></li>
+            <li class="date"><span class="span1">25</span><span class="span2">初四</span></li>
+            <li class="date"><span class="span1">26</span><span class="span2 week">初五</span></li>
+            <li class="date"><span class="span1">27</span><span class="span2 week">初六</span></li>
+
+            <li class="date festival"><span class="span1">28</span><span class="span2 autumn">七夕</span></li>
+            <li class="date"><span class="span1">29</span><span class="span2">初八</span></li>
+            <li class="date"><span class="span1">30</span><span class="span2">初九</span></li>
+            <li class="date"><span class="span1">1</span><span class="span2">初十</span></li>
+            <li class="date"><span class="span1">2</span><span class="span2">十一</span></li>
+            <li class="date"><span class="span1">3</span><span class="span2">十二</span></li>
+            <li class="date festival"><span class="span1">4</span><span class="span2">抗战胜</span></li>
+
+        </ul>
+    </div>
+    <div class="detailed">
+        <div class="detailed-top">2017年-8月-01日星期二</div>
+        <div class="detailed-middle">
+            <div class="detailed-middle-1">1</div>
+            <div class="detailed-middle-2">
+                <span class="span-1">闰六月初十</span><br>
+                <span class="span-1">丁酉年[鸡年]</span><br>
+                <span class="span-1">丁未月庚申日</span>
+            </div>
+        </div>
+        <div class="middle-down">
+            <div class="middle-down-1">
+                <span class="span-2 span-3">宜</span><br>
+                <span class="span-2">浅析</span><br>
+                <span class="span-2">入宅</span><br>
+                <span class="span-2">治病</span><br>
+                <span class="span-2">会友</span><br>
+                <span class="span-2">祭祀</span>
+            </div>
+            <div class="middle-down-2">
+                <span class="span-2 span-3">忌</span><br>
+                <span class="span-2">开市</span><br>
+                <span class="span-2">斋滘</span><br>
+                <span class="span-2">安床</span><br>
+                <span class="span-2">出行</span><br>
+                <span class="span-2">经络</span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [0, 1, 2, 3, 4, 5];
+        console.log(forward(arr, 4));
+        // console.log(moveTop(arr, 4));
+        // console.log(moveLast(arr, 3));
+        // console.log(change(arr, 5, 3));
+
+        function forward(arr, index) {
+            if (index >= arr.length || index <= 0) {
+                return (arr);
+            } else {
+                var temp = arr[index];
+                arr[index] = arr[index - 1];
+                arr[index - 1] = temp;
+                return (arr);
+            }
+        }
+        function moveTop(arr, index) {
+            arr.unshift(arr[index]);
+            arr.splice(index + 1, 1);
+            return arr;
+        }
+        function moveLast(arr, index) {
+            arr.push(arr[index]);
+            arr.splice(index, 1);
+            return arr;
+        }
+        function change(arr, index1, index2) {
+            var temp = arr[index1];
+            arr[index1] = arr[index2];
+            arr[index2] = temp;
+            return arr;
+        }
+    </script>
+</body>
+
+</html>

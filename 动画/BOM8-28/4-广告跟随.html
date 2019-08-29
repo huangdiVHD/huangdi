@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>广告跟随</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				height: 3000px;
+			}
+			.advance{
+				position: absolute;
+				top: 400px;
+				right: 60px;
+				width: 40px;
+				height: 100px;
+				padding: 40px 20px;
+				color: #fff;
+				background-color: crimson;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="advance">这是一条小广告</div>
+			
+		<script type="text/javascript">
+			var adv = document.querySelector(".advance");
+			
+			// 获取页面未发生滚动的条件下广告距离页面的上边距
+			var originTop = adv.offsetTop;
+			// 页面的滚动事件
+			window.onscroll = function (){
+				// 目标值 就是 页面卷入的高度 + 页面未发生滚动的条件下广告距离页面的上边距
+				var target = sct() + originTop;
+				// adv.style.top = target + "px";
+				slowlyMove(adv,target);
+			}
+				
+			function sct(){
+				return document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+			}
+			
+			function slowlyMove(ele,target){
+				// 清除定时器,防止冲突
+				clearInterval(ele.timer);
+				// 设置定时器
+				ele.timer = setInterval(function (){
+					// 获取起点
+					var start = ele.offsetTop;
+					// 设置步长
+					var step = (target - start) / 10;
+					// 判断步长临界区间
+					if(Math.abs(step) < 1){
+						step = step > 0 ? 1 : Math.floor(step);
+					}
+					// 运动
+					ele.style.top = start + step + "px";
+					// 判断是否到终点
+					if(start + step === target){
+						console.log('stop ...');
+						// 清除定时器
+						clearInterval(ele.timer);
+					}
+				},17)
+			}
+		
+		</script>
+	</body>
+</html>

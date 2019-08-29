@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            display: none;
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        不凡
+    </div>
+    <button class="btn1">显示</button>
+    <button class="btn2">隐藏</button>
+    <button class="btn3">滑入</button>
+    <button class="btn4">滑出</button>
+    <button class="btn5">滑入/滑出</button>
+    <button class="btn6">淡入</button>
+    <button class="btn7">淡出</button>
+    <button class="btn8">淡入/滑出</button>
+    <button class="btn9">fadeTo</button>
+
+
+
+
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        // show()  hide()
+        $('.btn1').click(function () {
+            // $('.box').css('display', 'block');
+            // 参数一  动画持续时间  毫秒  slow/normal/fast
+            // 参数二  回调函数,动画执行结束后  做什么
+            $('.box').show(2000, function () {
+                $(this).text('下雨了');
+                $(this).css('backgroundColor', 'orange')
+            });
+        })
+        $('.btn2').click(function () {
+            $('.box').hide('slow', function () {
+                alert('动画结束了')
+            })
+        })
+
+        // 1滑入动画效果
+        // $(xx).slideDown(speed,callback);
+        // 注意：省略参数或者传入不合法的字符串，那么则使用默认值：400毫秒（同样适用于fadeIn/slideDown/slideUp）
+        // $(xx).slideUp();
+
+        // 2滑入滑出切换动画效果
+        // $(xx).slideToggle(speed,callback);
+        $('.btn3').click(function () {
+            $('.box').slideDown('fast', function () {
+                console.log('动画结束了');
+            })
+        })
+        $('.btn4').click(function () {
+            $('.box').slideUp('normal', function () {
+                console.log('动画结束了');
+            })
+        })
+        $('.btn5').click(function () {
+            $('.box').slideToggle('normal', function () {
+                console.log('动画结束了');
+            })
+        })
+
+        // 1 淡入动画效果
+        // $(xx).fadeIn(speed, callback);
+
+        // 2 淡出动画效果
+        // $(xx).fadeOut(1000);
+
+        // 3淡入淡出切换动画效果
+        // $(xx).fadeToggle('fast',function(){});
+        $('.btn6').click(function () {
+            $('.box').fadeIn(1000, function () {
+                console.log('动画结束了');
+            })
+        })
+        $('.btn7').click(function () {
+            $('.box').fadeOut(5000, function () {
+                console.log('动画结束了');
+            })
+        })
+        $('.btn8').click(function () {
+            $('.box').fadeToggle(1500, function () {
+                console.log('动画结束了');
+            })
+        })
+
+        // 4改变透明度到某个值
+        // 作用：调节匹配元素的不透明度 
+        // $(xx).fadeTo(1000, .5); //  0全透，1全不透
+        $('.btn9').click(function () {
+            $('.box').fadeTo(1500, .2, function () {
+                console.log('动画结束了');
+            })
+        })
+    </script>
+</body>
+
+</html>

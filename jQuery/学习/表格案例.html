@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    .form {
+        width: 300px;
+        margin: 100px auto;
+        text-align: center;
+        border: 1px solid #333;
+    }
+    tr,th,td {
+        padding: 10px;
+		border: 1px solid #333;
+    }
+    .modal {
+				display: none;
+				position: fixed;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0, 0, 0, 0.5);
+			}
+
+	.form1 {
+				width: 200px;
+				height: 200px;
+				padding: 50px 100px;
+				background-color: #fff;
+				margin: 100px auto;
+			}
+    </style>
+</head>
+<body>
+    <table class="form">
+        <!-- <tr><th>姓名</th><th>年龄</th><th>性别</th><th>操作</th></tr> -->
+        <!-- <tr><td>张三</td><td>22</td><td>男</td><td><button>编辑</button><button>删除</button></td></tr> -->
+    </table>
+    <div class="modal">
+        <div class="form1">
+            用户名: <input class="username" type="text" />
+            <br />
+            性别: <br />
+            男: <input class="sex men" type="radio" name="sex" value="1" /> 女:
+            <input class="sex women" type="radio" name="sex" value="0" />
+            <br />
+            年龄: <input class="age" type="text" />
+            <button class="save">确定</button>
+            <button class="cancel">取消</button>
+        </div>
+	</div>
+	<button class="added">新增</button>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script>
+    var count;
+    var users = [
+				{
+					username: "张三",
+					sex: "男",
+					age: 26,
+				},
+				{
+					username: "李四",
+					sex: "男",
+					age: 23,
+				},
+				{
+					username: "小红",
+					sex: "女",
+					age: 18,
+				},
+				{
+					username: "王五",
+					sex: "男",
+					age: 29,
+				},
+			];
+    //动态生成
+    content($('.form'),users);
+    //删除
+    $('.bt1').click(function(){
+        $(this).parent().parent().remove();
+    });
+    $('.bt2').click(function(){
+          $('.modal').fadeIn(200);
+          // 获取
+       $count = $(this).parent().parent();
+		var username = $count
+			.children()
+			.eq(0)
+			.text();
+         var sex = $count
+			.children()
+			.eq(1)
+			.text();
+		var age = $count
+			.children()
+			.eq(2)
+			.text();
+        $(".modal .username").val(username);
+		sex == "男" ? $(".modal .men").prop("checked", true) : $(".modal .women").prop("checked", true);
+		$(".modal .age").val(age);
+    });
+     $('.save').click(function(){
+				// 获取表单修改后的 内容
+				var username = $(".modal .username").val();
+				var age = $(".modal .age").val();
+				var sex = $(".modal .sex:checked").val() == 1 ? "男" : "女";
+
+				// 赋值
+				$count
+					.children()
+					.eq(0)
+					.text(username);
+				$count
+					.children()
+					.eq(1)
+					.text(sex);
+				$count
+					.children()
+					.eq(2)
+					.text(age);
+
+				// 弹窗关闭
+				cancel();
+     });
+     $('.cancel').click(function(){
+        cancel();
+     });
+     // 弹窗取消
+	function cancel() {
+		// 清空表单
+		$(".modal .username").val("");
+		$(".modal .sex").prop("checked", false);
+		$(".modal .age").val("");
+		$(".modal").fadeOut(400);
+	}
+    function content ($el,arr){
+        var str = "<tr><th>姓名</th><th>年龄</th><th>性别</th><th>操作</th></tr>";
+        for(var i = 0;i<arr.length;i++){
+        str+= ' <tr><td>'+arr[i].username+'</td><td>'+arr[i].sex+'</td><td>'+arr[i].age+'</td><td><button class = "bt2")">编辑</button><button class = "bt1">删除</button></td></tr>';
+        }
+        $el.html(str);
+    }
+    </script>
+</body>
+</html>

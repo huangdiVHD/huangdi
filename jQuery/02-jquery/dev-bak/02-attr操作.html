@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div title="天气很好" class="box">
+        不凡学院
+    </div>
+    <div title="下雨了" class="inner-box">
+        xiyule
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        // setAttribute getAttribute removeAttribute
+        $('.box').click(function () {
+            console.log($(this).attr('title'));
+            $(this).attr('id', 'd1');
+        })
+        // 有则添加,无则删除 title属性
+        $('.inner-box').click(function () {
+            if ($(this).attr('title')) {
+                $(this).removeAttr('title')
+            } else {
+                $(this).attr('title', 'henhao')
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1,创建
+        var body = document.querySelector('body');
+        var div = document.createElement('div');
+        div.style.width='300px';
+        div.style.height='150px';
+        body.append(div);
+
+        // 2,渐变
+        div.style.background='linear-gradient(-45deg,blue,red)';
+
+
+        // 3,添加20个盒子
+        for(var i=0;i<20;i++){
+            var arr=['i+a'];
+            arr[0] = document.createElement('div');
+            body.append(arr[0]);
+            arr[0].classList.add('box');
+
+        }
+    
+       
+
+        
+        
+    </script>
+</body>
+</html>

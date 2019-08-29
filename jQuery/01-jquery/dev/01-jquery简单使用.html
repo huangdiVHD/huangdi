@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        box
+        <div class="inner-box">
+            我是内部盒子
+        </div>
+    </div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <!-- 1.获取事件源
+    2.绑定事件
+    3,写事件处理程序 -->
+    <script>
+        var boxEl = document.querySelector('.box'); // 原生dom对象
+        var $box = $('.box'); // jq对象,(把原生dom对象进行了 二次封装);
+        console.dir(boxEl);
+        console.log($box);
+
+
+        // 把jq 对象转换为 原生dom对象的方式
+        console.log($box[0]);
+
+        // 把原生dom 对象  转换为  jq 对象
+        console.log($(boxEl));
+
+        // 获取事件源的 基本选择器
+        // 基本选择器  同 css 选择器一模一样
+        // 获取事件源的时候  变得更容易了吧
+        var $innerBox = $('.box .inner-box');
+
+        // 绑定事件
+        boxEl.onclick = function () {
+            alert('123');
+        }
+        // 区别
+        // 事件 类型  不再 加on
+        // 此时调用了 jq 对象的 click 方法
+        // 将要执行的 函数 (事件处理程序) 当做参数传进去
+        $innerBox.click(function () {
+            alert('内部盒子')
+        });
+    </script>
+</body>
+
+</html>

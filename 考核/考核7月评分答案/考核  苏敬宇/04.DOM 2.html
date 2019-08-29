@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>dom2 </title>
+    <!-- 使用document.createElement在页面创建一个高宽为 300 像素*150 像素的 div 元素，插入到<body>标签下。
+通过设置 style 属性实现该div元素从左上角到右下角的 red 到 blue 的渐变。
+在<body>元素内append20 个类名为.box的盒子。
+点击元素判断当前点击元素是否是img元素。
+获取页面中所有的<a>元素，遍历获取到的元素，对其中href属性以#开头的元素，设置背景色为红色。 -->
+    <style>
+        /* 渐变 */
+        .box1 {
+            background: linear-gradient(to right bottom, red, blue);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box2">
+        <img src="icon/bg.jpg" alt="">
+        <a href="#">我是a标签</a>
+        <span>我是span</span>
+        <a href="12">12</a>
+        <a href="#12">#12</a>
+        <a href="34">34</a>
+        <a href="#34">#34</a>
+        <a href="56">56</a>
+        <a href="#56">#56</a>
+
+
+    </div>
+    <!-- 使用document.createElement在页面创建一个高宽为 300 像素*150 像素的 div 元素 -->
+    <script>
+        var newElement = document.createElement("div");
+        document.body.appendChild(newElement); //不能漏了这一句，否则行不通 
+        newElement.className = 'box1';
+        newElement.style.width = '150px';
+        newElement.style.height = '300px';
+    </script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        //在<body>元素内append20 个类名为.box的盒子。
+        $("body").append(" <div class:'box'>  </div>",
+            " <div class:'box'>  </div>",
+            " <div class:'box'>  </div>",
+            " <div class:'box'>  </div>",
+            " <div class:'box'>  </div>",
+            " <div class:'box'>  </div>",
+            " <div class:'box'>  </div>",
+            " <div class:'box'>  </div>",
+            " <div class:'box'>  </div>",
+            " <div class:'box'>  </div>",
+            " <div class:'box'>  </div>",
+            " <div class:'box'>  </div>");
+
+
+
+        //点击元素判断当前点击元素是否是img元素。
+        //event.target 实际触发事件的对象，不一定===this 
+        $('.box2').click(function (event) {
+            console.log(event.target);
+        //    console.log( event.currentTarget); //事件绑定的对象(事件源),和 this 相同
+            
+        })
+
+    //获取页面中所有的<a>元素，遍历获取到的元素，对其中href属性以#开头的元素，设置背景色为红色。
+        $('a').each(function(index,ele){//ele为 dom对象
+            console.log(ele);
+            if(ele[href]^='#'){
+                //需要将dom对象转换为jquery对象
+               $(ele).css('color','red');
+            // ele.css('color','red');
+                console.log('出来')
+            }
+        })
+      
+    </script>
+
+
+</body>
+
+</html>

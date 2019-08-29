@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button>判断是否有img元素</button>
+    <script>
+        var divEl = document.createElement('div');
+        divEl.style.width='150px';
+        divEl.style.height='300px';
+        document.body.appendChild(divEl);
+
+        divEl.style.background='radial-gradient(at 20% 20% ,red, blue)';
+        
+        for(var i = 0 ; i < 21; i ++) {
+            var div = document.createElement("div");
+            div.setAttribute('class','box')
+            var oTxt = document.createTextNode("盒子" + i);
+            div.appendChild(oTxt);
+            document.body.appendChild(div);
+        }
+
+        var buttonEl = document.getElementsByTagName('button');
+        buttonEl.onclick(function(){
+            console.log()
+        })
+
+        var aAll = document.getElementsByTagName('a');
+        aAll[href^='#'].style('backgroundColor','red');
+    </script>
+</body>
+</html>

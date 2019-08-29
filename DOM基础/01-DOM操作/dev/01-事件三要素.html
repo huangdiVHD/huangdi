@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+
+    </div>
+    <!-- 注释 -->
+    <script>
+        // 事件三要素: 事件源   事件   事件处理程序
+
+        //  获取事件源
+        // 给事件源绑定 事件(你如onclick ,onmouseover)
+        // 触发点击事件时   做什么事情
+
+        // 获取事件源
+        var boxEl = document.getElementById('box');
+        // 对象.xx
+        boxEl.onclick = function () {
+            boxEl.style.backgroundColor = 'green';
+        }
+        //         DOM 为文档提供了结构化表示，并定义了如何通过脚本来访问文档结构。目的其实就是为了能让 js 操作 html 元素而制定的一个规范。
+
+        // DOM 就是由节点组成的。
+
+        // HTML 加载完毕，渲染引擎会在内存中把 HTML 文档，生成一个 DOM 树
+
+        // 节点 元素节点 文本节点(换行空格都是节点) 属性节点 注释节点
+    </script>
+</body>
+
+</html>

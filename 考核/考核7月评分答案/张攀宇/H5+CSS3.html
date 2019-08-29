@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/reset.css">
+    <title>Document</title>
+    <style>
+        .nav {
+            width: 695px;
+            height: 122px;
+            background-color: #333333;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .item {
+            float: left;
+            width: 130px;
+            height: 122px;
+            margin-left: 35px;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .i1 {
+            width: 80px;
+            height: 50px;
+            margin-top: 20px;
+        }
+
+        .i2 {
+            width: 80px;
+            height: 50px;
+            position: absolute;
+            bottom: -50px;
+            left: 25px;
+        }
+
+        p {
+            font: 13px '微软雅黑';
+            color: white;
+            margin-top: 12px;
+        }
+
+        span {
+            width: 10px;
+            height: 10px;
+            background-color: skyblue;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 23px;
+            left: 95px;
+            display: none;
+        }
+
+        .i2.active {
+            bottom: 52px;
+        }
+
+        .i1.active {
+            opacity: .3;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="nav">
+        <li class="item">
+            <img src="img/cd-default.svg" alt="" class="i1">
+            <img src="img/cd-active.svg" alt="" class="i2">
+            <p>Home</p>
+        </li>
+        <li class="item">
+            <img src="img/camera-default.svg" alt="" class="i1">
+            <img src="img/camera-active.svg" alt="" class="i2">
+            <p>Camera</p>
+        </li>
+        <li class="item">
+            <img src="img/file-default.svg" alt="" class="i1">
+            <img src="img/file-active.svg" alt="" class="i2">
+            <p>Files</p>
+        </li>
+        <li class="item">
+            <img src="img/mine-default.svg" alt="" class="i1">
+            <img src="img/mine-active.svg" alt="" class="i2">
+            <p>Mine</p>
+        </li>
+        <span></span>
+    </ul>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        $('.item').click(function () {
+            var index = $(this).index();
+            // console.log(index);
+
+            // 排他
+            $(this).siblings().children().removeClass('active');
+            $(this).children().addClass('active');
+           
+            $(this).children().eq(0).css({
+
+                transition: 'all .5s ease'
+            })
+            $(this).children().eq(1).css({
+              
+                transition: 'all .5s ease'
+            })
+
+            // 字体
+            $(this).children().eq(2).hide();
+            $(this).siblings().children(2).show();
+
+            // 小圆点
+            if (index == 0) {
+                $('span').css({
+                    display: 'block',
+                    left: 95
+                });
+            } else if (index == 1) {
+                $('span').css({
+                    display: 'block',
+                    left: 260,
+                    transition: 'all .5s ease'
+                });
+            } else if (index == 2) {
+                $('span').css({
+                    display: 'block',
+                    left: 425,
+                    transition: 'all .5s ease'
+                });
+            } else if (index == 3) {
+                $('span').css({
+                    display: 'block',
+                    left: 590,
+                    transition: 'all .5s ease'
+                });
+            }
+
+        })
+    </script>
+</body>
+
+</html>

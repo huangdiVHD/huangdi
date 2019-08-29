@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="/account/login" id="login-form" method="post">
+        <p>账号: <input type="text" name="username" required /></p>
+        <p>密码: <input type="password" name="pwd" required /></p>
+        <p><input type="submit" value="登录" /></p>
+    </form>
+    <script>
+        //id
+        // var formEL = document.getElementById('login-form');
+        // console.log(formEL)
+
+        // 标签
+        // var formEL = document.getElementsByTagName("form")[0]
+        // console.log(formEL)
+
+        // 子元素的父元素
+        // var inputEl = document.getElementsByName('username')[0];
+        // var formEl = inputEl.parentNode.parentNode;
+        // console.log(formEl)
+
+        // 父元素的子节点
+        var bodyEl = document.getElementsByTagName('body')[0];
+        var formEl = bodyEl.firstElementChild;
+        console.log(formEl)
+    </script>
+</body>
+
+</html>

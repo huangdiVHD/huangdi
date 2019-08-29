@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="https://www.baidu.com/" class="item" title="不凡学院">跳到百度</a>
+    <a href="https://www.baidu.com/" class="item">跳到百度2</a>
+    <a href="https://www.baidu.com/" class="item" title="你好">跳到百度3</a>
+    <a href="https://www.baidu.com/" class="item" title="你好学">跳到百度4</a>
+    <a class="item" title="你好">跳到百度5</a>
+
+
+
+
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        // 具有title属性的 a标签
+        $('a[title]').css('color', 'black');
+        // title属性 是 '你好
+        $('a[title="你好"]').css('color', 'red');
+        // title 属性值 不是你好 包含没有title 属性的
+        $('a[title!="你好"]').css('color', 'green');
+        // title属性  以 不 开头
+        $('a[title^="不"]').css('color', 'orange');
+        // title 属性值  以  院  结尾
+        $('a[title$="院"]').css('color', 'pink');
+        // 属性值 包含 学 这个字符
+        $('a[title*="学"]').css('color', 'black');
+        // 有href属性 并且title属性值为 你好   符合多个规则
+        $('a[href][title="你好"]').css('color', 'blue');
+    </script>
+</body>
+
+</html>

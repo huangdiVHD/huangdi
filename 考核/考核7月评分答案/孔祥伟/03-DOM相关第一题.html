@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="/account/login" id="login-form" method="post">
+        <p>账号: <input type="text" name="username" required /></p>
+        <p>密码: <input type="password" name="pwd" required /></p>
+        <p><input type="submit" value="登录" onclick="func(event)" /></p>
+    </form>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        var $form = $('form')[0];
+        console.log($form);
+
+        var form = document.getElementById('login-form');
+        console.log(form);
+        var tagform = document.getElementsByTagName('form')[0];
+        console.log(tagform);
+
+        var loginform = document.querySelector('form');
+        console.log(loginform);
+
+
+        //<form>表单元素提交时，阻止默认的表单提交行为。
+        // 在按钮上绑定click事件，return false就会阻止默认行为
+        function func(event){
+            event.preventDefault();
+        }
+        //或者 直接 onclick='return false';
+        // function func(){
+        //     return false;
+        // }
+
+    </script>
+</body>
+
+</html>

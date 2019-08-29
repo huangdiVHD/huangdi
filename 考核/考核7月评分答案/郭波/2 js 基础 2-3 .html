@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [0, 1, 2, 3, 4, 5];
+        // 3 请实现，指定任意索引，对应数组项移动到最后面
+        function lgth(num, arr) {
+            var tit = arr[num]
+            for (var i = 0; i < arr.length; i++) {
+                if (num == i) {
+                    arr.splice(i, 1);
+                    arr.push(tit);
+                }
+            }
+            console.log(arr)
+        }
+        lgth(2, arr);
+    </script>
+</body>
+
+</html>

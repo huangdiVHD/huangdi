@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            background: linear-gradient(135deg, red, blue);
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#">kldskv</a>
+    <a href="2">sadkl</a>
+    <a href="8">askl</a>
+    <a href="23">kasldl</a>
+    <img src="../icon/mine-active.svg" alt="">
+    <button>判断有没有img元素</button>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        var script = document.getElementsByTagName('script')[0];
+        var divEl = document.createElement('div');
+        document.body.insertBefore(divEl, script);
+        divEl.style.width = '150px';
+        divEl.style.height = '300px';
+
+
+        for (var i = 0; i <= 20; i++) {
+            $('body').append('<div class="box"></div>')
+        }
+
+        $('button').click(function() {
+            console.log($('button').parent().children())
+
+        })
+    </script>
+</body>
+
+</html>

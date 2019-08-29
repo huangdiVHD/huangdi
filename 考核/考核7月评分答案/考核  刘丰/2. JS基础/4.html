@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+            div {
+                width: 500px;
+                height: 500px;
+                margin: 300px auto;
+            }
+        
+        </style>
+</head>
+<body>
+        <div> 原数组为:  arr = [0,1,2,3,4,5] </div>
+
+
+        <script>
+        
+        //  指定任意两项索引，对应数组项交换位置。
+        
+            var arr = [0,1,2,3,4,5];
+        
+            var b = prompt('指定第一个要交换的索引');
+
+            var c = prompt('指定第二个要交换的索引');
+        
+        
+        function double(a,i, arr) {
+            if((a < 0 || a > arr.length -1) || (i < 0 || i > arr.length - 1) ) {
+                alert('输入正确的索引')
+            }  else if (a == i) {
+                alert ('选中的是一个数,位置不变')
+            } else {
+                var temp = arr[a];
+                arr[a] = arr[i];
+                arr[i] = temp;
+
+            }
+            alert(arr);
+        }
+
+
+        double(b,c, arr);
+        
+        
+        
+        
+        
+        </script>
+    
+</body>
+</html>

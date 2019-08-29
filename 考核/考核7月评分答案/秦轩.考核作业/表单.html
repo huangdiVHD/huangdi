@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="/account/login" id="login-form" method="post">
+        <p>账号: <input type="text" name="username" required /></p>
+        <p>密码: <input type="password" name="pwd" required /></p>
+        <p><input type="submit" value="登录" /></p>
+    </form>
+    <!-- 获取<form>元素。（尽可能多的方法）
+        <form>表单元素提交时，阻止默认的表单提交行为。 -->
+    <script src="../../../第四周js-dom,bom/06-jQuery/01-jquery/dev/js/jquery-3.4.1.min.js"></script>
+    <script>
+        var formEl1 = document.getElementById('login-form');
+        var formEl2 = document.getElementsByTagName('form')[0];
+
+        var pEl1 = document.getElementsByTagName('p')[0];
+        var pEl2 = document.getElementsByTagName('p')[1];
+        var pEl3 = document.getElementsByTagName('p')[2];
+
+        var formEl3 = pEl1.parentNode
+        var formEl4 = pEl2.nextSibling.parentNode || pEl2.nextElementSibling.parentNode;
+        var formEl5 = pEl2.previousSibling.parentNode || pEl2.previousElementSibling.parentNode;
+        var formEl6 = $('form')[0];
+        var formEl7 = $('#login-form')[0];
+        var formEl8 = $('p').parent()[0];
+        var formEl9 = $('input').parents()[3];
+        var formEl10 = $('p').last().parent()[0];
+        var formEl11 = document.querySelector('form');
+        var formEl12 = document.querySelectorAll("form")[0];
+        console.log(formEl12)
+        $('form').submit(function () {
+            return false;
+        })
+    </script>
+
+
+</body>
+
+</html>

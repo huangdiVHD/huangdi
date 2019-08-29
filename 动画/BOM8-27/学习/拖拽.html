@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    .box0 {
+        width: 600px;
+        height: 400px;
+        border: 1px solid black;
+        margin: 50px auto;
+    }
+    .box {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        /* margin: 20px 10px; */
+        background-color: red;
+    }
+    </style>
+</head>
+<body>
+    <div class="box0">
+        <div class="box"></div>
+    </div>
+    <script>
+        var box = document.querySelector('.box');
+        var box0 = document.querySelector('.box0');
+        var minX = box0.offsetLeft;
+        var maxX = box0.offsetLeft + box0.offsetWidth - box.offsetWidth;
+        console.log(minX,maxX);
+        var minY = box0.offsetTop;
+        var maxY = box0.offsetTop + box0.offsetHeight - box.offsetHeight;
+        console.log(minY,maxY);
+        // console.log(maxY);
+        // 鼠标到盒子的距离 = 鼠标未移动时对于页面的距离- 盒子未移动对于页面的距离
+        // 盒子移动后对于页面左/上的的距离 = 鼠标移动后的距离 - 鼠标到盒子的距离
+        // 盒子移动后的固定距离 = 盒子移动后对于页面左/上的的距离
+        box.onmousedown = function () {
+            // 鼠标到盒子的距离
+            var fixedX = event.pageX - box.offsetLeft;
+            var fixedY = event.pageY - box.offsetTop;
+            //    console.log(fixedX);
+            window.onmousemove = function () {
+                // 盒子移动后对于页面左/上的的距离.先运行在判断,若先判断则会默认不符合条件
+                var changeX = event.pageX - fixedX;
+                var changeY = event.pageY - fixedY;
+                if (changeX >= maxX) {
+                    changeX = maxX;
+                    // console.log(changeX);
+                } else if (changeX <= minX) {
+                    changeX = minX;
+                };
+                if (changeY >= maxY) {
+                    changeY = maxY;
+                } else if (changeY <= minY) {
+                    changeY = minY;
+                }
+                // console.log(changeX);
+                box.style.left = changeX + 'px';
+                box.style.top = changeY + 'px';
+            };
+            window.onmouseup = function () {
+                window.onmousemove = null;
+            }
+        };
+        //方法一
+        // //盒子移动后到页面的距离 = 盒子移动的距离 + 盒子未移动时到页面的边距
+        // // 盒子移动的距离 = 鼠标移动后距离 - 鼠标未移动时到页面的距离
+        // box.onmousedown = function(){
+        //     //鼠标到页面的距离
+        //     var changeX1 = event.pageX;
+        //     var changeY1 = event.pageY;
+        //     //盒子到页面的距离
+        //     var changeX2 = box.offsetLeft;
+        //     var changeY2 = box.offsetTop;
+        //     window.onmousemove = function(){
+        //         //移动后的距离
+        //         var changeX3 = event.pageX - changeX1;
+        //         var changeY3 = event.pageY - changeY1;
+        //         box.style.left = changeX3 + changeX2 + 'px';
+        //         box.style.top = changeY3 + changeY2 + 'px';
+        //     };
+        //     window.onmouseup = function(){
+        //         window.onmousemove = null;
+        //     }
+        // };
+    </script>
+</body>
+</html>

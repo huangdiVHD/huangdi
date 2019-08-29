@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="d1" class="box">
+        我是一个盒子
+
+    </div>
+    <script>
+        // JS 是以事件驱动为核心的一门语言。
+
+        // 事件的三要素：事件源、事件、事件驱动程序。
+
+        // 获取事件源
+        var boxEl = document.getElementById('d1');
+        // 绑定上事件
+        boxEl.onclick = function () {
+            // 事件处理程序
+            alert('你好');
+        }
+
+
+        // dom简单介绍
+        // DOM：Document Object Model，文档对象模型。DOM 为文档提供了结构化表示，
+        // 并定义了如何通过脚本来访问文档结构。目的其实就是为了能让 js 操作 html 元素而制定的一个规范。
+    </script>
+</body>
+
+</html>

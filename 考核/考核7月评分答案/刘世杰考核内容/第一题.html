@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="/account/login" id="login-form" method="post">
+        <p>账号: <input type="text" name="username" required /></p>
+        <p>密码: <input type="password" name="pwd" required /></p>
+        <p><input type="submit" value="登录" /></p>
+    </form>
+    <script src="jquery-3.4.1.min.js"></script>
+    <script>
+        // 1.获取<form>元素。
+        // 1.
+        // console.log($("input[name='username']").val());
+        // console.log($("input[name='pwd']").val());
+        // 2.
+        // var va = document.querySelector('input[type="text"]');
+        // var pwd = document.querySelector('input[type="password"]');
+        // console.log(va.value)
+        // console.log(pwd.value)
+
+        // <form>表单元素提交时，阻止默认的表单提交行为。
+        // 1.把type属性submit 改成 type button 
+        // 2. 
+        // $("form").on("submit", function (event) {
+        //         event.preventDefault();
+        // })
+        // 3. 
+        // $('input[type="submit"]').click(function () {
+        //     return false;
+        // })
+    </script>
+</body>
+
+</html>

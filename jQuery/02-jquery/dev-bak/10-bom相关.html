@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            position: relative;
+            width: 200px;
+            height: 300px;
+            background-color: red;
+            margin: 20px;
+            border: 5px solid #333;
+            padding: 20px;
+        }
+
+        .inner-box {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+        }
+
+        .main {
+            height: 1000px;
+
+        }
+
+        .footer {
+            height: 1000px;
+            background-color: red;
+        }
+
+        .top {
+            position: fixed;
+            right: 10px;
+            bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        不凡学院
+        <div class="inner-box">
+
+        </div>
+    </div>
+    <div class="main">
+
+    </div>
+    <div class="footer">
+
+    </div>
+
+    <button class="btn1">设置宽高</button>
+    <button class="btn2">设置offset</button>
+    <button class="btn3">设置position</button>
+    <button class="btn4">获取scrollTop</button>
+    <div class="top">
+        回到顶部
+    </div>
+
+
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        // height()  和  width()
+        // 备选元素的 高度 和 宽度  num 类型
+        // 可以获取  也可以 设置
+        console.log($('.box').width());
+        console.log($('.box').height());
+        $('.btn1').click(function () {
+            $('.box').width(500);
+            $('.box').height(200);
+        })
+
+        // offset() 
+        // 作用：获取或设置元素相对于文档的位置
+        // 对象  可以获取 left 和top 属性
+        // num 类型(设置获取)
+        console.log('offset.left', $('.box').offset());
+        $('.btn2').click(function () {
+            $('.box').offset({
+                left: 300,
+                top: 100
+            })
+        })
+
+        // position() 
+        // 作用：获取相对于其最近的具有定位的父元素的位置。
+        //  注意  只能获取  不能设置
+        console.log($('.inner-box').position());
+        // $('.btn3').click(function () {
+        //     $('.inner-box').position({
+        //         left: 50,
+        //         top: 50
+        //     })
+        // })
+
+
+        // scrollTop() 
+        //  网页 被卷进去的高度
+        // 作用：获取或者设置元素垂直方向滚动的位置
+        $('.btn4').click(function () {
+            // document 本身 就是一个dom'对象
+            console.log($(document.documentElement).scrollTop());
+        })
+        $('.top').click(function () {
+            // $(document).scrollTop(0);
+            $(document.documentElement).animate({
+                scrollTop: 0
+            }, 400)
+        })
+    </script>
+</body>
+
+</html>

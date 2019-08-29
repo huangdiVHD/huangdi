@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+<!-- <img src="icon/camera-active.svg" alt="" onclick="isImg(this)"> -->
+
+
+    <script>
+        // 使用document.createElement在页面创建一个高宽为 300 像素*150 像素的 div 元素，
+        //插入到<body>标签下。
+        var body = document.getElementsByTagName('body')[0];
+        console.log(body);
+        var div = document.createElement('div');
+        body.append(div);
+        div.style.width = '300px';
+        div.style.height = '150px';
+    
+        // 通过设置 style 属性实现该div元素从左上角到右下角的 red 到 blue 的渐变。
+        div.style.background = 'linear-gradient(to bottom right, red , blue)';
+        // 在<body>元素内append20 个类名为.box的盒子。
+        var box = document.createElement('div');
+        console.log(box);
+
+        for(var i=0;i<20;i++){
+        box.setAttribute("class","box"); 
+        console.log(box);
+        box.style.width = '300px';
+        box.style.height = '150px';
+        box.style.backgroundColor = 'red';
+            body.insertBefore(box,div);
+        }
+        // 点击元素判断当前点击元素是否是img元素。
+        //绑定 onclick 事件
+        function isImg(obj){
+            if(obj.getElementsByTagName('img')){
+                alert('是img元素')
+            }else{
+                alert('不是img元素')
+            }
+
+
+        }
+
+
+
+        // 获取页面中所有的<a>元素，遍历获取到的元素，对其中href属性以#开头的元素，设置背景色为红色。
+    </script>
+</body>
+
+</html>

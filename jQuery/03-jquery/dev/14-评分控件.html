@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            font-size: 36px;
+            overflow: hidden;
+        }
+
+        span {
+            float: left;
+            cursor: pointer;
+            color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <span>☆</span>
+        <span>☆</span>
+        <span>☆</span>
+        <span>☆</span>
+        <span>☆</span>
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        $('span').mouseenter(function () {
+            $(this).text('★').prevAll().text('★').end().nextAll().text('☆');
+        })
+        $('span').click(function () {
+            // 排他
+            $('span').removeClass('active');
+            $(this).addClass('active');
+        })
+        $('.box').mouseleave(function () {
+            console.log($('span.active')); // true
+            if ($('span.active').length > 0) {
+                $('span.active').text('★').prevAll().text('★').end().nextAll().text('☆');
+            } else {
+                $('span').text('☆');
+            }
+        })
+    </script>
+</body>
+
+</html>

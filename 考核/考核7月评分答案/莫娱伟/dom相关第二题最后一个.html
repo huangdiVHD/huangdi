@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        a {
+            width: 50px;
+            height: 50px;
+            background-color: green;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#"></a>
+    <a href=""></a>
+    <a href="#"></a>
+    <a href="#"></a>
+    <a href=""></a>
+    <a href="#"></a>
+    <a href="#"></a>
+    <a href=""></a>
+    <a href="#"></a>
+    <a href="#"></a>
+    <a href=""></a>
+    <a href="#"></a>
+    <a href="#"></a>
+    <a href=""></a>
+    <a href="#"></a>
+    <a href="#"></a>
+    <a href=""></a>
+    <a href="#"></a>
+    <a href="#"></a>
+    <a href=""></a>
+    <a href="#"></a>
+</body>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script>
+    $('a').each(function () {//遍历
+
+        if ($(this).attr('href') == '#') {//获取href属性并进行对照
+            $(this).css('background-color', 'red');
+        }
+
+    });
+
+
+</script>
+
+</html>

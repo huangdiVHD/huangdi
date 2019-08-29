@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+        var arr = [0, 1, 2, 3, 4, 5];
+        // prev(3);
+        //前移一个
+        // function prev(el) {
+        //     var a = arr.splice(el, 1);
+        //     if (el == 0) {
+        //         arr.push(a[0]);
+        //     } else {
+        //         arr.splice(el - 1, 0, a[0]);
+        //     }
+        // }
+        //前移(2)
+        // prev(4);
+
+        // function prev(el) {
+        //     var temp = arr[el];
+        //     arr[el] = arr[el - 1];
+        //     arr[el - 1] = temp;
+        // }
+        // console.log(arr);
+
+        // console.log(arr);
+        //移动到最前面
+        // prevAll(5);
+
+        // function prevAll(el) {
+        //     var a = arr.splice(el, 1);
+        //     arr.unshift(a[0]);
+        // }
+        //  console.log(arr);
+        //移动到最后面
+        // after(0);
+
+        // function after(el) {
+        //     var a = arr.splice(el, 1);
+        //     arr.push(a[0]);
+        // }
+        // console.log(arr);
+
+        // 任意两个索引项目，交换位置
+        // change(0, 5);
+
+        // function change(prev, next) {
+        //     var b = arr.splice(next, 1);
+        //     var a = arr.splice(prev, 1);
+        //     arr.splice(next - 1, 0, a[0]);
+        //     arr.splice(prev, 0, b[0]);
+        // }
+        // console.log(arr);
+
+
+        // 任意两个索引项目，交换位置(第2种)
+        // change(0, 5);
+
+        // function change(prev, next) {
+        //     var temp = arr[prev];
+        //     arr[prev] = arr[next];
+        //     arr[next] = temp;
+        // }
+        // console.log(arr);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        .box {
+            width: 450px;
+            height: 450px;
+            border: 1px solid red;
+          
+        }
+        .box1 {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="box1"></div>
+    </div>
+    <script>
+    var box = document.querySelector('.box');
+    var box1 = document.querySelector('.box1');
+    var minX =  minY = 0;
+    var maxX = box.offsetWidth - box1.offsetWidth;
+    var maxY = box.offsetHeight- box1.offsetHeight;
+    box1.onmousedown = function(){
+        var fixedX = event.pageX;
+        var fixedY = event.pageY;
+        box.onmousemove = function(){
+            var nowX = event.pageX - fixedX;
+            var nowY = event.pageY - fixedY;
+            if(nowX<=minX ){
+                  nowX = minX;
+            }else if(nowX>=maxX){
+                nowX = maxX;
+            }
+            if(nowY<=minY ){
+                  nowY = minY;
+            }else if(nowY>=maxY){
+                nowY = maxY;
+            }
+            box1.style.left = nowX+'px';
+            box1.style.top = nowY+'px';
+        }
+        box1.onmouseup = function(){
+            box.onmousemove = null;
+        }
+    }
+    </script>
+</body>
+</html>

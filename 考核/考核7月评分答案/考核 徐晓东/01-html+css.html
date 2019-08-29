@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            display: inline-block;
+            list-style: none;
+        }
+
+        .box {
+            margin: 100px auto;
+            width: 20%;
+            height: 500px;
+            /* background-color: pink; */
+        }
+
+        .text {
+            width: 100%;
+            position: relative;
+            /* overflow: hidden; */
+        }
+
+        span {
+            display: inline-block;
+            width: 50%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -ms-text-overflow: ellipsis;
+            -o-text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .introduce {
+            position: absolute;
+            right: 0px;
+            top: 3px;
+            height: 25px;
+        }
+
+        .introduce-item {
+            float: left;
+            margin-right: 5px;
+            font-size: 12px;
+        }
+
+        .introduce-style {
+            float: right;
+            border: 1px solid gray;
+        }
+
+        .introduce-status {
+            color: red;
+            float: right;
+            border: 1px solid red;
+        }
+
+        .introduce-length {
+            color: blue;
+            float: right;
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="text">
+            <span title="这次是一个新的故事啊啊啊啊啊啊">这次是一个新的故事啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</span> <br>
+            <ul class='introduce'>
+                <li class='introduce-item introduce-length'>54.82万字</li>
+                <li class='introduce-item introduce-status'>连载中</li>
+                <li class='introduce-item introduce-style'>都市</li>
+            </ul>
+        </div>
+        <div class="text">
+            <span title="穿越天地复苏的平行世界啊啊啊啊啊啊">穿越天地复苏的平行世界啊啊啊啊啊啊啊啊</span>
+            <ul class='introduce'>
+                <li class='introduce-item introduce-length'>1万字</li>
+                <li class='introduce-item introduce-status'>完本</li>
+                <li class='introduce-item introduce-style'>都市</li>
+            </ul>
+        </div>
+        <div class="text">
+            <span>修真四万年</span>
+            <ul class='introduce'>
+                <li class='introduce-item introduce-length'>10445459.98万字</li>
+                <li class='introduce-item introduce-status'>完本</li>
+                <li class='introduce-item introduce-style'>科幻</li>
+            </ul>
+        </div>
+    </div>
+
+   
+</body>
+
+</html>

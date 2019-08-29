@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="login-form" method="post">
+        <p>账号: <input type="text" name="username" required /></p>
+        <p>密码: <input type="password" name="pwd" required /></p>
+        <p><input type="submit" value="登录" /></p>
+    </form>
+    <script>
+        // 获取form元素
+        var form = document.getElementsByTagName('form')[0];
+        var form = document.querySelector('form');
+        var form = document.getElementById('#login-form');
+        
+        // 阻止表单默认行为
+        var input = document.getElementsByTagName('input')[2];
+        input.onclick(function(event){
+            event.preventDefault();
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,950 @@
+<!DOCTYPE html><html><head>
+      <title>jQuery</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///C:\Users\Administrator\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.4.3\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+      
+      
+
+      
+      
+      
+      
+      
+      
+
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="jquery">jQuery</h1>
+
+<h2 class="mume-header" id="%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6-jquery">&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x5B66; jQuery</h2>
+
+<p>&#x7A76;&#x5176;&#x539F;&#x56E0;&#x662F;&#x56E0;&#x4E3A;&#x539F;&#x751F; js &#x5728;&#x8FDB;&#x884C; dom &#x64CD;&#x4F5C;&#x65F6;&#x4EE3;&#x7801;&#x91CF;&#x591A;&#x800C;&#x4E14;&#x5BB9;&#x9519;&#x6027;&#x5DEE;&#xFF0C;&#x4E0D;&#x591F;&#x7B80;&#x7EC3;&#x3002;&#x90A3;&#x4E48; jQuery &#x5C31;&#x662F;&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x8FD9;&#x4E9B;&#x95EE;&#x9898;&#x800C;&#x51FA;&#x73B0;&#x7684;&#x3002;</p>
+<h2 class="mume-header" id="jquery-%E6%98%AF%E4%BB%80%E4%B9%88">jQuery &#x662F;&#x4EC0;&#x4E48;</h2>
+
+<p>jQuery &#x662F;&#x4E00;&#x4E2A;&#x5FEB;&#x901F;&#x3001;&#x7B80;&#x6D01;&#x7684; JavaScript &#x6846;&#x67B6;&#xFF0C;&#x662F;&#x7EE7; Prototype &#x4E4B;&#x540E;&#x53C8;&#x4E00;&#x4E2A;&#x4F18;&#x79C0;&#x7684; JavaScript &#x4EE3;&#x7801;&#x5E93;&#xFF08;&#x6216; JavaScript &#x6846;&#x67B6;&#xFF09;&#x3002;jQuery &#x8BBE;&#x8BA1;&#x7684;&#x5B97;&#x65E8;&#x662F;&#x201C;write Less&#xFF0C;Do More&#x201D;&#xFF0C;&#x5373;&#x5021;&#x5BFC;&#x5199;&#x66F4;&#x5C11;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x505A;&#x66F4;&#x591A;&#x7684;&#x4E8B;&#x60C5;&#x3002;&#x5B83;&#x5C01;&#x88C5; JavaScript &#x5E38;&#x7528;&#x7684;&#x529F;&#x80FD;&#x4EE3;&#x7801;&#xFF0C;&#x63D0;&#x4F9B;&#x4E00;&#x79CD;&#x7B80;&#x4FBF;&#x7684; JavaScript &#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#xFF0C;&#x4F18;&#x5316; HTML &#x6587;&#x6863;&#x64CD;&#x4F5C;&#x3001;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x3001;&#x52A8;&#x753B;&#x8BBE;&#x8BA1;&#x548C; Ajax &#x4EA4;&#x4E92;&#x3002;<br>
+&#x76EE;&#x524D;&#x8FD9;&#x4E2A;&#x9636;&#x6BB5;&#xFF0C;&#x4E3B;&#x8981;&#x4ECB;&#x7ECD;&#x5982;&#x4F55;&#x6765;&#x4F7F;&#x7528; jQuery &#x64CD;&#x4F5C; DOM&#xFF0C;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x5B66;&#x4E60; jQuery &#x5C01;&#x88C5;&#x597D;&#x7684;&#x90A3;&#x4E9B;&#x529F;&#x80FD;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x53EB;&#x505A; API&#xFF08;Application Programming Interface &#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7F16;&#x7A0B;&#x63A5;&#x53E3;&#xFF09;&#x3002;</p>
+<h2 class="mume-header" id="jquery-%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8">jQuery &#x7684;&#x57FA;&#x672C;&#x4F7F;&#x7528;</h2>
+
+<ul>
+<li>&#x83B7;&#x53D6;&#x6E90;&#x6587;&#x4EF6;</li>
+<li>&#x5F15;&#x5165;&#x9875;&#x9762;</li>
+</ul>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token comment">// &#x5148;&#x4E0B;&#x8F7D;jQuery&#x6E90;&#x6587;&#x4EF6;</span>
+<span class="token comment">// &#x5F15;&#x5165;</span>
+<span class="token comment">// &#x540C;&#x65F6;&#x6CE8;&#x610F;&#x5F15;&#x7528;&#x987A;&#x5E8F;&#xFF0C;&#x5F15;&#x5165;&#x4E4B;&#x540E;&#x624D;&#x80FD;&#x4F7F;&#x7528;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x62A5;&#x9519; $ is not defined</span>
+<span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">&quot;jquery-3.3.1.min.js&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+</pre><h2 class="mume-header" id="%E5%85%A5%E5%8F%A3%E5%87%BD%E6%95%B0">&#x5165;&#x53E3;&#x51FD;&#x6570;</h2>
+
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token comment">// &#x4F55;&#x65F6;&#x5F15;&#x5165;&#x4E1A;&#x52A1;&#x4EE3;&#x7801;</span>
+<span class="token function">$</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ready</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//&#x63A8;&#x8350;</span>
+</pre><h2 class="mume-header" id="%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86">&#x4E8B;&#x4EF6;&#x5904;&#x7406;</h2>
+
+<ul>
+<li>&#x4E8B;&#x4EF6;&#x6E90;
+<ol>
+<li>&#x89E6;&#x53D1;&#x4E8B;&#x4EF6;&#x7684;&#x5BF9;&#x8C61;</li>
+<li>&#x5728; js &#x4E2D;&#x5C31;&#x662F; dom &#x5BF9;&#x8C61;</li>
+<li>&#x5728; jQuery &#x4E2D; &#x662F;&#x5305;&#x88C5;&#x8FC7;&#x7684; dom &#x5BF9;&#x8C61;</li>
+</ol>
+</li>
+<li>&#x4E8B;&#x4EF6;
+<ol>
+<li>js &#x4E2D; &#x6307;&#x7684;&#x662F; onclick , onmouseenter/onmouseleave , onmouseup/onmousedown</li>
+<li>jQuery &#x4E2D; &#x5C31;&#x662F; click , mouseenter/mouseleave , mouseup/mousedown</li>
+</ol>
+</li>
+<li>&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x7A0B;&#x5E8F;</li>
+</ul>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token comment">// 1. js&#x4E2D;</span>
+obj<span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">// &#x4E8B;&#x4EF6;&#x5904;&#x7406;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment">// jQuery&#x4E2D;</span>
+<span class="token function">$</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">// &#x4E8B;&#x4EF6;&#x5904;&#x7406;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// &#x533A;&#x522B;</span>
+<span class="token comment">// obj.onclick  &#x8C03;&#x7528;&#x5C5E;&#x6027;</span>
+<span class="token comment">// obj.click()  &#x8C03;&#x7528;&#x65B9;&#x6CD5;</span>
+</pre><h2 class="mume-header" id="%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D">&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;</h2>
+
+<h3 class="mume-header" id>$</h3>
+
+<ul>
+<li>&#x53D8;&#x91CF;&#x547D;&#x540D;&#x89C4;&#x5219;
+<ol>
+<li>&#x5B57;&#x6BCD;&#xFF0C;&#x6570;&#x5B57;&#xFF0C;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\_&#xFF0C;$</li>
+<li>&#x4E0D;&#x80FD;&#x4EE5;&#x6570;&#x5B57;&#x5F00;&#x5934;</li>
+</ol>
+</li>
+<li>jQuery &#x7684; &#x4E24;&#x4E2A;&#x53D8;&#x91CF; $ &#x548C; jQuery</li>
+</ul>
+<h3 class="mume-header" id="js-%E5%92%8C-jquery-%E5%85%A5%E5%8F%A3%E5%87%BD%E6%95%B0%E7%9A%84%E5%8C%BA%E5%88%AB">js &#x548C; jQuery &#x5165;&#x53E3;&#x51FD;&#x6570;&#x7684;&#x533A;&#x522B;</h3>
+
+<ul>
+<li>&#x6267;&#x884C;&#x65F6;&#x95F4;</li>
+</ul>
+<p>window.onload &#x5FC5;&#x987B;&#x7B49;&#x5230;&#x9875;&#x9762;&#x5185;&#x5305;&#x62EC;&#x56FE;&#x7247;&#x7684;&#x6240;&#x6709;&#x5143;&#x7D20;&#x52A0;&#x8F7D;&#x5B8C;&#x6BD5;&#x540E;&#x624D;&#x80FD;&#x6267;&#x884C;&#x3002;</p>
+<p>$(document).ready()&#x662F; DOM &#x7ED3;&#x6784;&#x7ED8;&#x5236;&#x5B8C;&#x6BD5;&#x540E;&#x5C31;&#x6267;&#x884C;&#xFF0C;&#x4E0D;&#x5FC5;&#x7B49;&#x5230;&#x52A0;&#x8F7D;&#x5B8C;&#x6BD5;&#x3002;&#x53EA;&#x52A0;&#x8F7D;&#x4E86; dom &#x6846;&#x67B6;&#xFF0C;&#x5BF9;&#x4E8E;&#x5927;&#x7684;&#x56FE;&#x7247;&#x9700;&#x8981;&#x65F6;&#x95F4;&#xFF0C;&#x8FD9;&#x4E2A;&#x4E0D;&#x7B49;&#x3002;</p>
+<ul>
+<li>&#x7F16;&#x5199;&#x4E2A;&#x6570;</li>
+</ul>
+<p>window.onload &#x4E0D;&#x80FD;&#x540C;&#x65F6;&#x7F16;&#x5199;&#x591A;&#x4E2A;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x591A;&#x4E2A; window.onload &#x65B9;&#x6CD5;&#xFF0C;&#x53EA;&#x4F1A;&#x6267;&#x884C;&#x4E00;&#x4E2A;&#x3002;</p>
+<p>$(document).ready()&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x7F16;&#x5199;&#x591A;&#x4E2A;&#xFF0C;&#x5E76;&#x4E14;&#x90FD;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x6267;&#x884C;&#x3002;</p>
+<h3 class="mume-header" id="jquery-%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%80%89%E6%8B%A9%E5%99%A8">jQuery &#x7684;&#x57FA;&#x672C;&#x9009;&#x62E9;&#x5668;</h3>
+
+<table>
+<thead>
+<tr>
+<th>&#x7B26;&#x53F7;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+<th style="text-align:left">&#x7528;&#x6CD5;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$(&apos;#demo&apos;)</td>
+<td style="text-align:left">&#x9009;&#x62E9; id &#x4E3A; demo &#x7684;&#x5143;&#x7D20;</td>
+<td style="text-align:left">$(&apos;#demo&apos;).css(&apos;color&apos;,&apos;red&apos;)</td>
+</tr>
+<tr>
+<td>$(&apos;.demo&apos;)</td>
+<td style="text-align:left">&#x9009;&#x62E9; class &#x4E3A; demo &#x7684;&#x6240;&#x6709;&#x5143;&#x7D20;</td>
+<td style="text-align:left">$(&apos;.demo&apos;).css(&apos;color&apos;,&apos;red&apos;)</td>
+</tr>
+<tr>
+<td>$(&apos;div&apos;)</td>
+<td style="text-align:left">&#x9009;&#x62E9;&#x6240;&#x6709; div &#x6807;&#x7B7E;&#x5143;&#x7D20;</td>
+<td style="text-align:left">$(&apos;div&apos;).css(&apos;color&apos;,&apos;red&apos;)</td>
+</tr>
+<tr>
+<td>$(&apos;*&apos;)</td>
+<td style="text-align:left">&#x9009;&#x62E9;&#x6240;&#x6709;&#x6807;&#x7B7E;&#x5143;&#x7D20;</td>
+<td style="text-align:left">$(&apos;*&apos;).css(&apos;color&apos;,&apos;red&apos;)</td>
+</tr>
+<tr>
+<td>$(&apos;.arr.arr-left&apos;)</td>
+<td style="text-align:left">&#x9009;&#x62E9;&#x540C;&#x65F6;&#x5177;&#x6709; arr &#x548C; arr-left &#x7C7B;&#x540D;&#x7684;&#x5143;&#x7D20;</td>
+<td style="text-align:left">$(&apos;.arr.arr-left&apos;).css(&apos;color&apos;,&apos;red&apos;)</td>
+</tr>
+</tbody>
+</table>
+<p>&#x770B;&#x8D77;&#x6765;&#x548C; css &#x7684;&#x9009;&#x62E9;&#x5668;&#x6CA1;&#x4EC0;&#x4E48;&#x4E24;&#x6837;!</p>
+<h3 class="mume-header" id="jquery-%E7%9A%84%E5%85%B6%E4%BB%96%E9%80%89%E6%8B%A9%E5%99%A8">jQuery &#x7684;&#x5176;&#x4ED6;&#x9009;&#x62E9;&#x5668;</h3>
+
+<ul>
+<li>&#x5C42;&#x7EA7;&#x9009;&#x62E9;&#x5668;(css &#x4E5F;&#x6709;)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>&#x7B26;&#x53F7;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+<th style="text-align:left">&#x7528;&#x6CD5;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x7A7A;&#x683C;</td>
+<td style="text-align:left">&#x540E;&#x4EE3;&#x9009;&#x62E9;&#x5668;</td>
+<td style="text-align:left">$(&apos;div span&apos;).css(&apos;color&apos;,&apos;red&apos;)</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td style="text-align:left">&#x5B50;&#x4EE3;&#x9009;&#x62E9;&#x5668;</td>
+<td style="text-align:left">$(&apos;div&gt;span&apos;).css(&apos;color&apos;,&apos;red&apos;)</td>
+</tr>
+<tr>
+<td>+</td>
+<td style="text-align:left">&#x7D27;&#x90BB;&#x9009;&#x62E9;&#x5668;</td>
+<td style="text-align:left">$(&apos;div+p&apos;).css(&apos;color&apos;,&apos;red&apos;)</td>
+</tr>
+<tr>
+<td>~</td>
+<td style="text-align:left">&#x5144;&#x5F1F;&#x9009;&#x62E9;&#x5668;</td>
+<td style="text-align:left">$(&apos;div~p&apos;).css(&apos;color&apos;,&apos;red&apos;)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>&#x5C5E;&#x6027;&#x9009;&#x62E9;&#x5668;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>&#x7B26;&#x53F7;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+<th style="text-align:left">&#x7528;&#x6CD5;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$(&apos;a[href]&apos;)</td>
+<td style="text-align:left">&#x5177;&#x6709; href &#x5C5E;&#x6027;&#x7684; a &#x6807;&#x7B7E;</td>
+<td style="text-align:left">$(&apos;a[href]&apos;).css(&apos;color&apos;,&apos;red&apos;)</td>
+</tr>
+<tr>
+<td>$(&apos;a[href=&apos;baidu&apos;]&apos;)</td>
+<td style="text-align:left">href &#x5C5E;&#x6027;&#x4E3A;&apos;baidu&apos;&#x7684; a &#x6807;&#x7B7E;</td>
+<td style="text-align:left">$(&apos;a[href=&apos;baidu&apos;]&apos;).css(&apos;color&apos;,&apos;red&apos;)</td>
+</tr>
+<tr>
+<td>$(&apos;a[href!=&apos;baidu&apos;]&apos;)</td>
+<td style="text-align:left">href &#x5C5E;&#x6027;&#x4E0D;&#x4E3A;&apos;baidu&apos;&#x7684; a &#x6807;&#x7B7E;,&#x5305;&#x62EC;&#x4E0D;&#x5177;&#x6709; href &#x5C5E;&#x6027;&#x7684; a &#x6807;&#x7B7E;</td>
+<td style="text-align:left">$(&apos;a[href!=&apos;baidu&apos;]&apos;).css(&apos;color&apos;,&apos;red&apos;)</td>
+</tr>
+<tr>
+<td>$(&apos;a[href^=&apos;www&apos;]&apos;)</td>
+<td style="text-align:left">href &#x5C5E;&#x6027;&#x4EE5;&apos;www&apos;&#x5F00;&#x5934;&#x7684; a &#x6807;&#x7B7E;</td>
+<td style="text-align:left">$(&apos;a[href^=&apos;www&apos;]&apos;).css(&apos;color&apos;,&apos;red&apos;)</td>
+</tr>
+<tr>
+<td>$(&apos;a[href$=&apos;cn&apos;]&apos;)</td>
+<td style="text-align:left">href &#x5C5E;&#x6027;&#x4EE5;&apos;cn&apos;&#x7ED3;&#x5C3E;&#x7684; a &#x6807;&#x7B7E;</td>
+<td style="text-align:left">$(&apos;a[href$=&apos;cn&apos;]&apos;).css(&apos;color&apos;,&apos;red&apos;)</td>
+</tr>
+<tr>
+<td>$(&apos;a[href*=&apos;i&apos;]&apos;)</td>
+<td style="text-align:left">href &#x5C5E;&#x6027;&#x5305;&#x542B;&apos;i&apos;&#x7684; a &#x6807;&#x7B7E;</td>
+<td style="text-align:left">$(&apos;a[href*=&apos;i&apos;]&apos;).css(&apos;color&apos;,&apos;red&apos;)</td>
+</tr>
+<tr>
+<td>$(&apos;a[href][title=&apos;&#x5185;&#x5BB9;&apos;]&apos;)</td>
+<td style="text-align:left">&#x5177;&#x6709; href &#x5C5E;&#x6027;&#x4E14; title &#x5C5E;&#x6027;&#x4E3A;&apos;&#x5185;&#x5BB9;&apos;&#x7684; a &#x6807;&#x7B7E;</td>
+<td style="text-align:left">$(&apos;a[href][title=&apos;&#x5185;&#x5BB9;&apos;]&apos;).css(&apos;color&apos;,&apos;red&apos;)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>&#x57FA;&#x672C;&#x7B5B;&#x9009;&#x9009;&#x62E9;&#x5668;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>&#x7B26;&#x53F7;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;(index &#x4ECE; 0 &#x5F00;&#x59CB;)</th>
+<th style="text-align:left">&#x7528;&#x6CD5;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:eq(index)</td>
+<td style="text-align:left">&#x5339;&#x914D;&#x4E00;&#x4E2A;&#x7ED9;&#x5B9A;&#x7D22;&#x5F15;&#x503C;&#x7684;&#x5143;&#x7D20;</td>
+<td style="text-align:left">$(&apos;li:eq(1)&apos;).css(&apos;color&apos;,&apos;red&apos;)</td>
+</tr>
+<tr>
+<td>:gt(index)</td>
+<td style="text-align:left">&#x5339;&#x914D;&#x6240;&#x6709;&#x5927;&#x4E8E;&#x7ED9;&#x5B9A;&#x7D22;&#x5F15;&#x503C;&#x7684;&#x5143;&#x7D20;</td>
+<td style="text-align:left">$(&apos;li:gt(1)&apos;).css(&apos;color&apos;,&apos;red&apos;)</td>
+</tr>
+<tr>
+<td>:lt(index)</td>
+<td style="text-align:left">&#x5339;&#x914D;&#x6240;&#x6709;&#x5C0F;&#x4E8E;&#x7ED9;&#x5B9A;&#x7D22;&#x5F15;&#x503C;&#x7684;&#x5143;&#x7D20;</td>
+<td style="text-align:left">$(&apos;li:lt(2)&apos;).css(&apos;color&apos;,&apos;red&apos;)</td>
+</tr>
+<tr>
+<td>:odd</td>
+<td style="text-align:left">&#x5339;&#x914D;&#x6240;&#x6709;&#x7D22;&#x5F15;&#x503C;&#x4E3A;&#x5947;&#x6570;&#x7684;&#x5143;&#x7D20;</td>
+<td style="text-align:left">$(&apos;li:odd&apos;).css(&apos;color&apos;,&apos;red&apos;)</td>
+</tr>
+<tr>
+<td>:even</td>
+<td style="text-align:left">&#x5339;&#x914D;&#x6240;&#x6709;&#x7D22;&#x5F15;&#x503C;&#x4E3A;&#x5076;&#x6570;&#x7684;&#x5143;&#x7D20;</td>
+<td style="text-align:left">$(&apos;li:odd&apos;).css(&apos;color&apos;,&apos;red&apos;)</td>
+</tr>
+<tr>
+<td>:first</td>
+<td style="text-align:left">&#x83B7;&#x53D6;&#x5339;&#x914D;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;</td>
+<td style="text-align:left">$(&apos;li:first&apos;).css(&apos;color&apos;,&apos;red&apos;)</td>
+</tr>
+<tr>
+<td>:last</td>
+<td style="text-align:left">&#x83B7;&#x53D6;&#x5339;&#x914D;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5143;&#x7D20;</td>
+<td style="text-align:left">$(&apos;li:last&apos;).css(&apos;color&apos;,&apos;red&apos;)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>&#x5176;&#x4ED6;&#x9009;&#x62E9;&#x5668;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>&#x7B26;&#x53F7;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;(index &#x4ECE; 0 &#x5F00;&#x59CB;)</th>
+<th style="text-align:left">&#x7528;&#x6CD5;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:empty</td>
+<td style="text-align:left">&#x5339;&#x914D;&#x6240;&#x6709;&#x4E0D;&#x5305;&#x542B;&#x5B50;&#x5143;&#x7D20;&#x6216;&#x8005;&#x6587;&#x672C;&#x7684;&#x7A7A;&#x5143;&#x7D20;</td>
+<td style="text-align:left">$(&apos;li:empty&apos;)</td>
+</tr>
+<tr>
+<td>:contains(text)</td>
+<td style="text-align:left">&#x5339;&#x914D;&#x5305;&#x542B;&#x7ED9;&#x5B9A;&#x6587;&#x672C;&#x7684;&#x5143;&#x7D20;</td>
+<td style="text-align:left">$(&apos;li:contains(&apos;john&apos;)&apos;)</td>
+</tr>
+</tbody>
+</table>
+<h2 class="mume-header" id="dom-%E5%AF%B9%E8%B1%A1%E5%92%8C-jquery-%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2">DOM &#x5BF9;&#x8C61;&#x548C; jQuery &#x5BF9;&#x8C61;&#x7684;&#x76F8;&#x4E92;&#x8F6C;&#x6362;</h2>
+
+<h3 class="mume-header" id="jquery-%E5%AF%B9%E8%B1%A1%E8%BD%AC%E6%8D%A2%E4%B8%BA-dom-%E5%AF%B9%E8%B1%A1">jQuery &#x5BF9;&#x8C61;&#x8F6C;&#x6362;&#x4E3A; DOM &#x5BF9;&#x8C61;</h3>
+
+<ul>
+<li>$(&apos;#btn&apos;)[0]</li>
+<li>$(&apos;#btn&apos;).get(0)</li>
+</ul>
+<h3 class="mume-header" id="dom-%E5%AF%B9%E8%B1%A1%E8%BD%AC%E6%8D%A2%E6%88%90-jquery-%E5%AF%B9%E8%B1%A1">DOM &#x5BF9;&#x8C61;&#x8F6C;&#x6362;&#x6210; jQuery &#x5BF9;&#x8C61;</h3>
+
+<p>var btn = document.getElementById(&apos;btn&apos;);</p>
+<p>$(btn) ====&gt; &#x628A; DOM &#x5BF9;&#x8C61;&#x8F6C;&#x6210;&#x4E86; jQuery &#x5BF9;&#x8C61;</p>
+<h2 class="mume-header" id="dom-%E6%93%8D%E4%BD%9C">DOM &#x64CD;&#x4F5C;</h2>
+
+<h3 class="mume-header" id="%E6%A0%B7%E5%BC%8F%E6%93%8D%E4%BD%9C-css">&#x6837;&#x5F0F;&#x64CD;&#x4F5C; .css()</h3>
+
+<ul>
+<li>&#x83B7;&#x53D6;&#x6837;&#x5F0F;</li>
+<li>&#x8BBE;&#x7F6E;&#x5355;&#x4E2A;&#x5C5E;&#x6027;&#x6837;&#x5F0F;</li>
+<li>&#x8BBE;&#x7F6E;&#x591A;&#x4E2A;&#x5C5E;&#x6027;&#x6837;&#x5F0F;</li>
+</ul>
+<h3 class="mume-header" id="%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C-attr">&#x5C5E;&#x6027;&#x64CD;&#x4F5C; .attr()</h3>
+
+<ul>
+<li>&#x83B7;&#x53D6;&#x5C5E;&#x6027; &#x2003; $(&apos;img&apos;).attr(&apos;src&apos;) &#x2003;&#x83B7;&#x53D6; img &#x7684; src &#x5C5E;&#x6027;&#x503C;</li>
+<li>&#x8BBE;&#x7F6E;&#x5C5E;&#x6027; &#x2003; $(&apos;img&apos;).attr({src:&apos;text.jpg&apos;,alt:&apos;sorry&apos;})</li>
+<li>removeAttr() &#x2003; $(&apos;img&apos;).removeAttr(&apos;src&apos;) &#x2003; &#x5220;&#x9664; src &#x5C5E;&#x6027;</li>
+</ul>
+<h3 class="mume-header" id="html-%E4%BB%A3%E7%A0%81%E6%96%87%E6%9C%AC%E5%80%BC">html &#x4EE3;&#x7801;/&#x6587;&#x672C;/&#x503C;</h3>
+
+<ul>
+<li>&#x53EF;&#x4EE5;&#x53D6;&#x503C;,&#x8BBE;&#x503C;</li>
+<li>html() &#x2003; $(&apos;p&apos;).html() &#x2003; $(&quot;p&quot;).html(&apos;html &#x4EE3;&#x7801;&apos;)</li>
+<li>text() &#x2003; $(&apos;p&apos;).text() &#x2003; $(&apos;p&apos;).text(&apos;&#x5185;&#x5BB9;&apos;)</li>
+<li>value() &#x2003; $(&apos;input&apos;).value() &#x2003; $(&apos;input&apos;).value(&apos;&#x59D3;&#x540D;&apos;)</li>
+<li>prop() &#x2003; $(&apos;input&apos;).prop(&apos;checked&apos;) &#x2003; $(&apos;input&apos;).prop(&apos;checked&apos;,false)</li>
+</ul>
+<h3 class="mume-header" id="%E7%B1%BB%E5%90%8D%E6%93%8D%E4%BD%9C">&#x7C7B;&#x540D;&#x64CD;&#x4F5C;</h3>
+
+<ul>
+<li>addClass(); &#x5411;&#x88AB;&#x9009;&#x5143;&#x7D20;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x7C7B;</li>
+<li>removeClass(); &#x4ECE;&#x88AB;&#x9009;&#x5143;&#x7D20;&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x7C7B;</li>
+<li>toggleClass(); &#x5BF9;&#x88AB;&#x9009;&#x5143;&#x7D20;&#x8FDB;&#x884C;&#x6DFB;&#x52A0;/&#x5220;&#x9664;&#x7C7B;&#x7684;&#x5207;&#x6362;&#x64CD;&#x4F5C;</li>
+<li>hasClass(); &#x5224;&#x65AD;&#x88AB;&#x9009;&#x5143;&#x7D20;&#x662F;&#x5426;&#x5B58;&#x5728;&#x7C7B;</li>
+</ul>
+<h3 class="mume-header" id="dom-%E7%AD%9B%E9%80%89%E8%BF%87%E6%BB%A4%E6%9F%A5%E6%89%BE">dom &#x7B5B;&#x9009;&#x8FC7;&#x6EE4;/&#x67E5;&#x627E;</h3>
+
+<ul>
+<li>eq(index);</li>
+<li>find(); &#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x540E;&#x4EE3;&#x8282;&#x70B9;</li>
+<li>siblings(); &#x9664;&#x4E86;&#x81EA;&#x5DF1;&#x4EE5;&#x5916;&#x7684;&#x6240;&#x6709;&#x5144;&#x5F1F;&#x8282;&#x70B9;</li>
+<li>children(); &#x6240;&#x6709;&#x5B69;&#x5B50;&#x8282;&#x70B9;</li>
+<li>next(); &#x4E0B;&#x4E00;&#x4E2A;&#x5144;&#x5F1F;&#x8282;&#x70B9;</li>
+<li>nextAll(); &#x540E;&#x9762;&#x7684;&#x6240;&#x6709;&#x5144;&#x5F1F;&#x8282;&#x70B9;</li>
+<li>nextUntil();&#x540E;&#x9762;&#x7684;&#x5144;&#x5F1F;&#x8282;&#x70B9;,&#x76F4;&#x5230;...</li>
+<li>prev();&#x4E0A;&#x4E00;&#x4E2A;&#x5144;&#x5F1F;&#x8282;&#x70B9;</li>
+<li>prevAll();</li>
+<li>prevUntil();</li>
+<li>parent(); &#x7236;&#x8282;&#x70B9;</li>
+<li>parents(); &#x6240;&#x6709;&#x7236;&#x8282;&#x70B9;</li>
+<li>parentsUntil();</li>
+</ul>
+<h2 class="mume-header" id="%E6%A1%88%E4%BE%8B%E7%BB%83%E4%B9%A0">&#x6848;&#x4F8B;&#x7EC3;&#x4E60;</h2>
+
+<h3 class="mume-header" id="%E9%9A%94%E8%A1%8C%E5%8F%98%E8%89%B2">&#x9694;&#x884C;&#x53D8;&#x8272;</h3>
+
+<h3 class="mume-header" id="%E9%AB%98%E4%BA%AE%E6%98%BE%E7%A4%BA">&#x9AD8;&#x4EAE;&#x663E;&#x793A;</h3>
+
+<h3 class="mume-header" id="%E6%B7%98%E5%AE%9D%E7%B2%BE%E5%93%81%E6%9C%8D%E9%A5%B0%E6%A1%88%E4%BE%8B">&#x6DD8;&#x5B9D;&#x7CBE;&#x54C1;&#x670D;&#x9970;&#x6848;&#x4F8B;</h3>
+
+<h3 class="mume-header" id="tab-%E6%A0%8F%E5%88%87%E6%8D%A2">tab &#x680F;&#x5207;&#x6362;</h3>
+
+<h2 class="mume-header" id="jquery-%E5%8A%A8%E7%94%BB">jQuery &#x52A8;&#x753B;</h2>
+
+<h3 class="mume-header" id="%E9%9A%90%E8%97%8Fhide%E6%98%BE%E7%A4%BA%E5%8A%A8%E7%94%BBshow">&#x9690;&#x85CF;(hide)/&#x663E;&#x793A;&#x52A8;&#x753B;(show)</h3>
+
+<ul>
+<li>$(selector).show(2000);</li>
+<li>$(selector).show(slow); slow/normal/fast</li>
+<li>$(selector).show(2000,function(){});</li>
+<li>$(selector).show();</li>
+</ul>
+<h3 class="mume-header" id="%E6%BB%91%E5%85%A5%E6%BB%91%E5%87%BA%E5%8A%A8%E7%94%BB">&#x6ED1;&#x5165;&#x6ED1;&#x51FA;&#x52A8;&#x753B;</h3>
+
+<ul>
+<li>$(selector).slideDown(speed,callback);</li>
+<li>$(selector).slideUp(speed,callback);</li>
+<li>$(selector).slideToggle(speed,callback);</li>
+</ul>
+<h3 class="mume-header" id="%E6%B7%A1%E5%85%A5%E6%B7%A1%E5%87%BA%E5%8A%A8%E7%94%BB">&#x6DE1;&#x5165;&#x6DE1;&#x51FA;&#x52A8;&#x753B;</h3>
+
+<ul>
+<li>$(selector).fadeIn(speed,callback);</li>
+<li>$(selector).fadeOut(speed,callback);</li>
+<li>$(selector).fadeToggle(speed,callback);</li>
+<li>$(selector).fadeTo(speed,opacity); &#x8C03;&#x8282;&#x900F;&#x660E;&#x5EA6;</li>
+</ul>
+<blockquote>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x7701;&#x7565;&#x53C2;&#x6570;&#x6216;&#x8005;&#x4F20;&#x5165;&#x4E0D;&#x5408;&#x6CD5;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x90A3;&#x4E48;&#x5219;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x503C;&#xFF1A;400 &#x6BEB;&#x79D2;</p>
+</blockquote>
+<h3 class="mume-header" id="%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8A%A8%E7%94%BB">&#x81EA;&#x5B9A;&#x4E49;&#x52A8;&#x753B;</h3>
+
+<p>$(selector).animate(styles,speed,ease,callback)</p>
+<ul>
+<li>&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x8868;&#x793A;&#xFF1A;&#x8981;&#x6267;&#x884C;&#x52A8;&#x753B;&#x7684; CSS &#x5C5E;&#x6027;&#xFF08;&#x5FC5;&#x9009;&#xFF09;</li>
+<li>&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x8868;&#x793A;&#xFF1A;&#x6267;&#x884C;&#x52A8;&#x753B;&#x65F6;&#x957F;&#xFF08;&#x53EF;&#x9009;&#xFF09;</li>
+<li>&#x7B2C;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#x8868;&#x793A;: &#x8FD0;&#x52A8;&#x51FD;&#x6570; &apos;swing&apos;&#x548C;&apos;linear&apos;</li>
+<li>&#x7B2C;&#x56DB;&#x4E2A;&#x53C2;&#x6570;&#x8868;&#x793A;&#xFF1A;&#x52A8;&#x753B;&#x6267;&#x884C;&#x5B8C;&#x540E;&#x7ACB;&#x5373;&#x6267;&#x884C;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF08;&#x53EF;&#x9009;&#xFF09;</li>
+</ul>
+<h3 class="mume-header" id="%E5%81%9C%E6%AD%A2%E5%8A%A8%E7%94%BB">&#x505C;&#x6B62;&#x52A8;&#x753B;</h3>
+
+<ul>
+<li>stop(); &#x505C;&#x6B62;&#x5F53;&#x524D;&#x52A8;&#x753B;</li>
+</ul>
+<p>&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x505C;&#x6B62;&#x52A8;&#x753B;&#xFF1F;&#x5982;&#x679C;&#x591A;&#x4E2A;&#x52A8;&#x753B;&#x540C;&#x65F6;&#x4F5C;&#x7528;&#x4E8E;&#x4E00;&#x4E2A;&#x5355;&#x4F4D;&#x4E0A;&#x9762;&#xFF0C;&#x90A3;&#x4E48;&#x591A;&#x4E2A;&#x52A8;&#x753B;&#x4F1A;&#x8FDB;&#x5165;&#x6392;&#x961F;&#x3002;&#x540E;&#x4E00;&#x4E2A;&#x52A8;&#x753B;&#x7684;&#x6267;&#x884C;&#x5FC5;&#x987B;&#x7B49;&#x524D;&#x9762;&#x7684;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x3002;</p>
+<ul>
+<li>stop(stopAll,goToEnd)</li>
+</ul>
+<p>stopAll:&#x662F;&#x5426;&#x5168;&#x90E8;&#x505C;&#x6B62;&#x52A8;&#x753B;(&#x505C;&#x6B62;&#x961F;&#x5217;&#x4E2D;&#x6240;&#x6709;&#x52A8;&#x753B;),&#x9ED8;&#x8BA4; false<br>
+goToEnd: &#x662F;&#x5426;&#x5C06;&#x505C;&#x6B62;&#x7684;&#x52A8;&#x753B;,&#x505C;&#x5728;&#x5F53;&#x524D;&#x52A8;&#x753B;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x72B6;&#x6001;</p>
+<h3 class="mume-header" id="%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9">&#x63D2;&#x5165;&#x8282;&#x70B9;</h3>
+
+<ul>
+<li>
+<p>append()</p>
+<ul>
+<li>&#x53C2;&#x6570; <code>jq&#x5BF9;&#x8C61;</code> &#x6216; <code>&#x6807;&#x7B7E;&#x5B57;&#x7B26;&#x4E32;</code> &#x6216; <code>DOM&#x5BF9;&#x8C61;</code></li>
+<li>&#x4F5C;&#x7528;&#xFF1A;&#x5728;&#x88AB;&#x9009;&#x5143;&#x7D20;&#x5185;&#x90E8;&#x4ECE;&#x540E;&#x9762;&#x63D2;&#x5165;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x662F;&#x9875;&#x9762;&#x4E2D;&#x5B58;&#x5728;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x90A3;&#x4E48;&#x8C03;&#x7528; append()&#x540E;&#xFF0C;&#x4F1A;&#x628A;&#x8FD9;&#x4E2A;&#x5143;&#x7D20;&#x653E;&#x5230;&#x76F8;&#x5E94;&#x7684;&#x76EE;&#x6807;&#x5143;&#x7D20;&#x91CC;&#x9762;&#x53BB;&#xFF1B;&#x4F46;&#x662F;&#xFF0C;&#x539F;&#x6765;&#x7684;&#x8FD9;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x5C31;&#x4E0D;&#x5B58;&#x5728;&#x4E86;&#x3002;(&#x526A;&#x5207;)</li>
+<li>&#x5982;&#x679C;&#x662F;&#x7ED9;&#x591A;&#x4E2A;&#x76EE;&#x6807;&#x8FFD;&#x52A0;&#x5143;&#x7D20;&#xFF0C;&#x90A3;&#x4E48;&#x65B9;&#x6CD5;&#x7684;&#x5185;&#x90E8;&#x4F1A;&#x590D;&#x5236;&#x591A;&#x4EFD;&#x8FD9;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x7136;&#x540E;&#x8FFD;&#x52A0;&#x5230;&#x591A;&#x4E2A;&#x76EE;&#x6807;&#x91CC;&#x9762;&#x53BB;&#x3002;</li>
+</ul>
+</li>
+<li>
+<p>appendTo()</p>
+</li>
+</ul>
+<p>&#x4F5C;&#x7528;&#xFF1A;&#x628A;<code>$(selector)</code>&#x8FFD;&#x52A0;&#x5230;<code>node</code>&#x4E2D;&#x53BB;</p>
+<pre data-role="codeBlock" data-info class="language-"><code>$(selector).appendTo(node);
+</code></pre><ul>
+<li>prepend()</li>
+</ul>
+<p>&#x4F5C;&#x7528;&#xFF1A;&#x5728;&#x88AB;&#x9009;&#x5143;&#x7D20;&#x5185;&#x90E8;&#x4ECE;&#x524D;&#x9762;&#x8FFD;&#x52A0;&#x5185;&#x5BB9;&#x6216;&#x8282;&#x70B9;&#x3002;</p>
+<ul>
+<li>after()</li>
+</ul>
+<p>&#x4F5C;&#x7528;&#xFF1A;&#x5728;&#x88AB;&#x9009;&#x5143;&#x7D20;&#x4E4B;&#x540E;&#xFF0C;&#x4F5C;&#x4E3A;&#x5144;&#x5F1F;&#x5143;&#x7D20;&#x63D2;&#x5165;&#x5185;&#x5BB9;&#x6216;&#x8282;&#x70B9;</p>
+<pre data-role="codeBlock" data-info class="language-"><code>$(selector).after(node);
+</code></pre><ul>
+<li>before()</li>
+</ul>
+<p>&#x4F5C;&#x7528;&#xFF1A;&#x5728;&#x88AB;&#x9009;&#x5143;&#x7D20;&#x4E4B;&#x524D;&#xFF0C;&#x4F5C;&#x4E3A;&#x5144;&#x5F1F;&#x5143;&#x7D20;&#x63D2;&#x5165;&#x5185;&#x5BB9;&#x6216;&#x8282;&#x70B9;</p>
+<pre data-role="codeBlock" data-info class="language-"><code>$(selector).before(node);
+</code></pre><blockquote>
+<p>&#x5BF9;&#x4E8E;&#x8FD9;&#x4E9B;&#x6DFB;&#x52A0;&#x65B9;&#x6CD5;&#xFF0C;node &#x53EF;&#x4EE5;&#x662F;<code>jq&#x5BF9;&#x8C61;</code> &#x6216; <code>&#x6807;&#x7B7E;&#x5B57;&#x7B26;&#x4E32;</code> &#x6216; <code>DOM&#x5BF9;&#x8C61;</code>&#x3002;</p>
+</blockquote>
+<h3 class="mume-header" id="%E6%B8%85%E7%A9%BA%E5%85%83%E7%B4%A0">&#x6E05;&#x7A7A;&#x5143;&#x7D20;</h3>
+
+<pre data-role="codeBlock" data-info class="language-"><code>$(selector).empty();
+$(selector).html(&apos;&apos;);
+$(selector).remove();  //&#x4F1A;&#x628A;&#x81EA;&#x5DF1;&#x4E5F;&#x5220;&#x9664;
+</code></pre><h3 class="mume-header" id="%E5%A4%8D%E5%88%B6%E5%85%83%E7%B4%A0">&#x590D;&#x5236;&#x5143;&#x7D20;</h3>
+
+<pre data-role="codeBlock" data-info class="language-"><code>$(selector).clone();
+</code></pre><h2 class="mume-header" id="bom-%E7%9B%B8%E5%85%B3">BOM &#x76F8;&#x5173;</h2>
+
+<ul>
+<li>height()</li>
+<li>height(200)</li>
+<li>width()</li>
+<li>width(100)<br>
+&#x53D6;&#x503C;&#x7C7B;&#x578B;&#x4E3A; <code>num</code> &#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x53C2;&#x4E0E;&#x8FD0;&#x7B97;</li>
+</ul>
+<h3 class="mume-header" id="%E5%9D%90%E6%A0%87%E5%80%BC%E6%93%8D%E4%BD%9C">&#x5750;&#x6807;&#x503C;&#x64CD;&#x4F5C;</h3>
+
+<ul>
+<li>offset()
+<ul>
+<li>&#x4F5C;&#x7528;&#xFF1A;&#x83B7;&#x53D6;&#x6216;&#x8BBE;&#x7F6E;&#x5143;&#x7D20;&#x76F8;&#x5BF9;&#x4E8E;&#x6587;&#x6863;&#x7684;&#x4F4D;&#x7F6E;</li>
+<li>$(selector).offset();</li>
+<li>$(selector).offset({left:100, top: 150});</li>
+</ul>
+</li>
+<li>position()
+<ul>
+<li>&#x4F5C;&#x7528;&#xFF1A;&#x83B7;&#x53D6;&#x76F8;&#x5BF9;&#x4E8E;&#x5176;&#x6700;&#x8FD1;&#x7684;&#x5177;&#x6709;&#x5B9A;&#x4F4D;&#x7684;&#x7236;&#x5143;&#x7D20;&#x7684;&#x4F4D;&#x7F6E;&#x3002;</li>
+<li>$(selector).position();</li>
+<li>&#x6CE8;&#x610F;&#xFF1A;&#x53EA;&#x80FD;&#x83B7;&#x53D6;&#xFF0C;&#x4E0D;&#x80FD;&#x8BBE;&#x7F6E;&#x3002;</li>
+</ul>
+</li>
+<li>scrollTop()
+<ul>
+<li>&#x4F5C;&#x7528;&#xFF1A;&#x83B7;&#x53D6;&#x6216;&#x8005;&#x8BBE;&#x7F6E;&#x5143;&#x7D20;&#x5782;&#x76F4;&#x65B9;&#x5411;&#x6EDA;&#x52A8;&#x7684;&#x4F4D;&#x7F6E;</li>
+<li>$(selector).scrollTop();</li>
+<li>$(selector).scrollTop(100);</li>
+</ul>
+</li>
+</ul>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token comment">// &#x9AD8;&#x5EA6;&#x548C;&#x5BBD;&#x5EA6;&#x64CD;&#x4F5C;;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">&quot;.box&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">height</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 100 &#x76D2;&#x5B50;&#x9AD8;&#x5EA6; ,&#x4E0D;&#x5305;&#x62EC; padding  border</span>
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">&quot;.box&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">height</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">&quot;.box&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">width</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 100 &#x76D2;&#x5B50;&#x5BBD;&#x5EA6; ,&#x4E0D;&#x5305;&#x62EC; padding  border</span>
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">&quot;.box&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">width</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// offset()</span>
+<span class="token comment">// &#x4F5C;&#x7528;&#xFF1A;&#x83B7;&#x53D6;&#x6216;&#x8BBE;&#x7F6E;&#x5143;&#x7D20;&#x76F8;&#x5BF9;&#x4E8E;&#x6587;&#x6863;&#x7684;&#x4F4D;&#x7F6E;</span>
+<span class="token comment">// $(selector).offset();</span>
+<span class="token comment">// $(selector).offset({left:100, top: 150});</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;box&#x76F8;&#x5BF9;&#x4E8E;&#x6587;&#x6863;&#x7684;&#x4F4D;&#x7F6E; left&quot;</span><span class="token punctuation">,</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">&quot;.box&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">offset</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>left<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 30</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;box&#x76F8;&#x5BF9;&#x4E8E;&#x6587;&#x6863;&#x7684;&#x4F4D;&#x7F6E; top&quot;</span><span class="token punctuation">,</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">&quot;.box&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">offset</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>top<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 30</span>
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">&quot;.box&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">offset</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+	left<span class="token punctuation">:</span> <span class="token number">60</span><span class="token punctuation">,</span>
+	top<span class="token punctuation">:</span> <span class="token number">60</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;innerbox&#x76F8;&#x5BF9;&#x4E8E;&#x6587;&#x6863;&#x7684;&#x4F4D;&#x7F6E; left&quot;</span><span class="token punctuation">,</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">&quot;.inner-box&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">offset</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>left<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 30</span>
+
+<span class="token comment">// position()</span>
+<span class="token comment">// &#x4F5C;&#x7528;&#xFF1A;&#x83B7;&#x53D6;&#x76F8;&#x5BF9;&#x4E8E;&#x5176;&#x6700;&#x8FD1;&#x7684;&#x5177;&#x6709;&#x5B9A;&#x4F4D;&#x7684;&#x7236;&#x5143;&#x7D20;&#x7684;&#x4F4D;&#x7F6E;&#x3002;</span>
+<span class="token comment">// 	$(selector).position();</span>
+<span class="token comment">// &#x6CE8;&#x610F;&#xFF1A;&#x53EA;&#x80FD;&#x83B7;&#x53D6;&#xFF0C;&#x4E0D;&#x80FD;&#x8BBE;&#x7F6E;&#x3002;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;innerbox position&#x4F4D;&#x7F6E; left&quot;</span><span class="token punctuation">,</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">&quot;.inner-box&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">position</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;innerbox position&#x4F4D;&#x7F6E; top&quot;</span><span class="token punctuation">,</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">&quot;.inner-box&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">position</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>top<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// scrollTop()</span>
+<span class="token comment">// &#x4F5C;&#x7528;&#xFF1A;&#x83B7;&#x53D6;&#x6216;&#x8005;&#x8BBE;&#x7F6E;&#x5143;&#x7D20;&#x5782;&#x76F4;&#x65B9;&#x5411;&#x6EDA;&#x52A8;&#x7684;&#x4F4D;&#x7F6E;</span>
+<span class="token comment">// 	$(selector).scrollTop();</span>
+<span class="token comment">// 	$(selector).scrollTop(100);</span>
+
+<span class="token comment">// scrollLeft()</span>
+<span class="token comment">// &#x4F5C;&#x7528;&#xFF1A;&#x83B7;&#x53D6;&#x6216;&#x8005;&#x8BBE;&#x7F6E;&#x5143;&#x7D20;&#x6C34;&#x5E73;&#x65B9;&#x5411;&#x6EDA;&#x52A8;&#x7684;&#x4F4D;&#x7F6E;</span>
+<span class="token comment">// $(selector).scrollLeft(100);</span>
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">&quot;.top&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">$</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span>documentElement<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">scrollTop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token comment">// $(document.documentElement).scrollTop(0);</span>
+	<span class="token function">$</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span>documentElement<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">animate</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+		scrollTop<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><h2 class="mume-header" id="%E6%A1%88%E4%BE%8B%E7%BB%83%E4%B9%A0-1">&#x6848;&#x4F8B;&#x7EC3;&#x4E60;</h2>
+
+<h3 class="mume-header" id="%E5%9B%BA%E5%AE%9A%E5%AF%BC%E8%88%AA%E6%A0%8F">&#x56FA;&#x5B9A;&#x5BFC;&#x822A;&#x680F;</h3>
+
+<h3 class="mume-header" id="%E6%89%8B%E9%A3%8E%E7%90%B4%E6%A1%88%E4%BE%8B%E9%98%B2%E6%8A%96">&#x624B;&#x98CE;&#x7434;&#x6848;&#x4F8B;(&#x9632;&#x6296;)</h3>
+
+<h3 class="mume-header" id="%E8%A1%A8%E6%A0%BC%E7%9A%84%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5">&#x8868;&#x683C;&#x7684;&#x589E;&#x5220;&#x6539;&#x67E5;</h3>
+
+<h2 class="mume-header" id="on-%E6%96%B9%E5%BC%8F%E7%BB%91%E5%AE%9A%E4%BA%8B%E4%BB%B6">on &#x65B9;&#x5F0F;&#x7ED1;&#x5B9A;&#x4E8B;&#x4EF6;</h2>
+
+<ul>
+<li>
+<p>target.on(type,[selector],[data],fn); &#x5728;&#x9009;&#x62E9;&#x5143;&#x7D20;&#x4E0A;&#x7ED1;&#x5B9A;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x51FD;&#x6570;</p>
+</li>
+<li>
+<p>target&#xFF1A;&#x9009;&#x62E9;&#x5143;&#x7D20;&#xFF08;jq &#x5BF9;&#x8C61;&#xFF09;</p>
+</li>
+<li>
+<p>type&#xFF1A;&#x4E8B;&#x4EF6;&#x7C7B;&#x578B;</p>
+</li>
+<li>
+<p>selector&#xFF1A;&#x4E00;&#x4E2A;&#x9009;&#x62E9;&#x5668;&#x5B57;&#x7B26;&#x4E32;,&#x7528;&#x6765;&#x8FC7;&#x6EE4;&#x9009;&#x5B9A;&#x7684;&#x5143;&#x7D20;&#xFF08;target &#x7684;&#x540E;&#x4EE3;&#xFF09;,&#x5982;&#x679C;&#x7701;&#x7565;,&#x5219; target &#x6240;&#x6709;&#x540E;&#x4EE3;&#x5143;&#x7D20;&#x90FD;&#x4F1A;&#x89E6;&#x53D1;&#x4E8B;&#x4EF6;</p>
+</li>
+<li>
+<p>data&#xFF1A;&#x5F53;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#x88AB;&#x89E6;&#x53D1;&#x65F6;&#x8981;&#x4F20;&#x9012; event.data &#x7ED9;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x51FD;&#x6570;&#x3002;&#x53EF;&#x4EE5;&#x7701;&#x7565;&#x3002;</p>
+</li>
+<li>
+<p>fn&#xFF1A;&#x8BE5;&#x4E8B;&#x4EF6;&#x88AB;&#x89E6;&#x53D1;&#x65F6;&#x6267;&#x884C;&#x7684;&#x51FD;&#x6570;&#x3002;</p>
+</li>
+</ul>
+<h2 class="mume-header" id="%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98">&#x4E8B;&#x4EF6;&#x59D4;&#x6258;</h2>
+
+<p>&#x4F7F;&#x7528; on &#x65B9;&#x5F0F;&#xFF0C;&#x5C06;&#x4E8B;&#x4EF6;&#x59D4;&#x6258;&#x7ED9;&#x7236;&#x7EA7;&#x5143;&#x7D20;&#x4EE3;&#x7406;&#x3002;</p>
+<h2 class="mume-header" id="off-%E8%A7%A3%E7%BB%91%E4%BA%8B%E4%BB%B6">off &#x89E3;&#x7ED1;&#x4E8B;&#x4EF6;</h2>
+
+<ul>
+<li>.off() &#x65B9;&#x6CD5;&#x79FB;&#x9664;&#x7528;.on()&#x7ED1;&#x5B9A;&#x7684;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x7A0B;&#x5E8F;</li>
+<li>.off(); &#x89E3;&#x9664;&#x6240;&#x6709;&#x7ED1;&#x5B9A;&#x7684;&#x4E8B;&#x4EF6;</li>
+<li>.off(&apos;click&apos;); &#x89E3;&#x7ED1;&#x6240;&#x6709;&#x7ED1;&#x5B9A;&#x7684; click &#x4E8B;&#x4EF6;&#xFF0C;&#x5143;&#x7D20;&#x672C;&#x8EAB;&#x7684;&#x4E8B;&#x4EF6;&#x4E0D;&#x4F1A;&#x88AB;&#x89E3;&#x7ED1;</li>
+<li>.off( &apos;click&apos;, &#x201C;xx&#x201D; );</li>
+<li>.off( &apos;click&apos;, &#x201C;xx&#x201D; ,fn);</li>
+</ul>
+<h2 class="mume-header" id="%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1-event">&#x4E8B;&#x4EF6;&#x5BF9;&#x8C61; Event</h2>
+
+<ul>
+<li>event.data &#x4F20;&#x9012;&#x7ED9;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x7684;&#x989D;&#x5916;&#x6570;&#x636E;</li>
+<li>event.currentTarget &#x4E8B;&#x4EF6;&#x7ED1;&#x5B9A;&#x7684;&#x5BF9;&#x8C61;(&#x4E8B;&#x4EF6;&#x6E90;),&#x548C; this &#x76F8;&#x540C;</li>
+<li>event.pageX &#x9F20;&#x6807;&#x76F8;&#x5BF9;&#x4E8E;&#x6587;&#x6863;&#x5DE6;&#x90E8;&#x8FB9;&#x7F18;&#x7684;&#x4F4D;&#x7F6E;</li>
+<li>event.target &#x5B9E;&#x9645;&#x89E6;&#x53D1;&#x4E8B;&#x4EF6;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x4E0D;&#x4E00;&#x5B9A;===this</li>
+<li>event.stopPropagation()&#xFF1B; &#x963B;&#x6B62;&#x4E8B;&#x4EF6;&#x5192;&#x6CE1;</li>
+<li>event.preventDefault(); &#x963B;&#x6B62;&#x9ED8;&#x8BA4;&#x884C;&#x4E3A;</li>
+<li>event.type &#x4E8B;&#x4EF6;&#x7C7B;&#x578B;&#xFF1A;click&#xFF0C;mouseover&#x2026;</li>
+<li>event.which &#x9F20;&#x6807;&#x7684;&#x6309;&#x952E;&#x7C7B;&#x578B;&#xFF1A;&#x5DE6; 1 &#x4E2D; 2 &#x53F3; 3</li>
+<li>event.keyCode &#x952E;&#x76D8;&#x6309;&#x952E;&#x4EE3;&#x7801;</li>
+</ul>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">&quot;.box&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;&#x6211;&#x662F;&#x5916;&#x90E8;&#x76D2;&#x5B50;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;this&quot;</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token comment">// currentTarget   this  &#x6307;&#x5411;&#x4E00;&#x6837; &#x4E8B;&#x4EF6;&#x7ED1;&#x5B9A;&#x7684;&#x5BF9;&#x8C61;</span>
+	<span class="token comment">// target  &#x5B9E;&#x9645;&#x89E6;&#x53D1;&#x7684;&#x5BF9;&#x8C61;</span>
+	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;target&quot;</span><span class="token punctuation">,</span> event<span class="token punctuation">.</span>target<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;currentTarget&quot;</span><span class="token punctuation">,</span> event<span class="token punctuation">.</span>currentTarget<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">&quot;input&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">keyup</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">//    keycode &#x83B7;&#x53D6;&#x70B9;&#x51FB;&#x7684; &#x6309;&#x952E;  &#x56DE;&#x8F66;===13</span>
+	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>event<span class="token punctuation">.</span>keyCode<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">&quot;p&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">val</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token comment">// &#x6572;&#x56DE;&#x8F66;&#x80CC;&#x666F;&#x8272;&#x53D8;&#x6210;&#x7EFF;&#x8272;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>event<span class="token punctuation">.</span>keyCode <span class="token operator">==</span> <span class="token number">13</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">&quot;p&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">css</span><span class="token punctuation">(</span><span class="token string">&quot;background-color&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;green&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><h2 class="mume-header" id="jquery-%E8%A1%A5%E5%85%85">jQuery &#x8865;&#x5145;</h2>
+
+<h3 class="mume-header" id="%E9%93%BE%E5%BC%8F%E7%BC%96%E7%A8%8B">&#x94FE;&#x5F0F;&#x7F16;&#x7A0B;</h3>
+
+<ul>
+<li>&#x94FE;&#x5F0F;&#x7F16;&#x7A0B;&#x539F;&#x7406;&#xFF1A;return this; &#x8C03;&#x7528;&#x201D;&#x4EFB;&#x4F55;&#x201D;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x90FD;&#x662F;&#x8FD4;&#x56DE;&#x4E86;&#x5BF9;&#x8C61;&#x672C;&#x8EAB;</li>
+<li>&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x53EA;&#x6709;&#x8BBE;&#x7F6E;&#x64CD;&#x4F5C;&#x624D;&#x80FD;&#x628A;&#x94FE;&#x5F0F;&#x7F16;&#x7A0B;&#x5EF6;&#x7EED;&#x4E0B;&#x53BB;&#x3002;&#x56E0;&#x4E3A;&#x83B7;&#x53D6;&#x64CD;&#x4F5C;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F1A;&#x8FD4;&#x56DE;&#x83B7;&#x53D6;&#x5230;&#x7684;&#x76F8;&#x5E94;&#x7684;&#x503C;&#xFF0C;&#x65E0;&#x6CD5;&#x8FD4;&#x56DE; this&#x3002;</li>
+</ul>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">&quot;.inner-box&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+		<span class="token punctuation">.</span><span class="token function">css</span><span class="token punctuation">(</span><span class="token string">&quot;width&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;80px&quot;</span><span class="token punctuation">)</span>
+		<span class="token punctuation">.</span><span class="token function">css</span><span class="token punctuation">(</span><span class="token string">&quot;font-size&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;40px&quot;</span><span class="token punctuation">)</span>
+		<span class="token punctuation">.</span><span class="token function">parent</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+		<span class="token punctuation">.</span><span class="token function">css</span><span class="token punctuation">(</span><span class="token string">&quot;width&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;200px&quot;</span><span class="token punctuation">)</span>
+		<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+		<span class="token punctuation">.</span><span class="token function">css</span><span class="token punctuation">(</span><span class="token string">&quot;background-color&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;black&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token comment">// &#x7ED3;&#x675F;&#x5F53;&#x524D;&#x94FE;&#x6700;&#x8FD1;&#x7684;&#x4E00;&#x6B21;&#x8FC7;&#x6EE4;&#x64CD;&#x4F5C;&#xFF0C;&#x5E76;&#x4E14;&#x8FD4;&#x56DE;&#x5339;&#x914D;&#x5143;&#x7D20;&#x4E4B;&#x524D;&#x7684;&#x72B6;&#x6001;&#x3002;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><h3 class="mume-header" id="%E9%9A%90%E5%BC%8F%E8%BF%AD%E4%BB%A3">&#x9690;&#x5F0F;&#x8FED;&#x4EE3;</h3>
+
+<ul>
+<li>&#x9690;&#x5F0F;&#x8FED;&#x4EE3;&#x7684;&#x610F;&#x601D;&#x662F;&#xFF1A;&#x5728;&#x65B9;&#x6CD5;&#x7684;&#x5185;&#x90E8;&#x4F1A;&#x4E3A;&#x5339;&#x914D;&#x5230;&#x7684;&#x6240;&#x6709;&#x5143;&#x7D20;&#x8FDB;&#x884C;&#x5FAA;&#x73AF;&#x904D;&#x5386;&#xFF0C;&#x6267;&#x884C;&#x76F8;&#x5E94;&#x7684;&#x65B9;&#x6CD5;&#xFF1B;&#x800C;&#x4E0D;&#x7528;&#x6211;&#x4EEC;&#x518D;&#x8FDB;&#x884C;&#x5FAA;&#x73AF;&#xFF0C;&#x7B80;&#x5316;&#x6211;&#x4EEC;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x65B9;&#x4FBF;&#x6211;&#x4EEC;&#x8C03;&#x7528;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x83B7;&#x53D6;&#x7684;&#x662F;&#x591A;&#x5143;&#x7D20;&#x7684;&#x503C;&#xFF0C;&#x5927;&#x90E8;&#x5206;&#x60C5;&#x51B5;&#x4E0B;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x503C;&#x3002;</li>
+</ul>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">&quot;.btn&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">&quot;.box&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><h3 class="mume-header" id="each">each</h3>
+
+<ul>
+<li>
+<p>&#x5927;&#x90E8;&#x5206;&#x60C5;&#x51B5;&#x4E0B;&#x662F;&#x4E0D;&#x9700;&#x8981;&#x4F7F;&#x7528; each &#x65B9;&#x6CD5;&#x7684;&#xFF0C;&#x56E0;&#x4E3A; jQuery &#x7684;&#x9690;&#x5F0F;&#x8FED;&#x4EE3;&#x7279;&#x6027;&#x3002;</p>
+</li>
+<li>
+<p>&#x5982;&#x679C;&#x8981;&#x5BF9;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x505A;&#x4E0D;&#x540C;&#x7684;&#x5904;&#x7406;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x5C31;&#x7528;&#x5230;&#x4E86; each &#x65B9;&#x6CD5;</p>
+</li>
+<li>
+<p>&#x4F5C;&#x7528;&#xFF1A;&#x904D;&#x5386; jQuery &#x5BF9;&#x8C61;&#x96C6;&#x5408;&#xFF0C;&#x4E3A;&#x6BCF;&#x4E2A;&#x5339;&#x914D;&#x7684;&#x5143;&#x7D20;&#x6267;&#x884C;&#x4E00;&#x4E2A;&#x51FD;&#x6570;</p>
+</li>
+<li>
+<p>$(selector).each(function(index,element){});</p>
+</li>
+<li>
+<p>Element &#x662F;&#x4E00;&#x4E2A; js &#x5BF9;&#x8C61;&#xFF0C;&#x9700;&#x8981;&#x8F6C;&#x6362;&#x6210; jquery &#x5BF9;&#x8C61;</p>
+</li>
+</ul>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">&quot;li&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">each</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">index<span class="token punctuation">,</span> ele</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">// ele  &#x5F53;&#x524D;&#x6B63;&#x5728;&#x904D;&#x5386;&#x7684; dom&#x5BF9;&#x8C61;</span>
+	<span class="token comment">// index &#x5F53;&#x524D;&#x6B63;&#x5728;&#x4FBF;&#x5229;&#x7684;dom&#x5BF9;&#x8C61;   &#x7684;&#x4E0B;&#x6807;</span>
+	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;index=====&gt;&quot;</span><span class="token punctuation">,</span> index<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;ele=====&gt;&quot;</span><span class="token punctuation">,</span> ele<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token comment">// &#x4E0B;&#x6807;&#x5927;&#x4E8E;3 &#x7684; &#x7ED1;&#x5B9A;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>index <span class="token operator">&gt;</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		ele<span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">&quot;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><h3 class="mume-header" id="%E5%A4%9A%E5%BA%93%E5%85%B1%E5%AD%98">&#x591A;&#x5E93;&#x5171;&#x5B58;</h3>
+
+<ul>
+<li>&#x6B64;&#x5904;&#x591A;&#x5E93;&#x5171;&#x5B58;&#x6307;&#x7684;&#x662F;&#xFF1A;jQuery &#x5360;&#x7528;&#x4E86;$ &#x548C; jQuery &#x8FD9;&#x4E24;&#x4E2A;&#x53D8;&#x91CF;&#x3002;&#x5F53;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#x4E2D;&#x5F15;&#x7528;&#x4E86; jQuery &#x8FD9;&#x4E2A; js &#x5E93;&#xFF0C;&#x5E76;&#x4E14;&#x5F15;&#x7528;&#x7684;&#x5176;&#x4ED6;&#x5E93;&#xFF08;&#x6216;&#x8005;&#x5176;&#x4ED6;&#x7248;&#x672C;&#x7684; jQuery &#x5E93;&#xFF09;&#x4E2D;&#x4E5F;&#x7528;&#x5230;&#x4E86;$&#x6216;&#x8005; jQuery &#x8FD9;&#x4E24;&#x4E2A;&#x53D8;&#x91CF;&#xFF0C;&#x90A3;&#x4E48;&#xFF0C;&#x8981;&#x4FDD;&#x8BC1;&#x6BCF;&#x4E2A;&#x5E93;&#x90FD;&#x80FD;&#x6B63;&#x5E38;&#x4F7F;&#x7528;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x5C31;&#x6709;&#x4E86;&#x591A;&#x5E93;&#x5171;&#x5B58;&#x7684;&#x95EE;&#x9898;&#x3002;</li>
+<li>$.noConflict();&#x8BA9; jQuery &#x91CA;&#x653E;&#x5BF9;$&#x7684;&#x63A7;&#x5236;&#x6743;&#xFF0C;&#x8BA9;&#x5176;&#x4ED6;&#x5E93;&#x80FD;&#x591F;&#x4F7F;&#x7528;$&#x7B26;&#x53F7;&#xFF0C;&#x8FBE;&#x5230;&#x591A;&#x5E93;&#x5171;&#x5B58;&#x7684;&#x76EE;&#x7684;&#x3002;&#x6B64;&#x540E;&#xFF0C;&#x53EA;&#x80FD;&#x4F7F;&#x7528; jQuery &#x6765;&#x8C03;&#x7528; jQuery &#x63D0;&#x4F9B;&#x7684;&#x65B9;&#x6CD5;</li>
+</ul>
+<h3 class="mume-header" id="%E6%8F%92%E4%BB%B6%E6%9C%BA%E5%88%B6">&#x63D2;&#x4EF6;&#x673A;&#x5236;</h3>
+
+<ul>
+<li>jQuery &#x8FD9;&#x4E2A; js &#x5E93;&#xFF0C;&#x867D;&#x7136;&#x529F;&#x80FD;&#x5F3A;&#x5927;&#xFF0C;&#x4F46;&#x4E5F;&#x4E0D;&#x662F;&#x9762;&#x9762;&#x4FF1;&#x5230;&#x5305;&#x542B;&#x6240;&#x6709;&#x7684;&#x529F;&#x80FD;&#x3002;</li>
+<li>jQuery &#x662F;&#x901A;&#x8FC7;&#x63D2;&#x4EF6;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x6765;&#x6269;&#x5C55;&#x5B83;&#x7684;&#x529F;&#x80FD;&#xFF1A;</li>
+<li>&#x5F53;&#x4F60;&#x9700;&#x8981;&#x67D0;&#x4E2A;&#x63D2;&#x4EF6;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x201C;&#x5B89;&#x88C5;&#x201D;&#x5230; jQuery &#x4E0A;&#x9762;&#xFF0C;&#x7136;&#x540E;&#xFF0C;&#x4F7F;&#x7528;&#x3002;</li>
+<li>&#x5F53;&#x4F60;&#x4E0D;&#x518D;&#x9700;&#x8981;&#x8FD9;&#x4E2A;&#x63D2;&#x4EF6;&#xFF0C;&#x90A3;&#x4F60;&#x5C31;&#x53EF;&#x4EE5;&#x4ECE; jQuery &#x4E0A;&#x201C;&#x5378;&#x8F7D;&#x201D;&#x5B83;&#x3002;</li>
+</ul>
+<h2 class="mume-header" id="%E6%A1%88%E4%BE%8B%E7%BB%83%E4%B9%A0-2">&#x6848;&#x4F8B;&#x7EC3;&#x4E60;</h2>
+
+<h3 class="mume-header" id="%E4%BA%94%E8%A7%92%E6%98%9F%E8%AF%84%E5%88%86%E6%A1%88%E4%BE%8B">&#x4E94;&#x89D2;&#x661F;&#x8BC4;&#x5206;&#x6848;&#x4F8B;</h3>
+
+<h3 class="mume-header" id="jq-color-%E6%8F%92%E4%BB%B6%E4%BD%BF%E7%94%A8">jq-color &#x63D2;&#x4EF6;&#x4F7F;&#x7528;</h3>
+
+<h3 class="mume-header" id="lightbox-%E6%8F%92%E4%BB%B6%E4%BD%BF%E7%94%A8">lightBox &#x63D2;&#x4EF6;&#x4F7F;&#x7528;</h3>
+
+<h3 class="mume-header" id="swiper-%E8%BD%AE%E6%92%AD%E6%8F%92%E4%BB%B6%E4%BD%BF%E7%94%A8">swiper &#x8F6E;&#x64AD;&#x63D2;&#x4EF6;&#x4F7F;&#x7528;</h3>
+
+<h3 class="mume-header" id="echarts-%E6%8F%92%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96">Echarts &#x63D2;&#x4EF6;&#x4F7F;&#x7528;(&#x6570;&#x636E;&#x53EF;&#x89C6;&#x5316;)</h3>
+
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    男:<input class="men" type="radio" name="sex">
+    女:<input class="women" type="radio" name="sex">
+    爱好:
+    足球: <input class="foot" type="checkbox" name="like">
+    蓝球: <input class="basket" type="checkbox" name="like">
+    <button class="btn1">获取状态</button>
+    <button class="btn2">选中足球</button>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        // 获取单选框 或者 多选框的 状态  prop()
+        $('.btn1').click(function () {
+            console.log('单选框状态:男', $('.men').prop('checked'));
+            console.log('单选框状态:女', $('.women').prop('checked'));
+            console.log('多选框状态:足球', $('.foot').prop('checked'));
+            console.log('多选框状态:篮球', $('.basket').prop('checked'));
+        })
+        $('.btn2').click(function () {
+            $('.foot').prop('checked', true);
+        })
+    </script>
+</body>
+
+</html>

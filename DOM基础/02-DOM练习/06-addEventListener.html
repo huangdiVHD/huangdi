@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        box
+    </div>
+    <div class="wrap">
+        wrap
+        <div class="w1">
+            w1
+            <div class="w2">
+                w2
+                <div class="w3">
+                    w3
+                </div>
+            </div>
+        </div>
+    </div>
+    <button>移除onclick</button>
+    <button class="btn1">移除eventListener</button>
+
+    <script>
+        var box = document.querySelector('.box');
+        var btn = document.querySelector('button');
+        var btn1 = document.querySelector('.btn1');
+
+        box.onclick = function () {
+            alert('123');
+        }
+        box.onclick = function () {
+            alert('456');
+        }
+        // onclick 绑定 会覆盖之前的.只能绑定一个
+        // 移除onclick事件
+        btn.onclick = function () {
+            box.onclick = null;
+        }
+
+        // 提供了 addEventListener()
+        // 可以更精细的控制事件触发阶段
+        //         语法：target.addEventListener(type,listener,usecapture]);
+        // target： 文档节点、document、window 或 XMLHttpRequest。 (事件源)
+        // type： 字符串，事件名称，不含“on”，比如“click”、“mouseover”、“keydown”等。 
+        // listener ：实现了 EventListener 接口或者是 JavaScript 中的函数。
+        // useCapture ：是否使用捕获，一般用 false (冒泡)  true(捕获)
+
+
+        var wrap = document.querySelector('.wrap');
+        var w1 = document.querySelector('.w1');
+        var w2 = document.querySelector('.w2');
+
+        var w3 = document.querySelector('.w3');
+
+        wrap.addEventListener('click', function () {
+            alert('wrap');
+        }, false)
+        w1.addEventListener('click', function () {
+            alert('w1');
+        }, true)
+
+        // 冒泡 从里 到外
+        // 捕获 从外到里
+        w2.addEventListener('click', function () {
+            alert('w2');
+        }, false)
+        w3.addEventListener('click', foo, true)
+
+        function foo() {
+            alert('w3')
+        }
+
+
+        // 移除事件监听器
+        btn1.onclick = function () {
+            w3.removeEventListener('click', foo, true)
+        }
+    </script>
+</body>
+
+</html>

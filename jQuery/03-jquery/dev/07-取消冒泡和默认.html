@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        box
+        <div class="inner-box">
+            内部盒子
+        </div>
+    </div>
+    <a target="_blank" href="javascript:;">百度</a>
+    <a target="_blank" href="https://www.baidu.com/">百度1</a>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        $('a').click(function (event) {
+            console.log('1');
+            // 取消默认事件
+            event.preventDefault();
+        })
+        $('.inner-box').click(function (event) {
+            console.log('内部盒子');
+            event.stopPropagation();
+            // 阻止冒泡事件
+        })
+        $('.box').click(function () {
+            console.log('外部盒子')
+        })
+
+        // 想实现  点击inner box 的时候  不触发 box 的 事件
+    </script>
+</body>
+
+</html>

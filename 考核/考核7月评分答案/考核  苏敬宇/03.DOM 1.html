@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>dom1</title>
+    <!-- 已知 HTML 如下
+    <form action="/account/login" id="login-form" method="post">
+	<p>账号: <input type="text" name="username" required /></p>
+	<p>密码: <input type="password" name="pwd" required /></p>
+	<p><input type="submit" value="登录" /></p>
+    </form>
+    1. 获取<form>元素。（尽可能多的方法）
+    2. <form>表单元素提交时，阻止默认的表单提交行为。 -->
+</head>
+
+<body>
+    <form action="https://www.baidu.com/" id="login-form" method="post">
+        <p>账号: <input type="text" name="username" required /></p>
+        <p>密码: <input type="password" name="pwd" required /></p>
+        <p><input type="submit" value="登录" /></p>
+    </form>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        // 1. 获取<form>元素。（尽可能多的方法）
+        //方法一  通过id  
+        // var formid = document.getElementById("login-form");
+        // console.log(formEl);
+        //方法二   通过标签名  类数组 
+        // var formtn = document.getElementsByTagName("form")[0];
+        // console.log(formtn);
+        //方法三  通过querySelector获取
+        // var formq=document.querySelector('form');
+        // console.log(formq);
+        //方法四  jquery  标签名
+        // var $form1 = $("form")[0];
+        // console.log($form1);
+        //方法五  jquery  属性加属性值选择器
+        // var $form2 = $('form[method="post"]')[0];
+        // console.log($form2);
+        //方法六  jquery  id选择器
+        // var $form3 = $('#login-form')[0];
+        // console.log($form3);
+        //方法六  jquery  属性选择器
+        //  var $form4 = $('form[action]')[0];
+        // console.log($form4);
+
+        //2. <form>表单元素提交时，阻止默认的表单提交行为。
+        $("form").on("submit", function (event) {
+                    if ('验证通过' ) {
+                        return true;
+                    } else {
+                        event.preventDefault();
+                    }
+
+                }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .co {
+            position: fixed;
+            top: 50px;
+            left: 100px;
+            width: 450px;
+            border: 3px solid black;
+        }
+
+        .co1 {
+            float: left;
+            height: 50px;
+            width: 150px;
+            background-color: aqua;
+        }
+
+        .co2 {
+            float: left;
+            height: 50px;
+            width: 150px;
+            background-color: red;
+        }
+
+        .co3 {
+            float: left;
+            height: 50px;
+            width: 150px;
+            background-color: blue;
+        }
+
+        .box1 {
+            height: 1500px;
+            background-color: aqua;
+        }
+
+        .box2 {
+            height: 1500px;
+            background-color: red;
+        }
+
+        .box3 {
+            height: 1500px;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="co">
+        <div class="co1"></div>
+        <div class="co2"></div>
+        <div class="co3"></div>
+    </div>
+    <div class="box">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+    <script>
+        var col = document.querySelector('.co1');
+        var co2 = document.querySelector('.co2');
+        var co3 = document.querySelector('.co3');
+
+        var box1 = document.querySelector('.box1');
+        var box2 = document.querySelector('.box2');
+        var box3 = document.querySelector('.box3');
+
+        col.onclick = function(){
+            var a = box1.offsetTop;
+            distance(a);
+        };
+        co2.onclick = function(){
+            var a = box2.offsetTop;
+            distance(a);
+        };
+        co3.onclick = function(){
+            var a = box3.offsetTop;
+            console.log(a);
+            distance(a);
+        };
+        function distance (length){
+           clearInterval(window.timer);
+           window.timer = setInterval(function(){
+               var start = sct();
+               var step = (length-start)/10;
+               if(Math.abs(step)<1){
+                  step = step > 0 ? 1:Math.floor(step);
+               }
+               start+=step;
+               window.scroll(0,start);
+               if(Math.abs(start) == length ){
+                  clearInterval (window.timer);
+               }
+           },20);
+        }
+        function sct(){
+            // return document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+            return document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop ;
+        }
+    </script>
+</body>
+</html>

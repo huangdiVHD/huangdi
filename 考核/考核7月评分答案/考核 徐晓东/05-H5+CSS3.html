@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul {
+            width: 800px;
+            height: 200px;
+            background-color: rgba(0, 0, 0, .8);
+            list-style: none;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .dynamic.active {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        li {
+            position: relative;
+            height: 200px;
+            width: 100px;
+            float: left;
+            margin-right: 100px;
+        }
+
+        .dynamic {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li class='li1'>
+            <img class="static" src="icon/cd-default.svg" alt="">
+            <img class='dynamic' src="icon/cd-active.svg" alt="">
+        </li>
+        <li>
+            <img class="static" src="icon/camera-default.svg" alt="">
+            <img class='dynamic' src="icon/camera-active.svg" alt="">
+        </li>
+        <li>
+            <img class="static" src="icon/file-default.svg" alt="">
+            <img class='dynamic' src="icon/file-active.svg" alt="">
+        </li>
+        <li>
+            <img class="static" src="icon/mine-default.svg" alt="">
+            <img class='dynamic' src="icon/mine-active.svg" alt="">
+        </li>
+    </ul>
+
+
+    <script src="lib/jquery-3.3.1.min.js"></script>
+    <script>
+        $('.li1').click(function () {
+            $('.dynamic').css('display', 'block');
+            $('.dynamic').addClass('active');
+            $('.static').css('display', 'none');
+        })
+    </script>
+</body>
+
+</html>

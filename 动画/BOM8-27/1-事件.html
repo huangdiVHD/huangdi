@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>事件对象</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				width: 200px;
+				height: 200px;
+				margin: 50px auto;
+				padding-top: 1px;
+				background-color: #FF4500;
+			}
+			.inner{
+				width: 100px;
+				height: 100px;
+				margin: 19px auto;
+				background-color: blueviolet;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="inner"></div>
+		</div>
+		
+		<ul>
+			<li>li_1</li>
+			<li>li_2</li>
+			<li>li_3</li>
+			<li>li_4</li>
+			<li>li_5</li>
+			<li>li_6</li>
+		</ul>
+
+		<input type="text" class="ipt">
+
+		<script type="text/javascript">
+			var box = document.querySelector(".box");
+			var inner = document.querySelector(".inner");
+			var ipt = document.querySelector("input");
+			var ulEle = document.querySelector("ul");
+			
+			// for(var i = 0; i < ulEle.children.length; i ++){
+			// 	ulEle.children[i].onclick = function (){
+			// 		this.style.color = 'red';
+			// 	}
+			// }
+			ulEle.onclick = function (){
+				console.log(event.target);
+				event.target.style.color = 'red';
+				console.log(event.currentTarget);
+			}
+			var liEle = document.createElement("li");
+			liEle.innerText = "li_7";
+			ulEle.appendChild(liEle);
+			
+			
+			// 如果事件的执行函数里面写了一个形参,这个形参就是 event 对象,写多了形参无效
+			// event 可以简写成 e
+			// box.onclick = function (){
+				// console.log(event);
+				// console.log(window.event);
+				// console.log(this.innerHTML);
+				// console.log(this.outerHTML);
+			// }
+			
+			/*box.onmousedown = function (){
+				console.log(event.button);
+			}*/
+			// box.onmouseenter = function (e){
+			// 	console.log(e);
+			// }
+			
+			
+			box.onclick = function (e){
+				// 谷歌等浏览器和IE浏览器获取事件对象的兼容写法
+				e = event || window.event;
+				console.log(e);
+				// 事件目标 指向触发事件的元素本身 兼容写法 谷歌等浏览器 e.target  IE浏览器 e.srcElement
+				// 获取事件目标的兼容写法
+				
+				console.log("target",e.target)
+				// e.target.style.backgroundColor = "blue";
+				console.log("srcElement",e.srcElement);
+				e.srcElement.style.backgroundColor = "blue";
+				
+				// 获取鼠标点击的相对于页面的位置,算入滚动条的距离
+				console.log("e.pageX=====>" + e.pageX);
+				console.log("e.pageY=====>" + e.pageY);
+				// 获取鼠标点击的相对于可视区域的位置,目前可见区域
+				console.log("e.clientX=====>" + e.clientX);
+				console.log("e.clientY=====>" + e.clientY);
+				// 获取鼠标点击的相对于屏幕的位置,整个屏幕
+				console.log("e.screenX=====>" + e.screenX);
+				console.log("e.screenY=====>" + e.screenY);
+				// 获取鼠标点击位置相对于触发事件的元素的位置
+				console.log("e.offsetX===>" + e.offsetX);
+				console.log("e.offsetY===>" + e.offsetY);
+				// console.log(e.pageX - box.offsetLeft);
+				// console.log(e.pageY - box.offsetTop);
+			}
+		
+			// 键盘输入事件
+			ipt.onkeydown = function (){
+				// 按下的是哪一个键
+				// console.log(event.key);
+				// 按下的键所对应的的键码
+				// console.log(event.keyCode);
+				// innerHTML innerText outerHTML
+				if(event.keyCode === 13){
+					// console.log(this.value);
+					box.style.backgroundColor = this.value;
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box1 {
+            background: linear-gradient(150deg, red, blue);
+             float: left;
+        }
+        .box {
+            width: 50px;
+            height: 50px; 
+           float: left;
+            background: linear-gradient(150deg, red, blue);
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    
+    <script>               
+        var div = document.createElement('div');
+        document.body.appendChild(div);
+        div.className = 'box1';
+        div.style.width = '150px';
+        div.style.height = '300px';  
+        var boxEl = document.getElementsByClassName('box')
+        for ( var i=0;i < boxEl.length;i++){
+            boxEl[i].onclick = (function(){
+                if (boxEL) {
+                    
+                }
+            })  
+        }
+                                  
+    </script>
+</body>
+</html>

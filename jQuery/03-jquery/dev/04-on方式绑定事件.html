@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        box
+        <div class="inner-box">
+            woshiinnerbox
+        </div>
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        // $('.box').click(function () {
+        //     alert('123');
+        // })
+        $('.box').on('click', function () {
+            alert('123');
+        })
+        $('.box').on('mouseenter', function () {
+            console.log('enter');
+        })
+        // off()  移除 on 方式绑定的事件
+        $('.box').off('click');
+    </script>
+</body>
+
+</html>

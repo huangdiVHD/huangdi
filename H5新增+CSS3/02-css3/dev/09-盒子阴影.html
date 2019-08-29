@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin: 0 auto;
+            transition: all ease .2s;
+            /* box-shadow: 10px 20px 10px 1px #333; */
+
+            /* box-shadow: h-shadow(x) v-shadow(y) blur(模糊半径) spread(扩展范围) color(颜色) inset(是否内嵌,可省略) */
+        }
+
+        .box1 {
+            width: 500px;
+            height: 500px;
+            margin: 50px auto;
+            background-color: green;
+            /* box-shadow: 10px 20px 10px 1px red, -10px -20px 10px 1px yellow; */
+            box-shadow: 150px 200px 100px 1px red inset;
+
+        }
+
+        .box2 {
+            width: 500px;
+            height: 500px;
+            margin: 50px auto;
+            background-color: green;
+            /* box-shadow: 10px 20px 10px 1px red, -10px -20px 10px 1px yellow; */
+            box-shadow: 150px 200px 100px 1px red;
+
+        }
+
+        .box:hover {
+            box-shadow: 0px 15px 30px rgba(0, 0, 0, .1);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+
+    </div>
+    <div class="box1">
+
+    </div>
+    <div class="box2">
+
+    </div>
+</body>
+
+</html>

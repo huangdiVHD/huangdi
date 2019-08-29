@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			ul{
+				list-style: none;
+			}
+			.box{
+				width: 1200px;
+				height: 450px;
+				margin: 0 auto;
+				/*background-size: 100% 100%;*/
+				background: url(../01-DOM操作/dev/img/m1.jpg) no-repeat center;	 
+			}
+			ul{
+				overflow: hidden;
+				width: 1210px;
+				margin: 0 auto;
+			
+			}
+			ul li{
+				float: left;
+				width: 240px;
+				height: 90px;
+				background-repeat: no-repeat;
+                background-position: center;
+				background-size: 100% 100%;
+			}
+			li.active{
+				border: 1px solid red;
+			}
+		</style>
+	</head>
+	<body> 
+		<div class="box"></div>
+		<ul>
+			<!--<li style="background-image: url(img/m1.jpg);"></li>
+			<li style="background-image: url(img/m2.jpg);"></li>
+			<li style="background-image: url(img/m3.jpg);"></li>
+			<li style="background-image: url(img/m4.jpg);"></li>
+			<li style="background-image: url(img/m5.jpg);"></li>-->
+			<!--这部分内容可以尝试 根据后台请求来的数据 动态生成--> 
+		</ul>
+		<script type="text/javascript">
+			var li = document.getElementsByTagName('li');
+			var box = document.getElementsByClassName('box')[0];
+			var imgarr = ['m1.jpg', 'm2.jpg', 'm3.jpg', 'm4.jpg', 'm5.jpg'];
+			var ul = document.getElementsByTagName('ul')[0];
+			initImg(ul,imgarr);
+			//class,document过来是个数组要进行选中
+			for(var i = 0; i<li.length; i++){
+				li[i].onclick = function (){
+					
+					var a = this.style.backgroundImage;
+					box.style.backgroundImage = a;
+					
+				  for (var i = 0; i < li.length; i++) {
+				  	//排它,将所有的边框属性都删除,在下面再添加
+                    li[i].classList.remove('active');
+                   }
+                    this.classList.add('active');
+                    //给li增加1px的红色边框,但是每次点击都是增加即,第二次点击时,第一次还存留,
+				}
+			}
+			function initImg (el,arr){
+				var str ='';
+				for(var i = 0; i<arr.length; i++){
+					str+='<li style="background-image: url(img/' + arr[i] +')"></li>';
+//				    //细心,细心,再细心
+				}
+				el.innerHTML = str;
+			}
+		</script>
+	</body>
+</html>

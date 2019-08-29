@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .box,.box1,.box2 {
+        width: 320px;
+        overflow: hidden;
+        margin: 10px auto;
+        
+    }
+    p { width: 50%;
+        overflow:hidden; 
+        white-space:nowrap; 
+        text-overflow:ellipsis;
+        float: left;
+        margin: 0;
+        }
+        .box1 p {
+            width: 64%;
+        }
+        .f,.s,.t {
+            float: right;
+            /* width: 40%; */
+        }
+     div span {
+        float:left;
+        /* text-align: right; */
+        margin-left:5px; 
+        font-size: 14px;
+    }
+    div span:nth-child(1) {
+        border: 1px rgb(92, 91, 91) solid;
+        color: rgb(92, 91, 91);
+    }
+    div span:nth-child(2) {
+    border: 1px red solid;
+    color: red
+    }
+    div span:nth-child(3) {
+    border: 1px skyblue solid;
+    color: skyblue
+    }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p>这次是一个新的故事后面隐藏形式表现为点点点</p>
+         <div class="f">
+             <span>都市</span>
+             <span>连载中</span>
+             <span>54.82万字</span>
+         </div>
+    </div>
+         <div class="box1">
+        <p>穿越天地复苏的平行世界后面隐藏形式表现为点点点</p>
+        <div class="s"><span>都市</span>
+            <span>完本</span>
+            <span>1万字</span></div>
+        
+         </div>
+         <div class="box2">
+             <p>修真四万年</p>
+        <div class="t"> 
+            
+            <span>科幻</span>
+            <span>完本</span>
+            <span>1059.98万字</span>
+        </div>
+    </div>
+</body>
+</html>

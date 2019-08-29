@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+
+    </div>
+
+    <a href="#">百度</a>
+    <script>
+        //  取消默认点击事件
+        var aEl = document.querySelector('a');
+        aEl.onclick = function (event) {
+            event.preventDefault();
+        }
+
+        // 点击时 判断是不是  img元素
+
+        var box = document.querySelector('.box');
+        box.onclick = function () {
+            return this.tagName === 'IMG' ? true : false;
+        }
+    </script>
+</body>
+
+</html>

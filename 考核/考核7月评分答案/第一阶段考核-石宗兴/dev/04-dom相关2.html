@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="#12">#########</a>
+    <a href="#23">#########</a>
+    <a href="1#2">111111111</a>
+    <a href="2#3">222222222</a>
+
+    <script>
+        var parent = document.getElementsByTagName('body')[0];
+
+        // 第1、2题
+        var div = document.createElement('div');
+        div.style.width = '150px';
+        div.style.height = '300px';
+        div.style.background = 'linear-gradient(to bottom right, red , blue)';
+        parent.appendChild(div);
+
+        // 第3题
+        for (var i = 0; i < 20; i++) {
+            var box = document.createElement('div');
+            box.className = 'box';
+            parent.appendChild(box);
+        }
+
+        // 第4题
+        div.onclick = function () {
+            this.tagName == 'img' ? alert('是img元素') : alert('不是img元素');
+        }
+
+        // 第5题
+        var a = document.getElementsByTagName('a');
+        for (var i = 0; i < a.length; i++) {
+            var href = a[i].getAttribute('href');
+            // console.log(href);
+            href.slice(0, 1) === '#' ? a[i].style.backgroundColor = 'red' : '';
+        }
+    </script>
+</body>
+
+</html>

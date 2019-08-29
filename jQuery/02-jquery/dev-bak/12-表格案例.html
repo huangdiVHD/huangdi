@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .5);
+        }
+
+        .modal .form {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            /* transform:translate(-50%,-50%); */
+            margin-left: -150px;
+            margin-top: -200px;
+            width: 300px;
+            height: 400px;
+            padding: 20px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <table border="2" cellspacing=10 cellpadding=10>
+        <!-- <tr><th>姓名</th><th>年龄</th><th>性别</th><th>操作</th></tr> -->
+        <!-- <tr><td>张三</td><td>18</td><td>男</td><td><button class="edit">编辑</button><button class="del">删除</button></td></tr> -->
+    </table>
+    <div class="modal">
+        <div class="form">
+            姓名: <input class="username" type="text"> <br>
+            年龄: <input class="age" type="text"> <br>
+            性别: <br>
+            男: <input class="sex men" type="radio" name="sex" value="1">
+            女: <input class="sex women" type="radio" name="sex" value="0">
+            <br>
+            <button class="save" onclick="save()">确定</button>
+            <button onclick="cancel()" class="cancel">取消</button>
+
+        </div>
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        var users = [{
+                name: '张三',
+                age: 18,
+                sex: '男'
+            },
+            {
+                name: '王五',
+                age: 22,
+                sex: '男'
+            },
+            {
+                name: '赵六',
+                age: 26,
+                sex: '男'
+            },
+            {
+                name: '小红',
+                age: 22,
+                sex: '女'
+            }
+        ];
+        // 动态生成表格
+        initTable($('table'), users);
+        var $currentTr;
+
+        function initTable($el, arr) {
+            var str = '<tr><th>姓名</th><th>年龄</th><th>性别</th><th>操作</th></tr>';
+            for (var i = 0; i < arr.length; i++) {
+                str +=
+                    '<tr><td>' + arr[i].name + '</td><td>' + arr[i].age + '</td><td>' + arr[i].sex +
+                    '</td><td><button class="edit" onclick="edit(this)">编辑</button><button class="del" onclick="del(this)">删除</button></td></tr>'
+            }
+            $el.html(str);
+        }
+
+        // 删除操作
+        function del(obj) {
+            // 把这个按钮所在的这一行突然删掉
+            $(obj).parent().parent().remove();
+        }
+        // 编辑操作
+        function edit(obj) {
+            // 打开弹窗
+            // $('.modal').css('display', 'block');
+            $('.modal').show(400);
+            //  填充表单
+            $currentTr = $(obj).parent().parent();
+            var children = $(obj).parent().parent().children();
+            $('.username').val(children.eq(0).text());
+            $('.age').val(children.eq(1).text());
+            children.eq(2).text() == '男' ? $('.sex.men').prop('checked', true) : $('.sex.women').prop('checked', true)
+        }
+
+        // 取消
+        function cancel() {
+            // $('.modal').css('display', 'none');
+            $('.modal').hide(400);
+            // 清空表单
+            $('.username').val('');
+            $('.age').val('');
+            $('.sex').prop('checked', false);
+        }
+
+        // 确定
+        function save() {
+            // 获取表单新的填入内容
+            var username = $('.username').val();
+            var age = $('.age').val();
+            var sex = $('.sex:checked').val() == 0 ? '女' : '男';
+
+            console.log(sex)
+            // 更新表格
+            $currentTr.children().eq(0).text(username);
+            $currentTr.children().eq(1).text(age);
+            $currentTr.children().eq(2).text(sex);
+            // 调用cancel
+            cancel();
+        }
+    </script>
+</body>
+
+</html>

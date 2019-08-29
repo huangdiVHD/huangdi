@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [0, 1, 2, 3, 4, 5];
+        // 指定任意索引，对应数组项前移一个位置
+        function foo(el, arr) {
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i] == el && i !== 0) {
+                    var temp = arr[i - 1];
+                    arr[i - 1] = arr[i];
+                    arr[i] = temp;
+                }
+            }
+            return arr;
+        }
+        console.log(foo(3, arr));
+        // 指定任意索引，对应数组项移动到最前面
+        function first(sl, arr) {
+            var arr = [0, 1, 2, 3, 4, 5];
+            for (var j = 0; j < arr.length; j++) {
+                if (arr[j] == sl) {
+                    var di = arr[0];
+                    arr[0] = arr[j];
+                    arr[j] = di;
+                }
+            }
+            return arr;
+        }
+        console.log(first(3, arr));
+        // 指定任意索引，对应数组项移动到最后面。
+        function last(jl, arr) {
+            var arr = [0, 1, 2, 3, 4, 5];
+            for (var j = 0; j < arr.length; j++) {
+                if (arr[j] == jl) {
+                    var ai = arr[arr.length - 1];
+                    arr[arr.length - 1] = arr[j];
+                    arr[j] = ai;
+                }
+            }
+            return arr;
+        }
+        console.log(last(3, arr));
+        // 指定任意两项索引，对应数组项交换位置。
+        var arr = [0, 1, 2, 3, 4, 5];
+        function some(arr, m, n) {
+            if (m >= 0 && m < arr.length && n >= 0 && n < arr.length) {
+                var nex = arr[m];
+                arr[m] = arr[n];
+                arr[n] = nex;
+            }
+            return arr;
+        }
+        console.log(some(arr, 2, 1));
+    </script>
+</body>
+
+</html>

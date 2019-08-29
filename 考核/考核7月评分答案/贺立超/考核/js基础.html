@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <script>
+    
+        var arr = [0,1,2,3,4,5];
+
+        const moveForward = (arr, index) => {
+        return exchange(arr, index, index - 1);
+        }
+        // 最前
+        const moveFirst = (arr, index) => {
+        arr.unshift(arr.splice(index, 1)[0]);
+        return arr;
+        }
+        // 最后
+        const moveLast = (arr, index) => {
+        arr.push(arr.splice(index, 1)[0]);
+        return arr;
+        }
+        // 交换
+        const exchange = (arr, index1, index2) => {
+        arr[index1] = arr.splice(index2, 1, arr[index1])[0];
+        return arr;
+        }
+        
+    </script>
+</body>
+</html>

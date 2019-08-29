@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="/account/login" id="login-form" method="post">
+        <p>账号: <input type="text" name="username" required /></p>
+        <p>密码: <input type="password" name="pwd" required /></p>
+        <p><input type="submit" value="登录" /></p>
+    </form>
+    <script src="js/jquery-3.4.1.min.js
+    "></script>
+    <script>
+        // 获取 form 元素
+        var formEl = document.getElementsByTagName('form')[0];
+        var formEl = document.getElementById('login-form');
+        var formEl = document.querySelector('form');
+        var formEl = document.querySelector('#login-form');
+        var $form = $('form');
+        var $form = $('#login-form');
+        
+        // 阻止 form 表单的提交
+        formEL.onsubmit = function () {
+            return false;
+        }
+    </script>
+</body>
+
+</html>

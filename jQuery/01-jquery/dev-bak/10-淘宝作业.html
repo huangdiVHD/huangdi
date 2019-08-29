@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style: none;
+        }
+
+        .box {
+            width: 300px;
+            height: 250px;
+            margin: 100px auto;
+        }
+
+        .left {
+            float: left;
+        }
+
+        img {
+            float: left;
+        }
+
+        .box .li-item {
+            width: 50px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            margin-top: 4px;
+        }
+
+        .box .li-item:hover {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul class="left">
+            <!-- 动态生成 -->
+            <!-- <li class="li-item">冬裙</li> -->
+        </ul>
+        <img src="images/冬裙.jpg" alt="" srcset="">
+
+    </div>
+    <script src="data/data.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        initPro($('.left')[0], product[0]);
+        // 鼠标进入 获取图片路径
+        $('.left .li-item').mouseenter(function () {
+            // 怎么获取鼠标进入的这个 li 的 下标
+            // 方式一
+            // var index = this.id.split('-')[1];
+            // console.log(index);
+            // 方式二
+            var index = $(this).index();
+            console.log(index);
+            $('img')[0].src = 'images/' + product[0][index].img;
+        })
+
+        function initPro(el, arr) {
+            var str = '';
+            for (var i = 0; i < arr.length; i++) {
+                str += '<li id="li-' + i + '" class="li-item">' + arr[i].text + '</li>';
+            }
+            el.innerHTML = str;
+        }
+    </script>
+
+</body>
+
+</html>

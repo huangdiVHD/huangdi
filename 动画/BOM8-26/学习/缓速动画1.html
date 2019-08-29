@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .box {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            margin-bottom: 50px;
+            background-color: aqua;
+        }
+        button {
+            width: 100px;
+            height: 30px;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="box"></div>
+        <button class="bt0">点击100</button>
+        <button class="bt1">点击400</button>
+        <button class="bt2">点击800</button>
+        <button class="bt3">回到最初</button>
+        <script>
+         var box = document.querySelector('.box');
+         var bt0 = document.querySelector('.bt0');
+         var bt1 = document.querySelector('.bt1');
+         var bt2 = document.querySelector('.bt2');
+         var bt3 = document.querySelector('.bt3');
+        bt0.onclick = function(){
+            movement(box,100);
+        };
+        bt1.onclick = function(){
+            movement(box,400);
+        };
+        bt2.onclick = function(){
+            movement(box,800);
+        };
+        bt3.onclick = function(){
+            movement(box,0);
+        };
+        function movement(ele,terminus){
+            var timer = setInterval(function(){
+                var spacing = ele.offsetLeft;
+                var step = (terminus-spacing)/10;
+                if(Math.abs(step)<1){
+                   step = step > 0 ? 1:Math.floor(step);
+                }
+                spacing+=step;
+                ele.style.left = spacing+'px';
+                if(spacing ==100){
+                    ele.style.left = terminus+'px';
+                      clearInterval(timer);
+                }
+                //  console.log(spacing);
+            },20);
+        }
+        </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .box {
+            width: 300px;
+            height: 200px;
+            background-color: rgb(14, 253, 221);
+            margin: 300px auto;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <p> var arr = [0, 1, 2, 3, 4, 5]</p>
+        <input type="button" class="qianyi" onclick="qianyi()" value="前移">
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        var arr = [0, 1, 2, 3, 4, 5];
+        // prev(0);
+        // function prev(el) {
+        //     var a = arr.splice(el, 1);
+        //     // console.log(a[0]);
+        //     if (el == 0) {
+        //         arr.push(a[0]);
+        //     } else {
+        //         arr.splice(el - 1, 0, a[0]);
+        //     }
+        // }
+
+
+        // prev(4);
+
+        // function prev(el) {
+        //     // for (var i = el; i <= el; i++) {
+        //     //     for (var j = el - 1; j < el; j++) {
+
+        //     //         var temp = arr[i];
+        //     //         arr[i] = arr[j];
+        //     //         arr[j] = temp;
+        //     //     }
+
+        //     // }
+        //     var temp = arr[el];
+        //     arr[el] = arr[el - 1];
+        //     arr[el - 1] = temp;
+        //     console.log(arr);
+        // }
+
+        // 前移
+        var temp;
+        var i;
+        // function qianyi() {
+        //     i = prompt("请输入数组下标：");
+        //     temp = arr[i];
+        //     arr[i] = arr[i - 1];
+        //     arr[i - 1] = temp;
+        //     alert(arr);
+        // }
+
+
+        // 最前移
+        // prev(4);
+        // function prev(el) {
+        //     var arr1 = [];
+        //     var a = arr.splice(el, 1);
+        //     arr1.push(a);
+        //     arr1 = arr1.concat(arr);
+        //     alert(arr1);
+        // }
+
+        // 最后移
+        // prev(4);
+        // function prev(el) {
+        //     var arr1 = [];
+        //     var a = arr.splice(el, 1);
+        //     arr1.push(a);
+        //     arr = arr.concat(arr1);
+        //     alert(arr);
+        // }
+
+
+        // prev(4);
+        // function prev(el) {
+        //     var a = arr.splice(el, 1);
+        //     arr.push(a);
+        //     alert(arr);
+        // }
+
+        // 交换
+        prev(4, 2);
+        function prev(el, num) {
+            temp = arr[el];
+            arr[el] = arr[num];
+            arr[num] = temp;
+            alert(arr);
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        li:first-child {
+            background-color: red;
+        }
+
+        li:last-child {
+            background-color: green;
+        }
+
+        li:nth-child(3) {
+            background-color: blue;
+        }
+
+        /* 表达式  选中 第三个  和 第六个  第九个 */
+        /* 支持简单的表达式 */
+        li:nth-child(2n) {
+            background-color: blue;
+        }
+
+        li:nth-child(2n-1) {
+            background-color: red;
+        }
+
+        li:nth-last-child(2) {
+            background-color: pink;
+        }
+
+        /* 结构伪类 重点通过E来确定元素的父元素。
+E:first-child	匹配到的父元素的  第一个子元素
+E:last-child	匹配到的父元素的  最后一个子元素
+E:nth-child(n) 匹配到的父元素的 第n个子元素
+E:nth-last-child(n) 同E:nth-child(n) 相似，只是倒着计算
+n是支持简单表达式的
+注意: n 是从1开始的自然数 E:nth-child(0) 无效 */
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>li1</li>
+        <p>不凡学院</p>
+        <li>li2</li>
+        <li>li3</li>
+        <li>li4</li>
+        <li>li5</li>
+        <li>li6</li>
+        <li>li7</li>
+        <li>li8</li>
+        <li>li9</li>
+        <li>li10</li>
+    </ul>
+</body>
+
+</html>

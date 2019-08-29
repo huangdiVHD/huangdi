@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .main {
+            width: 800px;
+            height: 170px;
+            background-color: #333;
+            margin: 300px auto;
+        }
+        
+        li {
+            list-style: none;
+            float: left;
+            text-align: center;
+            width: 60px;
+            height: 100px;
+            margin: 20px 70px;
+            transition: all .8s ease;
+        }
+        
+        img {
+            width: 60px;
+            height: 60px;
+        }
+        
+        span {
+            color: #fff;
+        }
+        
+        ul {
+            transform: translate(0, -85px)
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <li>
+            <img class="min" src="../icon/cd-default.svg" alt="">
+            <span>Home</span>
+            <ul>
+                <img class="ac" src="../icon/cd-active.svg" alt="">
+            </ul>
+        </li>
+        <li>
+            <img class="min" src="../icon/camera-default.svg" alt="">
+            <span>Camera</span>
+            <ul>
+                <img class="ac" src="../icon/camera-active.svg" alt="">
+            </ul>
+        </li>
+        <li>
+            <img class="min" src="../icon/file-default.svg" alt="">
+            <span>Files</span>
+            <ul>
+                <img class="ac" src="../icon/file-active.svg" alt="">
+            </ul>
+        </li>
+        <li>
+            <img class="min" src="../icon/mine-default.svg" alt="">
+            <span>Mine</span>
+            <ul>
+                <img class="ac" src="../icon/mine-active.svg" alt="">
+            </ul>
+        </li>
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        $('.ac').css('display', 'none')
+        $('.min').on('click', function() {
+            $('.ac').css('display', 'block')
+
+        })
+    </script>
+</body>
+
+</html

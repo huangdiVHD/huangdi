@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <!-- 使用document.createElement在页面创建一个高宽为 300 像素*150 像素的 div 元素，插入到<body>标签下。
+                通过设置 style 属性实现该div元素从左上角到右下角的 red 到 blue 的渐变。
+                在<body>元素内append20 个类名为.box的盒子。
+                点击元素判断当前点击元素是否是img元素。
+                获取页面中所有的<a>元素，遍历获取到的元素，对其中href属性以#开头的元素，设置背景色为红色。 -->
+         <!-- <script src="JS/jquery-3.4.1.js"></script> -->
+        <script>
+            var a = document.createElement('div');
+            a.style.width= 300+"px";
+            a.style.height =300 + "px";
+            a.style.background = 'radial-gradient(circle at 0% 0%, blue 20%, red 70%)';
+            document.body.appendChild(a);
+            for(var i =0;i<=20;i++){
+                var b = document.createElement('div');
+                b.className='box';
+                b.style.width= 30+"px";
+                b.style.height =30+"px";
+                b.style.background = 'red';
+                b.style.marginTop = '10px ';
+                document.body.appendChild(b);
+            }
+            // var c = $('.box')[0].tagName.toLowerCase();
+            // $('.box').click(function(){
+            //     if(c=='div'){
+            //                 console.log('div');
+            //             } else {
+            //                 console.log('img');
+            //             }
+            // });
+            var box1 = document.getElementsByClassName('box');
+                for (var i = 0; i < box1.length; i++) {
+                    var c = box1[i].tagName;
+                    console.log(c);
+                    box1[i].onclick = function () {
+                        if (c == 'DIV') {
+                            console.log('div');
+                        } else {
+                            console.log('img');
+                        }
+                    }
+                }
+        </script>
+</body>
+</html>

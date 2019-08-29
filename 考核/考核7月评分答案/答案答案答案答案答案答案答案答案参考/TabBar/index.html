@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.container{
+				display: flex;
+				justify-content: space-around;
+				position: relative;
+				width: 800px;
+				height: 100px;	
+				margin: 200px auto;
+				background-color: #333;
+				padding: 20px 0;
+			}
+				
+			.dot{
+				position: absolute;
+				width: 16px;
+				height: 16px;
+				left: 11.5%;
+				bottom: 22px;
+				border-radius: 50%;
+				background-color: deepskyblue;
+				transition: all .5s;
+			}
+			.icon{
+				position: relative;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				flex-direction: column;
+				color: #fff;
+			}
+			.icon .tab{
+				position: relative;
+				width: 60px;
+				height: 60px;
+				overflow: hidden;
+			}
+			
+			.tab-icon img{
+				width: 100%;
+				height: 100%;
+				display: block;
+			}
+			.icon .tab-default{
+				position: relative;
+				z-index: 1;
+				transition: .5s;
+			}
+				
+			.icon .tab-active{
+				position: absolute;
+				z-index: 0;
+				transition: all .5s;
+				transform: translate(0,0);
+			}
+			.icon .text{
+				position: relative;
+				transition: all .5s;
+			}
+				
+			.icon.active .tab.left{
+				animation: shakeLeft .5s;
+			}
+			.icon.active .tab.right{
+				animation: shakeRight .5s;
+			}
+			.icon.active .tab-default{
+				opacity: 0;
+				transition-delay: .3s;
+			}
+			.icon.active .tab-active{
+				transform: translate(0,-60px);
+			}
+				
+			.icon.active .text{
+				opacity: 0;
+			}
+			@keyframes shakeLeft{
+				0%{
+					transform:  rotate(0deg) translate(-5px,0);
+				}
+					
+				25%{
+					transform: rotate(-30deg) translate(-5px,-5px);
+				}
+					
+				40%{
+					transform: translate(0,-10px);
+				}
+					
+				100%{
+					transform: rotate(0deg);
+				}
+			}
+			@keyframes shakeRight{
+				0%{
+					transform:  rotate(0deg) translate(5px,0);
+				}
+					
+				25%{
+					transform: rotate(30deg) translate(5px,-5px);
+				}
+					
+				40%{
+					transform: translate(0,-10px);
+				}
+					
+				100%{
+					transform: rotate(0deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			
+		</div>
+		<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+		<script type="text/javascript">
+			var imgArr = [
+				{
+					index:0,
+					activeImg:'img/cd-active.svg',
+					defaultImg:'img/cd-default.svg',
+					text:'Home'
+				},
+				{
+					index:1,
+					activeImg:'img/camera-active.svg',
+					defaultImg:'img/camera-default.svg',
+					text:'Camera'
+				},
+				{
+					index:2,
+					activeImg:'img/file-active.svg',
+					defaultImg:'img/file-default.svg',
+					text:'Files'
+				},
+				{
+					index:3,
+					activeImg:'img/mine-active.svg',
+					defaultImg:'img/mine-default.svg',
+					text:'Mine'
+				}
+			];
+			var oldIndex = 0;
+			initTab($('.container'),imgArr);
+			
+			function swap(index){
+				$('.icon .tab').removeClass('left');
+				$('.icon .tab').removeClass('right');
+
+				$('.icon').removeClass('active');
+				$('.icon').eq(index).addClass('active');
+				if(index>=oldIndex){
+					$('.active .tab').addClass('right');
+				}else{
+					$('.active .tab').addClass('left')
+				}
+				var left = 11.5+index*25;
+				$('.dot').css({
+					left:left+'%' 
+				})
+				oldIndex = index;
+			}
+			
+			function initTab($el,arr){
+				var str = '<div class="dot"></div>';	
+				for(var i =0;i<arr.length;i++){
+					str+='<div class="icon'+(i===0?' active':'')+'" onclick="swap('+i+')"><div class="tab"><div class="tab-default tab-icon"><img src="'+arr[i].defaultImg+'" ></div><div class="tab-active tab-icon"><img src="'+arr[i].activeImg+'" ></div></div><div class="text">'+arr[i].text+'</div></div>'
+				}
+				$el.html(str);
+			}
+			
+		</script>
+	</body>
+</html>

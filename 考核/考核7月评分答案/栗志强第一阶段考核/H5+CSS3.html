@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>h5+CSS3</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 800px;
+            height: 200px;
+            background-color: #000;
+            margin: 50px auto;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .box li {
+            width: 200px;
+            float: left;
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+
+        }
+
+        .img {
+            width: 80px;
+            height: 80px;
+            margin-top: 30px;
+            margin-left: 60px;
+            overflow: hidden;
+            position: relative;
+            transition: all .5s;
+            
+        }
+        .cd{
+            background: url("../icon/cd-default.svg") no-repeat center;
+            background-size: contain;
+            background-origin: content-box;
+        }
+        .camera{
+            background: url("../icon/camera-default.svg") no-repeat center;
+            background-size: contain;
+            background-origin: content-box;
+        }
+        .file{
+            background: url("../icon/file-default.svg") no-repeat center;
+            background-size: contain;
+            background-origin: content-box;
+        }
+        .mine{
+            background: #000 url("../icon/mine-default.svg") no-repeat center;
+            background-size: contain;
+            background-origin: content-box;
+        }
+
+        .img img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .img .hidden {
+            position: absolute;
+            bottom: -80px;
+            left: 0;
+            transition: all .5s;
+        }
+        
+        /* .box .dot{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: skyblue;
+            position: absolute;
+            bottom: 40px;
+            left: 90px;
+        } */
+
+        .box p {
+            text-align: center;
+            margin-top: 30px;
+            color: #fff;
+            transition: all .5s;
+        }
+
+        li:hover .hidden {
+            transform: translateY(-80px);
+        }
+        li:hover p{
+            color: transparent;
+        }
+        li:hover .img {
+            background: transparent;
+        }
+
+    </style>
+</head>
+
+<body>
+    <ul class="box">
+        <li>
+            <div class="img cd">
+                <!-- <img src="../icon/cd-default.svg" class="visible" alt=""> -->
+                <img src="../icon/cd-active.svg" class="hidden" alt="">
+
+            </div>
+            <div class="dot"></div>
+            <p>Home</p>
+        </li>
+        <li>
+            <div class="img camera">
+                <!-- <img src="../icon/camera-default.svg" class="visible" alt=""> -->
+                <img src="../icon/camera-active.svg" class="hidden" alt="">
+
+            </div>
+            <p>Camera</p>
+        </li>
+        <li>
+            <div class="img file">
+                <!-- <img src="../icon/file-default.svg" class="visible" alt=""> -->
+                <img src="../icon/file-active.svg" class="hidden" alt="">   
+            </div>
+            <p>Files</p>
+
+        </li>
+        <li>
+            <div class="img mine">
+                <!-- <img src="../icon/mine-default.svg" class="visible" alt=""> -->
+                <img src="../icon/mine-active.svg" class="hidden" alt="">
+
+            </div>
+            <p>Mine</p>
+
+        </li>
+    </ul>
+</body>
+
+</html>

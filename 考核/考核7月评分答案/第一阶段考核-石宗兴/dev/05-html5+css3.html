@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .footer {
+            position: relative;
+            margin: 0 auto;
+            width: 640px;
+            /* height: 120px; */
+            background-color: black;
+            overflow: hidden;
+        }
+
+        .footer a {
+            position: relative;
+            display: block;
+            float: left;
+            margin: 10px 50px;
+            width: 60px;
+            height: 95px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .footer a img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
+            transition: all .5s ease;
+        }
+
+        .footer a img:last-child {
+            position: absolute;
+            left: 0;
+            top: 95px;
+        }
+
+        .footer a span {
+            color: #fff;
+            font-size: 14px;
+        }
+
+        a.active img:last-child {
+            top: 0;
+        }
+
+        a.active span {
+            transition: all .5s ease;
+            opacity: 0;
+        }
+
+        .dot {
+            position: absolute;
+            bottom: 10px;
+            left: 71px;
+            width: 18px;
+            height: 18px;
+            background-color: skyblue;
+            border-radius: 50%;
+            transition: all .5s ease;
+        }
+
+        @keyframes icon-jump-l {
+            25% {
+                transform: rotate(-10deg);
+                transform-origin: left bottom;
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            75% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes icon-jump-r {
+            10% {
+                transform: rotate(10deg);
+                transform-origin: right bottom;
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            75% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .jump-l {
+            animation: icon-jump-l .5s forwards;
+        }
+
+        .jump-r {
+            animation: icon-jump-r .5s forwards;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="footer">
+        <a href="#" class="active">
+            <img src="icon/cd-default.svg" alt="">
+            <span>Home</span>
+            <img src="icon/cd-active.svg" alt="">
+        </a>
+        <a href="#">
+            <img src="icon/camera-default.svg" alt="">
+            <span>Camera</span>
+            <img src="icon/camera-active.svg" alt="">
+        </a>
+        <a href="#">
+            <img src="icon/file-default.svg" alt="">
+            <span>Files</span>
+            <img src="icon/file-active.svg" alt="">
+        </a>
+        <a href="#">
+            <img src="icon/mine-default.svg" alt="">
+            <span>Mine</span>
+            <img src="icon/mine-active.svg" alt="">
+        </a>
+        <div class="dot">
+        </div>
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+
+        var index = 0,//圆点位置
+            distance = 0;//移动的距离
+
+        $('a').click(function () {
+            $(this).siblings().removeClass('active');
+            $(this).addClass('active');
+            $(this).siblings().children().removeClass();
+
+            var mul = $(this).index() - index;
+
+            if (mul > 0) {
+                $(this).children().eq(0).addClass('jump-r');
+            } else if (mul < 0) {
+                $(this).children().eq(0).addClass('jump-l');
+            }
+
+            distance += 160 * mul;
+            $('.dot').css('transform', 'translateX(' + distance + 'px)');
+            index = $(this).index();
+        })
+    </script>
+</body>
+
+</html>

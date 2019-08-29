@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .uls {
+            width: 500px;
+            height: 140px;
+            background-color: black;
+            margin: 50px auto;
+            list-style: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        li {
+            width: 50px;
+            height: 100%;
+            float: left;
+            margin-right: 50px;
+            border: 1px solid red;
+
+        }
+
+        .list {
+            display: block;
+            width: 100%;
+            height: 50px;
+            border: 1px solid orange;
+            margin-top: 50px;
+        }
+
+        .sp {
+            display: block;
+            color: white;
+            width: 50px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .imgs {
+            display: block;
+            width: 50px;
+            border: 1px solid green;
+            transition: all .3s ease;
+        }
+
+        .active {
+            display: block;
+            position: absolute;
+            top: 80px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="uls">
+        <li class="li1 lis">
+            <img src="icon/cd-default.svg" alt="" class="list1 list">
+            <span class="sp1 sp">Home</span>
+            <img src="icon/cd-active.svg" alt="" class="img1 imgs">
+        </li>
+        <li class="li2 lis">
+            <img src="icon/camera-default.svg" class="list2 list" alt="">
+            <span class="sp2 sp">Camera</span>
+            <img src="icon/camera-active.svg" alt="" class="img2 imgs">
+        </li>
+
+        <li class="li3 lis">
+            <img src="icon/file-default.svg" class="list3 list" alt="">
+            <span class="sp3 sp">File</span>
+            <img src="icon/file-active.svg" alt="" class="img3 imgs">
+        </li>
+        <li class="li4 lis">
+            <img src="icon/mine-default.svg" class='list4 list' alt="">
+            <span class="sp4 sp">Mine</span>
+            <img src="icon/mine-active.svg" alt="" class="img4 imgs">
+        </li>
+    </ul>
+    <script src="jquery-3.4.1.min.js"></script>
+    <script>
+        $('.li1').click(function () {
+            $('.img1').css('transform', 'translateY(-92px)');
+             var $ys = $(this).siblings().children()[2];
+             $ys.css('transform', 'translateY(192px)');
+             console.log($ys)
+        })
+        $('.li2').click(function () {
+            $('.img2').css('transform', 'translateY(-92px)');
+            var $ys = $(this).siblings().children()[2];
+            $ys.css('transform', 'translateY(192px)');
+        })
+
+
+
+
+
+        $('.li3').click(function () {
+            $('.img3').css('transform', 'translateY(-92px)');
+            $('.img4').siblings('transform', 'translateY(-192px)');
+        })
+        $('.li4').click(function () {
+            $('.img4').css('transform', 'translateY(-92px)');
+            $('.img4').siblings('transform', 'translateY(-192px)');
+        })
+
+        // $('.li1').mouseenter(function () {
+        //     $('.img1').css("marginTop", '-52px');
+        //     $('.sp1').css('color', 'transparent');
+        //     $('.list1').css('opacity', '0');
+        //     $('.uls').removeClass('active');
+        //     $('.sp1').addClass('active');
+        // })
+        // $('.li1').mouseleave(function () {
+        //     $('.img1').css("marginTop", '70px');
+        //     $('.sp1').css('color', 'white');
+        //     $('.list1').css('opacity', '1');
+        //     $('.sp1').removeClass('active');
+        // })
+        // $('.li2').mouseenter(function () {
+        //     $('.img2').css("marginTop", '-52px');
+        //     $('.sp2').css('color', 'transparent');
+        //     $('.list2').css('opacity', '0');
+        //     $('.uls').removeClass('active');
+        //     $('.sp2').addClass('active');
+        // })
+        // $('.li2').mouseleave(function () {
+        //     $('.img2').css("marginTop", '70px');
+        //     $('.sp2').css('color', 'white');
+        //     $('.list2').css('opacity', '1');
+        //     $('.sp2').removeClass('active');
+        // })
+        // $('.li3').mouseenter(function () {
+        //     $('.img3').css("marginTop", '-52px');
+        //     $('.sp3').css('color', 'transparent');
+        //     $('.list3').css('opacity', '0');
+        //     $('.uls').removeClass('active');
+        //     $('.sp3').addClass('active');
+        // })
+        // $('.li3').mouseleave(function () {
+        //     $('.img3').css("marginTop", '70px');
+        //     $('.sp3').css('color', 'white');
+        //     $('.list3').css('opacity', '1');
+        //     $('.sp3').removeClass('active');
+        // })
+        // $('.li4').mouseenter(function () {
+        //     $('.img4').css("marginTop", '-52px');
+        //     $('.sp4').css('color', 'transparent');
+        //     $('.list4').css('opacity', '0');
+        //     $('.uls').removeClass('active');
+        //     $('.sp4').addClass('active');
+        // })
+        // $('.li4').mouseleave(function () {
+        //     $('.img4').css("marginTop", '70px');
+        //     $('.sp4').css('color', 'white');
+        //     $('.list4').css('opacity', '1');
+        //     $('.sp4').removeClass('active');
+        // })
+    </script>
+</body>
+
+</html>

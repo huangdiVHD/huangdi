@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .uls {
+            width: 300px;
+            height: 150px;
+            border: 1px solid red;
+            margin: 50px auto;
+            list-style: none;
+            position: relative;
+        }
+
+        li {
+            width: 300px;
+            height: 30px;
+        }
+
+        li a {
+            position: absolute;
+            color: black;
+            text-decoration: none;
+            width: 200px;
+            height: 30px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+
+        }
+        .new1,.new2{
+            position: absolute;
+            width: 42px;
+            height: 29px;
+            cursor: pointer;
+            border: 1px solid red;
+            text-align: center;
+            line-height: 29px;
+            padding: 0 5px ;
+            border-right-style: none;
+            border-top-style: none;
+            font-size: 14px;
+        }
+        .new1{
+            right: 52px;
+           
+        }
+        .new2{
+            right: 0px;
+        }
+        li a:hover ,  span:hover{
+            color: #f40;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="uls">
+        <li>
+            <a href="#">安徽知名度最高的地名，风头盖过省会，很多游客却不知</a>
+            <span class="new1">新闻</span>
+            <span class="new2"> 新闻4</span>
+        </li>
+        <li>
+            <a href="#">2019中国民营企业500强出炉 看河南上榜企业名单</a>
+            <span class="new1">新闻2</span>
+            <span class="new2"> 新闻5</span>
+        </li>
+        <li>
+            <a href="#">约两成家长暑假花费超万元，近八成超4000元！都花哪了？</a>
+            <span class="new1">新闻3</span>
+            <span class="new2"> 新闻6</span>
+        </li>
+    </div>
+</body>
+
+</html>

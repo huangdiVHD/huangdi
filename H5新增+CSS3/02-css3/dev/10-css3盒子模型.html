@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            /* 宽高 不包括  padding border */
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+            background-color: red;
+        }
+
+        .box:hover {
+            /* 添加border 所占位置变大   会影响周围的 元素位置 */
+            border: 10px solid #333;
+        }
+
+        /* content-box(默认)    width/height + border +padding   */
+
+        /* css3 盒子模型 border-box 位置大小由 设置的width/height决定  设置padding  和border 会挤压内容区域*/
+        .box3 {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            margin: 50px auto;
+            /* 转换盒子模型 */
+            box-sizing: border-box;
+            /* 添加边框  padding 时  不会影响盒子在页面中的 大小,但是会挤压内容区域 */
+        }
+
+        .box3:hover {
+            border: 10px solid #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+    </div>
+    <div class="box3">
+
+    </div>
+</body>
+
+</html>

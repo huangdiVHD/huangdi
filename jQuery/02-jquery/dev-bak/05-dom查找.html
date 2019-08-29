@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li class="li_1">li1</li>
+        <li class="li_2">li2</li>
+        <li class="li_3">li3</li>
+        <li class="li_4">li4</li>
+        <li class="li_5">li5</li>
+        <li class="li_6">li6</li>
+        <li class="li_7">li7</li>
+        <li class="li_8">li8</li>
+    </ul>
+    <div class="box">
+        <div class="inner-box">
+            <p>bufanxueyuan</p>
+        </div>
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        // siblings()  所有兄弟
+        // parent()  父亲
+        // find()  所有后代
+        // children()
+        // eq()
+
+
+        // 下一个兄弟  next()
+        // 	nextUntil()	后面所有的兄弟直到…  不包含结束的节点
+        // nextAll()
+        $('.li_3').click(function () {
+            $(this).next().css('color', 'red');
+            $(this).nextAll().css('color', 'orange');
+            $(this).nextUntil('.li_6').css('color', 'green');
+        })
+        // 	prev()	前面的兄弟
+        // 	prevAll()		前面所有的兄弟
+        // 	prevUntil()	
+
+        // 	parents()		所有的父节点
+        console.log($('p').parents()); // inner-box  box body html
+        console.log($('p').parentsUntil('body')); // inner-box  box
+    </script>
+</body>
+
+</html>

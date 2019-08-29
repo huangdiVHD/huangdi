@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style: none;
+        }
+
+        .dot .dot-item {
+            width: 10px;
+            height: 10px;
+            float: left;
+            margin: 0 10px;
+        }
+
+        .dot .dot-item a {
+            display: block;
+            width: 6px;
+            height: 6px;
+            background-color: rgba(0, 0, 0, .4);
+            border: 2px solid rgba(255, 255, 255, .4);
+            border-radius: 50%;
+        }
+
+        .dot .dot-item a:hover {
+            background-color: rgba(255, 255, 255, .4);
+            border: 2px solid rgba(0, 0, 0, .4);
+
+        }
+
+        .dot .dot-item.active a {
+            background-color: rgba(255, 255, 255, .4);
+            border: 2px solid rgba(0, 0, 0, .4);
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="dot">
+        <li class="dot-item active">
+            <a href="#"></a>
+        </li>
+        <li class="dot-item">
+            <a href="#"></a>
+        </li>
+        <li class="dot-item">
+            <a href="#"></a>
+        </li>
+        <li class="dot-item">
+            <a href="#"></a>
+        </li>
+        <li class="dot-item">
+            <a href="#"></a>
+        </li>
+    </ul>
+    <script>
+        var dotItems = document.getElementsByClassName('dot-item');
+
+        for (var i = 0; i < dotItems.length; i++) {
+
+            // dotItems[i].onclick = function () {
+            //     // console.log(i); // 5
+            // }
+            dotItems[i].onclick = (function (n) {
+                // 函数内部  return 其他函数时,会把这个函数所在的作用域下变量一块return出去,就像放在一个背包里边
+                return function () {
+                    console.log(n);
+                    // 当执行这句代码时,要查找n,
+                    // 先从自己身上找,自己身上找不到,行李里边找
+                }
+            })(i);
+            // user.a = foo(); // 把foo函数的 返回值 赋值给a
+        }
+
+        // li0 行李: n=0  function(){
+        //     console.log(n)
+        // }
+        // li1 行李:n=1 
+        // li2 行李:n=2
+        // li3 行李:n=3
+        // li4 行李:n=4
+
+        function foo() {
+            var a = 1;
+            return function () {
+                console.log(a);
+            }
+        }
+        var bar = foo();
+        console.log(bar);
+        bar(); // a=1
+    </script>
+</body>
+
+</html>

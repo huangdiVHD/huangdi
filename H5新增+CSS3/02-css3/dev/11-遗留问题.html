@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: hsl(202, 88.8%, 54.3%);
+        }
+
+        body {
+            background-color: gray;
+            color: gray;
+        }
+
+        p {
+            font-size: 48px;
+            /* 凸 */
+            /* text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000; */
+            /* 凹 */
+            text-shadow: -1px -1px 1px #000, 1px 1px 1px #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- autocomplete  on(默认)或者 off -->
+    <form action="">
+        <input autocomplete="off" name="text" type="text">
+        <input type="submit" value="提交">
+    </form>
+
+    <!-- 颜色 hsl -->
+    <div class="box">
+
+    </div>
+
+    <!-- 文本阴影 -->
+    <p>不凡学院</p>
+
+    <!-- 盒子阴影 -->
+    <!-- https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Background_and_Borders/Box-shadow_generator -->
+</body>
+
+</html>

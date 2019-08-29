@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.min.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <form action="http://www.baidu.com" id="login-form" method="post" onsubmit="sub(event)" name="fo" class="dd">
+        <!--或者可以直接 onsubmit="return false"-->
+        <p>账号: <input type="text" name="username" required /></p>
+        <p>密码: <input type="password" name="pwd" required /></p>
+        <p><input type="submit" value="登录" class="btn" /></p>
+    </form>
+    <script>
+        function sub(e) {
+            return e.preventDefault();
+
+        }
+
+        //获取form元素
+        var f = document.getElementById('login-form');
+        // console.log(f);
+        var f1 = document.getElementsByTagName('form')[0];
+        var f2 = document.getElementsByName('fo')[0];
+        var f3 = document.getElementsByClassName('dd')[0];
+        var f4 = document.querySelector('form');
+        // console.log(f4);
+        var f5 = document.querySelector('.dd');
+        var f6 = document.querySelector('#login-form');
+        // console.log(f6);
+        var f7 = document.querySelectorAll('form')[0];
+        // console.log(f7);
+    </script>
+</body>
+
+</html>

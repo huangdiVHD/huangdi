@@ -6,17 +6,124 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+ <script src="douban.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
 <body>
-    1 打印字符串 '电影名字:西虹市首富,导演:闫飞/彭大魔'
-    2 将一个字符串数组['刘备', '张飞', '关羽'] 输出为 | 分割的形式， 比如“ 刘备 | 张飞 | 关羽”。 使用两种方式实现
-    // 3 找到数组中每个字母出现的次数["c", "a", "z", "a", "a"]
-    // 4 如何把一个字符串的大小写取反（ 大写变小写小写变大写）， 例如’ AbC ' 变成 '
-    // aBc ' 。
-    // 5 请把俩个数组[A1, A2, B1, B2, C1, C2, D1, D2] 和[A, B, C, D]，
-    // 合并为[A1, A2, A, B1, B2, B, C1, C2, C, D1, D2, D]。
-    // 6 工资的数组[1500,1200,2000,2100,2100,1800],把工资超过2000的删除
+    <script type="text/javascript">
+//  1 打印字符串 '电影名字:西虹市首富,导演:闫飞/彭大魔'
+    //  console.log(movies);
+     // 打印出 所有电影名字
+    //  var subjects = movies.subjects;
+    //   for (var i = 0; i < subjects.length; i++) {
+    //      var a = '电影导演:'+subjects[i].title+','+'导演:';
+    //      var  b = subjects[i].directors;
+    //      for (var j=0;j<b.length;j++){
+    //           a = a+ b[j].name+'/';
+    //      }
+    //      a = a.substr(0,a.length-1);//截取
+    //      console.log(a);
+    //  }
+//  	2 将一个字符串数组['刘备', '张飞', '关羽'] 输出为 | 分割的形式， 比如“ 刘备 | 张飞 | 关羽”。 使用两种方式实现
+ 	// var a = ['刘备','张飞','关羽'];
+ 	//   a.splice(1, 1,'| 张飞 |');
+    //    a[1]="| 张飞 |"
+ 	// console.log(a.join('|'));//join将数组改为字符串
+   // 3 找到数组中每个字母出现的次数["c", "a", "z", "a", "a"]
+    //    var a = ["c", "a", "z", "a", "a",'z'];
+    //    var b = {};
+    // for(var i=0;i<a.length;i++){
+    //   if(b[a[i]]){
+    //     //   b[a[i]]=b[a[i]]+1;
+    //     b[a[i]]++;
+    //    }else{
+    //         b[a[i]]=1;
+    //          }
+    //    }
+//  console.log(b);//使用对象
+//  var index1 = a.indexOf('a');
+//  console.log(index1);
+//  var b=0;
+//  var c=0;
+//  var d=0;
+//  for(var i=0;i<=a.length;i++){
+//  	if('a'==a[i]){
+//  		b++;
+//  	}else if('c'==a[i]){
+//  		c++;
+//  	}else if('z'==a[i]){
+//  		d++;
+//  	}
+//  }
+//  console.log('a出现的次数:'+b+',c出现的次数:'+c+',z出现的次数:'+d);
+
+ // 4 如何把一个字符串的大小写取反（ 大写变小写小写变大写）， 例如’ AbC ' 变成 'aBc ' 。
+    // toLowerCase  变成小写 不会改变原字符串
+     var str = 'Abc';
+    //  var str1 = '';
+    //  //类似数组,多变通
+    //  for(i=0; i<str.length;i++){
+    //      if(str[i]===str[i].toUpperCase()){
+    //          //遍举元素,进行比较
+    //          str1+=str[i].toLowerCase();
+    //      }else{
+    //          str1+=str[i].toUpperCase();
+    //      }
+    //  }
+    //  console.log(str1);
+    // var strArr = str.split("");//str变成数组''引号中间不能有空格,否则便是有值得数组;
+
+    // for(var i=0; i<strArr.length; i++){
+
+    //     if(strArr[i].toLowerCase() === strArr[i]){
+
+    //         strArr[i] = strArr[i].toUpperCase();
+    //     }else{
+    //         strArr[i] = strArr[i].toLowerCase();
+    //     }
+    // }
+    // var newStr = strArr.join('');
+    // console.log(newStr)
+// 5 请把俩个数组[A1, A2, B1, B2, C1, C2, D1, D2] 和[A, B, C, D]，
+ // 合并为[A1, A2, A, B1, B2, B, C1, C2, C, D1, D2, D]。
+ 
+        var arr1 = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2', 'D1', 'D2'];
+        var arr2 = ['A', 'B', 'C', 'D'];
+        var a = [];
+        var b = arr2[0];
+        var c = 0;
+        for(var i=0;i<arr1.length;i++){
+            if(arr1[i].indexOf(b) !==-1){
+                a.push(arr1[i]);
+            }else{
+                a.push(b);
+                b=arr2[++c];
+                a.push(arr1[i]);
+            }
+        }
+        if(i===arr1.length){
+            //   a.push(b);
+              a.push(arr2[c]);
+        }
+        console.log(a);
+  // 6 工资的数组[1500,1200,2000,2100,2100,1800],把工资超过2000的删除
+//     var a = [1500,1200,2000,2100,2100,1800,1600,3000];
+//     for (var i=0; i<a.length; i++) {
+//            if( a[i] > 2000){
+//              a.splice(i,1);
+//              i--;//每次splice删除一个,对原数组作了修改,即原先下标4现在为3,相应的i也需要减去1个在循环
+//            }
+//     }
+//    console.log(a);
+//     for(var j=1;j<a.length;j++){
+//          for(var i=0;i<a.length-j;i++){
+//              if(a[i]>2000){
+//		            a.splice(i,i-1);
+//	             }
+//          }
+//      }
+//       console.log(a);
+    </script>
 </body>
 
 </html>

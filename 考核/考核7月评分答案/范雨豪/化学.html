@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none
+        }
+
+        body {
+            background-color: #f2f2f2;
+        }
+
+        .header {
+            height: 37px;
+            background-color: #2e3139;
+        }
+
+        .container-header {
+            height: 98px;
+            background-color: #fff;
+        }
+
+        .container {
+            height: 400px;
+            background-color: #114676;
+        }
+
+        .header-c,
+        .container-header-c,
+        .container-c {
+            width: 1000px;
+            margin: 0 auto;
+            font-size: 14px;
+            color: #969696;
+            height: 100%;
+            position: relative;
+        }
+
+        .header-c {
+            line-height: 37px
+        }
+
+        .header-nav {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .header-nav a {
+            color: #969696;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .header-nav a:first-child {
+            padding-right: 10px;
+        }
+
+        .header-nav a:nth-of-type(2) {
+            padding-left: 14px
+        }
+
+        .container-header-c {
+            background: url("../img/CL.png") no-repeat left center;
+        }
+
+        .container-header-c .nav-item {
+            float: left;
+            color: #969696;
+            font-size: 16px;
+            font-family: "微软雅黑";
+            text-decoration: none;
+            text-align: center;
+            /* height: 40px; */
+            height: 20px;
+            width: 65px;
+            padding: 6px 20px;
+            margin-left: 13px
+        }
+
+        .container-header-c .nav-item:hover {
+            color: #03579e;
+            border-bottom: 1px solid #03579e
+        }
+
+        .nav {
+            height: 20px;
+            /* background-cojlor: red; */
+            position: absolute;
+            right: 0;
+            top: 39.5px;
+
+        }
+
+        .nav-item:last-child {
+            padding-right: 0px
+        }
+
+        .container-c {
+            width: 1000px;
+            background: url("../img/container.jpg") no-repeat left center;
+        }
+
+        .container-body {
+            width: 1000px;
+            height: 780px;
+            /* background-color: red; */
+            margin: 0 auto
+        }
+
+        .container-body .tips {
+            width: 100%;
+            height: 36px;
+            /* background-color: pink; */
+            margin-top: 39px;
+            background: url("../img/square.png") no-repeat left 10px;
+            border-bottom: 1px solid #cfcfcf;
+            position: relative;
+            color: #5a5a5a;
+            font-size: 18px;
+        }
+
+        .tips .pro-center {
+            display: inline-block;
+            font-size: 18px;
+            font-weight: 18px;
+            height: 36px;
+            line-height: 36px;
+            text-indent: 23px;
+            font-weight: bold;
+        }
+
+        .tips .pro-center.pp {
+            font-size: 15.23px;
+            font-weight: normal;
+            color: #5a5a5a;
+            text-indent: 20px;
+        }
+
+        .tips .more {
+            position: absolute;
+            right: 0px;
+            bottom: 5px;
+            width: 55px;
+            height: 22px;
+            text-decoration: none;
+            border: 1px solid #cfcfcf;
+            color: #767676;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .product {
+            margin-top: 17px;
+            height: 183px;
+        }
+
+        .product .pro-list {
+            width: 244px;
+            float: left;
+            position: relative;
+            text-align: center;
+            margin-left: 8px;
+        }
+
+        .product .pro-list.fr {
+            margin: 0
+        }
+
+        p {
+            /* bottom: -31px;
+            left: 30%; */
+            font-size: 15px;
+            color: #3a3a3a;
+            margin-top: 12px;
+        }
+
+        .product .img {
+            width: 100%;
+            height: 151px;
+            background-color: white;
+            background: url("../img/gsn.jpg") no-repeat center;
+        }
+
+        .img.se {
+            background: url("../img/sbl.jpg") no-repeat center;
+        }
+
+        .img.th {
+            background: url("../img/gtgsn.jpg") no-repeat center;
+        }
+
+        .img.frt {
+            background: url("../img/grj.jpg") no-repeat center;
+        }
+
+        .desc {
+            height: 170px;
+            width: 100%;
+            /* background-color: red; */
+            margin: 0 auto;
+            margin-top: 10px;
+            position: relative
+        }
+
+        .desc .img {
+            width: 300px;
+            height: 100%;
+            background: url("../img/city.jpg") no-repeat center;
+        }
+
+        .intro {
+            width: 674px;
+            height: 100%;
+            margin-left: 26px;
+        }
+
+        .img,
+        .intro {
+            float: left;
+            position: relative;
+        }
+
+        /* .intro .intro-spdd {
+            margin: 0;
+            line-height: 24px;
+        } */
+
+        .desc .intro .intro-sp {
+            color: #3a3a3a;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 3px;
+        }
+
+        /* .intro .intro-content {
+            color: #6d6d6d;
+            line-height: 24px;
+            font-size: 14px;
+            display: block;
+        } */
+
+        /* .intro-content.sj {
+            text-indent: 26px;
+        } */
+
+
+
+        .intro .sppp {
+            line-height: 24px;
+            font-size: 14px;
+            margin: 0;
+            color: #6d6d6d;
+            text-indent: 26px;
+        }
+
+        .container-footer {
+            width: 1000px;
+            height: 240px;
+            margin: 0 auto;
+            /* background-color: red; */
+        }
+
+        .container-footer1,
+        .container-footer2 {
+
+            float: left
+        }
+
+        .container-footer2 {
+            margin-left: 27px;
+        }
+
+        .container-footer .message {
+            color: #3a3a3a;
+            font-size: 15px;
+            margin-top: 22px;
+        }
+
+        .message .message-item {
+            line-height: 28px;
+            position: relative;
+
+        }
+
+        .message.ar {
+            width: 698.55px;
+            /* background-color: pink; */
+        }
+
+        .message.ar .time {
+            position: absolute;
+            right: 0px;
+        }
+
+        .message .square {
+            display: inline-block;
+            width: 4px;
+            height: 4px;
+            background-color: #b2b2b2;
+            /* position: absolute;
+            left: 0px;
+            top: 11px; */
+            vertical-align: middle;
+            margin-right: 10px;
+            /* margin-top: 30px */
+        }
+
+        .footer {
+            height: 204px;
+            width: 100%;
+            background-color: #2e3139;
+            overflow: hidden;
+        }
+
+        .footer-main {
+            margin: 0 auto;
+            /* background-color: red; */
+            height: 100%;
+            width: 1000px;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .footer-main p {
+            color: #bbbfcb;
+            font-size: 14px;
+        }
+
+        .footer-nav {
+            width: 492px;
+            margin: 0 auto;
+            margin-top: 45px;
+            height: 20px;
+        }
+
+        .footer-nav-item {
+            float: left;
+            width: 76px;
+            height: 20px;
+            /* background-color: blue; */
+            text-align: center;
+            line-height: 20px;
+            position: relative;
+            float: left;
+            display: inline;
+        }
+
+        .footer-nav-item .nav-a {
+            color: #bbbfcb;
+            font-size: 14px;
+            text-decoration: none;
+            height: 20px;
+        }
+
+
+        .footer-nav span {
+            color: red;
+            float: left;
+            width: 1px;
+            height: 12px;
+            background-color: red;
+            display: inline;
+            margin-top: 4.5px
+        }
+
+        /* .footer-nav .footer-item {
+            color: #bbbfcb;
+            font-size: 14px;
+            text-decoration: none;
+            padding: 0 10px;
+            float: left;
+            display: inline;
+
+        }
+
+        .footer-nav .line {
+            margin: 0 3px;
+            display: inline-block;
+            width: 1px;
+            height: 12px;
+            background-color: red;
+            float: left;
+            display: inline;
+            margin-top: 4px
+        } */
+        .ad {
+            width: 143px;
+            height: 183px;
+            background-color: white;
+            position: fixed;
+            left: 50%;
+            top: 600px;
+            margin-left: 510px;
+            text-align: center;
+            overflow: hidden;
+            border: 1px solid #cfcfcf
+        }
+
+        .ad .ask-qq {
+            color: #616161;
+            font-size: 16px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 16px;
+        }
+
+        .btn {
+            display: block;
+            height: 30px;
+            margin: 0 auto;
+            line-height: 30px;
+            width: 90px;
+            background-color: orange;
+            margin-top: 10px;
+        }
+
+        .btn .ask-qq2 {
+            display: block;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+            background: url("../img/qq-1.png") no-repeat left center;
+            text-indent: 20px;
+        }
+
+        .phone {
+            display: block;
+            width: 90px;
+            height: 30px;
+            margin: 0 auto;
+            margin-top: 15px;
+            line-height: 30px;
+        }
+
+        .phone .tel {
+            display: block;
+            background: url("../img/Unknown.png") no-repeat 10px center;
+            color: #1185bb;
+            font-size: 16px;
+            text-decoration: none;
+            text-indent: 20px
+        }
+
+        .ad p {
+            color: #616161;
+            font-size: 15px;
+            font-weight: bold;
+            margin-top: 2px
+        }
+
+        .a {}
+
+        .v {}
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="header-c">
+            欢迎莅临河南省巩义市昌隆精化有限公司！
+            <div class="header-nav">
+                <a href="">收藏本站</a>
+                <span class="line">|</span>
+                <a href="">设为首页</a>
+            </div>
+        </div>
+    </div>
+    <div class="container-header">
+        <div class="container-header-c">
+            <div class="nav">
+                <a href="#" class="nav-item">首页</a>
+                <a href="#" class="nav-item">公司简介</a>
+                <a href="#" class="nav-item">产品中心</a>
+                <a href="#" class="nav-item">新闻动态</a>
+                <a href="#" class="nav-item">诚聘英才</a>
+                <a href="#" class="nav-item">联系我们</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="container-c">
+        </div>
+    </div>
+    <div class="container-body">
+        <div class="tips">
+            <span class="pro-center">产品中心</span>
+            <span class="pro-center pp">PRODUCTS</span>
+            <a href="" class="more">more></a>
+        </div>
+        <ul class="product">
+            <li class="pro-list fr">
+                <div class="img fr"></div>
+                <p>速溶硅酸钠/粉状硅酸钠</p>
+            </li>
+            <li class="pro-list">
+                <div class="img se"></div>
+                <p>水玻璃</p>
+            </li>
+            <li class="pro-list">
+                <div class="img th"></div>
+                <p>固体硅酸钠</p>
+            </li>
+            <li class="pro-list la">
+                <div class="img frt"></div>
+                <p>硅溶胶 </p>
+            </li>
+        </ul>
+        <div class="tips">
+            <span class="pro-center">公司简介</span>
+            <span class="pro-center pp">COMPANY PROFILE</span>
+            <a href="" class="more">more></a>
+        </div>
+        <div class="desc">
+            <div class="img"></div>
+            <div class="intro">
+                <p class="intro-sp">河南省巩义市昌隆精化有限公司</p>
+                <!-- <p class="intro-spdd"><span class="intro-content sj">巩义市昌隆精化有限公司位于人杰地灵的杜甫故里巩义市，成立于1999年，经过近17年的不懈努力,我们</span>
+                    <span class="intro-content">已成为国内最专业的硅酸钠类产品生产厂家，郑州地区居同行业之首。</span></p>
+                <p class="intro-spdd"><span class="intro-content sj">公司主要生产固体、液体、粉状、钾钠等多种规格的泡花碱，其中年生产固体2万吨以上，液体5万吨速溶</span>
+                    <span class="intro-content">硅酸钠千余吨，并可根据用户需要生产特殊规格的泡花碱。我们以稳定的产品质量、优质的服务赢得了广大客</span>
+                    <span class="intro-content">户的信赖和支持，产品畅销全国以及世界各个国家和地区。公司在立足国内市场的同时，积极开拓国际市场。</span>
+                    <span class="intro-content">目前产品已销往东南亚、欧洲等国家和地区。公司愿与有志之士协同合作，互利共赢！</span>
+                </p> -->
+                <p class="sppp">巩义市昌隆精化有限公司位于人杰地灵的杜甫故里巩义市，成立于1999年，经过近17年的不懈努力,我们
+                    已成为国内最专业的硅酸钠类产品生产厂家，郑州地区居同行业之首。</p>
+                <p class="sppp">
+                    公司主要生产固体、液体、粉状、钾钠等多种规格的泡花碱，其中年生产固体2万吨以上，液体5万吨速溶
+                    硅酸钠千余吨，并可根据用户需要生产特殊规格的泡花碱。我们以稳定的产品质量、优质的服务赢得了广大客
+                    户的信赖和支持，产品畅销全国以及世界各个国家和地区。公司在立足国内市场的同时，积极开拓国际市场。
+                    目前产品已销往东南亚、欧洲等国家和地区。公司愿与有志之士协同合作，互利共赢！
+                </p>
+            </div>
+        </div>
+        <div class="container-footer">
+            <div class="container-footer1">
+                <div class="tips">
+                    <span class="pro-center">联系我们</span>
+                    <span class="pro-center pp">CONTACT US</span>
+                </div>
+                <ul class="message">
+                    <li class="message-item">电话: 0371-4124378</li>
+                    <li class="message-item">手机: 13598855556 ( 李经理 )</li>
+                    <li class="message-item">传真: 010-80210483</li>
+                    <li class="message-item">邮箱: clhg@163.com</li>
+                    <li class="message-item">地址: 河南省巩义市北山口汽车站南200米</li>
+                </ul>
+            </div>
+            <div class="container-footer2">
+                <div class="tips">
+                    <span class="pro-center">新闻动态</span>
+                    <span class="pro-center pp">COMPANY NEWS</span>
+                    <a href="" class="more">more></a>
+                </div>
+                <ul class="message ar">
+                    <li class="message-item"><span class="square"></span>生产固体水泡前景如何<span class="time">2016-07-05</span></li>
+                    <li class="message-item"><span class="square"></span>水玻璃的化学成分密度模数对水玻璃的性能有什么影响<span class="time">2016-11-19</span></li>
+                    <li class="message-item"><span class="square"></span>昌隆泡花碱告知你硅酸水溶液的技术指标<span class="time">2016-07-05</span></li>
+                    <li class="message-item"><span class="square"></span>生产固体泡花碱销售前景如何<span class="time">2016-07-05</span></li>
+                    <li class="message-item"><span class="square"></span>生产固体泡花碱销售前景如何<span class="time">2016-07-05</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-main">
+            <ul class="footer-nav">
+                <li class="footer-nav-item"><a href="#" class="nav-a">公司介绍</a></li>
+                <span></span>
+                <li class="footer-nav-item"><a href="#" class="nav-a">产品中心</a></li>
+                <span></span>
+                <li class="footer-nav-item"><a href="#" class="nav-a">网站新闻</a></li>
+                <span></span>
+                <li class="footer-nav-item"><a href="#" class="nav-a">留言系统</a></li>
+                <span></span>
+                <li class="footer-nav-item"><a href="#" class="nav-a">联系我们</a></li>
+                <span></span>
+                <li class="footer-nav-item"><a href="#" class="nav-a">网站地图</a></li>
+            </ul>
+            <!-- <div class="footer-nav">
+                <a href="" class="footer-item">公司介绍</a><span class="line"></span>
+                <a href="" class="footer-item">产品中心</a><span class="line"></span>
+                <a href="" class="footer-item">网站新闻</a><span class="line"></span>
+                <a href="" class="footer-item">留言系统</a><span class="line"></span>
+                <a href="" class="footer-item">联系我们</a><span class="line"></span>
+                <a href="" class="footer-item">网站地图</a>
+            </div> -->
+            <p>河南省巩义市昌隆精化有限公司 公司地址：巩义市北山口汽车站南200米 手机：13598855556</p>
+            <p>电话：0371-64124378 邮编：450000  邮箱：gychanglong@163.com 网址：http://www.clphj.com </p>
+            <p>豫ICP备12013179号-1</p>
+        </div>
+    </div>
+    <div class="ad">
+        <span class="ask"><a href="#" class="ask-qq">点击咨询QQ</a></span>
+        <span class="btn"><a href="#" class="ask-qq2">点击咨询</a></span>
+        <span class="phone"><a href="#" class="tel">电话</a></span>
+        <p>0371-4124378</p>
+        <p>13598855556</p>
+    </div>
+</body>
+
+</html>

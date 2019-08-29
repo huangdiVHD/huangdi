@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        // window.onload = function () {
+        //     alert('123')
+        // }
+        // window.onload = function () {
+        //     alert('456')
+        // }
+        // window.onload  事件覆盖
+
+        $(document).ready(function () {
+            alert('567');
+        })
+        $(document).ready(function () {
+            alert('7');
+        })
+        //  不会覆盖
+        // 简写
+        $(function () {
+            alert('123')
+        });
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

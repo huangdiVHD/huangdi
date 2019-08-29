@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box>.w-box {
+            color: red;
+        }
+
+        .li-item.active+li {
+            color: red;
+        }
+
+        .li-item.active~li {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="inner-box">
+            <div class="w-box">
+                w-box
+            </div>
+        </div>
+        <div class="w-box">
+            box 里边的 w-box
+        </div>
+    </div>
+    <ul>
+        <li class="li-item">li1</li>
+        <li class="li-item active">li2</li>
+        <li class="li-item">li3</li>
+        <li class="li-item">li4</li>
+        <li class="li-item">li5</li>
+        <li class="li-item">li6</li>
+        <p>p标签</p>
+    </ul>
+    <a href="">百度</a>
+    <a>百度无href</a>
+    <a href="baidu">href为百度</a>
+    <a href="baidu" title="百度">href为百度</a>
+
+
+    <!-- <a href="">百度</a> -->
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        // css的选择器  和 jquery 选择器是一样的的
+
+        // 其他css 选择器
+        // jquery 也适用
+        // 子代选择器
+        // 紧邻选择器 紧挨着的下一个兄弟
+        // 兄弟选择器 后边的所有兄弟
+
+        $('.box>.w-box').css('color', 'blue');
+        $('.active+li').css('fontSize', '24px');
+        $('.active~li').css('background-color', 'orange');
+
+
+        // 属性选择器
+        $('a[href]').css('color', 'red');
+        $('a[href="baidu"]').css('color', 'green');
+        $('a[href="baidu"][title]').css('color', 'yellow')
+    </script>
+</body>
+
+</html>

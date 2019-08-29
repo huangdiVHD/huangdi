@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			.d1 {
+				width: 100px;
+				height: 100px;
+				border: 20px solid black;
+				box-sizing: content-box;
+				/* border-image-source: url(border.png);
+				border-image-slice: 30;
+				border-image-width: 40px;
+				border-image-outset: 20px;
+				border-image-repeat: repeat; */
+				-moz-border-image: url(border.png) 27 fill/ 27px/ 0 0.55 0.22 0.44 round round;
+				-webkit-border-image: url(border.png) 27 fill/ 27px/ 0 0.55 0.22 0.44 round round;
+				-o-border-image: url(border.png) 27 fill/ 27px/ 0 0.55 0.22 0.44 round round;
+				border-image: url(border.png) 27 fill/ 27px/ 0 0.55 0.22 0.44 round round;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="d1">
+			我是一个div
+		</div>
+	</body>
+</html>

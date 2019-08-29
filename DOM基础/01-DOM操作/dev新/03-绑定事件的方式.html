@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="d1">
+        我是d1
+    </div>
+    <div onclick="bar()" class="d2">
+        我是d2
+    </div>
+    <script>
+        var divs = document.getElementsByTagName('div');
+        var d1 = document.getElementsByClassName('d1')[0];
+        var d2 = document.getElementsByClassName('d2')[0];
+        // 给d1绑定事件
+        d1.onclick = function () {
+            alert('我是d1');
+        }
+        // d1.onclick = foo;
+
+        // console.log(divs)
+
+        function foo() {
+            console.log('我是d1')
+        }
+
+
+        // 给d2 绑定事件
+        // 可以直接在标签内部绑定
+        function bar() {
+            alert('我是d2')
+        }
+    </script>
+</body>
+
+</html>

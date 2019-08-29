@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var arr = [0,1,2,3,4,5];
+// 请实现，指定任意索引，对应数组项前移一个位置。
+// 请实现，指定任意索引，对应数组项移动到最前面。
+
+// 请实现，指定任意索引，对应数组项移动到最后面。
+
+// 请实现，指定任意两项索引，对应数组项交换位置
+   var a = prompt('请输入');
+    arr1(arr, Number(a));
+    function arr1(arr, index) {
+        var a = arr[index];
+        arr[index] = arr[index + 1];
+        arr[index + 1] = a;
+        console.log(arr);
+        alert(arr);
+    }
+    var a = prompt('请输入');
+    arr1(arr, Number(a));
+    function arr2(arr, index) {
+        var a = arr[index];
+        arr[index] = arr[0];
+        arr[0] = a;
+        console.log(arr);
+        alert(arr);
+    }
+    var a = prompt('请输入');
+    arr1(arr, Number(a));
+    function arr3(arr, index) {
+        var a = arr[index];
+        arr[index] = arr[5];
+        arr[5] = a;
+        console.log(arr);
+        alert(arr);
+    }
+    var a = prompt('请输入1');
+    var b = prompt('请输入2');
+    arr1(arr, Number(a), Number(b));
+    function arr4(arr, index1, index2) {
+        var a = arr[index1];
+        arr[index1] = arr[index2];
+        arr[index2] = a;
+        console.log(arr);
+        alert(arr);
+    }
+    </script>
+</body>
+</html>

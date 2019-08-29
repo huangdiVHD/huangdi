@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+    </div>
+    <script>
+        var boxEl = document.getElementsByClassName('box')[0];
+        boxEl.onclick = function () {
+            // 修改样式  
+            // 修改style属性
+            // background-color === backgroundColor
+            // css 样式中的  -  ,不能在js中使用,此时改成驼峰命名
+            // 属性值  是  字符串
+            // 这些样式修改  都是 行内样式
+            boxEl.style.backgroundColor = 'green';
+            boxEl.style.width = '200px';
+            // boxEl.style.display = 'none';
+
+            // 但是 不建议在 js当中 直接去修改样式(尤其是复杂的样式
+            // 会造成 样式 和 js  耦合
+            // 通过class 名 来控制样式  以后会说
+            // )
+        }
+    </script>
+</body>
+
+</html>

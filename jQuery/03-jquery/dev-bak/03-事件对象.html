@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="lib/jquery-3.4.1.js"></script>
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+
+        .inner-box {
+            width: 50px;
+            height: 50px;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="inner-box">
+
+        </div>
+    </div>
+    <button>触发box点击事件</button>
+
+    <input type="text">
+    <p class="text"></p>
+    <script>
+        // 事件触发时,给你的附加信息
+        $('.box').click(function (event) {
+            console.log('我是外部盒子');
+            console.log(event)
+            console.log('this', this);
+            // currentTarget   this  指向一样 事件绑定的对象
+            // target  实际触发的对象
+            console.log('target', event.target);
+            console.log('currentTarget', event.currentTarget);
+        })
+        $('input').keyup(function () {
+            // 监听到 你按下的是哪个  按键
+            console.log(event.keyCode);
+            if (event.keyCode === 13) {
+                var val = $(this).val()
+                $('p').text(val);
+            }
+            // 敲回车时 ,更新text
+        })
+    </script>
+</body>
+
+</html>

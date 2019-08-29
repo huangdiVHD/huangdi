@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>固定导航栏</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.nav{
+				position: fixed;
+				top: 50px;
+				left: 100px;
+				width: 450px;
+				border: 3px solid black;
+			}
+			.nav div{
+				float: left;
+				width: 150px;
+				height: 40px;
+			}
+			.nav .d1{
+				background-color: #FF4500;
+			}
+			.nav .d2{
+				background-color: #00ff45;
+			}
+			.nav .d3{
+				background-color: #788404;
+			}
+			.header{
+				height: 1500px;
+				background-color: #FF4500;
+			}
+			.container{
+				height: 1500px;
+				background-color: #00ff45;
+			}
+			.footer{
+				height: 1500px;
+				background-color: #788404;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="nav">
+			<div class="d1"></div>
+			<div class="d2"></div>
+			<div class="d3"></div>
+		</div>
+		<div class="header"></div>
+		<div class="container"></div>
+		<div class="footer"></div>
+		
+		<script type="text/javascript">
+			// var h = 0;
+			// var timer = setInterval(function (){
+			// 	h ++;
+			// 	if(h === 600){
+			// 		clearInterval(timer);
+			// 	}
+			// 	window.scroll(0,h);
+			// },17)
+			
+			getEle(".d1").onclick = function (){
+				// 获取header与页面的顶部距离
+				var h = getEle(".header").offsetTop;
+				// window.scroll(0,h);
+				slowlyMove(h);
+			}
+			getEle(".d2").onclick = function (){
+				// 获取header与页面的顶部距离
+				var h = getEle(".container").offsetTop;
+				// window.scroll(0,h);
+				slowlyMove(h);
+			}
+			getEle(".d3").onclick = function (){
+				// 获取header与页面的顶部距离
+				var h = getEle(".footer").offsetTop;
+				// window.scroll(0,h);
+				slowlyMove(h);
+			}
+			
+			
+			function slowlyMove(target){
+				// 清除定时器,防止冲突
+				clearInterval(window.timer);
+				// 设置定时器
+				window.timer = setInterval(function (){
+					// 起点,页面当前的卷入高度
+					var start = sct();
+					// 步长
+					var step = (target - start) / 10;
+					// 判断步长临界区间
+					if(Math.abs(step) < 1){
+						step = step > 0 ? 1 : Math.floor(step);
+					}
+					// 运动
+					window.scroll(0,start + step);
+					// 终点值
+					if(start + step === target){
+						console.log("stop ...");
+						// 清除定时器
+						clearInterval(window.timer);
+					}
+				},17)
+			}
+			
+			// 实时获取页面的卷入高度
+			function sct(){
+				return document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+			}
+
+			
+			
+			function getEle(str){
+				var arr = document.querySelectorAll(str);
+				if(arr.length > 1){
+					return arr;
+				}else {
+					return arr[0];
+				}
+			}
+		</script>
+	</body>
+</html>

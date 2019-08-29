@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="lib/jquery-3.4.1.min.js"></script>
+    <script>
+        // $.noConflict();让jQuery释放对$的控制权，让其他库能够使用$符号，达到多库共存的目的。
+        // 此后，只能使用jQuery来调用jQuery提供的方法
+        $.noConflict();
+        var $ = 'abc';
+    </script>
+</body>
+
+</html>

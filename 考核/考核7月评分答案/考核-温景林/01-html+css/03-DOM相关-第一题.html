@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <form action="/account/login" id="login-form" method="post" class="form-post">
+    <p>账号: <input type="text" name="username" required /></p>
+    <p>密码: <input type="password" name="pwd" required /></p>
+    <p><input type="submit" value="登录" /></p>
+  </form>
+
+  <script src="jquery-1.12.4.min.js"></script>
+  <script>
+    var methods1 = document.getElementById('login-form');
+    var methods2 = document.getElementsByTagName('form')[0];
+    var methods3 = document.getElementsByClassName('form-post')[0];
+    var methods4 = document.querySelector('form');
+    var methods5 = document.querySelector('.form-post');
+    var methods6 = document.querySelectorAll('form')[0];
+    var methods7 = document.querySelectorAll('.form-post')[0];
+    var methods8 = $('form')[0];
+    var methods9 = $('.form-post')[0];
+    var methods10 = $('p').parent()[0];
+    var methods11 = document.getElementsByTagName('p')[0].parentNode;
+
+    console.log(
+      methods1,methods2,methods3,methods4,methods5,methods6,methods7,methods8,methods9,methods10,methods11
+    );
+    /*阻止表单的默认提交行为*/
+    /*利用event事件*/
+    $('input[type = "submit"]').click(function (event) {
+      event.preventDefault();
+    });
+  </script>
+</body>
+
+</html>

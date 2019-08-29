@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .inner {
+      width: 300px;
+      height: 150px;
+    }
+
+    .dianji {
+      width: 100px;
+      height: 100px;
+      background-color: yellow;
+      margin-top: 100px;
+    }
+
+    a {
+      display: block;
+      width: 50px;
+      height: 50px;
+      border: 2px solid #333;
+      margin-bottom: 10px;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <!--1.使用document.createElement在页面创建一个高宽为 300 像素*150 像素的 div 元素，插入到<body>标签下。
+      2.通过设置 style 属性实现该div元素从左上角到右下角的 red 到 blue 的渐变。
+      3.在<body>元素内append20 个类名为.box的盒子。
+      4.点击元素判断当前点击元素是否是img元素。
+      5.获取页面中所有的<a>元素，遍历获取到的元素，对其中href属性以#开头的元素，设置背景色为红色。 -->
+  <a href="#1"></a>
+  <a href=""></a>
+  <a href="#"></a>
+  <a href=""></a>
+  <a href=""></a>
+  <!-- <img class="dianji"></img> -->
+  <img src="icon/cd-active.svg" alt="">
+
+  <script src="jquery-1.12.4.min.js"></script>
+  <script>
+    // 1.使用document.createElement在页面创建一个高宽为 300 像素*150 像素的 div 元素，插入到<body>标签下
+    var getDiv = document.createElement('div');
+    var getScript = document.getElementsByTagName('script')[0];
+    getDiv.classList.add('inner');
+    var getBody = document.body;
+    getBody.insertBefore(getDiv, getScript);
+    // 2.通过设置 style 属性实现该div元素从左上角到右下角的 red 到 blue 的渐变。
+    getDiv.setAttribute('style', 'background:linear-gradient(to right bottom,red, blue)');
+    // 3.在<body>元素内append20 个类名为.box的盒子。
+    for (var i = 0; i < 20; i++) {
+      document.createElement('div');
+      getBody.appendChild(document.createElement('div'));
+    }
+
+    var arr = document.getElementsByTagName('div');
+    for (var j = 0; j < arr.length; j++) {
+      arr[j].classList.add('box');
+    }
+
+    //4.点击元素判断当前点击元素是否是img元素。
+
+    var dianJi = document.getElementsByTagName('img')[0];
+    var imgStr = dianJi.tagName.toLowerCase();
+    dianJi.onclick = function () {
+      if (imgStr === 'img') {
+        return alert('是');
+      } else {
+        return alert('不是');
+      }
+    }
+
+    //5.获取页面中所有的<a>元素，遍历获取到的元素，对其中href属性以#开头的元素，设置背景色为红色。 -->
+    $('a').each(function () {
+      $('a[href^="#"]').css({ backgroundColor: 'red' });
+    })
+
+  </script>
+</body>
+
+</html>

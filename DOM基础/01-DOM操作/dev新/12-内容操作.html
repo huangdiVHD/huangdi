@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul class="nav">
+        <li class="nav-item">li1</li>
+        <li class="nav-item">li2</li>
+        <li class="nav-item">li3</li>
+        <li class="nav-item">li4</li>
+        <li class="nav-item">li5</li>
+        <li class="nav-item">li6</li>
+        <li class="nav-item">li7</li>
+        <li class="nav-item">li8</li>
+    </ul>
+
+    <div class="box">
+        w我是box
+        <div class="inner-box">
+            我是innerbox
+        </div>
+    </div>
+    <script>
+        // innerText  和  innerHTML  都是属性
+        var box = document.getElementsByClassName('box')[0];
+        var ulEl = document.getElementsByTagName('ul')[0];
+        // 获取 box  标签内部的  所有文本
+        // 双闭合标签里面的内容（不识别标签）。
+        console.log(box.innerText);
+        // 设置box标签 的内容 (覆盖之前的内容)
+//      box.innerText = '不凡学院';
+        box.innerText = '<p>我是一个p标签</p>';
+        // innerText 只会把内容当做文本来解析
+
+
+        // innerHTML  会把 标签字符串  当做 html标签来解析
+        // 拿的 双闭合标签里面的内容（识别标签）。
+        console.log(ulEl.innerHTML);
+        // 设置 覆盖!!!!
+//         ulEl.innerHTML = '不凡学院';
+        ulEl.innerHTML = '<p>我是一个p标签</p>'; // 解析标签
+
+        // innerHTML 通常用来动态生成页面
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // setTimeout(function(){
+    //     alert("等5S");
+    // },5000)
+    //单次5S后弹出alert
+    var a = setInterval(function(){
+        alert("3S骂你一次");
+    },3000);
+  //每隔3S弹出一次alert
+    setTimeout(()=>{
+        clearInterval(a);
+    },6000);
+    //a 总共运行6S,然后停止
+     // 倒计时怎么关闭
+        // 清除setTimeout()
+        // clearTimeout();
+    </script>
+</body>
+</html>

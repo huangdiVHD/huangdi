@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul,
+        li {
+            padding: 0;
+            margin: 0;
+            list-style: none
+        }
+
+        .box {
+            width: 880px;
+            height: 154px;
+            background-color: #333333;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+
+        li {
+            float: left;
+            width: 70px;
+            height: 100px;
+           
+            margin-left: 120px;
+            margin-top: 20px;
+            position: relative;
+            overflow: hidden;
+
+        }
+
+        .box img {
+            width: 70px;
+            height: 70px;
+
+        }
+
+        img:nth-child(1) {
+            position: absolute;
+            top: 200px;
+
+            transition: all .5s ease;
+        }
+
+        li:active img:nth-child(1){
+            top: 0px;
+        }
+
+        img:nth-child(2) {
+           
+            
+
+            transition: all .5s ease;
+        }
+
+        li:active img:nth-child(2){
+           transform: translateY(-100px);
+          
+        }
+        li ul:nth-child(2){
+            color: white;
+            text-align: center;
+            transition: all .8s;
+            margin-top: 8px;
+        }
+        li:active ul:nth-child(2){
+            display: none;
+        }
+        li ul:nth-child(3){
+            
+            text-align: center;
+            transition: all .8s;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: green;
+            transition: all .8s;
+            position: absolute;
+            left: -159px;
+            bottom: 8px;
+          
+            
+            
+            
+            
+        }
+        li:active ul:nth-child(3){
+            
+           left: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <li name='rate'>
+            <ul><img src="icon/camera-active.svg" alt="">
+                <img src="icon/camera-default.svg" alt=""></ul>
+            <ul>Home</ul>
+            <ul></ul>
+        </li>
+        <li name='rate'>
+            <ul><img src="icon/cd-active.svg" alt="">
+                <img src="icon/cd-default.svg" alt=""></ul>
+            <ul>Camera</ul>
+            <ul></ul>
+        </li>
+        <li name='rate'>
+            <ul><img src="icon/file-active.svg" alt="">
+                <img src="icon/file-default.svg" alt=""></ul>
+            <ul>Files</ul>
+            <ul></ul>
+        </li>
+        <li name='rate'>
+            <ul><img src="icon/mine-active.svg" alt="">
+                <img src="icon/mine-default.svg" alt=""></ul>
+            <ul>Mine</ul>
+            <ul></ul>
+        </li>
+
+    </div>
+</body>
+
+</html>

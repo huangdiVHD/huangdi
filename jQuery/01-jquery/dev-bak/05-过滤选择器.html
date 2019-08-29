@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>li1</li>
+        <li>li2</li>
+        <li>li3</li>
+        <li class="li4">li4</li>
+        <li>li5</li>
+        <li>li6</li>
+        <li>li7</li>
+        <li>li8</li>
+    </ul>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        // :eq(index) index从0开始
+        $('li:eq(4)').css('background-color', 'red');
+        // :gt()   大于这个序号
+        $('li:gt(2)').css('background-color', 'blue');
+        // :lt()  小于这个序号
+        $('li:lt(2)').css('background-color', 'orange');
+        // :odd 序号为奇数
+        $('li:odd').css('background-color', 'pink');
+        // :even  偶数
+        $('li:even').css('background-color', 'red');
+        // fisrt
+        $('li:first').css('background-color', 'black');
+        // last
+        $('li:last').css('background-color', 'green');
+    </script>
+</body>
+
+</html>

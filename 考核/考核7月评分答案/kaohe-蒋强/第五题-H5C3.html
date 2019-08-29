@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 400px;
+            height: 150px;
+            margin: 100px auto;
+            background-color: black;
+            position: relative;
+        }
+
+        .box1 {
+            float: left;
+            width: 50px;
+            height: 50px;
+            position: relative;
+            overflow: hidden;
+            margin: 25px 25px;
+
+        }
+
+        /* .box1:hover.box1 img:nth-child(2) {
+            top: 0;
+        } */
+
+        .box1 img:nth-child(1) {
+            display: block;
+            width: 50px;
+            height: 50px;
+        }
+
+        .box1 img:nth-child(2) {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 100px;
+            transition: all 1s ease;
+
+        }
+
+        .wenzi p:nth-child(1) {
+            position: absolute;
+            bottom: 30px;
+            left: 35px;
+            opacity: 1;
+            transition: all .7s ease;
+            color: white;
+        }
+
+        .wenzi p:nth-child(2) {
+            position: absolute;
+            bottom: 30px;
+            left: 120px;
+            opacity: 1;
+            transition: all .7s ease;
+            color: white;
+        }
+
+        .wenzi p:nth-child(3) {
+            position: absolute;
+            bottom: 30px;
+            left: 235px;
+            opacity: 1;
+            transition: all .7s ease;
+            color: white;
+        }
+
+        .wenzi p:nth-child(4) {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            opacity: 1;
+            transition: all .7s ease;
+            color: white;
+        }
+
+        .piont {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: pink;
+            position: absolute;
+            bottom: 30px;
+            left: 40px;
+            display: none;
+            transition: all .5s ease;
+        }
+
+        .box span .img1 {
+            transition: all 1s ease 1s;
+            opacity: 1;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <span class="box1 cd">
+            <img src="icon/cd-default.svg" alt="" class="img1">
+            <img src="icon/cd-active.svg" alt="" class="active">
+        </span>
+        <span class="box1 camera">
+            <img src="icon/camera-default.svg" alt="" class="img1">
+            <img src="icon/camera-active.svg" alt="" class="active">
+        </span>
+        <span class="box1 file">
+            <img src="icon/file-default.svg" alt="" class="img1">
+            <img src="icon/file-active.svg" alt="" class="active">
+        </span>
+        <span class="box1 mine">
+            <img src="icon/mine-default.svg" alt="" class="img1">
+            <img src="icon/mine-active.svg" alt="" class="active">
+        </span>
+        <div class="wenzi">
+            <p class="p1">CD</p>
+            <p class="p1">Camare</p>
+            <p class="p1">Files</p>
+            <p class="p1">Mine</p>
+        </div>
+        <div class="piont"></div>
+    </div>
+
+    <script src="lib/jquery-3.3.1.min.js"></script>
+    <script>
+        $('.box span').click(function () {
+            // 绑定当前鼠标点击的事件源
+            $(this).siblings().find('.active').css({ top: '100px' });
+            $(this).children().eq(1).css({ top: '0' });
+             // 原图片隐藏
+            $(this).children().eq(0).css({ opacity: 0 });
+            $(this).siblings().find('.img1').css({ opacity: 1 });
+            // 获取当前鼠标点击的下标
+            // 文字隐藏
+            var index = $(this).index();
+            $('.p1').css({ opacity: 1 });
+            $('.p1').eq(index).css({ opacity: 0 });
+           
+            // 使用下标完成小圆点的移动
+            if (index == 0) {
+                $('.piont').css({ display: 'block', left: 40, bottom: 30 });
+            } else if (index == 1) {
+                $('.piont').css({ display: 'block', left: 140, bottom: 30 });
+            } else if (index == 2) {
+                $('.piont').css({ display: 'block', left: 240, bottom: 30 });
+            } else if (index == 3) {
+                $('.piont').css({ display: 'block', left: 340, bottom: 30 });
+            }
+        })
+
+    </script>
+</body>
+
+</html>

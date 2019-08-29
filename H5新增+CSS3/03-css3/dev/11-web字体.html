@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="iconfont.css">
+    <style>
+        @font-face {
+
+            font-family: 'web';
+            src: url('webfont.ttf');
+            src: url('webfont.woff');
+            src: url('webfont.woff2');
+        }
+在link中引入字体的CSS样式
+在style中使用 @font-face {font-family: 'web';给要调用的字体样式命名
+            src: url('webfont.ttf');引入字体样式,字体样式可以有多种
+            src: url('webfont.woff');
+            src: url('webfont.woff2');}将下载字体引入html
+在需要使用字体的类中使用字体(web)
+
+        .box {
+            font-family: webfont;
+        }
+
+        .iconfont {
+            font-size: 48px;
+            color: red;
+        }
+    </style>
+    <!-- 引入外部  web 字体 -->
+</head>
+
+<body>
+    <div class="box">
+        孔子曰：中午不睡，下午崩溃!孟子曰：孔子说的对!
+        <span class="iconfont icon-RectangleCopy">
+
+        </span>
+    </div>
+</body>
+
+</html>

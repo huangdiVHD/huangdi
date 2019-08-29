@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS基础第一题</title>
+</head>
+
+<body>
+    <script>
+
+            var arr = [0, 1, 2, 3, 4, 5];
+            var num = parseInt(prompt('请输入索引号:'));
+            function forward(num) {
+            if (num == 0) {
+                arr[num] = arr[0];
+            } else if (num > 0 && num <= 5) {
+                var temp = arr[num];
+                arr[num] = arr[num - 1];
+                arr[num - 1] = temp;
+            } else {
+                alert('请输入正确的索引号!')
+            }
+            console.log(arr);
+        }
+        forward(num);
+    </script>
+</body>
+
+</html>

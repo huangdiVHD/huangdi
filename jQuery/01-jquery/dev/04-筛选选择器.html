@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>li1</li>
+        <li>li2</li>
+        <li>li3</li>
+        <li>li4</li>
+        <li>li5</li>
+        <li>li6</li>
+        <li>li7</li>
+        <li>li8</li>
+        <li>li9</li>
+        <li>li10</li>
+    </ul>
+    <p></p>
+    <p>不凡学院</p>
+
+    篮球:<input type="checkbox">
+    足球:<input type="checkbox">
+    乒乓球:<input type="checkbox" checked>
+
+    <!-- <select name="" id="">
+        <option value="">篮球</option>
+        <option value="" selected>足球</option>
+        <option value="">乒乓球</option>
+
+    </select> -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        $('li:eq(0)').css('color', 'red');
+        $('li:gt(4)').css('color', 'yellow');
+        $('li:lt(4)').css('color', 'green');
+        $('li:odd').css('color', 'pink');
+        $('li:even').css('color', 'purple');
+        $('li:first').css('background-color', 'red');
+        $('li:last').css('background-color', 'yellow');
+
+
+        $('p:empty').css('color', 'red');
+        $('p:contains("不凡")').css('color', 'yellow');
+
+        // 获取被选中的多选框 ,prop()可以获取选中状态,并且修改
+        $('input:checked').prop('checked', false);
+    </script>
+</body>
+
+</html>

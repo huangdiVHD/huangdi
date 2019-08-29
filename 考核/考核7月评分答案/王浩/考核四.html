@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    * {
+		margin: 0;
+		padding: 0;
+	}
+	ul {
+		list-style: none;
+	}
+	a {
+		text-decoration: none;
+	}
+    .box{
+        position: relative;
+        width: 800px;
+        height: 200px;
+        background-color:black;
+        margin: 150px auto;
+    }
+    .home,
+    .camera,
+    .files,
+    .mine{
+        position: relative;
+        float: left;
+        width: 172px;
+        height: 200px;
+        /* background-color: aqua; */
+        margin: 0 14px 0 14px;
+    }
+    .home-img{
+        width: 172px;
+        height: 143px;
+        background:url('icon/cd-default.svg') no-repeat center;
+        background-size: contain;
+    }
+    .camera-img{
+        width: 172px;
+        height: 143px;
+        background:url('icon/camera-default.svg') no-repeat center;
+        background-size: contain;
+    }
+    .files-img{
+        width: 172px;
+        height: 143px;
+        background:url('icon/file-default.svg') no-repeat center;
+        background-size: contain;
+    }
+    .mine-img{
+        width: 172px;
+        height: 143px;
+        background:url('icon/mine-default.svg') no-repeat center;
+        background-size: contain;
+    }
+
+    .home-text,
+    .camera-text,
+    .files-text,
+    .mine-text{
+        width: 172px;
+        height:50px;
+        color: rgb(138, 138, 138);
+        margin: 0 auto;
+        text-align: center;
+        font-size: 18px;
+        /* margin-top:10px; */
+        line-height: 50px;
+    }
+    .home-text{
+        visibility: hidden;
+    }
+    img{
+        width: 172px;
+        height: 143px;
+        text-align: center;
+    }
+    .home-1,
+    .camera-1,
+    .files-1,
+    .mine-1{
+        position: absolute;
+        left:0px;
+        top:57px;
+    }
+    .origin{
+        height: 18px;
+        width: 18px;
+        position: absolute;
+        left:90px;
+        bottom: 20px;
+        background-color: cornflowerblue;
+        border-radius: 50%;
+    }
+    .home-1,
+    .camera-1,
+    .files-1,
+    .mine-1{
+        visibility: hidden;
+    }
+
+    
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="origin"></div>
+        <div class="home">
+            <div class="home-img"></div>
+            <div class="home-text text">Home</div>
+            <img class="home-1 img" src="icon/cd-active.svg" alt="">
+        </div>
+        <div class="camera">
+            <div class="camera-img"></div>
+            <div class="camera-text text">Camera</div>
+            <img class="camera-1 img" src="icon/camera-active.svg" alt="">
+
+        </div>
+        <div class="files">
+            <div class="files-img"></div>
+            <div class="files-text text">Files</div>
+            <img class="files-1 img" src="icon/file-active.svg" alt="">
+        </div>
+        <div class="mine">
+            <div class="mine-img"></div>
+            <div class="mine-text text">Mine</div>
+            <img class="mine-1 img" src="icon/mine-active.svg" alt="">
+        </div>
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+    $('.home').click(function(){
+        $('.home-1').animate({
+            left : 0,
+            top : 0,
+        }, 400);
+        $('.origin').animate({
+            left : 90,
+            bottom : 20,
+        }, 400); 
+    });
+  $('.camera').click(function(){
+    $('.origin').animate({
+            left : 291,
+            bottom : 20,
+        }, 400);
+        $('.camera-1').animate({
+            left : 0,
+            top : 0,
+        }, 400);
+  })
+  $('.files').click(function(){
+    $('.origin').animate({
+            left : 491,
+            bottom : 20,
+        }, 400);
+        $('.files-1').animate({
+            left : 0,
+            top : 0,
+        }, 400);
+  })
+  $('.mine').click(function(){
+    $('.origin').animate({
+            left : 691,
+            bottom : 20,
+        }, 400);
+        $('.mine-1').animate({
+            left : 0,
+            top : 0,
+        }, 400);
+  })
+                // 文字特效
+        $('.home').click(function () {
+            $(".text").css('visibility',' visible');
+            $(".home-text").css('visibility',' hidden');  
+            
+        })
+        $('.camera').click(function () {
+             $(".text").css('visibility',' visible');
+            $(".camera-text").css('visibility',' hidden');
+        })
+        $('.files').click(function () {
+            $(".text").css('visibility',' visible');
+            $(".files-text").css('visibility',' hidden');  
+        })
+        $('.mine').click(function () {
+             $(".text").css('visibility',' visible');
+            $(".mine-text").css('visibility',' hidden');
+        })
+        
+        // 图片特效
+        $('.home').click(function () {
+            $(".img").css('visibility',' hidden');  
+            $(".home-1").css('visibility',' visible');
+            $(".img").css('top','57px');
+            $(".home-1").css('top','0');
+ 
+        })
+        $('.camera').click(function () {
+            $(".img").css('visibility',' hidden');
+             $(".camera-1").css('visibility',' visible');
+             $(".img").css('top','57px');
+            $(".camera-1").css('top','0');
+           
+        })
+        $('.files').click(function () {
+            $(".img").css('visibility',' hidden'); 
+            $(".files-1").css('visibility',' visible');
+            $(".img").css('top','57px');
+            $(".files-1").css('top','0');
+            
+        })
+        $('.mine').click(function () {
+            $(".img").css('visibility',' hidden');
+             $(".mine-1").css('visibility',' visible');
+             $(".img").css('top','57px');
+            $(".mine-1").css('top','0');
+           
+        })
+    </script>
+    
+</body>
+</html>

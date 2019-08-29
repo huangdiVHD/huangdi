@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+        .box {
+            width: 700px;
+            height: 150px;
+            margin: 300px auto;
+            background-color: #333333;
+            box-sizing: border-box;
+            padding-top: 30px;
+            padding-left: 80px;
+            position: relative;
+        }
+    
+        
+        input {
+            margin-right: 80px;
+            -webkit-appearance: none;
+            display: inline-block;
+            width: 65px;
+            height: 65px;
+            /* background-color: pink; */
+            outline: none;
+            position: relative;
+            transition: all 1s linear 0s;
+        }
+        input:last-child {
+            margin-right:0;
+            background: url(icon/mine-default.svg) no-repeat center;
+            background-size: cover;
+        }
+
+        input:first-child {
+            background: url(icon/cd-default.svg) no-repeat center;
+            background-size: cover;
+        }
+
+
+        input:nth-child(2) {
+            background: url(icon/camera-default.svg) no-repeat center;
+            background-size: cover;
+        }
+    
+
+
+        input:nth-child(3) {
+            background: url(icon/file-default.svg) no-repeat center;
+            background-size: cover;
+        }
+
+        
+    
+        input:first-child::before {
+            content: '';
+            display: block;
+            width: 65px;
+            height: 65px;
+            background: url(icon/cd-active.svg);
+            background-size: cover;
+            position: absolute;
+            bottom: -26px;
+            /* display: none; */
+            opacity: 0;
+            /* transform: translateY(36px); */
+            transition: all 0.5s ease-in-out 0s;
+        }
+
+        input:first-child::after {
+            content: 'Home';
+            color: #fff;
+            position: absolute;
+            left: 13px;
+            bottom: -38px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.5s ease-in-out 0s;
+        }
+
+
+        input:first-child:checked::before {
+            opacity: 1;
+            transform: translateY(-26px);
+        }
+
+        input:first-child:checked ~ input::before {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        input:first-child:checked::after {
+            opacity: 0;
+        }
+
+    
+        input:first-child:checked ~ input::after {
+            opacity: 1;
+        }
+        
+        input:last-child::before {
+            content: '';
+            display: block;
+            width: 65px;
+            height: 65px;
+            background: url(icon/mine-active.svg);
+            background-size: cover;
+            position: absolute;
+            bottom: -26px;
+            /* display: none; */
+            opacity: 0;
+            /* transform: translateY(36px); */
+            transition: all 0.5s ease 0s;
+        }
+
+        input:last-child::after {
+            content: 'Mine';
+            color: #fff;
+            position: absolute;
+            left: 13px;
+            bottom: -38px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.5s ease-in-out 0s;
+        }
+
+
+        input:last-child:checked::before {
+            /* transition: all 1s linear 0s; */
+            opacity: 1;
+            /* display: block; */
+            transform: translateY(-26px);
+        }
+
+
+
+        input:last-child:checked ~ input::before {
+            opacity: 0;
+        }
+
+
+        input:last-child:checked::after {
+            opacity: 0;
+        }
+
+
+        input:nth-child(2)::before {
+            content: '';
+            display: block;
+            width: 65px;
+            height: 65px;
+            background: url(icon/camera-active.svg);
+            background-size: cover;
+            position: absolute;
+            bottom: -26px;
+            opacity: 0;
+            transition: all 0.5s ease 0s;
+        }
+
+    
+        input:nth-child(2)::after {
+            content: 'Camera';
+            color: #fff;
+            position: absolute;
+            left: 2px;
+            bottom: -38px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.5s ease-in-out 0s;
+        }
+
+
+        input:nth-child(2):checked::before {
+            opacity: 1;
+            transform: translateY(-26px);
+        }
+
+        input:nth-child(2):checked::after {
+            opacity: 0;
+            /* transform: translateY(-26px); */
+        }
+
+        input:nth-child(2):checked ~ input::before {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        input:nth-child(2):checked ~ input::after{
+            opacity: 1;
+            /* transform: translateY(20px); */
+        }
+
+        input:nth-child(3)::before {
+            content: '';
+            display: block;
+            width: 65px;
+            height: 65px;
+            background: url(icon/file-active.svg);
+            background-size: cover;
+            position: absolute;
+            bottom: -26px;
+            opacity: 0;
+            transition: all 0.5s ease 0s;
+        }
+
+        input:nth-child(3)::after {
+            content: 'File';
+            color: #fff;
+            position: absolute;
+            left: 16px;
+            bottom: -38px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.5s ease-in-out 0s;
+        }
+
+
+        input:nth-child(3):checked::before {
+            opacity: 1;
+            transform: translateY(-25.5px);
+        }
+
+        input:nth-child(3):checked::after {
+            opacity: 0;
+            /* transform: translateY(-26px); */
+        }
+
+        input:nth-child(3):checked ~ input::before {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        
+        input:nth-child(3):checked ~ input::after {
+            opacity: 1;
+            /* transform: translateY(20px); */
+        }
+
+
+    </style>
+</head>
+<body>
+
+
+
+    <div class="box">
+        <input type="radio" name="1"> 
+        <input type="radio" name="2">
+        <input type="radio" name="3">
+        <input type="radio" name="4">
+    </div>
+
+
+
+
+
+    
+</body>
+</html>

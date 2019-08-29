@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>旋转木马</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul,ol{
+				list-style: none;
+			}
+			.swiper{
+				position: relative;
+				width: 1200px;
+				margin: 10px auto;
+			}
+			.swiper ul{
+				height: 500px;
+			}
+			li{
+				position: absolute;
+				/* left: 100px;
+				top: 0; */
+			}
+			.swiper li img{
+			    width:100%;
+			}
+			.arr{
+				position: absolute;
+				top: 50%;
+				left: 0;
+				margin-top: -35px;
+				display: block;
+				width: 30px;
+				height: 70px;
+				font-size: 20px;
+				color: #fff;
+				text-align: center;
+				line-height: 70px;
+				background-color: rgba(0,0,0,.7);
+				z-index: 999;
+				text-decoration: none;
+			}
+			.arr.arr-r{
+				left: auto;
+				right: 0;
+			}
+			ul li.li_1{
+				width:400px;
+				top:70px;
+				left:50px;
+				opacity:.2;
+				z-index:2;
+			}
+			ul li.li_2{
+				width:600px;
+				top:120px;
+				left:0px;
+				opacity:.8;
+				z-index:3;
+			}
+			ul li.li_3{
+				width:800px;
+				top:100px;
+				left:200px;
+				opacity:1;
+				z-index:4;
+			}
+			ul li.li_4{
+				width:600px;
+				top:120px;
+				left:600px;
+				opacity:.8;
+				z-index:3;
+			}
+			ul li.li_5{
+				 width:400px;
+				top:70px;
+				left:750px;
+				opacity:.2;
+				z-index:2;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="swiper">
+			<ul>
+			  <li class="li_1"><a href="#"><img src="img/m1.jpg" alt=""/></a></li>
+		    <li class="li_2"><a href="#"><img src="img/m2.jpg" alt=""/></a></li>
+		    <li class="li_3"><a href="#"><img src="img/m3.jpg" alt=""/></a></li>
+		    <li class="li_4"><a href="#"><img src="img/m4.jpg" alt=""/></a></li>
+		    <li class="li_5"><a href="#"><img src="img/m5.jpg" alt=""/></a></li>
+			</ul>
+			<a href="javascript:;" class="arr arr-l"><</a>
+			<a href="javascript:;" class="arr arr-r">></a>
+		</div>
+		
+		<script type="text/javascript">
+			var btn1 = document.querySelector(".arr-l");
+			var btn2 = document.querySelector(".arr-r");		// 下一个
+			var lis = document.querySelector("ul li"); // 获取所有的li
+			// 获取要改变元素的样式组成的数组
+			var arr = [		// 整体移动 tab 向后, shift + tab 向前		arr跟着循环变化的
+				{   //  0
+					width:400,
+					top:70,
+					left:50,
+					opacity:.2,
+					zIndex:2
+				},
+				{  // 1
+					width:600,
+					top:120,
+					left:0,
+					opacity:.8,
+					zIndex:3
+				},
+				{   // 2
+					width:800,
+					top:100,
+					left:200,
+					opacity:1,
+					zIndex:4
+				},
+				{  // 3
+					width:600,
+					top:120,
+					left:600,
+					opacity:.8,
+					zIndex:3
+				},
+				{   //4
+					width:400,
+					top:70,
+					left:750,
+					opacity:.2,
+					zIndex:2
+				}
+			];
+			
+			
+		</script>
+	</body>
+</html>

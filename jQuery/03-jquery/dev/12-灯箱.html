@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 引入css样式库 -->
+    <link rel="stylesheet" href="lightbox2-dev/dist/css/lightbox.css">
+    <!-- 引入依赖库 -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <!-- 引入核心库 -->
+    <script src="lightbox2-dev/dist/js/lightbox.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="img/m1.jpg" data-lightbox="image-1" data-title="My caption">Image #1</a>
+    <a href="img/m2.jpg" data-lightbox="image-1" data-title="My caption">Image #1</a>
+
+    <script>
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true
+        })
+    </script>
+</body>
+
+</html>

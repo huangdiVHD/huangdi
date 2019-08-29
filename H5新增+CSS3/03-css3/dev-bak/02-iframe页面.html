@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			list-style: none;
+		}
+		a{
+			text-decoration: none;
+		}
+		.main{
+			width: 1000px;
+			height: 500px;
+			background-color: pink;
+			margin: 50px auto;
+		}
+		.aside{
+			float: left;
+			width: 200px;
+			height: 100%;
+			background-color: green;
+		}
+		.iframe-box{
+			position: relative;
+			float: left;
+			width: 800px;
+			height: 100%;
+			background-color: yellow;
+		}
+		.iframe-item{
+			width: 100%;
+			height: 100%;
+		}
+		.aside .nav-item{
+			display: block;
+			width: 100%;
+			height: 40px;
+			background-color: blue;
+			font-size: 20px;
+			line-height: 40px;
+			text-decoration: none;
+			color: #fff;
+			margin-bottom: 10px;
+			text-indent: 20px;
+		}
+		.aside .nav-item:hover{
+			color: orange;
+		}
+		.aside .nav-item.active{
+			color:orange;
+		}
+		.iframe-box .tabs{
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 30px;
+		}
+		.iframe-box .tabs .tab-item{
+			position: relative;
+			float: left;
+			width: 70px;
+			height: 30px;
+			border: 1px solid red;
+			background-color: #fff;
+			color:blue;
+			font-size: 18px;
+			text-align: center;
+			line-height: 30px;
+			cursor: pointer;
+		}
+		/*伪元素 js无法选中 所以无法作为事件源*/
+		/*.iframe-box .tabs .tab-item::after{
+			content: 'x';
+		}*/
+
+		.iframe-box .tab-item .close{
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 20px;
+			height: 20px;
+			background-color: red;
+			color:#fff;
+			font-size: 14px;
+			text-align: center;
+			line-height: 20px;
+			cursor: pointer;
+		}
+		.iframe-box .tab-item.active{
+			background-color: green;
+			color:#fff;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="main">
+		<div class="aside">
+			<a class="nav-item" data-iframe-id="baidu" data-url="http://www.baidu.com" href="javascript:;">百度</a>
+			<a class="nav-item" data-iframe-id="taobao" data-url="http://www.taobao.com" href="javascript:;">淘宝</a>
+			<a class="nav-item" data-iframe-id="bufan" data-url="http://www.bufanui.com" href="javascript:;">不凡</a>
+		</div>
+		<div class="iframe-box">
+			<ul class="tabs">
+				<!-- <li class="tab-item active">百度<span class="close">X</span></li>
+				<li class="tab-item">百度<span class="close">X</span></li>
+				<li class="tab-item">百度<span class="close">X</span></li> -->
+			</ul>
+			<!-- <iframe class="iframe-item" src="" border="0" frameborder="0"></iframe> -->
+		</div>
+		
+	</div>
+
+	<script src="lib/jquery-3.3.1.min.js"></script>
+	<script>
+
+		$('.nav-item').click(function () {
+			//移除原本的active样式
+			$('.nav-item.active').removeClass('active');
+			//再给自己添加
+			$(this).addClass('active');
+			//创建iframe
+			createIframe($(this));	
+			//动态创建tabs
+			createTabs($(this));
+		})
+
+		//注意  tab是后来生成的元素 所以需要用到事件委托
+		$('.tabs').on('click','.tab-item .close',function(event) {
+			//组织冒泡
+			event.stopPropagation();
+			//移除iframe  #iframe_baidu
+			$('#iframe_'+$(this).parent().data('nav')).remove();
+			//移除tab本身
+			$(this).parent().remove();
+			//显示下一个 显示.tabs的最后一个孩子节点
+			// $('.tabs').children().last().addClass('active');
+			tabClick($('.tabs').children().last()[0]);
+
+		})
+
+
+		function createTabs ($this) {
+			//获取到当前要生成的tab的id
+			var tempId = 'tab_'+$this.data('iframe-id');
+			//新创建之前需要移除其他的激活状态
+			$('.tabs .tab-item.active').removeClass('active');
+			//检测原来是否存在
+			if($('#'+tempId).length==0){
+				var str = '<li onclick="tabClick(this);" data-nav="'+$this.data('iframe-id')+'" data-target="iframe_'+$this.data('iframe-id')+'" id="'+tempId+'" class="tab-item active">'+$this.text()+'<span class="close">X</span></li>';
+				$('.tabs').append($(str));
+			}else{
+				$('#'+tempId).addClass('active');
+			}
+
+			
+		}
+
+		function tabClick(obj) {
+			//直接获取对应的iframeid
+			var target = $(obj).data('target');
+			console.log(target)
+			//修改自身激活样式
+			$(obj).addClass('active').siblings().removeClass('active');
+			$('#'+target).show().siblings('iframe').hide();
+			//同步左边nav样式
+			$('.aside .nav-item[data-iframe-id="'+$(obj).data('nav')+'"]').addClass('active').siblings().removeClass('active');
+		}
+
+		/**
+		* 动态创建iframe 
+		**/
+		function createIframe($this) {
+			//创建之前 判断之前有没有一个 iframe_xx的id存在
+			var tempId = '#iframe_'+$this.data('iframe-id');
+			// $('#iframe_baidu')
+			// console.log($('.nav-itema'));
+			// jquery对于查找到的对象 会有length!=0的属性
+			// 但是原生的方法 document.getElementsByClassName('.abc') == null;
+			if($(tempId).length!=0){
+				//如果存在  其他隐藏  自己显示
+				$('.iframe-item').hide();
+				$(tempId).show();
+			}else{
+				// //jq获取自定义属性  $el.data('xx')
+				// $('.iframe-item').attr('src',$(this).data('url')); 
+				//创建iframe
+				var str = '<iframe class="iframe-item" id="iframe_'+$this.data('iframe-id')+'" src="'+$this.data('url')+'" border="0" frameborder="0"></iframe>';
+				$('.iframe-item').hide();
+				//追加
+				$('.iframe-box').append($(str));
+			}
+		}
+	</script>
+</body>
+</html>

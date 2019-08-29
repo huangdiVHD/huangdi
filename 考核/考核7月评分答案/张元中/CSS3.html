@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 清除默认 -->
+    <link rel="stylesheet" href="css/reset-min.css">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            width: 1000px;
+            height: 190px;
+            margin: 200px auto;
+            background-color: #333;
+        }
+
+        .in {
+            position: absolute;
+            position: relative;
+        }
+
+        input {
+            float: left;
+            -webkit-appearance: none;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+
+        input[name="picture"] {
+            position: absolute;
+            top: 20px;
+            padding-right: 50px;
+            transition: transform 0.2s ease;
+        }
+
+        /* 两组图标导入 */
+        .p1::after {
+            content: url('icon/cd-default.svg');
+            transition: color 0.4s ease;
+        }
+
+        .p2::after {
+            content: url('icon/camera-default.svg');
+            transition: color 0.4s ease;
+        }
+
+        .p3::after {
+            content: url('icon/file-default.svg');
+            transition: color 0.4s ease;
+        }
+
+        .p4::after {
+            content: url('icon/mine-default.svg');
+            transition: color 0.4s ease;
+        }
+
+        .p5::after {
+            content: url('icon/cd-active.svg');
+            transition: color 0.4s ease;
+        }
+
+        .p6::after {
+            content: url('icon/camera-active.svg');
+            transition: color 0.4s ease;
+        }
+
+        .p7::after {
+            content: url('icon/file-active.svg');
+            transition: color 0.4s ease;
+        }
+
+        .p8::after {
+            content: url('icon/mine-active.svg');
+            transition: color 0.4s ease;
+        }
+
+        /* 导入结束 */
+
+        /* CSS样式和点击事件 */
+        .in1,
+        .in5 {
+            left: 100px;
+        }
+
+        .in2,
+        .in6 {
+            left: 350px;
+        }
+
+        .in3,
+        .in7 {
+            left: 600px;
+        }
+
+        .in4,
+        .in8 {
+            left: 850px;
+        }
+
+        .box .p5,
+        .box .p6,
+        .box .p7,
+        .box .p8 {
+            transform: translate(0px, 87px);
+            transition: all .3s ease-in;
+        }
+
+        .p5.active {
+            transform: translate(0px, 0px);
+        }
+
+        .p1:checked~.p5 {
+            transform: translate(0px, 0px);
+        }
+
+        .p13.active {
+            animation: myfirst .3s;
+            -webkit-animation: myfirst .3s;
+            animation-fill-mode: forwards;
+        }
+
+        .p1:checked~.p9 .p13 {
+            animation: myfirst .3s;
+            -webkit-animation: myfirst .3s;
+            animation-fill-mode: forwards;
+        }
+
+        .p2:checked~.p6 {
+            transform: translate(0px, 0px);
+        }
+
+        .p2:checked~.p10 .p14 {
+            animation: myfirst .3s;
+            -webkit-animation: myfirst .3s;
+            animation-fill-mode: forwards;
+        }
+
+        .p3:checked~.p7 {
+            transform: translate(0px, 0px);
+        }
+
+        .p3:checked~.p11 .p15 {
+            animation: myfirst .3s;
+            -webkit-animation: myfirst .3s;
+            animation-fill-mode: forwards;
+        }
+
+        .p4:checked~.p8 {
+            transform: translate(0px, 0px);
+        }
+
+        .p4:checked~.p12 .p16 {
+            animation: myfirst .3s;
+            -webkit-animation: myfirst .3s;
+            animation-fill-mode: forwards;
+        }
+
+        .p9,
+        .p10,
+        .p11,
+        .p12 {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            line-height: 80px;
+            top: 110px;
+            left: 5px;
+        }
+
+        /* 字体透明渐变 */
+        @keyframes myfirst {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @-webkit-keyframes myfirst {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        /* 小圆点属性 */
+        .box1 {
+            position: absolute;
+            top: 142px;
+            left: 35px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: rgb(119, 21, 119);
+            z-index: 9;
+            transition: all .3s ease-in;
+        }
+    </style>
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        <div class="in in1">
+            <input class="p1" type="radio" name="picture">
+            <input class="p5 active" type="radio" name="picture">
+            <div class="p9">
+                <p class="p13 active">Home</p>
+            </div>
+            <div class="box1"></div>
+        </div>
+        <div class="in in2">
+            <input class="p2" type="radio" name="picture">
+            <input class="p6" type="radio" name="picture">
+            <div class="p10">
+                <p class="p14">Camera</p>
+            </div>
+        </div>
+        <div class="in in3">
+            <input class="p3" type="radio" name="picture">
+            <input class="p7" type="radio" name="picture">
+            <div class="p11">
+                <p class="p15">Files</p>
+            </div>
+        </div>
+        <div class="in in4">
+            <input class="p4" type="radio" name="picture">
+            <input class="p8" type="radio" name="picture">
+            <div class="p12">
+                <p class="p16">Mine</p>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        // 点击第一个图标时小圆点的移动
+        $('.p1').click(function () {
+            $('.box1').css({
+                'transform': 'translateX(0px)',
+            })
+        })
+        // 点击第二个图标时小圆点的移动
+        $('.p2').click(function () {
+            $('.box1').css({
+                'transform': 'translateX(250px)',
+            })
+            $('.p5').removeClass('active');
+            $('.p13').removeClass('active');
+        })
+        // 点击第三个图标时小圆点的移动
+        $('.p3').click(function () {
+            $('.box1').css({
+                'transform': 'translateX(500px)',
+            })
+            $('.p5').removeClass('active');
+            $('.p13').removeClass('active');
+        })
+        // 点击第四个图标时小圆点的移动
+        $('.p4').click(function () {
+            $('.box1').css({
+                'transform': 'translateX(750px)',
+            })
+            $('.p5').removeClass('active');
+            $('.p13').removeClass('active');
+        })
+    </script>
+</body>
+
+</html>

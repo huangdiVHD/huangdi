@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+
+  <script>
+    var numArr = [0, 1, 2, 3, 4, 5];
+    /*需求1:  请实现，指定任意索引，对应数组项前移一个位置。*/
+    // console.log(
+    //   changeOne(numArr, 0)
+    // );
+    // changeOne(numArr, 2);
+    function changeOne(arr, index) {
+      if (index == 0) {
+        return alert('它前面是墙,无法位移了');
+      }
+      for (var i = 0; i < arr.length; i++) {
+        if (index == i) {
+          var temp = arr[i - 1];
+          arr[i - 1] = arr[index];
+          arr[index] = temp;
+        }
+      }
+      return arr;
+    }
+
+    /*需求2:  请实现，指定任意索引，对应数组项移动到最前面。*/
+    // getFirst(numArr, 4);
+    function getFirst(arr, index) {
+      if (index == 0) {
+        return alert('它已经在最前面了');
+      }
+      for (var i = 0; i < arr.length; i++) {
+        if (index == i) {
+          var temp = arr[0];
+          arr[0] = arr[index];
+          arr[index] = temp;
+        }
+      }
+      return arr;
+    }
+
+    /*需求3:  请实现，指定任意索引，对应数组项移动到最后面*/
+    // console.log(
+    //   getLast(numArr, 5)
+    // );
+
+    function getLast(arr, index) {
+      if (index == arr.length - 1) {
+        return alert('它已经在最后面了');
+      }
+      for (var i = 0; i < arr.length; i++) {
+        if (index == i) {
+          var temp = arr[arr.length - 1];
+          arr[arr.length - 1] = arr[index];
+          arr[index] = temp;
+        }
+      }
+      return arr;
+    }
+
+    /*需求3:  请实现，指定任意两项索引，对应数组项交换位置。*/
+    // getChangetwo(numArr, 1, 4);
+    function getChangetwo(arr, index1, index2) {
+      var temp = arr[index1];
+      arr[index1] = arr[index2];
+      arr[index2] = temp;
+      return arr;
+    }
+  </script>
+</body>
+
+</html>

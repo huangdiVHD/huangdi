@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<style>
+			.content {
+				width: 100px;
+				height: 10px;
+				margin: 10px;
+				border: 1px solid #333;
+			}
+			.load {
+				height: 10px;
+				background-color: red;
+			}
+		</style>
+	</head>
+
+	<body>
+		<form action="">
+			<input tabIndex="1" autocomplete="on" type="email" />
+			<input oninput="foo()" type="tel" />
+			<!-- 这种写法在电脑版网页中不会使用，因为这个type是为触屏网页开发服务的。
+        在触屏端点击type为tel的输入框时，跳出的虚拟键盘为电话键盘（1-9、*、#）。 -->
+			<input tabIndex="2" type="number" />
+			<!-- 必填项 -->
+			<input required oninvalid="alert('验证不通过')" type="url" />
+			<!-- 移动端 -->
+			<input type="search" />
+			<input type="range" />
+			<input tabIndex="3" type="color" />
+			<input type="time" />
+			<input type="date" />
+			<input type="week" />
+			<!-- <input type="text" list="data" />
+			<datalist id="data">
+				<option value="">男</option>
+				<option value="">女</option>
+			</datalist> -->
+			<input type="text" list="data" />
+			<datalist id="data">
+				<option>男</option>
+				<option>女</option>
+				<option>不详</option>
+			</datalist>
+			<meter value="0.6"></meter>
+			<meter value="22" min="0" max="100"></meter>
+			<progress value="22" max="100"></progress>
+			手机号:<input type="tel" name="tel" required pattern="^(\+86)?1[3,5,8](\d{9})$" />
+			<input type="submit" value="提交" />
+		</form>
+		<div class="content">
+			<div class="load" style="width:0;"></div>
+		</div>
+		<script>
+			function foo() {
+				console.log("123");
+			}
+			setInterval(function() {
+				var load = document.querySelector(".load");
+				var leader = parseInt(load.style.width);
+				if (leader == 100) {
+					leader = 0;
+				}
+				leader += 2;
+				load.style.width = leader + "px";
+			}, 17);
+		</script>
+	</body>
+</html>

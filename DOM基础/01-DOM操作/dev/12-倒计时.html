@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>距离2019年7月12日17:00,还有</p>
+    <p class="stamp">00:00:00</p>
+
+    <script>
+        var pEl = document.getElementsByClassName('stamp')[0];
+        var deadTime = new Date('2019-07-12 18:00');
+        setInterval(function () {
+            var nowTime = new Date();
+            // 时间差
+            var stamp = deadTime - nowTime;
+            // 转换成时分秒
+            // var hour = Math.floor(stamp / 1000 / 60 / 60);
+            // var min = Math.floor(stamp / 1000 / 60 % 60);
+            // var s = Math.floor(stamp / 1000 % 60);
+
+            var HOUR_MS = 60 * 60 * 1000;
+            var MIN_MS = 60 * 1000;
+            var hour = Math.floor(stamp / HOUR_MS);
+            var min = Math.floor(stamp % HOUR_MS / MIN_MS);
+            var s = Math.floor(stamp % MIN_MS / 1000);
+            var str = '' + wrap(hour) + ':' + wrap(min) + ':' + wrap(s) + '';
+            pEl.innerText = str;
+        }, 1000)
+        // 辅助函数
+        function wrap(n) {
+            return n > 9 ? n : '0' + n;
+        }
+    </script>
+</body>
+
+</html>

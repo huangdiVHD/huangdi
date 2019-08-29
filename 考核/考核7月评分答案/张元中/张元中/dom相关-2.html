@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #id1 {
+            background: linear-gradient(to right bottom, red, blue)
+        }
+
+        a {
+            display: block;
+            margin-top: 50px;
+            width: 50px;
+            height: 50px;
+            background-color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#"></a>
+    <a href=""></a>
+    <a href="#"></a>
+    <img src="icon/mine-active.svg" alt="">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        // 1.
+        var myElement = document.createElement("div");
+        myElement.id = "id1";
+        document.body.appendChild(myElement);
+        document.getElementById("id1").style.cssText = 'width:300px;height:150px';
+
+
+        // 2.见style标签
+
+
+        // 3.
+        for (i = 1; i <= 20; i++) {
+            var text = document.createElement("div");
+            text.className = "box";
+            document.body.appendChild(text);
+        }
+
+        // 4.
+        var icon = document.getElementsByTagName('img')[0];;
+        var img1 = icon.tagName.toLowerCase();
+        icon.onclick = function () {
+            if (img1 === 'img') {
+                alert('是');
+            } else {
+                alert('不是');
+            }
+        }
+        var a = document.querySelector('a');
+        var img2 = a.tagName.toLowerCase();
+        a.onclick = function () {
+            if (img2 === 'img') {
+                alert('是');
+            } else {
+                alert('不是');
+            }
+        }
+        var aa = document.getElementsByTagName('a')[1];
+        var img3 = aa.tagName.toLowerCase();
+        aa.onclick = function () {
+            if (img3 === 'img') {
+                alert('是');
+            } else {
+                alert('不是');
+            }
+        }
+        var aaa = document.getElementsByTagName('a')[2];
+        var img4 = aaa.tagName.toLowerCase();
+        aaa.onclick = function () {
+            if (img4 === 'img') {
+                alert('是');
+            } else {
+                alert('不是');
+            }
+        }
+
+        var box = document.getElementById('id1');
+        var img5 = box.tagName.toLowerCase();
+        box.onclick = function () {
+            if (img5 === 'img') {
+                alert('是');
+            } else {
+                alert('不是');
+            }
+        }
+
+
+        // 5
+
+        $('a').each(function () {
+            $('a[href^="#"]').css('backgroundColor', 'red');
+        })
+    </script>
+</body>
+
+</html>

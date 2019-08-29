@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.d1,.d2,.d3{
+			width: 200px;
+			height: 200px;
+			background-color: green;
+			margin: 100px;
+			box-shadow: 10px 20px 50px  red;
+			transition: all ease .4s;
+		}
+		.d2{
+			/*50px是模糊半径 30px 扩散半径*/
+			box-shadow: 10px 20px 50px 30px red;
+		}
+		.d3{
+			box-shadow: none;
+		}
+		.d3:hover{
+			transform: translateY(-20px);
+			box-shadow: 0 40px 50px -20px  rgba(0,0,0,.7);
+		}
+	</style>
+</head>
+<body>
+	<div class="d1">
+		
+	</div>
+	<div class="d2">
+		
+	</div>
+	<div class="d3">
+		
+	</div>
+</body>
+</html>

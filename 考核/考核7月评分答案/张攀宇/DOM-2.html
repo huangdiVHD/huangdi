@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/reset.css">
+    <title>Document</title>
+    <style>
+        div {
+            /* border: 1px solid blue; */
+            background: radial-gradient(circle at 0 0, red, blue);
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="">啦</a>
+    <a href="">啦</a>
+    <a href="#">啦</a>
+    <a href="">啦</a>
+    <a href="#">啦</a>
+    <a href="#">啦</a>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        var div = document.createElement('div');
+        document.body.appendChild(div);
+        div.style.width = '150px';
+        div.style.height = '300px';
+
+        for (var i = 1; i <= 20; i++) {
+            var divEL = document.createElement('div');
+            document.body.appendChild(divEL);
+            divEL.classList.add('.box');
+        }
+
+        $('a[href="#"]').css('backgroundColor', 'red');
+    </script>
+</body>
+
+</html>

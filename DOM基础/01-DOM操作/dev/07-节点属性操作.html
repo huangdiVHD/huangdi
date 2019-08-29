@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+	</head>
+
+	<body>
+		<div id="d1" class="box"></div>
+		<div class="btn">切换类名</div>
+		<script>
+			var boxEl = document.getElementsByClassName("box")[0];
+			var btn = document.getElementsByClassName("btn")[0];
+			// 对象追加属性
+			boxEl.title = "不凡学院";
+
+			// 元素节点.getAttribute("属性名称");
+			// 元素节点.setAttribute(属性名, 新的属性值);
+			// 元素节点.removeAttribute(属性名);
+
+			console.log(boxEl.getAttribute("class"));
+			console.log(boxEl.className);
+			console.log(boxEl.getAttribute("title"));
+
+			boxEl.setAttribute("id", "d2");
+			boxEl.setAttribute("title", "d3");
+			boxEl.setAttribute("class", "box2");
+			// 怎么实现添加 class 名
+			// boxEl.setAttribute('class', 'box2 box3');
+			// boxEl.setAttribute('class', 'box3');
+			var str = "box1 box22";
+			// 添加 box2 这个类名
+			// console.log(str.indexOf('box2'));//用不了的
+
+			boxEl.removeAttribute("title");
+
+			// 追加类名
+			boxEl.classList.add("box3");
+			boxEl.classList.add("box4", "box5");
+			// 删除某一个类名
+			boxEl.classList.remove("box2");
+			// 判断指定类名是否存在
+
+			console.log(boxEl.classList.item(1)); //
+			console.log(boxEl.classList.contains("box4"));
+			// 有则删除  无则添加
+			btn.onclick = function() {
+				boxEl.classList.toggle("box4");
+			};
+		</script>
+	</body>
+</html>

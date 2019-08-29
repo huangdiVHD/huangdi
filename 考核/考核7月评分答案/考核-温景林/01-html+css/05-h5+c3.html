@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .box {
+      width: 100%;
+      height: 300px;
+      background-color: #000;
+      overflow: hidden;
+      position: relative;
+    }
+
+    span {
+      display: block;
+      height: 100px;
+      float: left;
+      cursor: pointer;
+      width: 200px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .box img {
+      background-size: contain;
+      width: 50px;
+      height: 50px;
+      display: block;
+      margin: 0 auto;
+      margin-top: 30px;
+
+    }
+
+    .wenzi {
+      position: absolute;
+      left: 0;
+      top: 120px;
+    }
+
+    .dot {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: pink;
+      position: absolute;
+      left: 90px;
+      top: 120px;
+      display: none;
+      transition: all .5s ease;
+    }
+
+    .box .camera1 {
+      position: absolute;
+      top: 100px;
+      left: 100px;
+      transform: translateX(-50%);
+      /* display: none; */
+      transition: all .4s ease;
+    }
+
+    .wenzi a {
+      text-decoration: none;
+      color: #fff;
+      display: block;
+      opacity: 1;
+      transition: all .7s ease;
+    }
+
+    .box span .img1 {
+      transition: all .7s ease;
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <span>
+      <img src="icon/camera-default.svg" class="img1">
+      <img src="icon/camera-active.svg" class="camera1">
+    </span>
+    <span>
+      <img src="icon/cd-default.svg" class="img1">
+      <img src="icon/cd-active.svg" class="camera1">
+    </span>
+    <span>
+      <img src="icon/file-default.svg" class="img1">
+      <img src="icon/file-active.svg" class="camera1">
+    </span>
+    <span>
+      <img src="icon/mine-default.svg" class="img1">
+      <img src="icon/mine-active.svg" class="camera1">
+    </span>
+
+  </div>
+
+  <div class="wenzi">
+    <span><a href="">Camera</a></span>
+    <span><a href="">Home</a></span>
+    <span><a href="">Files</a></span>
+    <span><a href="">Mine</a></span>
+  </div>
+  <div class="dot"></div>
+
+
+
+  <script src="jquery-1.12.4.min.js"></script>
+  <script>
+    //逻辑分析
+    $('.box span').click(function () {
+      //1.鼠标点击 active 图片出来 覆盖之前的图片
+      $(this).siblings().find('.camera1').css({ position: 'absolute', left: '100px', top: '100px' });
+      $(this).children().eq(1).css({ position: 'absolute', left: '100px', top: '0px' });
+
+      //active图片上去后 默认图片消失
+      $(this).children().eq(0).css({ opacity: 0 });
+      $(this).siblings().find('.img1').css({ opacity: 1 });
+      //2.字体消失
+      var index = $(this).index();
+      $('.wenzi span').children().css({ opacity: 1 });
+      $('.wenzi span').children().eq(index).css({ opacity: 0 });
+      //3.小圆点跟着移动 改变小圆点的位移
+      var chang = $(this).width() * index + 90;
+      if (index == 0) {
+        $('.dot').css({ display: 'block', left: 90 });
+      } else {
+        $('.dot').css({ display: 'block', left: chang });
+      }
+    })
+
+
+  </script>
+</body>
+
+</html>

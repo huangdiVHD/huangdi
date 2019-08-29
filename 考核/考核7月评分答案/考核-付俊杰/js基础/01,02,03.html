@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr1 = [0,1,2,3,4,5];
+        var arr2 = [0,1,2,3,4,5];
+        var arr3 = [0,1,2,3,4,5];
+        function num1(arr1){
+            var i = prompt();
+            var temp = arr1[i];
+                arr1[i] = arr1[i - 1];
+                arr1[i - 1] = temp;
+        }
+        num1(arr1);
+        console.log(arr1);
+        function num2(arr2){
+            var i = prompt();
+            arr2.unshift(arr2[i]);
+            arr2.splice(++i,1);
+        }
+        num2(arr2);
+        console.log(arr2);
+        function num3(arr3){
+            var i =prompt();
+            arr3.push(arr3[i]);
+            arr3.splice(i,1);
+        }
+        num3(arr3);
+        console.log(arr3);
+
+    </script>
+</body>
+</html>

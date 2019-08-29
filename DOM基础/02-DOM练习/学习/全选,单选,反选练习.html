@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        table{
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th><input type="checkbox" id="a" value="全选" /></th>
+            <th>姓名</th>
+            <th>职业</th>
+        </tr>
+        <tr>
+            <th><input type="checkbox" class="b"/></th>
+            <th>张三</th>
+            <th>学生</th>
+        </tr>
+        <tr>
+            <th><input type="checkbox" class="b"/></th>
+            <th>李四</th>
+            <th>工人</th>
+        </tr>
+        <tr>
+            <th><input type="checkbox" class="b"/></th>
+            <th>王五</th>
+            <th>大刀</th>
+        </tr>
+    </table>
+    <input type="button"  id="c" value="点击反选" />
+      <script>
+      var input1 = document.getElementById('a');
+      var input2 = document.getElementsByClassName('b');
+      var input3 = document.getElementById('c');
+      input1.onclick = function(){
+          for(var i = 0; i<input2.length;i++){
+              input2[i].checked = this.checked;
+          }
+      }
+      for(var i = 0; i<input2.length;i++){
+            input2[i].onclick = function (){
+               e();
+            //    var d =true;
+            //    for (var j = 0; j < input2.length; j++) {
+            //        if(input2[j].checked== false){
+            //           d = false;
+            //            break;
+            //         }
+            //     }
+            //     if(d==true){
+            //         input1.checked= true;
+            //     }else {
+            //             input1.checked=false;
+            //     }
+            }
+         }
+      input3.onclick = function (){
+          for(var i = 0; i < input2.length; i++){
+              input2[i].checked = !input2[i].checked;
+          }
+            //   var d =true;
+            //    for (var j = 0; j < input2.length; j++) {
+            //        if(input2[j].checked== false){
+            //           d = false;
+            //            break;
+            //         }
+            //     }
+            //     if(d==true){
+            //         input1.checked= true;
+            //     }else {
+            //             input1.checked=false;
+            //     }
+            e();
+      }
+
+      function e (){
+          var d =true;
+          for (var i = 0; i < input2.length; i++) {
+              if(input2[i].checked==false){
+                   d = false;
+                   break;
+               }
+             }
+           if(d==true){
+               input1.checked= true;
+           }else{
+               input1.checked=false;
+            }
+      }
+
+      </script>
+</body>
+</html>

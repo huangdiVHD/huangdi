@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        不凡学院
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        var box = document.getElementsByClassName('box');
+        // box[0].onclick = function () {
+        //     this.style.color = 'red';
+        // }
+        console.log(box);
+        // 原生 dom 元素  (原生dom)
+
+        // jquery 如何实现
+
+        // 获取事件源(jq对象)  绑定事件   书写处理程序
+        var $box = $('.box');
+        // 绑定事件
+        // .click()
+        $box.click(function () {
+            // 回调函数  函数作为参数时
+            // 再回电函数中 this 的指向 通常会发生改变,慎用this
+            //  jquery  强行修改了this的指向,所以这里他才能指向 $box的 原声都没对象
+
+            // 修改样式 .css()
+            console.log(this); // 原声 dom对象   不具备 jquery的方法
+            // dom对象 转 jq对象
+            $(this).css('color', 'blue');
+        });
+    </script>
+</body>
+
+</html>

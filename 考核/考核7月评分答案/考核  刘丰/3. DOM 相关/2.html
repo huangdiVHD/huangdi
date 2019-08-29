@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        /* .box {
+            width: 300px;
+            height: 150px;
+            background: linear-gradient(135deg,  red, blue)
+        }
+     */
+
+        .png {
+            width: 100px;
+            height: 100px;
+            background: url(1.png);
+            color: #fff;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        img {
+            cursor: pointer;
+        }
+
+        a {
+            display: inline-block;
+            margin: 10px;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <script src="../DOM 相关/js/jquery-3.4.1.js"></script>
+
+
+    <img src="1.png" alt="" onclick= 'isImg()'>
+
+    <div class="png">我是div, 上边是img, 点我试试,点他试试</div>
+
+    <a href="#1">我是#1</a>
+    <a href="1">我是a</a>
+    <a href="1">我是a</a>
+    <a href="6">我是a</a>
+    <a href="#2">我是#2</a>
+    <a href="0">我是a</a>
+    <a href="1">我是a</a>
+    <a href="#3">我是#3</a>
+    <a href="1">我是a</a>
+    <a href="1">我是a</a>
+
+    <script>
+    
+    // 1.
+        var a =  document.createElement('div');
+        $(a).css('width', '300px').css('height', '150px').css('color','#fff').text('我是document.createElement创建的盒子')
+        
+        document.body.append(a);
+
+
+
+
+    // 2.
+
+        a.style.background = ('linear-gradient(135deg,  red, blue)');
+
+        // $(a).css('background','linear-gradient(135deg,  red, blue)')
+        
+    
+    
+    
+
+
+    // 3. 
+
+        for(var i = 1; i < 21; i++) {
+
+            $('body').append( '<div class="box"></div>')
+        }
+        
+        // $('body').append( '<div class="box"></div>')
+
+    
+    
+
+
+    
+    // 4.
+
+        function isImg() {
+
+            alert('yes,我就是img')
+        }
+
+
+
+    
+
+
+    // 5. 
+
+        $('a').each(function(index,el) {
+            var $href = $(this).attr(('href'));
+            var $that = $(this);
+            var lala = '#';
+            if($href.charCodeAt() == lala.charCodeAt()) {
+                console.log($href);             // #1 #2 #3
+            }
+            // if( $that = $href ) {
+
+            //     // $(this).css('background-color', 'red');
+            // }
+        })
+
+            $('a[href ="#1"]').css('background-color', 'red');
+            $('a[href ="#2"]').css('background-color', 'red');
+            $('a[href ="#3"]').css('background-color', 'red');
+
+    
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>

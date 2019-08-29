@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .ads {
+            width: 800px;
+            height: 50px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="ads">
+        这是一条广告
+    </div>
+    <script>
+        // 定时器
+        setTimeout(function () {
+            console.log('你好')
+        }, 2000);
+
+
+        // 循环定时器
+        // 每隔 2000 ms  执行一次这个function
+        var timer = setInterval(function () {
+            console.log('我是循环执行')
+        }, 2000);
+
+
+        // 关闭(清除)定时器
+        // 4s之后  清除 timer
+        // clearInterval()
+        // clearTimeout()
+        setTimeout(function () {
+            clearInterval(timer);
+        }, 4000);
+        var ads = document.getElementsByClassName('ads')[0];
+        setTimeout(function () {
+            ads.style.display = 'none';
+        }, 5000)
+    </script>
+</body>
+
+</html>

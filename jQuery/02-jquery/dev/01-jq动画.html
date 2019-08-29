@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+    </div>
+    <button class="show">显示</button>
+    <button class="hide">隐藏</button>
+    <button class="slide-down">滑入</button>
+    <button class="slide-up">滑出</button>
+    <button class="slide-toggle">滑入/滑出</button>
+    <button class="fade-in">淡入</button>
+    <button class="fade-out">淡出</button>
+    <button class="fade-toggle">淡入/淡出</button>
+
+    <button class="fade-to">调节透明度</button>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        // 第一个参数   速度 毫秒  'slow'
+        // 第二参数  回调函数 指定动画结束时 做什么
+        $('.hide').click(function () {
+            // $('.box').css('display', 'none');
+            // slow 800ms
+            // normal  400ms
+            // fast 200ms
+            $('.box').hide('slow', function () {
+                alert('动画结束了');
+            });
+        })
+        $('.show').click(function () {
+            $('.box').show(800, function () {
+                alert('显示结束')
+            })
+        })
+
+        $('.slide-down').click(function () {
+            $('.box').slideDown(800, function () {
+                alert('划入结束')
+            })
+        })
+        $('.slide-up').click(function () {
+            $('.box').slideUp(800, function () {
+                alert('滑出')
+            })
+        })
+        $('.slide-toggle').click(function () {
+            $('.box').slideToggle(800);
+        })
+
+        $('.fade-in').click(function () {
+            $('.box').fadeIn('slow');
+        })
+        $('.fade-out').click(function () {
+            $('.box').fadeOut('slow');
+        })
+        $('.fade-toggle').click(function () {
+            $('.box').fadeToggle('slow');
+        })
+
+
+        // fadeTo  调节 透明度
+        $('.fade-to').click(function () {
+            $('.box').fadeTo('slow', .5);
+        })
+    </script>
+</body>
+
+</html>

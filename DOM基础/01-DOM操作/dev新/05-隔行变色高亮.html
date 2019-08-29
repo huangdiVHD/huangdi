@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        li:hover {
+            /* 权重不够  不会生效 */
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>li_1</li>
+        <li>li_2</li>
+        <li>li_3</li>
+        <li>li_4</li>
+        <li>li_5</li>
+        <li>li_6</li>
+        <li>li_7</li>
+        <li>li_8</li>
+        <li>li_9</li>
+        <li>li_10</li>
+    </ul>
+    <script>
+        var lis = document.getElementsByTagName('li');
+        var colorBefore;
+        for (var i = 0; i < lis.length; i++) {
+            if (i % 2 === 0) {
+                // 奇数行
+                lis[i].style.backgroundColor = 'red';
+
+            } else {
+                lis[i].style.backgroundColor = 'green';
+            }
+            lis[i].onmouseover = function () {
+                // 鼠标放在元素之上
+                // 先获取原来的颜色,再做修改
+                colorBefore = this.style.backgroundColor;
+                // this 执行调用者
+                this.style.backgroundColor = 'yellow';
+            }
+            // 鼠标离开时 标会原来的颜色
+            lis[i].onmouseout = function () {
+                // 原来的颜色 怎么拿到
+                this.style.backgroundColor = colorBefore;
+            }
+        }
+
+        // 鼠标进入高亮显示 黄色
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 3000px;
+        }
+
+        .advance {
+            position: absolute;
+            top: 400px;
+            right: 60px;
+            width: 40px;
+            height: 100px;
+            padding: 40px 20px;
+            color: #fff;
+            background-color: crimson;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="advance">这是一条小广告</div>
+
+    <script>
+    var advance = document.querySelector('.advance');
+
+    var originTop = advance.offsetTop;
+
+    window.onscroll = function(){
+        var target = originTop +sct();
+        mo(advance,target);
+    }
+    function mo(ele,target){
+        clearInterval(ele.timer);
+        ele.timer = setInterval(function(){
+            var length = ele.offsetTop;//获取起点
+            var set = (target-length)/10;
+            if(Math.abs(set)<1){
+                 set = set >0 ? 1:Math.floor(set);
+            }
+            length +=set;
+            //还是要细心,注意元素名前后是否一致
+            // console.log(length);
+            ele.style.top = length+'px';
+            if(length ===target){
+                clearInterval(ele.timer);
+            }
+        },17);
+    }
+    //实时获取页面卷入高度
+    function sct(){
+		return document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+	}
+    </script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .box {
+            width: 800px;
+            height: 300px;
+            background-image: url(img/m1.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100%;
+            margin: 0 auto;
+        }
+
+        ul {
+            width: 910px;
+            height: 80px;
+            margin: 0 auto;
+            list-style: none;
+        }
+
+        ul li {
+            float: left;
+        }
+
+        ul li.active {
+            border: 1px solid red;
+        }
+
+        img {
+            width: 150px;
+            height: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+    </div>
+    <ul>
+        <!-- <li><img src="img/m1.jpg" alt=""></li> -->
+    </ul>
+    <script>
+        var imgArr = ['m1.jpg', 'm2.jpg', 'm3.jpg', 'm4.jpg', 'm5.jpg', 'm6.jpg'];
+        var box = document.getElementsByClassName('box')[0];
+        var ul = document.getElementsByTagName('ul')[0];
+        var str = '';
+        for (var i = 0; i < imgArr.length; i++) {
+            str += '<li><img src="img/' + imgArr[i] + '" alt=""></li>';
+        }
+        console.log(str);
+        ul.innerHTML = str;
+
+        // 如何给 这 6个li 绑定 点击事件
+        var lis = document.getElementsByTagName('li');
+        // 循环绑定点击事件
+        // 解决方式一
+        // for (var i = 0; i < lis.length; i++) {
+        //     lis[i].index = i;
+        //     lis[i].onclick = function () {
+
+        //         // console.log(i);// 6
+        //         // 获取index属性
+        //         // 这里边不能用lis[i],需要使用this
+        //         var index = this.index;
+        //         box.style.backgroundImage = 'url(img/' + imgArr[index] + ')';
+        //     }
+        // }
+        // 点击时  for循环早已结束
+
+        // 解决方式二
+        // 自执行函数解决
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].onclick = (function (n) {
+                return function () {
+                    // console.log(n);
+                    box.style.backgroundImage = 'url(img/' + imgArr[n] + ')';
+                    // 排他思想
+                    for (var i = 0; i < lis.length; i++) {
+                        // lis[i].style.border = 'none';
+                        lis[i].classList.remove('active');
+                    }
+                    // 添加边框
+                    // lis[n].style.border = '1px solid #333';
+                    this.classList.add('active');
+                    // 但是咱们很少  在js 当中 去修改样式
+                    // 结构样式  分离的原则
+                }
+                // return 函数的时候  会把这个函数所在作用域的变量一块 丢出去(存在背包)
+            })(i);
+        }
+        // 分步
+        // lis[0].onclick = function () {
+        // 背包里 n是 0
+        //     box.style.backgroundImage = 'url(img/' + imgArr[n] + ')';
+        // }
+        // lis[1].onclick = function () {
+        // 背包里 n是1
+        //     box.style.backgroundImage = 'url(img/' + imgArr[n] + ')';
+        // }
+        // lis[2].onclick = function () {
+        // 背包里 n是2
+        //     box.style.backgroundImage = 'url(img/' + imgArr[n] + ')';
+        // }
+    </script>
+</body>
+
+</html>

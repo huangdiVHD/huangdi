@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    a[href^='#']{
+        background-color: red;
+    }
+
+    </style>
+</head>
+<body>
+    <a href="#adfsga">a标签</a>
+    <a href="adfsga">a标签</a>
+    <a href="ad#fsga">a标签</a>
+    <a href="_adfsga">a标签</a>
+    <a href="#">a标签</a>
+    <a href="$fasf">a标签</a>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+<script>
+    var aEl = document.getElementsByTagName('a');
+    console.log(aEl);
+</script>
+
+</body>
+</html>

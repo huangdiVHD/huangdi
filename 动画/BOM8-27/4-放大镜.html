@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>放大镜</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box,.box2{
+				position: relative;
+				float: left;
+				width: 400px;
+				height: 400px;
+				margin-top: 20px;
+				margin-left: 50px;
+				border: 2px solid red;
+				overflow: hidden;
+			}
+			.box img{
+				width: 100%;
+				height: 100%;
+				user-select: none;
+			}
+			.inner{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100px;
+				height: 100px;
+				background-color: #0000ff99;
+				cursor: move;
+			}
+			/* .box2{
+				display: none;
+			} */
+			.box2 img{
+				position: absolute;
+				width: 200%;
+				height: 200%;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<!-- ondragstart="return false;"  让 img 元素无法被选中拉扯 -->
+		<div class="box">
+			<img src="./img/1.jpg" alt="sorry" ondragstart="return false">
+			<div class="inner" ondragstart="return false"></div>
+		</div>
+		<div class="box2">
+			<img class="big" src="./img/1.jpg" alt="sorry">
+		</div>
+		
+		<script type="text/javascript">
+			// 获取元素
+			var box = document.querySelector(".box");
+			var inner = document.querySelector(".inner");
+			// 获取放大图片
+			var imgEle = document.querySelector(".big");
+			
+			// 加边界
+			var minLeft = minTop = 0;
+			var maxLeft = box.offsetWidth - inner.offsetWidth;
+			var maxTop = box.offsetHeight - inner.offsetHeight;
+			
+			inner.onmousedown = function (){
+				// 获取鼠标在inner中的坐标
+				var mouseX = event.offsetX;
+				var mouseY = event.offsetY;
+				
+				// 在box上的移动事件
+				box.onmousemove = function (){
+					// inner距离box的上边距 = 获取鼠标距离页面的上边距 - 鼠标距离inner的上边距 - box距离页面的上边距
+					var targetY = event.pageY - mouseY - box.offsetTop;
+					var targetX = event.pageX - mouseX - box.offsetLeft;
+					
+					// 判断边界 0 < left < box的宽 - inner的宽
+					// 0 < top < box的高 - inner的高
+					if(targetX <= minLeft){
+						targetX = minLeft;
+					}else if(targetX >= maxLeft){
+						targetX = maxLeft;
+					}
+					if(targetY <= minTop){
+						targetY = minTop;
+					}else if(targetY >= maxTop){
+						targetY = maxTop;
+					}
+					
+					// 赋值
+					inner.style.left = targetX + "px";
+					inner.style.top = targetY + "px";
+					// 放大的图片往相反的方向移动两倍距离
+					// imgEle.style.left = -2 * targetX + "px";
+					// imgEle.style.top = -2 * targetY + "px";
+					imgEle.style.marginLeft = -2 * targetX + "px";
+					imgEle.style.marginTop = -2 * targetY + "px";
+				}
+				// 松开事件
+				inner.onmouseup = function (){
+					box.onmousemove = null;
+				}
+			}
+		</script>
+	</body>
+</html>

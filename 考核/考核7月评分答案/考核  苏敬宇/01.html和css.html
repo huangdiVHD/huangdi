@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>标题后面打点</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .box {
+            height: 50px;
+            width: 400px;
+            margin: 0 auto;
+            /* display: inline-block; */
+            /* background-color: aqua; */
+        }
+
+        .title {
+            float: left;
+            /* display: inline-block; */
+            width: 180px;
+            height: 50px;
+            line-height: 50px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: pre;
+            word-break: break-all;
+            font-size: 18px;
+            font-weight: bolder;
+            /* background-color: blue; */
+
+        }
+
+        .inner-box {
+            display: inline-block;
+            height: 50px;
+            /* background-color: green; */
+
+        }
+
+        a {
+           
+            display: inline-block;
+            height: 20px;
+            line-height: 20px;
+            border: 1px solid #333;
+            color: #333;
+            margin: 13px 5px;
+            font-weight: bolder;
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+
+        .a2 {
+            color: red;
+        }
+
+        .a3 {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <span class="title">这是一个新的故事这是一个新的故事这是一个新的故事这是一个新的故事这是一个新的故事</span>
+        <span class="inner-box">
+            <a href="#" class="a1">都市</a>
+            <a href="#" class="a2">连载中</a>
+            <a href="#" class="a3">54.82万字</a>
+        </span>
+        <!-- <input type="button" value="都市">
+        <input type="button" value="连载中">
+        <input type="button" value="54.82万字"> -->
+    </div>
+    <div class="box">
+        <span class="title">穿越天地复苏的平行世界穿越天地复苏的平行世界穿越天地复苏的平行世界穿越天地复苏的平行世界</span>
+        <span class="inner-box">
+            <a href="#" class="a1">都市</a>
+            <a href="#" class="a2">完本</a>
+            <a href="#" class="a3">1万字</a>
+        </span>
+    </div>
+    <div class="box">
+        <span class="title">修真四万年</span>
+        <span class="inner-box">
+            <a href="#" class="a1">科幻</a>
+            <a href="#" class="a2">完本</a>
+            <a href="#" class="a3">1059.98万字</a>
+        </span>
+    </div>
+</body>
+
+</html>

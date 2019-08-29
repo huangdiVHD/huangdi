@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 请实现，指定任意索引，对应数组项前移一个位置。
+        请实现，指定任意索引，对应数组项移动到最前面。
+        请实现，指定任意索引，对应数组项移动到最后面。
+        请实现，指定任意两项索引，对应数组项交换位置。  -->
+</body>
+<script>
+    var arr = [0, 1, 2, 3, 4, 5];
+    console.log(advance(0, arr));
+    console.log(advance(1, arr));
+    console.log(advance(9, arr));
+
+    function advance(i, arr) {//前移
+        if (i < 1) {
+            return '索引必须大于零'
+        } else if (i > arr.length - 1) {
+            return '不存在的索引';
+        }
+        else {
+            var volution = arr[i - 1];
+            arr[i - 1] = arr[i];
+            arr[i] = volution;
+            return arr;
+        }
+    }
+
+
+    var arr2 = [0, 1, 2, 3, 4, 5];
+    console.log(removeFront(3, arr2));
+    function removeFront(i, arr) {//移动到最前面
+        var volution2 = arr[i];
+        if (i < 1) {
+            return '索引必须大于零'
+        } else if (i > arr.length - 1) {
+            return '不存在的索引';
+        }
+        else {
+
+            for (var j = i; j >= 1; j--) {
+                arr[j] = arr[j - 1];
+            }
+            arr[0] = volution2;
+            return arr;
+        }
+    }
+
+    var arr3 = [0, 1, 2, 3, 4, 5];
+    console.log(removeEnd(0, arr3));
+
+    function removeEnd(i, arr) {//移动到最后面
+        var volution3 = arr[i];
+        if (i < 0) {
+            return '索引不能为负值'
+        } else if (i > arr.length - 1) {
+            return '不存在的索引';
+        }
+        else {
+
+            for (var j = i; j < arr.length - 1; j++) {
+                arr[j] = arr[j + 1];
+            }
+            arr[arr.length - 1] = volution3;
+            return arr;
+        }
+    }
+
+    var arr4 = [0, 1, 2, 3, 4, 5];
+    console.log(change(0, 6, arr4));
+
+    function change(i, j, arr) {//交换位置
+        if (i < 0 || j < 0) {
+            return '索引不能为负值'
+        } else if (i > arr.length - 1 || j > arr.length - 1) {
+            return '不存在的索引';
+        }
+        else {
+            var volution = arr[i];
+            arr[i] = arr[j];
+            arr[j] = volution;
+            return arr;
+        }
+    }
+
+
+</script>
+
+</html>

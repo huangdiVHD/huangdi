@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="/account/login" id="login-form" method="post">
+        <p>账号: <input type="text" name="username" required /></p>
+        <p>密码: <input type="password" name="pwd" required /></p>
+        <p><input type="submit" value="登录" /></p>
+    </form>
+    <!-- 1 获取<form>元素。（尽可能多的方法）
+   2 <form>表单元素提交时，阻止默认的表单提交行为。 -->
+    <script>
+        var Nameform = document.getElementsByTagName('form')[0];
+        console.log(Nameform)
+        var Idform = document.getElementById('login-form');
+        console.log(Idform)
+        var Quform = document.querySelector('form')
+        console.log(Quform)
+        var Qulform = document.querySelectorAll('form')[0];
+        console.log(Qulform)
+        var p = document.getElementsByTagName('p')[0];
+        var Tform = p.parentNode
+        console.log(Tform)
+        var inputForm = document.getElementsByTagName('input')[0];
+        console.log(inputForm.parentNode.parentNode)
+        var username = document.getElementsByName('username')[0];
+        console.log(username.parentNode.parentNode)
+        var Body = document.getElementsByTagName('body')[0]
+        console.log(Body.firstElementChild)
+
+
+        var Form = Body.firstElementChild[2]
+        Form.onsubmit = function() {
+            return false
+        }
+    </script>
+</body>
+
+</html>

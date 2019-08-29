@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+
+        .box {
+            margin: 100px auto;
+            width: 400px;
+            height: 300px;
+            background-color: green;
+            border: 1px solid red;
+            /*景深 简单理解为眼睛的距离*/
+            perspective: 300px;
+            /*视角位置*/
+            /* perspective-origin: -100% -50%; */
+        }
+
+        .box>img {
+            width: 100%;
+            height: 100%;
+            transition: all ease 3s;
+            transform-origin: right 70%;
+            /*perspective可以直接应用于自身*/
+            /* transform: perspective(300px); */
+        }
+
+        .box:hover>img {
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="t.jpg" alt="">
+    </div>
+</body>
+
+</html>

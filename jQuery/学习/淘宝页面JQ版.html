@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        ul{
+            list-style: none;
+        }
+        .box{
+        width: 322px;
+        height: 250px;
+        margin: 100px auto 0 auto;
+        border-top: 1px solid red;
+        border-right: 1px solid red;
+        border-left: 1px solid red;;
+       }
+       .left {
+        width: 60px;
+        height: 250px;
+        float: left;
+        border-right: 1px solid red;
+        align-content: center;
+        }
+        .img1 {
+        width: 200px;
+        height: 250px;
+        float: left;
+        border-bottom: 1px solid red;;
+        }
+        .right {
+            width: 60px;
+            height: 250px;
+            float: left;
+            border-left: 1px solid red;
+        }
+        .li1{
+            width: 60px;
+            height: 27px;
+            border-bottom: 1px solid red;
+            line-height: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .li2 {
+            width: 60px;
+            height: 27px;
+            border-bottom: 1px solid red;
+            line-height: 30px;
+            text-align: center;
+            cursor: pointer;
+        }
+        </style>
+</head>
+<body>
+    <div class="box">
+        <ul class="left">
+             <!-- //动态生成 -->
+        </ul>
+        <img src="images/女包.jpg" alt="加载不出来" class="img1">
+        <ul class="right">
+           <!-- //动态生成 -->
+        </ul>
+    </div>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/data.js"></script>
+    <script>
+       var $left = $('.left');
+       var $right = $('.right');
+       var $img = $('.img1');
+       name1($left[0],product[0]);
+       name1($right[0],product[1])
+           //左侧
+          $('.left .li1').click(function(){
+              var index = $(this).index();
+              var url = product[0][index].img;
+              $img[0].src = 'images/'+url;
+          });
+          //右侧
+         $('.right .li1').click(function(){
+             var index = $(this).index();
+             var url = product[0][index].img;
+              $img[0].src = 'images/'+url;
+         });
+        function name1 (el, arr) {
+            var str = '';
+            for (var i = 0; i < arr.length; i++) {
+                  str += '<li class="li1">' + arr[i].text + '</li>'
+              }
+              el.innerHTML = str;
+          }
+    </script>
+</body>
+</html>

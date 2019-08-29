@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			a {
+				text-decoration: none;
+			}
+
+			ul {
+				list-style: none;
+				width: 400px;
+				margin: 100px auto;
+			}
+
+			.list .list-item {
+				height: 40px;
+				margin: 10px;
+			}
+
+			.list .tags {
+				float: right;
+			}
+
+			.list .tag {
+				float: right;
+				line-height: 30px;
+				text-align: center;
+				box-sizing: border-box;
+				padding: 4px;
+				border: 1px solid gray;
+				margin-left: 8px;
+				border-radius: 2px;
+			}
+
+			.list .title {
+				display: block;
+
+				height: 40px;
+				line-height: 40px;
+				font-size: 24px;
+				font-weight: bolder;
+				color: gray;
+				/* 文本溢出... */
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- 整体思路,右边宽度由标签宽度撑开,左边宽度自动占满盒子剩余宽度 -->
+		<ul class="list">
+			<li class="list-item">
+				<div class="tags">
+					<span class="tag count">54.82万字</span>
+					<span class="tag status">连载中</span>
+					<span class="tag type">都市</span>
+				</div>
+
+				<a href="#" class="title">标题很长呵呵呵呵呵呵呵呵呵呵</a>
+			</li>
+			<li class="list-item">
+				<div class="tags">
+					<span class="tag count">1万字</span>
+					<span class="tag status">完本</span>
+					<span class="tag type">都市</span>
+				</div>
+				<!-- a标签 须写在 tags后边  ,因为右 浮动的缘故 -->
+				<a href="#" class="title">标题很长呵呵呵呵呵呵呵呵</a>
+			</li>
+			<li class="list-item">
+				<div class="tags">
+					<span class="tag count">1万字</span>
+					<span class="tag status">完本</span>
+					<span class="tag type">都市</span>
+				</div>
+
+				<a href="#" class="title">标题很长</a>
+			</li>
+		</ul>
+	</body>
+</html>

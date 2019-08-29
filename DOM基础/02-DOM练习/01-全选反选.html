@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrap {
+            width: 800px;
+            height: 400px;
+            margin: 0 auto;
+        }
+
+        table {
+            margin: 20px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <table cellspacing="20">
+            <tr>
+                <th><input type="checkbox" value="全选" id="all"></th>
+                <th>产品</th>
+                <th>价钱</th>
+
+            </tr>
+            <tr>
+                <td><input type="checkbox" class="check"></td>
+                <td>iphone</td>
+                <td>5000</td>
+
+            </tr>
+            <tr>
+                <td><input type="checkbox" class="check"></td>
+                <td>iwatch</td>
+                <td>2000</td>
+
+            </tr>
+            <tr>
+                <td><input type="checkbox" class="check"></td>
+                <td>ipad</td>
+                <td>3000</td>
+
+            </tr>
+        </table>
+        <input type="button" class="inverse" value="反选">
+    </div>
+
+    <script>
+        var btnAll = document.getElementById('all');
+        var inputs = document.getElementsByClassName('check');
+        var inverse = document.getElementsByClassName('inverse')[0];
+        btnAll.onclick = function () {
+            // 获取选择框状态
+            // this.checked;
+            console.log(this.checked)
+            for (var i = 0; i < inputs.length; i++) {
+                inputs[i].checked = this.checked;
+            }
+        }
+        // 循环绑定 输入框选中事件
+        for (var i = 0; i < inputs.length; i++) {
+            inputs[i].onclick = function () {
+                checkAll();
+            }
+        }
+        // 封装成函数
+        function checkAll() {
+            var flag = true;
+            for (var i = 0; i < inputs.length; i++) {
+                if (!inputs[i].checked) {
+                    flag = false;
+                    break;
+                }
+            }
+            btnAll.checked = flag;
+            // if (flag) {
+            //     // 都被选中了
+            //     btnAll.checked = true;
+            // } else {
+            //     btnAll.checked = false;
+            // }
+        }
+        // 反选
+        inverse.onclick = function () {
+            for (var i = 0; i < inputs.length; i++) {
+                inputs[i].checked = !inputs[i].checked;
+            }
+            checkAll();
+        }
+    </script>
+</body>
+
+</html>

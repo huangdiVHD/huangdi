@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>a</li>
+			<li>b</li>
+			<li>c</li>
+			<li>d</li>
+			<li>e</li>
+		</ul>
+		<script type="text/javascript">
+			var liEl = document.getElementsByTagName('li');
+			var a1;
+			for(var i = 0; i<liEl.length; i++){
+				if(i%2==0){
+					liEl[i].style.backgroundColor = 'red';
+				}else {
+					liEl[i].style.backgroundColor = 'black';
+				}
+				
+				liEl[i].onmouseover = function(){
+					 a1 = this.style.backgroundColor;//获取鼠标没点上去前的背景颜色
+					 this.style.backgroundColor = 'green';//鼠标放上去后背景颜色改变
+				}
+				liEl[i].onmouseout = function(){
+					this.style.backgroundColor = a1;//鼠标离开后背景色恢复原状
+				}
+			}
+		</script>
+	</body>
+</html>

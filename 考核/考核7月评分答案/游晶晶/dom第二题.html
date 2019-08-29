@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <img src="icon/camera-active.svg" alt="" onclick="foo(this)">
+    <!-- <a href="#" onclick="foo(this)">百度</a> -->
+    <a href="cbhac">ancf</a>
+    <a href="#">你是理科</a>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        var divs=document.createElement('div');
+        document.body.appendChild(divs);
+        divs.style.width='150px';
+        divs.style.height='300px';
+        divs.style.background='linear-gradient( to right bottom , red,blue)';
+       for(var i=1;i<=20;i++){
+           var divm=document.createElement('div');
+           document.body.appendChild(divm);
+          divm.classList.add('.box');
+       }
+      function foo(){
+        var ss=document.getElementsByTagName('img');
+        console.log(ss);
+        if(ss[0]=='img'){
+            console.log(true);
+        }else{
+            console.log(false);
+        }
+      }
+       $('a[href="#"]').css('backgroundColor','red');
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+<form action="/account/login" id="login-form" method="POST">
+	<p>账号: <input type="text" name="username" required /></p>
+	<p>密码: <input type="password" name="pwd" required /></p>
+	<p><input type="submit" value="登录"/></p>
+</form>
+
+
+
+    <script src="js/jquery-3.4.1.js"></script>
+
+
+
+    <script>
+    
+        // 1. 获取<form>元素。（尽可能多的方法）
+    
+        
+            var a = document.getElementById('login-form');
+            console.log(a);
+    
+            var b = document.getElementsByTagName('form')[0];
+            console.log(b);
+
+            var c = document.querySelector('form');
+            console.log(c);
+
+
+            var d = document.querySelectorAll('form')[0];
+            console.log(d);
+
+            var e = $('form')[0];
+            console.log(e);
+
+            var f = $('form');
+            console.log(f);
+
+    
+            var g = $('form[method="post"]');
+            console.log(g);
+    
+    
+            var h = $('form[action="/account/login"]');
+            console.log(h);
+    
+            var i = $('form[id="login-form"]');
+            console.log(i);
+
+            var j = $('p').parent();
+            console.log(j);
+    
+            var k = $('input[value="登录"]').parent().parent()[0];
+            console.log(k);
+
+
+
+            // <form>表单元素提交时，阻止默认的表单提交行为。
+
+
+                $('input[ type="submit"]').click(function(event) {
+                    alert('别点了 没用的');
+                    return false;
+                })
+
+
+
+    
+    </script>
+
+
+
+
+
+</body>
+</html>

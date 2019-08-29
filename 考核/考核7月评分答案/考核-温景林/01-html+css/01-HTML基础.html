@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+
+  .content {
+    margin: 100px 100px;
+    font-size: 16px;
+  }
+
+  .content span {
+    display: inline-block;
+    border: 1px solid #333;
+    border-radius: 4px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-bottom: 5px;
+  }
+
+  span:nth-child(1),
+  span:nth-child(6),
+  span:nth-child(11) {
+    width: 160px;
+    height: 20px;
+    line-height: 20px;
+    border: none;
+  }
+
+  span:nth-child(6) {
+    width: 200px;
+    margin-right: 10px;
+  }
+
+  span:nth-child(1) {
+    margin-right: 2px;
+  }
+
+  span:nth-child(2),
+  span:nth-child(7),
+  span:nth-child(12) {
+    color: gray;
+    border-color: gray;
+  }
+
+  span:nth-child(3),
+  span:nth-child(8),
+  span:nth-child(13) {
+    color: red;
+    border-color: red;
+  }
+
+  span:nth-child(4),
+  span:nth-child(9),
+  span:nth-child(14) {
+    color: blue;
+    border-color: blue;
+  }
+</style>
+
+<body>
+  <div class="content">
+    <span><a href="#">这次是一个新的故事这次是一个新的故事这次是一个新的故事</a></span>
+    <span>都市</span>
+    <span>连载中</span>
+    <span>54.82万字</span><br>
+    <span><a href="#">穿越天地复苏的平行世界穿越天地复苏的平行世界穿越天地复苏的平行世界穿越天地复苏</a></span>
+    <span>都市</span>
+    <span>完本</span>
+    <span>1万字</span><br>
+    <span><a href="#">修真四万年</a></span>
+    <span>科幻</span>
+    <span>完本</span>
+    <span>1059.98万字</span>
+  </div>
+
+</body>
+
+</html>

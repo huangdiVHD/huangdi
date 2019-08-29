@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			table{
+				width: 300px;
+				height: 300px;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<table border="" cellspacing="" cellpadding="">
+			<tr>
+				<th><input type="checkbox" id="a" value="全选" /></th>
+				<th>姓名</th>
+				<th>职业</th>
+			</tr>
+			<tr>
+				<th><input type="checkbox" class="b"/></th>
+				<th>张三</th>
+				<th>学生</th>
+			</tr>
+			<tr>
+			    <th><input type="checkbox" class="b"/></th>
+				<th>李四</th>
+				<th>工人</th>
+			</tr>
+			<tr>
+				<th><input type="checkbox" class="b"/></th>
+				<th>王五</th>
+				<th>大刀</th>
+			</tr>
+		</table>
+		<input type="button"  id="c" value="点击反选" />
+		<script type="text/javascript">
+			var inputall = document.getElementById('a');
+			var input1 = document.getElementsByClassName('b');
+			var reverse = document.getElementById('c');
+			//全选
+			inputall.onclick = function(){
+				for(var i = 0;i<input1.length;i++){
+					input1[i].checked = this.checked;
+				}
+			}
+			//单选
+			for(var i = 0;i<input1.length;i++){
+				input1[i].onclick = function(){
+                   hs();
+			    }
+			}
+			//反选
+			reverse.onclick = function (){
+                for(var i = 0;i<input1.length;i++){
+				    input1[i].checked = !input1[i].checked;  
+			    }
+				hs();
+			}
+			
+			function hs(){
+				var dj = true;
+			    for(var i = 0;i<input1.length;i++){
+				   if (!input1[i].checked) {
+                        dj = false;
+                        break;
+                   }
+			    }
+			    if (dj == true) {
+					  inputall.checked = true;
+			    }else{
+					  inputall.checked = false;
+		       	  }
+			}
+		
+		</script>
+	</body>
+</html>

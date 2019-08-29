@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.d1,.d2,.d3{
+			margin: 100px;
+			width: 200px;
+			height: 200px;
+			background-color: green;
+			transition: all ease .4s;
+		}
+		.d1:hover{
+			/*transform: scale(.5,2);*/
+			transform: scale(2);
+		}
+		.d2:hover{
+			/*位移*/
+			transform: translate(100px,100px);
+		}
+		.d3{
+			transform:scale(.5) rotate(0);
+			transition-duration: 3s;
+		}
+		.d3:hover{
+			transform: scale(2) rotate(720deg);
+		}
+		.d4{
+			width: 200px;
+			height: 400px;
+			margin: 100px;
+			background-color: red;
+			transform-origin:bottom center;
+			transition: all .4s ease;
+		}
+		.d4:hover{
+			transform: rotate(-20deg);
+		}
+	</style>
+</head>
+<body>
+	<div class="d1">
+		
+	</div>
+	<div class="d2">
+		
+	</div>
+	<div class="d3">
+		
+	</div>
+	
+	<div class="d4">
+		
+	</div>
+</body>
+</html>

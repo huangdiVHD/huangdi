@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    .box {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background-color: aqua;
+    }
+    </style>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+    <script>
+    var box = document.querySelector('.box');
+
+    window.onmousemove =function(){
+        // console.log(e.offsetX,e.offsetY);
+        //关于图像跟随鼠标进行移动:1,图像一定要开启定位,2,看需求图像以那个位置为中心跟随鼠标移动,但总体是图像的距离页面的左和上的边距,
+        // 等于鼠标距离页面的距离-图像的左/上的长度
+        // 4.获取鼠标相对于绑定事件的元素的位置 e.pageX/Y - 绑定事件的元素距离页面的左/上边距(offsetLeft/Top)
+        box.style.top = event.pageY-box.offsetHeight/2+'px';
+        box.style.left = event.pageX-box.offsetWidth/2+'px';
+    }
+    </script>
+</body>
+</html>

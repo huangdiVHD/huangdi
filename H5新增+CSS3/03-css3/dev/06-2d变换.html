@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .d1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            transition: all .4s ease;
+        }
+
+        /* 位置上变化(位移)  水平方向   垂直方向 */
+
+        /* 大小上变化  缩放 */
+        /* 旋转 */
+
+        /* 区分正负 */
+        .d1:hover {
+            /* transform: translate(10px, 20px); */
+            transform: translateX(-10px) translateY(-10px);
+
+        }
+
+        .d2 {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            transition: all .8s ease;
+            
+        }
+
+        .d2:hover {
+            transform: rotate(180deg);
+            /* 旋转中心 */
+            transform-origin: right bottom;
+
+        }
+
+        .d3 {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            transition: all .8s ease;
+        }
+
+        .d3:hover {
+            transform: scale(1.2);
+        }
+
+        .d4 {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            transition: all .8s ease;
+        }
+
+        .d4:hover {
+            transform: skew(20deg, 30deg);
+        }
+
+        .d5 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            transition: all .8s ease;
+        }
+
+        .d5:hover {
+            transform: translate(50px, 40px) scale(1.5) rotate(270deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="d1">
+
+    </div>
+    <div class="d2">
+
+    </div>
+    <div class="d3">
+
+    </div>
+    <div class="d4">
+
+    </div>
+    <div class="d5">
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .box{
+            width: 880px;
+            height: 160px;
+            margin: 0 auto;
+            background-color:rgb(48, 47, 47);
+        }
+        .box .box-item{
+            float: left;
+            width: 120px;
+            height:160px;
+            padding: 0px 20px;
+            margin: 0px 30px;
+            text-align: center;
+            color:floralwhite;
+            font-size: 18px;
+        }
+        .box-item img{
+            margin-top: 20px;
+            height: 80px;
+            width: 90px;
+            padding-bottom: 10px;
+        }
+        .box-item::after {
+			content: '';
+			display: block;
+			width: 20px;
+			height: 20px;
+			background-color:dimgrey;
+			border-radius: 10px;
+			position: absolute;
+		}
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="box-item">
+            <img src="icon/cd-default.svg" alt="">
+            Home
+        </div>
+        <div class="box-item">
+            <img src="icon/camera-default.svg" alt="">
+            Camera
+        </div>
+        <div class="box-item">
+            <img src="icon/file-default.svg" alt="">
+            Files
+        </div>
+        <div class="box-item">
+            <img src="icon/mine-default.svg" alt="">
+            Mine
+        </div>
+    </div>
+</body>
+</html>

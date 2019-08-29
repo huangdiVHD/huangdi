@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .big-box{
+            width: 880px;
+            height: 170px;
+            margin: 50px auto;
+            background-color: #333333;
+            overflow: hidden;
+            position: relative;
+        }
+        /* 图片 */
+        img {
+            width: 80px;
+            height: 80px;
+            position: absolute;
+        }
+        .box {
+            width: 80px;
+            height: 160px;
+            margin: 10px 70px 0px 70px;
+            float: left;
+            position: relative;
+            background-color: #333333;
+        }
+        .img1 {
+            transition: all 0.4s ease;
+            position: absolute;
+            top: 80px;
+        }
+        .img2 {
+            transition: all 0s ease 0.4s;
+
+        }
+        /* 文字 */
+        .text {
+            z-index: 3;
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            color: #ffffff;
+            background-color: #333333;
+            text-align: center;
+            line-height: 80px;
+            transition: all 0.4s ease s;
+        }
+        .text1 {
+            top:75px;
+            left:70px;
+        }
+        .text2 {
+            top:75px;
+            left:290px;
+        }
+      
+        .text3 {
+            top:75px;
+            left:510px
+        }
+      
+        .text4 {
+            top:75px;
+            left:730px
+        }
+        /* 球 */
+        .ball{
+            width: 80px;
+            height: 80px;
+            z-index: 4;
+            position: absolute;
+            top:90px;
+            left:70px;
+            background-color: #333333;
+            transition: all 0.4s ease;
+            display: none;
+        }
+        .ball::after{
+           content:'';
+           display: block;
+           width: 20px;
+           height: 20px;
+           background-color: #00BEFE;
+           border-radius: 50%;
+           margin:0 auto;
+           margin-top:30px
+        }
+    </style>
+</head>
+
+<body>
+    <div class="big-box">
+        <!-- 图片 -->
+        <div class="box">
+            <img src="../../考核/icon/cd-active.svg" alt="" class='img1'>
+            <img src="../../考核/icon/cd-default.svg" alt="" class='img2'>
+        </div>
+        <div class="box">
+            <img src="../../考核/icon/camera-active.svg" alt="" class='img1'>
+            <img src="../../考核/icon/camera-default.svg" alt="" class='img2'>
+        </div>
+        <div class="box">
+            <img src="../../考核/icon/file-active.svg" alt="" class='img1'>
+            <img src="../../考核/icon/file-default.svg" alt="" class='img2'>
+        </div>
+        <div class="box">
+            <img src="../../考核/icon/mine-active.svg" alt="" class='img1'>
+            <img src="../../考核/icon/mine-default.svg" alt="" class='img2'>
+        </div>
+        <!-- 文字 -->
+        <p class="text1 text">Home</p>
+        <p class="text2 text">Camera</p>
+        <p class="text3 text">Files</p>
+        <p class="text4 text">Mine</p>
+        <!-- 球 -->
+        <div class="ball"></div>
+    </div>
+
+    <script src="jquery-3.4.1.min.js"></script>
+    <script>
+        //图片切换
+        $('.img2').click(function () {
+            $('.img1').css({
+                top :'80px',
+            })
+            $('.img2').css({
+                opacity: '1',
+                transition: 'all 0s ease 0s',
+            })
+            $(this).css({
+                opacity:'0',
+                transition: 'all 0s ease 0.4s',
+            })
+            $(this).prev().css('top', '0px')
+            //球移动
+            $('.ball').css({
+                left:$(this).parent().position().left+70,
+                display:'block',
+            })
+        })
+    
+    </script>
+</body>
+
+</html>

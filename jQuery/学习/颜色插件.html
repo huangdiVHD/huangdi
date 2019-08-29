@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .a {
+        width: 300px;
+        height: 200px;
+        background-color: black;
+    }
+    </style>
+</head>
+<body>
+    <div class="a"></div>
+    <button>点击</button>
+  <!-- //引入依赖库 -->
+  <script src="js/jquery-3.4.1.js"></script>
+  <!-- 引入核心库 -->
+  <script src="jquery-color-master/jquery.color.js"></script>
+  <script>
+  $('button').click(function(){
+      $('.a').animate({
+          width:500,
+          height:300,
+          backgroundColor:'red'
+      },2000)
+  });
+  </script>
+</body>
+</html>

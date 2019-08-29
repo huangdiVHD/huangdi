@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 320px;
+            position: relative;
+        }
+        p {
+            width: 160px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: gray;
+            /* display: -webkit-box;    */
+        }
+        .tag{
+            float: right;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        .tag.item1{
+            border: 1px solid gray;
+            color: gray;
+        }
+        .tag.item2{
+            border: 1px solid red;
+            color: red;
+        }
+        .tag.item3{
+            border: 1px solid blue;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p>这次是一个新的故事修真放电饭锅</p>
+        <div class="tag">
+            <a class="item1">都市</a>
+            <a class="item2">连载中</a>
+            <a class="item3">50万字</a>
+        </div>
+    </div>
+</body>
+</html>

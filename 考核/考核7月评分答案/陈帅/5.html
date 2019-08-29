@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .box {
+            position: relative;
+            width: 600px;
+            height: 250px;
+            background-color: rgb(15, 8, 8);
+            margin: 400px auto;
+        }
+
+        .text {
+            font-size: 36px;
+            color: beige;
+            margin: 10px 20px;
+        }
+
+        .cing {
+            width: 150px;
+            height: 100%;
+            float: left;
+        }
+
+        .tubiao {
+            width: 100px;
+            height: 100%;
+        }
+
+        .img1 {
+            margin: 10px 20px;
+        }
+
+        .img1:hover .img2 {
+            color: black;
+            display: block;
+
+        }
+
+        .img2 {
+            position: absolute;
+            top: 10px;
+            margin-left: 20px;
+            /* left: 20px; */
+            width: 100px;
+            height: 100px;
+            display: none;
+            transform: translate(0px, 200px);
+            transition: all 0.5s ease-in;
+        }
+
+        div:hove .img2 {
+            /* display: inline; */
+            transform: translate(0px, 0px);
+
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .yuanhuan {
+            width: 20px;
+            height: 20px;
+            float: left;
+            border-radius: 50%;
+            background-color: #fff;
+            margin: 8px 50px;
+            display: none;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <span class="cing">
+            <div class="tubiao">
+                <img class="img1" src="icon/cd-default.svg" alt="" onclick="click()">
+                <p class="text">home</p>
+                <img class="img2" src="icon/cd-active.svg" alt="">
+            </div>
+        </span>
+        <span class="cing">
+            <div class="tubiao">
+                <img class="img1" src="icon/cd-default.svg" alt="">
+                <p class="text">home</p>
+
+                <img class="img2" src="icon/cd-active.svg" alt="">
+            </div>
+
+        </span>
+        <span class="cing">
+            <div class="tubiao">
+                <img class="img1" src="icon/cd-default.svg" alt="">
+                <p class="text">home</p>
+
+                <img class="img2" src="icon/cd-active.svg" alt="">
+            </div>
+        </span>
+        <span class="cing">
+            <div class="tubiao">
+                <img class="img1" src="icon/cd-default.svg" alt="">
+                <p class="text">home</p>
+
+                <img class="img2" src="icon/cd-active.svg" alt="">
+            </div>
+        </span>
+        <div class="yuanhuan">
+
+        </div>
+
+    </div>
+
+    <script>
+
+        var img1 = document.getElementsByClassName("img1");
+        var img2 = document.getElementsByClassName("img2");
+
+        $('.img1').click() {
+            var acc = $("img2").attr("img2");
+            $('img2').attr("display", "block");
+
+        }
+    </script>
+</body>
+
+</html>

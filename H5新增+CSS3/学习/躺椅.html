@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    .A {
+        width: 200px;
+        height: 300px;
+        background-color: red;
+        margin: 50px auto;
+        
+        transform-style: preserve-3d;
+        perspective: 2000px;
+        transition: all 2s ease;
+
+        backface-visibility: visible;
+    }
+    .B {
+        width: 200px;
+        height: 300px;
+        background-color: green;
+        transform: rotateX(30deg);
+    }
+    .A:hover {
+        transform: rotateY(360deg);
+    }
+    </style>
+</head>
+<body>
+    <div class="A">
+        <div class="B"></div>
+    </div>
+</body>
+</html>

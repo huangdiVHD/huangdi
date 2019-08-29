@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 引入Echarts -->
+    <script src="https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts.min.js"></script>
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+    <div id="main" style="width: 600px;height:400px;"></div>
+
+    <script>
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            tooltip: {
+                formatter: "{a} <br/>{b} : {c}%"
+            },
+            toolbox: {
+                feature: {
+                    restore: {},
+                    saveAsImage: {}
+                }
+            },
+            series: [{
+                name: '业务指标',
+                type: 'gauge',
+                detail: {
+                    formatter: '{value}%'
+                },
+                data: [{
+                    value: 50,
+                    name: '完成率'
+                }]
+            }]
+        };
+        myChart.setOption(option, true);
+        // setInterval(function () {
+        //     option.series[0].data[0].value = (Math.random() * 100).toFixed(2) - 0;
+        //     myChart.setOption(option, true);
+        // }, 2000);
+    </script>
+</body>
+
+</html>

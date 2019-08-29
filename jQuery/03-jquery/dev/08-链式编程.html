@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        box
+    </div>
+    <div class="w-box">
+        <div class="inner-box">
+            内部
+        </div>
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        $('.box').css('width', '200px').css('height', '300px').text('重新设置了').css('background-color', 'red');
+        //         链式编程原理：return this; 调用”任何”一个方法都是返回了对象本身
+        // $('.box').text(); // 返回值   是  文本内容
+        // 通常情况下，只有设置操作才能把链式编程延续下去。因为获取操作的时候，会返回获取到的相应的值，无法返回 this。
+
+        // end()可以让链式编程中断
+        // end(); // 结束当前链最近的一次过滤操作，并且返回匹配元素之前的状态。
+        $('.inner-box').css('width', '100px').parent().css('width', '1000px').end().text('回到了内部盒子');
+    </script>
+</body>
+
+</html>

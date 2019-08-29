@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    ul {
+        list-style: none;
+    }
+    .box {
+        position: relative;
+        width: 600px;
+        height: 270px;
+        margin: 50px auto;
+        border: 1px solid red;
+		overflow: hidden;
+    }
+    .box2 {
+        position: absolute;
+        width: 600%;
+        height: 100%;
+    }
+    .box li {
+        float: left;
+        width: 600px;
+        height: 100%;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+    }
+    /* .box3 {
+        width: 150px;
+        height: 50px;
+        margin: 0 auto;
+    } */
+    button {
+        width: 30px;
+        height: 30px;
+        margin: 10px ;
+        line-height: 30px;
+    }
+    .bt0 {
+        position:absolute;
+        top: 166px;
+        left: 373px;
+        font-size: 30px;
+        text-align: left;
+        opacity: 0;
+    }
+    .bt0:hover {
+        opacity: 0.6;
+    }
+    .bt1 {
+        position:absolute;
+        top: 166px;
+        left: 943px;
+        font-size: 30px;
+        text-align: right;
+        opacity: 0;
+    }
+    .bt1:hover {
+        opacity: 0.6;
+    }
+    .box3 {
+        position: absolute;
+        top: 281px;
+        left: 585px;
+         width: 200px;
+         height: 40px;
+    }
+   
+    .li1 {
+        float: left;
+        width: 10px;
+        height: 10px;
+        margin: 20px 10px;
+        border-radius: 50%;
+        border: 1px solid blue;
+        background-color: blue;
+    }
+    /* .box3 li:hover {
+        background-color: red;
+    } */
+    .active {
+        background-color: red;
+    }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul class="box2">
+            <li><img src="../img/m1.jpg" alt=""></li>
+            <li><img src="../img/m2.jpg" alt=""></li>
+            <li><img src="../img/m4.jpg" alt=""></li>
+            <li><img src="../img/m5.jpg" alt=""></li>
+            <li><img src="../img/m6.jpg" alt=""></li>
+            <li><img src="../img/m1.jpg" alt=""></li>
+        </ul>
+    </div>
+    <button class="bt0"><</button>
+    <button class="bt1">></button>
+     <ul class="box3">
+         <li class="li1 active"></li>
+         <li class="li1"></li>
+         <li class="li1"></li>
+         <li class="li1"></li>
+         <li class="li1"></li>
+     </ul>
+    <script>
+        var box = document.querySelector('.box');
+        var box2 = document.querySelector('.box2');
+        var bt1 = document.querySelector('.bt1');
+        var bt0 = document.querySelector('.bt0');
+        var box3 = document.querySelector('.box3');
+        var li1 = document.querySelectorAll('.li1');
+        var content = 0;
+        for (var i = 0; i < li1.length; i++) {
+            li1[i].index = i;
+            li1[i].onclick = function () {
+                var index = this.index;
+                console.log(index);
+                for (var j = 0; j < li1.length; j++) {
+                    li1[j].classList.remove('active');
+                }
+                li1[index].classList.add('active');
+                content = index;
+                var target = content * 600;
+                mo(box2, target);
+                //相较于以前使用的排他方式,现在的直接document更加直接方便
+                // document.querySelector('.li1.active').classList.remove('active');
+                // this.classList.add("active");
+                // content = i;
+                // var  target = content*600;
+                //  mo(box2,target);
+            }
+        }
+        bt0.onclick = function () {
+            if (content == 0) {
+                box2.style.left = '-3000px';
+                content = 5;
+            }
+            content--;
+            console.log(content);
+            var target = content * 600;
+            mo(box2, target);
+            for (var i = 0; i < li1.length; i++) {
+                li1[i].index = i;
+                var index = this.index;
+                for (var j = 0; j < li1.length; j++) {
+                    li1[j].classList.remove('active');
+                }
+                li1[content].classList.add('active');
+            }
+        };
+        bt1.onclick = function () {
+            if (content == 5) {
+                box2.style.left = '0px';
+                content = 0;
+            }
+            content++;
+            var target = content * 600;
+            mo(box2, target);
+            for (var i = 0; i < li1.length; i++) {
+                li1[i].index = i;
+                var index = this.index;
+                for (var j = 0; j < li1.length; j++) {
+                    li1[j].classList.remove('active');
+                }
+                if (content === 5) {
+                    li1[0].classList.add('active');
+                } else {
+                    li1[content].classList.add('active');
+                }
+            }
+            // document.querySelector('.li1.active').classList.remove('active');
+            // li1[content].classList.add('active');
+        };
+        // 给timer1一个初始值,要不然后期容易出问题
+        var timer1 = null;
+        //自动切换图片
+          start();
+          function start(){
+             timer1 = setInterval(function(){
+                 //bt1自动点击,每隔一秒
+                 bt1.onclick();
+             },1000);
+          }
+           box.onmouseenter = function(){
+               clearInterval(timer1);
+           };
+           box.onmouseleave = function(){
+             start();
+           };
+        function mo(ele, target) {
+            //给元素新建一个名为timer的对象,ele此时为传过来的对象box2
+            clearInterval(ele.timer);
+            ele.timer = setInterval(function () {
+                var spacing = ele.offsetLeft;
+                var replace = (-target - spacing);
+                var step = (replace) / 10;
+                if (Math.abs(step) < 1) {
+                    step = step > 0 ? 1 : Math.floor(step);
+                }
+                spacing += step;
+                ele.style.left = spacing + 'px';
+                if (spacing == -target) {
+                    clearInterval(ele.timer);
+                }
+            }, 20);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+</head>
+
+<body>
+  <img src="icon/mine-active.svg" alt="">
+  <a href="#">baidu </a>
+  <script src="js/jquery-3.4.1.js"></script>
+  <script>
+    var div = document.createElement('div')
+    document.body.appendChild(div);
+    var divEl = document.getElementsByTagName('div')[0]
+    divEl.style.width = '150px'
+    divEl.style.height = '300px'
+    divEl.style.background = 'linear-gradient(to right bottom , red,blue)'
+    for (var i = 1; i <= 20; i++) {
+      var div = document.createElement('div')
+      document.body.appendChild(div);
+      div.classList.add('.box')
+    }
+
+
+    
+    $('a').click(function () {
+      if ($(this).find("img")) {
+        alert('you')
+        console.log($(this).find("img"));
+
+      } else {
+        alert('没有')
+      };
+    })
+    $('a[href="#"]').css('backgroundColor', 'red');
+  </script>
+</body>
+
+</html>

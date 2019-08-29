@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+
+        .btn {
+            position: fixed;
+            bottom: 50px;
+            left: 0;
+        }
+
+        .box2 {
+            left: 0;
+            top: 200px;
+        }
+
+        .stop {
+            position: fixed;
+            bottom: 10px;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box box1">
+
+    </div>
+    <!-- <div class="box box2">
+
+    </div> -->
+    <button class="btn">动画开始</button>
+    <button class="stop">停止动画</button>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        // $(selector).animate(styles,speed,ease,callback)
+
+        // styles 变化的样式
+
+        // speed 速度
+
+        // easing 运动函数 
+        // 'swing' 先慢后快再慢
+        // 'linear'(线性匀速)
+        $('.btn').click(function () {
+            $('.box').animate({
+                left: 1200,
+                top: 100
+            }, 2000);
+
+            $('.box').animate({
+                left: 100
+            }, 1000);
+        })
+
+        $('.stop').click(function () {
+            // 停止当前动画
+            // 参数1  :  stopAll:是否全部停止动画(停止队列中所有动画),默认 false
+            // 参数2:  goToEnd: 是否将停止的动画,停在当前动画的最后一个状态
+            $('.box').stop();
+        })
+        // $('.btn').click(function () {
+        //     $('.box1').animate({
+        //         left: 1400
+        //     }, '20000', 'linear')
+        //     $('.box2').animate({
+        //         left: 1400
+        //     }, '20000', 'swing')
+        // })
+    </script>
+</body>
+
+</html>

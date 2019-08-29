@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [0, 1, 2, 3, 4, 5];
+        // 请实现，指定任意索引，对应数组项前移一个位置。
+        function forward(arr, i) {
+            if (i != 0) {
+                var temp = arr[i - 1]
+                arr[i - 1] = arr[i]
+                arr[i] = temp
+            }
+        }
+        // 请实现，指定任意两项索引，对应数组项交换位置。
+        function change(arr, i, l) {
+            var temp = arr[l]
+            arr[l] = arr[i]
+            arr[i] = temp
+        }
+        // 请实现，指定任意索引，对应数组项移动到最前面。
+        function former(arr, i) {
+            var temp = [];
+            temp.push(arr[i]);
+            arr.splice(i, 1);
+            temp.push(arr[0], arr[1], arr[2], arr[3], arr[4])
+            for (var l = 0; l < temp.length; l++) {
+                arr[l] = temp[l]
+            }
+        }
+        // 请实现，指定任意索引，对应数组项移动到最后面。
+        function last(arr, i) {
+            var temp = [];
+            temp.push(arr[i]);
+            arr.splice(i, 1);
+            temp.unshift(arr[0], arr[1], arr[2], arr[3], arr[4])
+            for (var l = 0; l < temp.length; l++) {
+                arr[l] = temp[l]
+            }
+        }
+        // last(arr,2);
+    </script>
+</body>
+
+</html>

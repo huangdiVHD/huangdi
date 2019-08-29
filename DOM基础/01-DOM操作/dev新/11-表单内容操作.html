@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            display: none;
+            width: 200px;
+            height: 200px;
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" value='请输入用户名'>
+    <input type="submit" value="搜索">
+    <div class="box">
+
+    </div>
+
+    <select name="like" id="">
+        <option value="">篮球</option>
+        <option value="">足球</option>
+
+    </select>
+    <script>
+        var inputs = document.getElementsByTagName('input');
+        var boxEl = document.getElementsByClassName('box')[0];
+//         inputs[0].value = '用户名';
+        // 可以对文本输入框的 值 进行 修改 或 获取
+        inputs[0].onfocus = function () {
+            boxEl.style.display = 'block';
+            if (this.value === '请输入用户名') {
+                this.value = '';
+
+            }
+        }
+        inputs[0].onblur = function () {
+            boxEl.style.display = 'none';
+            if (this.value === '') {
+                this.value = '请输入用户名'
+            }
+        }
+
+        var select = document.getElementsByTagName('select')[0];
+        var options = select.getElementsByTagName('option');
+//      console.log(options);
+        options[1].selected = true;
+    </script>
+</body>
+
+</html>

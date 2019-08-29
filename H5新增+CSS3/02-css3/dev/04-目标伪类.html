@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .header {
+            height: 600px;
+            background-color: red;
+        }
+
+        .main {
+            height: 1000px;
+            background-color: blue;
+        }
+
+        .footer {
+            height: 400px;
+            background-color: black;
+        }
+
+        /* 目标伪类 */
+        /* E:target 结合锚点进行使用，处于当前锚点的元素会被选中 */
+        div:target {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+
+    </div>
+    <div id="m" class="main">
+
+    </div>
+    <div id="f" class="footer">
+
+    </div>
+    <!-- 通过id 跳转到标签位置 -->
+    <a href="#m">跳到main</a>
+    <a href="#f">跳到f</a>
+</body>
+
+</html>

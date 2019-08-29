@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .box {
+            width: 600px;
+            height: 200px;
+            background: url('img/m1.jpg') no-repeat center;
+            background-size: 100% 100%;
+            margin: 0 auto;
+        }
+
+        ul {
+            overflow: hidden;
+            width: 610px;
+            margin: 0 auto;
+        }
+
+        ul li {
+            float: left;
+            width: 120px;
+            height: 40px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 100%;
+        }
+
+        li.active {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+    </div>
+    <ul>
+        <!-- <li style="background-image: url(img/m1.jpg)"></li>
+        <li style="background-image: url(img/m2.jpg)"></li>
+        <li style="background-image: url(img/m3.jpg)"></li>
+        <li style="background-image: url(img/m4.jpg)"></li>
+        <li style="background-image: url(img/m5.jpg)"></li> -->
+        <!-- 这部分内容可以尝试 根据后台请求来的数据 动态生成 -->
+    </ul>
+    <script>
+        // 获取事件源
+        var lis = document.getElementsByTagName('li');
+        var box = document.getElementsByClassName('box')[0];
+        var imgArr = ['m1.jpg', 'm2.jpg', 'm3.jpg', 'm4.jpg', 'm5.jpg'];
+        var ulEl = document.getElementsByTagName('ul')[0];
+        initImg(ulEl, imgArr);
+        // 绑定事件
+        // 循环绑定
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].onclick = function () {
+                // 获取图片路径
+                // 思考这个地方 能不能使用lis[i]
+                // console.log(lis[i]); // undefined
+                // console.log(i); // 5  为什么i 是5
+                // var url = lis[i].style.backgroundImage;
+                var url = this.style.backgroundImage;
+                // 设置
+                box.style.backgroundImage = url;
+
+                // 排他
+                for (var i = 0; i < lis.length; i++) {
+                    lis[i].classList.remove('active');
+                }
+                this.classList.add('active');
+            }
+            // 循环绑定时  ,函数内部的代码并没有执行
+            // 点击时里边的代码才会执行 ,此时for 循环 早已经结束 ,所以i 是5
+        }
+
+        function initImg(el, arr) {
+            var str = '';
+            for (var i = 0; i < arr.length; i++) {
+                str += '<li style="background-image: url(img/' + arr[i] + ')"></li>'
+            }
+            el.innerHTML = str;
+        }
+    </script>
+</body>
+
+</html>

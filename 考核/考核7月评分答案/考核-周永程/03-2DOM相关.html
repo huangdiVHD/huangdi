@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body class="by">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        var div = document.createElement("div");
+        div.style.width = '300px';
+        div.style.height= '150px';
+        div.style.background = 'linear-gradient(to bottom right,red ,blue)';     
+        document.body.appendChild(div);  
+
+        for(var i = 0;i<20;i++){
+            var New = document.createElement("div");
+            New.className = ".box";
+            document.body.appendChild(New);
+            New.style.width = '50px';
+            New.style.height = '50px';
+            New.style.backgroundColor = 'red';
+            New.style.marginTop = '5px';
+        }
+        var box1 = document.getElementsByClassName('.box');
+                for (var i = 0; i < box1.length; i++) {
+                    var c = box1[i].tagName;
+                    box1[i].onclick = function () {
+                        if(c=='DIV'){
+                            console.log('img');
+                        } else {
+                            console.log('div');
+                        }
+                    }
+            }
+    </script>
+</body>
+</html>

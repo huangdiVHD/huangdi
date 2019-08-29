@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width: 600px;
+			height: 300px;
+			background-color: pink;
+			margin: 100px auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+
+	<script>
+		var box = document.querySelector('.box');
+		box.onmouseenter = function (e) {
+			var w = box.clientWidth;
+			var h = box.clientHeight;
+			var x = e.pageX - box.offsetLeft;
+			var y = h-(e.pageY - box.offsetTop);
+			var k = h/w;
+			var k2 = -1*h/w;
+			var b = h;
+			if (y>=k*x && y>=k2*x+h) {
+				console.log('上方进入');
+			}
+			if (y>=k*x && y<k2*x+h) {
+				console.log('左边进入');
+			}
+			if (y<k*x && y>=k2*x+h) {
+				console.log('右边进入');
+			}
+			if (y<k*x && y<k2*x+h) {
+				console.log('下边进入');
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        a {
+            font-size: 40px;
+            font-weight: bolder;
+        }
+
+        /* 访问前链接未点击 */
+        a:link {
+            color: red;
+        }
+
+        /* 鼠标悬浮时: */
+        .a1:hover {
+            color: orange;
+        }
+
+        /* 点击的瞬间 */
+        .a2:active {
+            color: green;
+        }
+
+        /* 访问过后的状态 */
+        a:visited {
+            color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 伪类选择器 -->
+    <!-- :link、:active、:visited、:hover， -->
+    <!-- :checked  :selected -->
+
+    <a class="a1" href="#">百度</a>
+    <a class="a2" href="https://developer.mozilla.org/zh-CN/">MDN</a>
+    <a class="a3" href="https://juejin.im/timeline">掘金</a>
+    <a class="a4" href="#">矢量图标</a>
+</body>
+
+</html>

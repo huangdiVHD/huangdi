@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box1 {
+            /* 设置从左上角到右下角的red到blue渐变 */
+            background: linear-gradient(to right bottom, red, blue);
+        }
+
+        .box {
+            float: left;
+            width: 50px;
+            height: 50px;
+            border: 1px solid #333;
+        }
+
+        .box3 {
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+        }
+
+        /* //获取页面中所有的<a>元素，遍历获取到的元素，对其中href属性以#开头的元素，设置背景色为红色。 */
+        a[href='#'] {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box3"></div>
+    <!-- <p id="demo">单击按钮创建有文本的按钮</p> -->
+    <button onclick="myFunction()">点我</button>
+    <button class="btn">点击元素判断当前点击元素是否是img元素</button>
+    <a href="www.sinlang.com">新浪</a>
+    <a href="#">你好</a>
+    <a href="www.baidu.com">百度</a>
+    <a href="#">元素</a>
+    <a href="#">遍历</a>
+
+
+
+    <script>
+        // 创建一个宽高为300*150的div元素
+        var script = document.getElementsByTagName('script')[0];
+        var div = document.createElement('div');
+        div.className = 'box1';
+        div.style.width = '300px';
+        div.style.height = '150px';
+        div.style.border = '1px solid black';
+        document.body.insertBefore(div, script);
+        // 点击生成.box的盒子
+        function myFunction() {
+            var divEl = document.createElement("div");
+            divEl.className = 'box';
+            document.body.appendChild(divEl);
+        }
+        // 点击元素判断当前点击元素是否是img元素。
+        var boxEl = document.getElementsByClassName('box3')[0];
+        var btnS = document.getElementsByTagName('button');
+        btnS[1].onclick = function () {
+            boxEl.classList.contains('img') ? alert('是img元素') : alert('不是');
+        }
+        //获取页面中所有的<a>元素，遍历获取到的元素，对其中href属性以#开头的元素，设置背景色为红色。
+        var A = document.getElementsByTagName('a');
+        console.log(A);
+    </script>
+</body>
+
+</html>

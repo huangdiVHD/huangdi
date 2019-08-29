@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box{
+            position: relative;
+            background-color: rgb(7, 7, 7);
+            width: 1200px;
+            height: 300px;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+        .icon{
+            float: left;
+            width: 200px;
+            height: 204px;
+            margin: 50px 50px 60px 50px;
+        }
+        .icon p{
+            position: absolute;
+            bottom: -50px;
+            left: 80px;
+            text-align: center;
+            margin: 20px auto;
+            color: white;
+            font-weight: bolder;
+        }
+        .home .hidden{
+            float: left;
+        }
+        .home .chuxian,
+        .camera .chuxian,
+        .files .chuxian,
+        .mine .chuxian{
+            float: left;
+            /* display: none; */
+            transition: all 0.8s ;
+            transform: translateY(200px);
+        }
+        /* .home .chuxian.active,
+        .camera .chuxian.active,
+        .files .chuxian.active,
+        .mine .chuxian.active{
+            /* display: block; */
+            /* transform: translateY(-202px); */
+        /* } */ */
+        .home,
+        .camera,
+        .files,
+        .mine{
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="icon home">
+            <img  class='hidden' src="icon/cd-default.svg" alt="">
+            <img  class="chuxian" src="icon/cd-active.svg" alt="">
+            <p>Home</p>
+        </div>
+        <div class="icon camera">
+            <img class='hidden' src="icon/camera-default.svg" alt="">
+            <img class="chuxian" src="icon/camera-active.svg" alt="">
+            <p>Camera</p>
+        </div>
+        <div class="icon files">
+            <img class='hidden'src="icon/file-default.svg" alt="">
+            <img class="chuxian" src="icon/file-active.svg" alt="">
+            <p>Files</p>
+        </div>
+        <div class="icon mine">
+            <img class='hidden' src="icon/mine-default.svg" alt="">
+            <img class="chuxian" src="icon/mine-active.svg" alt="">
+            <p>Mine</p>
+        </div>
+    </div>
+    <script src="jquery-3.4.1.min.js"></script>
+    <script>
+        // $('.home').click(function(){
+
+        //     $('.home img').slideDown(1000,function(){
+        //         $('.home img').attr('src','icon/cd-active.svg');
+        //     })
+        // })
+
+        $('.home').click(function(){
+            $('.home .chuxian').slideDown(800,function(){
+                $('.home .chuxian').css('transform',' translateY(-202px)');
+            })
+            setTimeout(function(){
+                $('.home .hidden').css('opacity',0);
+            },800);
+           
+        })
+        $('.camera').click(function(){
+            $('.camera .chuxian').slideDown(800,function(){
+                $('.camera .chuxian').css('transform',' translateY(-202px)');
+            })
+            setTimeout(function(){
+                $('.camera .hidden').css('opacity',0);
+            },800);
+           
+        })
+        $('.files').click(function(){
+            $('.files .chuxian').slideDown(800,function(){
+                $('.files .chuxian').css('transform',' translateY(-202px)');
+            })
+            setTimeout(function(){
+                $('.files .hidden').css('opacity',0);
+            },800);
+           
+        })
+        $('.mine').click(function(){
+            $('.mine .chuxian').slideDown(800,function(){
+                $('.mine .chuxian').css('transform',' translateY(-202px)');
+            })
+            setTimeout(function(){
+                $('.mine .hidden').css('opacity',0);
+            },800);
+           
+        })
+        
+
+        // $('.icon').click(function(){
+        //     var $that = $(this);
+        //     $('that .chuxian').slideDown(800,function(){
+        //         $('that .chuxian').addClass('active');
+        //         // $('.home .chuxian').attr('transform',' translateY(-202px)');
+        //     })
+        //     console.log($('that .chuxian'));
+        //     // $('.home .hidden').fadeOut(800,function(){
+               
+        //     // })
+        //     setTimeout(function(){
+        //         $that.children('hidden').css('opacity',0);
+        //     },800);
+           
+        // })
+    </script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav{
+            width: 1300px;
+            height: 170px;
+            margin: 100px auto;
+            position: relative;
+        }
+        .nav ul {
+            width: 1300px;
+            height: 170px;
+            background-color: #333;
+        }
+
+        li {
+            list-style: none;
+            float: left;
+            text-align: center;
+            color: aliceblue;
+            font-size: 24px;
+            width: 325px;
+            padding: 20px 0;
+            position: relative;
+        }
+
+        .img-box {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+
+        }
+
+        .active {
+            position: absolute;
+            bottom: -40px;
+            left: 112px;
+            display: none;
+            transition: bottom .8s ease;
+        }
+
+        .dots {
+            position: absolute;
+            left: 150px;
+            bottom: 20px;
+            width: 20px;
+            height: 20px;
+            background-color: lightblue;
+            border-radius: 50%;
+            display: none;
+            transition: left 1s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <ul>
+            <li class="item1" onclick="func(0)">
+                <div class="img-box">
+                    <img class="default d1" src="icon/camera-default.svg" alt="">
+                    <img class="active a1" src="icon/camera-active.svg">
+                </div>
+
+                <p class="p1">camera</p>
+
+            </li>
+            <li class="item2" onclick="func(1)">
+                <div class="img-box">
+                    <img class="default d2" src="icon/cd-default.svg" alt="">
+                    <img class="active a2" src="icon/cd-active.svg">
+                </div>
+                <p class="p2">cd</p>
+
+            </li>
+            <li class="item3" onclick="func(2)">
+                <div class="img-box">
+                    <img class="default d3" src="icon/file-default.svg" alt="">
+                    <img class="active a3" src="icon/file-active.svg">
+                </div>
+                <p class="p3">file </p>
+
+            </li>
+            <li class="item4" onclick="func(3)">
+                <div class="img-box">
+                    <img class="default d4" src="icon/mine-default.svg" alt="">
+                    <img class="active a4" src="icon/mine-active.svg">
+                </div>
+                <p class="p4">mine</p>
+            </li>
+                  
+        </ul>
+        <div class="dots"></div>  
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+
+        // 点击时 改变状态 
+        //默认图片 动态图片 文字 圆点距离 
+        function dis(d,a,p,num){
+            
+                d.fadeOut('swing');
+                d.css('display','none'); 
+                
+                a.fadeIn('slow');
+                a.css('display', 'block');
+                a.css('bottom', '20px');
+               
+
+                p.css('display','none'); 
+                $('.dots').css('display', 'block');
+                $('.dots').css('left',num+'px');
+            
+        }
+
+
+
+        //点击事件
+        function func(index){
+            switch(index){
+                case 0:{
+                    //调用函数
+                    dis($('.d1'),$('.a1'),$('.p1'),150);
+                    //默认图片 显示
+                    $('li.item1').siblings().children().children().eq(0).css("display","block");
+                    //紫色图片 隐藏
+                    $('li.item1').siblings().children().children().eq(1).css('display','none');
+                
+                    //文字显示
+                    $('li.item1').siblings().children().eq(1).css("display","block");
+
+                    console.log( $('li.item1').siblings().children());//p2
+                    break;
+                }
+                case 1 :{
+                    dis($('.d2'),$('.a2'),$('.p2'),480);
+                    $('li.item2').siblings().children().children().eq(0).css("display","block");
+                    $('li.item2').siblings().children().children().eq(1).css('display','none');
+                    $('li.item2').siblings().children().eq(1).css("display","block");
+                    
+                    break;
+                }
+                case 2:{
+                    dis($('.d3'),$('.a3'),$('.p3'),800);
+                    $('li.item3').siblings().children().children().eq(0).css("display","block");
+                    $('li.item3').siblings().children().eq(0).children().eq(1).css('display','none');
+                    $('li.item3').siblings().children().eq(1).css("display","block");
+                    break;
+                }
+                case 3:{
+                    dis($('.d4'),$('.a4'),$('.p4'),1130);
+                    $('li.item4').siblings().children().children().eq(0).css("display","block");
+                    $('li.item4').siblings().children().eq(0).children().eq(1).css('display','none');
+                    $('li.item4').siblings().children().eq(1).css("display","block");
+                    break;
+                }
+            }
+        }
+        
+        
+        
+       
+       
+
+
+
+        // $('li.item1').click(function () { 
+        //         $('.d1').fadeOut('swing');
+        //         $('.d1').css('display','none'); 
+                
+        //         $('.a1').fadeIn('slow');
+        //         $('.a1').css('display', 'block');
+        //         $('.a1').css('bottom', '52px');
+        //         $('.dots').css('left','150px');
+
+        //     })
+
+    </script>
+
+</body>
+
+</html>

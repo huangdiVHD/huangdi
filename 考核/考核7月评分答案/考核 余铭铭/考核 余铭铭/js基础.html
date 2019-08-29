@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [0,1,2,3,4,5];
+        var index = parseInt(prompt('请输入需要移动的下标'));
+        // 指定前移一个位置
+        int(index);
+        function int(index){
+            if(index<arr.length){
+                if(index != 0 ){
+                    var temp = arr[index];
+                    arr[index] = arr[index-1];
+                    arr[index-1] = temp;
+                }
+                console.log(arr);
+            }else{
+                alert('超过数组的长度');
+            }
+        }
+
+        // 指定移到最前面
+        // int(index);
+        // function int(index){
+        //     if(index < arr.length){
+        //         if(index != 0 ){
+        //             for(index ; index >0 ; index--){
+        //                 var temp = arr[index];
+        //                 arr[index]= arr[index-1];
+        //                 arr[index-1] = temp;
+        //             }
+        //         }
+        //         console.log(arr);
+        //     }else{
+        //         alert('超过数组的长度');
+        //     }
+        // }
+
+        // 指定移到最后面
+        // int(index);
+        // function int(index){
+        //     if(index<arr.length){
+        //         if(index != arr.length-1){
+        //             for(index ; index <arr.length-1; index++){
+        //                 var temp = arr[index];
+        //                 arr[index]= arr[index+1];
+        //                 arr[index+1] = temp;
+        //             }
+        //         }
+        //         console.log(arr);
+        //     }else{
+        //         alert('超过数组的长度');
+        //     }
+        // }
+
+        // 指定任意两索引交换位置
+        // var index1 = parseInt(prompt('请输入需要移动的第一个下标'));
+        // var index2 = parseInt(prompt('请输入需要移动的第二个下标'));
+        // int(index1,index2);
+        // function int(index1,index2){
+        //     if(index1 <arr.length && index2<arr.length){
+        //         var temp = arr[index1];
+        //         arr[index1]= arr[index2];
+        //         arr[index2] = temp; 
+        //         console.log(arr);
+        //     }else{
+        //         alert('超过数组的长度');
+        //     }
+        // }
+    </script>
+</body>
+</html>

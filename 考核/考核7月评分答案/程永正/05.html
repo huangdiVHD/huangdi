@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            text-align: center;
+            width: 450px;
+            height: 100px;
+            list-style: none;
+            background-color: black;
+            margin: 0 auto;
+            color: #fff;
+            overflow: hidden;
+           position: relative;
+
+        }
+
+        .item {
+            float: left;
+            margin-left: 50px;
+            position: relative;
+        }
+
+        img {
+            width: 60px;
+            height: 50px;
+            margin-top: 10px;
+        }
+
+        .cd2 {
+            position: absolute;
+            top: 89px;
+            left: 0px;
+            transition: 0.5s ease;
+        }
+
+        .active {
+            top: 0px;
+        }
+
+        .circle {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: blue;
+            position: absolute;
+            top: 70px;
+            left: 70px;
+            transition: all 1s ease;
+        }
+        p{
+            float: left;
+            margin-left: 62px;
+        }
+     
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li class="item">
+          
+            <img src="icon/cd-default.svg" alt="" class="cd1">
+            <img src="icon/cd-active.svg" alt="" class="cd2">
+        </li>
+        <li class="item">
+            <img src="icon/camera-default.svg" alt="">
+            <img src="icon/camera-active.svg" alt="" class="cd2">
+        </li>
+        <li class="item">
+            <img src="icon/file-default.svg" alt="">
+            <img src="icon/file-active.svg" alt="" class="cd2">
+        </li>
+        <li class="item">
+            <img src="icon/mine-default.svg" alt="">
+            <img src="icon/mine-active.svg" alt="" class="cd2">
+        </li>
+        <div class="circle"></div>
+        <div>
+            <p class="p-1">Home</p>
+            <p class="p-2">Camera</p>
+            <p class="p-3">Files</p>
+            <p class="p-3">Mine</p>
+        </div>
+    </ul>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script>
+        $('.item').click(function () {
+            $(this).siblings().children().removeClass('active');
+            $(this).children(1).addClass('active');
+            var $num = $(this).index();
+             $('p').eq($num).css({opacity:0})
+             $('p').eq($num).siblings().css({opacity:1})
+               if($num==0){
+                    $('.circle').css({left:70});
+               }else{
+                   var $num2 = 50*($num+1)+$(this).width()*$num+30;
+                   $('.circle').css({left:$num2});
+               }
+        })
+    </script>
+</body>
+
+</html>

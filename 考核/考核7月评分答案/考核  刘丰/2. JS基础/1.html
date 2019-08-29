@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+    
+        div {
+            width: 500px;
+            height: 500px;
+            margin: 300px auto;
+        }
+    
+    </style>
+</head>
+<body>
+
+
+    <div> 原数组为:  arr = [0,1,2,3,4,5]
+
+    </div>
+
+
+    <script>
+
+        //指定任意索引，对应数组项前移一个位置。
+    
+        var arr = [0,1,2,3,4,5];
+
+            // var a = prompt('输入索引');
+
+            // var temp = arr[a];
+            // arr[a] = arr[a - 1];
+            // arr[a - 1] = temp;
+
+
+            // console.log(arr);
+    
+
+            var b = prompt('输入索引')
+
+        function pev(a,arr) {
+            if(a == 0) {
+                alert('已经在最前边了')
+            } else if(a > arr.length - 1 || a < 0) {
+                alert('请输入正确的下标')
+            } else{
+                var temp = arr[a];
+                arr[a] = arr[a - 1];
+                arr[a - 1] = temp;
+            }
+            alert('新的数组为'  + arr);
+        }
+    
+
+            pev(b,arr)
+    
+    
+
+
+    
+    
+    </script>
+
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>

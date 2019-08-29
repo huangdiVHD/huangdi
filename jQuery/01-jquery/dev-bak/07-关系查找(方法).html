@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>li_1</li>
+        <li>li_2</li>
+        <li>li_3</li>
+        <li class="li3">li_4</li>
+        <li>li_5</li>
+        <li>li_6</li>
+        <li>li_7</li>
+        <li>li_8</li>
+        <li>li_9</li>
+        <li>li_10</li>
+    </ul>
+
+    <div class="box">
+        <div class="d1">
+            我是d1
+            <div class="d2">
+                我是d2
+            </div>
+        </div>
+        <p class="p1">
+            我是p1
+        </p>
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        $('.box').find('.p1').css('width', '200px');
+        // children()  直接子元素
+        $('.box').children().css('backgroundColor', 'red');
+        // 所有兄弟元素(不包括自己)
+        $('.li3').siblings().css('color', 'blue');
+        // 父元素
+        $('.d2').parent().css('width', '50px');
+
+        // eq(index) 查找指定元素的第index个元素，index是索引号，从0开始
+        $('li').eq(3).css('color', 'red');
+    </script>
+</body>
+
+</html>

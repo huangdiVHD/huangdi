@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        不凡学院
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        $('.box').click(function () {
+            console.log($(this).css('height')); // 获取对应的属性值
+            $(this).css('color', 'red'); //  设置css样式
+            $(this).css({
+                'height': '30px',
+                backgroundColor: 'blue',
+                lineHeight: '30px'
+            })
+        })
+    </script>
+</body>
+
+</html>

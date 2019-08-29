@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    ul{
+        list-style: none;
+        width: 850px;
+        height: 260px;
+        margin: 50px auto;
+        background-color: black;
+    }
+    li {
+        float: left;
+        width: 200px;
+        height: 200px;
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+    .img-1 {
+        position: absolute;
+        transition: all 0.3S ease;
+    }
+    .img-2{
+        position: relative;
+        opacity:0;
+        left: 0px;
+        top: 80px;
+        transition: all 0.5S ease;
+    }
+    .li-1:hover .img-1{
+        transform: translateY(-10px)  ;
+    }
+    .li-1:hover .img-2{
+        opacity:1;
+        transform: translateY(-90px) ;
+    }
+    .title {
+        position: absolute;
+        width: 200px;
+        height: 10px;
+        color: white;
+        text-align: center;
+    }
+    .title1 {
+        position: relative;
+        left: 150px;
+        top: 2px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        opacity: 0;
+        background-color: aqua;
+        transition: all 0.2S ease;
+    }
+    .li-1:hover .title{
+         opacity: 0;
+    }
+    .li-1:hover .title1{
+         opacity: 1;
+         transform: translateX(-60px);
+    }
+    </style>
+</head>
+<body>
+    <ul class="box">
+        <li class="li-1">
+            <img class="img-1" src="icon/camera-default.svg">
+            <img class="img-2" src="icon/camera-active.svg">
+            <div class="title">Home</div>
+            <div class="title1"></div>
+        </li>
+        <li class="li-1">
+            <img class="img-1" src="icon/cd-default.svg">
+            <img class="img-2" src="icon/cd-active.svg">
+            <div class="title">Camera</div>
+            <div class="title1"></div>
+        </li>
+        <li class="li-1">
+            <img class="img-1" src="icon/file-default.svg">
+            <img class="img-2" src="icon/file-active.svg">
+            <div class="title">Files</div>
+            <div class="title1"></div>
+        </li>
+        <li class="li-1">
+            <img class="img-1" src="icon/mine-default.svg">
+            <img class="img-2" src="icon/mine-active.svg">
+            <div class="title">Mine</div>
+            <div class="title1"></div>
+        </li>
+    </ul>
+</body>
+</html>

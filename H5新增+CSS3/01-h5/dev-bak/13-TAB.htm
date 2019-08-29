@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding: 0;
+		}
+		ul{
+			list-style: none;
+		}
+		.box{
+			position: relative;
+			width: 400px;
+			height: 300px;
+			border: 1px solid red;
+			margin: 100px auto;
+		}
+		.box .nav{
+			width: 100%;
+			height: 40px;
+		}
+		.box .nav>li{
+			float: left;
+			width: 33.33%;
+			height: 100%;
+			box-sizing: border-box;
+			text-align: center;
+			line-height: 40px;
+		}
+		.box .nav>li:hover{
+			border-bottom: 2px solid red;
+		}
+		.content{
+			position: absolute;
+			left: 0;
+			top: 42px;
+			width: 100%;
+			height: 100%;
+			display: none;
+			border-top: 1px slid gray;
+		}	
+		.content.active{
+			display: block;
+		}
+	</style>
+	<script>
+		// 重点： data-* 自定义属性的使用
+		window.onload = function(){
+			var lis = document.querySelectorAll('.nav li');
+			for(var i = 0 ; i < lis.length ; i ++){
+				lis[i].onmouseenter = function(){
+					//获取当前背景色
+					var color = this.dataset.color;
+					// 排他思想
+					var activeOld = document.querySelector('.content.active');
+					activeOld.classList.remove('active');
+					//根据li的data-target属性 获取需要改变的目标元素的class
+					var targetClass = this.dataset.target; // fine /news /sport
+
+					var targetEle = document.querySelector('.content.'+targetClass);
+					targetEle.classList.add('active');
+					//给目标元素怒设置背景色
+					targetEle.style.backgroundColor = color;
+				}
+			}
+		}
+
+	</script>
+</head>
+<body>
+	<div class="box">
+		<ul class="nav">
+			<li data-target="news" data-color="blue">新闻</li>
+			<li data-target="fine" data-color="pink">娱乐</li>
+			<li data-target="sport" data-color="purple">体育</li>
+		</ul>
+		<div class="content news active">
+			1952年毕业于台湾大学外文系。1959年获美国爱荷华大学（ LOWA ）艺术硕士。先后任教台湾东吴大学、台湾师范大学、台湾大学、台湾政治大学。其间两度应美国国务院邀请，赴美国多家大学任客座教授。1972 年任台湾政治大学西语系教授兼主任。1974年至1985 年任香港中文大学中文系教授。 1985年至今，任台湾中山大学教授及讲座教授，其中有六年时间兼任文学院院长及外文研究所所长。
+		</div>
+		<div class="content fine">
+			余光中一生从事诗歌、散文、评论、翻译，自称为自己写作的“四度空间”。至今驰骋文坛已逾半个世纪，涉猎广泛，被誉为“艺术上的多妻主义者”。其文学生涯悠远、辽阔、深沉，为当代诗坛健将、散文重镇、著名批评家、优秀翻译家。现已出版诗集 21 种；散文集 11 种；评论集 5 种；翻译集 13 种；共 40 余种。 代表作有《白玉苦瓜》（诗集）、《记忆像铁轨一样长》（散文集）及《分水岭上：余光中评论文集》（评论集）等。
+		</div>
+		<div class="content sport">
+			小时候，
+
+			　　乡愁是一枚小小的邮票，
+
+			　　我在这头，
+
+			　　母亲在那头。
+
+			　　长大后，
+
+			　　乡愁是一张窄窄的船票，
+
+			　　我在这头，
+
+			　　新娘在那头。
+
+			　　后来啊，
+
+			　　乡愁是一方矮矮的坟墓，
+
+			　　我在外头，
+
+			　　母亲在里头。
+
+			　　而现在，
+
+			　　乡愁是一湾浅浅的海峡，
+
+			　　我在这头，
+
+			　　大陆在那头。
+		</div>
+	</div>
+</body>
+</html>

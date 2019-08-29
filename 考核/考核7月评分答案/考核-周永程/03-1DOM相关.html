@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/account/login" id="login-form" method="post">
+        <p>账号: <input type="text" name="username" required /></p>
+        <p>密码: <input type="password" name="pwd" required /></p>
+        <p><input type="submit" value="登录" /></p>
+    </form>
+    <!-- 获取<form>元素。（尽可能多的方法）
+        <form>表单元素提交时，阻止默认的表单提交行为。 -->
+    <script>
+        var form = document.getElementsByTagName("form");
+        console.log(form);
+
+        var submit = document.getElementById("login-form");
+        submit.onsubmit = function(){
+            return false;
+        }
+    </script>
+</body>
+</html>

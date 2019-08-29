@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [0, 1, 2, 3, 4, 5];
+
+        var num = parseInt(prompt('请指定前移一个位置的索引号'))
+        // // 指定任意索引，对应数组项前移一个位置。
+        function one(num) {
+            for (var i = 0; i < arr.length; i++) {
+                if (num == 0) {
+                    arr[num] = arr[0];
+                    console.log(arr);
+                    break;
+                } else if (num == i) {
+                    var temp = arr[i - 1];
+                    arr[i - 1] = arr[i];
+                    arr[num] = temp;
+                    console.log(arr);
+                } else if (num > 5) {
+                    alert('错误');
+                    break;
+                }
+            }
+        }
+        one(num);
+
+        // 指定任意索引，对应数组项移动到最前面
+        var num1 = parseInt(prompt('请指定移动到最前面的索引号'))
+        function one(num1) {
+            var newArr = [];
+            newArr[0] = arr[num1];
+            for (var i = 0; i < arr.length; i++) {
+                if (i <= num1) {
+                    newArr[i + 1] = arr[i];
+                } else {
+                    newArr[i] = arr[i];
+                }
+            }
+            console.log(newArr);
+        }
+        one(num1);
+
+        // 指定任意索引，对应数组项移动到最后面。
+        var num2 = parseInt(prompt('请指定移动到最后面的索引号'))
+        function one(num2) {
+            var newArr = arr[num2];
+            newArr = arr.concat(arr[num2]);
+            console.log(newArr)
+        }
+        one(num2);
+
+        var num3 = parseInt(prompt('指定第一个索引:'))
+        var num4 = parseInt(prompt('指定第二个索引:'))
+        // 指定任意两项索引，对应数组项交换位置。
+        function one(num3, num4) {
+            var temp = arr[num3];
+            arr[num3] = arr[num4];
+            arr[num4] = temp;
+            console.log(arr);
+        }
+        one(num3, num4);
+    </script>
+</body>
+
+</html>

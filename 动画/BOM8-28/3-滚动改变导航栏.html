@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>滚动改变导航栏</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				height: 2000px;
+			}
+			.header{
+				position: fixed;
+				top: 0;
+				width: 100%;
+				height: 150px;
+				background-color: #000000;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="header"></div>
+		
+		<script type="text/javascript">
+			// 页面被卷入 300px 的时候, 高度变化为 100px, 透明度改变成 0.2
+			var header = document.querySelector(".header");
+			// header若无	position: fixed;top: 0;,固定那么它覆盖150px的高度
+			// ,但若是固定后,在下面还是显示它则是原来的150卷入再加上现在显示的150px高度 即300px的高度
+			// 即当高度等于150时透明为1,300时透明为0
+			// 条件:当页面高度卷入300px时,header高度从150px变为100px,透明度从1变成0.2
+			// 即   0  150  1
+			//     300 100  0.2
+			// 页面被卷入的高度 / 6 (即50/300)
+			// 页面被卷入的高度/375(0.8/300)
+			/*
+			0 - 300  150 - 100 ===>  被卷入的高度从0-300  header的高度变化 0 - 50  页面被卷入的高度/300 = header变化的高度/50
+			header变化的高度						页面卷入的高度  (sct())
+			----------------   === 	----------------
+					(50)1											(300)6
+			opacity 		(0.8)1										(300)375
+			header变化的高度 = 页面被卷入的高度 / 300 * 50 = 页面被卷入的高度 / 6
+			
+			透明度改变到 0.2  变化的透明度 0 - 0.8  页面被卷入高度/300 = 透明度变化/0.8
+			透明度变化值 = 页面被卷入的高度/300*0.8 = 页面被卷入的高度/375
+			*/
+			
+			window.onscroll = function (){
+				// header的高度 = header原来的高度 - header变化的高度
+				if(sct() >= 300){
+					header.style.height = "100px";
+					header.style.opacity = 0.2;
+				}else{
+					header.style.height = 150 -  sct()/6 + "px";
+					header.style.opacity = 1 -  sct()/375;
+				}
+			}
+			
+			function sct(){
+				return document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+			}
+			
+		</script>
+	</body>
+</html>

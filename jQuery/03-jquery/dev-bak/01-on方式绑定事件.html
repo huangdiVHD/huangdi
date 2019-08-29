@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        不凡学院
+    </div>
+    <button class="btn">off解绑</button>
+    <script src="lib/jquery-3.4.1.min.js"></script>
+    <script>
+        // $('.box').click(function () {
+
+        // })
+
+        $('.box').on('click', function () {
+            // 事件处理程序
+            console.log('天气很好')
+        })
+        $('.box').on('mouseenter', function () {
+            // 事件处理程序
+            console.log('天气')
+        })
+
+        // on方式绑定,off解绑事件
+        $('.btn').click(function () {
+            // 取消了 box上的所有事件
+            // $('.box').off();
+            $('.box').off('click');
+
+        })
+    </script>
+</body>
+
+</html>

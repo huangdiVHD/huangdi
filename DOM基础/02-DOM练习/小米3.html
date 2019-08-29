@@ -1,0 +1,1686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/util.js"></script>
+	<script src="data/midata.js"></script>
+	<link rel="stylesheet" href="font/font-awesome/css/font-awesome.min.css">
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		a {
+			text-decoration: none;
+		}
+		ul {
+			list-style: none;
+		}
+		.banner {
+			position: relative;
+			width: 1226px;
+			height: 460px;
+			margin: 0 auto;
+		}
+		.banner img {
+			width: 100%;
+			height: 100%;
+		}
+		.banner .arr {
+			position: absolute;
+			left: 230px;
+			top: 50%;
+			display: block;
+			width: 40px;
+			height: 80px;
+			margin-top: -40px;
+			line-height: 80px;
+			text-align: center;
+			font-size: 28px;
+			color: #fff;
+			/*background-color: rgba(0,0,0,.3);*/
+		}
+		.banner .arr:hover{
+			background-color: rgba(0,0,0,.3);
+		}
+		.banner .arr.arr-r {
+			right: 0;
+			left: auto;
+		}
+		.banner .dotts {
+			position: absolute;
+			right: 20px;
+			bottom: 20px;
+			width: 109px;
+			height: 14px;
+		}
+		.banner .dotts .dott-item {
+			float: left;
+			width: 14px;
+			height: 14px;
+			margin-right: 5px;
+		}
+		.banner .dotts .dott-item.r0 {
+			margin-right: 0;
+		}
+		.banner .dotts .dott-item .dott{
+			display: block;
+			width: 10px;
+			height: 10px;
+			color: #fff;
+			border: 2px solid #fff;
+			border-radius: 50%;
+			background-color: rgba(0,0,0,.2);
+		}
+		.banner .dotts .dott-item .dott.active {
+			background-color: #fff;
+		}
+		.side-bar {
+			position: absolute;
+			left: 0;
+			top: 0;
+			background-color: rgba(0,0,0,.2);
+			width: 230px;
+			height: 460px;
+
+		}
+		.side-bar .column{
+			margin-top: 20px;
+			width: 230px;
+			height: 420px;
+		}
+		.side-bar .column .column-item .col-text {
+			display: block;
+			position: relative;
+			width: 200px;
+			height: 42px;
+			color: #fff;
+			line-height: 42px;
+			font-size: 14px;
+			padding-left: 30px;
+		}
+		.side-bar .column .column-item:hover {
+			background-color: #FF6700;
+		}
+		.side-bar .column .column-item:hover .col-children{
+			display: block;
+		}
+		.column .column-item .col-text span {
+			display: block;
+			position: absolute;
+			right: 10px;
+			top: 0;
+			width: 20px;
+			height: 100%;
+			font-size: 14px;
+			font-weight: bolder;
+			color: #fff;
+			line-height: 42px;
+			text-align: center;
+			font-weight: bolder;
+
+		}
+		.col-children {
+			display: none;
+			position: absolute;
+			left: 230px;
+			top: 0;
+			width: 996px;
+			height: 460px;
+			/*border: 1px solid rgba(9,9,9.2);*/
+		}
+		.col-children .col-child-list {
+			float: left;
+			/*display: inline-block;*/
+			width: 249px;
+			height: 460px;
+			background-color: #fff;
+		}
+		.col-children .col-children-item {
+			width: 239px;
+			height: 76.6px;
+			padding-left: 10px;
+		}
+		.col-children .col-children-item a {
+			position: relative;
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+		.col-children .col-children-item .col-children-icon{
+			position: absolute;
+			left: 0;
+			top: 50%;
+			margin-top: -20px;
+			height: 40px;
+			width: 40px;
+			padding: 0 10px;
+		}
+		.col-children .col-children-item .col-children-text{
+			position: absolute;
+			left: 60px;
+			top: 0;
+			height: 76.6px;
+			line-height: 76.6px;
+			color: black;
+			font-size: 14px;
+		}
+		.col-children .col-children-item:hover .col-children-text {
+			color: #FF6700;
+		}
+		.nav {
+			width: 100%;
+			height: 100px;
+		}
+		.nav .nav-c {
+			position: relative;
+			width: 1226px;
+			height: 100px;
+			margin: 0 auto;
+		}
+		.nav-c .search {
+			position: absolute;
+			right: 0;
+			top: 25px;
+			width: 288px;
+			height: 48px;
+			border: 1px solid #e5e5e5;
+		}
+		.nav-c .search input {
+			width: 239px;
+			height: 100%;
+			border: none;
+			font-size: 20px;
+			text-indent: 10px;
+			outline: none;
+		}
+		.nav-c .search .search-item {
+			display: block;
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 48px;
+			height: 48px;
+			border-left: 1px solid #e5e5e5;
+			line-height: 48px;
+			text-align: center;
+			color: #666;
+		}
+		.nav-c .search .search-item:hover {
+			background-color: #FF6700;
+			color: #fff;
+		}
+		.nav-c .search .tips {
+			height: 16px;
+			position: absolute;
+			right: 55px;
+			top: 17px;
+		}
+		.nav-c .search .tips a {
+			display: block;
+			float: left;
+			width: 40px;
+			height: 100%;
+			margin-right: 5px;
+			font-size: 14px;
+			line-height: 16px;
+			text-align: center;
+			color: #999;
+			background-color: #EEE;
+		}
+		.nav-c .search .tips .r {
+			width: 80px;
+		}
+		.nav-c .search .tips a:hover {
+			color: #fff;
+			background-color: #FF6700;
+		}
+		.nav-c .search:hover{
+			border-color: #999;
+		}
+		.nav-c .search:hover .search-border{
+			border-color: #999;
+		}
+		.nav-c .search .search-list {
+			display: none;
+			position: absolute;
+			left: -1px;
+			top: 48px;
+			width: 239px;
+			border: 1px solid #FF6700;
+			z-index: 10;
+			background-color: #fff;
+		}
+		.nav-c .search .search-list .search-list-item a {
+			display: block;
+			height: 28px;
+			width: 239%;
+			text-indent: 15px;
+			line-height: 28px;
+			font-size: 12px;
+			color: black;
+		}
+		.search .search-list .search-list-item:hover {
+			background-color: #EEE;
+		}
+		.nav-c .search.active .tips{
+			display: none;
+		}
+		.nav-c .search.active .search-list {
+			display: block;
+		}
+		.nav-c .search.active .search-item {
+			border-color: #FF6700;
+		}
+		.nav-c .search.active {
+			border-color: #FF6700;
+		}
+		.nav-c .nav-logo {
+			position: relative;
+			width: 230px;
+			height: 100px;
+		}
+		.nav-c .nav-logo .logo-item {
+			position: absolute;
+			display: block;
+			width: 49px;
+			height: 49px;
+			left: 0;
+			top: 25.5px;
+			background: #FF6700 url('img/mi-logo.png') no-repeat center ;
+		}
+		.nav-c .nav-logo .logo-ad {
+			position: absolute;
+			right: 0;
+			top: 17px;
+			width: 163px;
+			height: 66px;
+			background: url('img/mi-logo-ad.gif') no-repeat center;
+		}
+		.nav-c .nav-list {
+			position: absolute;
+			left: 230px;
+			top: 0;
+			height: 100px;
+		}
+		.nav-c .nav-list .nav-item{
+			float: left;
+		}
+		.nav-c .nav-list .nav-item:hover a{
+			color: #FF6700;
+		}
+		.nav-c .nav-list .nav-item a{
+			display: block;
+			height: 100px;
+			font-size: 16px;
+			line-height: 100px;
+			text-align: center;
+			color: #333;
+			padding: 0 10px;
+		}
+		.box {
+			display: none;
+			position: absolute;
+			left: 0;
+			top: 100px;
+			width: 100%;
+			height: 230px;
+			border-top: 1px solid #eee;
+			z-index: 20;
+		}
+		.box:hover {
+			display: block;
+		}
+		.box.active {
+			display: block;
+		}
+		.box .children-container {
+			width: 1226px;
+			height: 100%;
+			margin: 0 auto;
+			background-color: #fff;
+			/*border-bottom: 1px solid #eee;*/
+		}
+		.box .children-container .nav-children {
+			float: left;
+			width: 160px;
+			height: 195px;
+			padding: 35px 22px 0;
+		}
+		.box .nav-children .child-img {
+			display: block;
+			width: 160px;
+			height: 110px;
+		}
+		.box .nav-children .child-img-item{
+			display: block;
+			width: 160px;
+			height: 110px;
+		}
+		.box .nav-children .child-text {
+			display: block;
+			width: 100%;
+			height: 20px;
+			text-align: center;
+			line-height: 20px;
+			font-size: 12px;
+			color: #333;
+			padding-top: 20px; 
+		}
+		.box .nav-children .price {
+			width: 100%;
+			height: 20px;
+			line-height: 20px;
+			text-align: center;
+			font-size: 12px;
+			color: #FF6700;
+		}
+		.container {
+			width: 100%;
+			background-color: #f5f5f5;
+		}
+		.container .container-c {
+			width: 1226px;
+			height: 100%;
+			margin: 0 auto;
+		}
+		.container-c .flashover {
+			position: relative;
+			width: 1226px;
+			height: 418px;
+			margin-top: 26px;
+			overflow: hidden;
+		}
+
+		.container-c .box-hd {
+			position: relative;
+			width: 1226px;
+			height: 58px;
+			color: #333;
+		}
+		.container-c .box-hd .title {
+			width: 100%;
+			height: 100%;
+			font-size: 22px;
+
+			line-height: 58px;
+		}
+		.container-c .box-hd .subnav{
+			position: absolute;
+			right: 0;
+			top: 0;
+			height: 26px;
+			padding-top: 16px;
+		}
+		.container-c .box-hd .subnav .subnav-item{
+			display: inline-block;
+			font-size: 16px;
+			margin-left: 30px;
+			line-height: 24px;
+			border-bottom: 2px solid transparent;
+			cursor: pointer;
+		}
+		.container-c .box-hd .subnav .subnav-item.active{
+			border-bottom: 2px solid #ff6700;
+			color: #ff6700;
+		}
+		.container-c .box-hd .more {
+			position: absolute;
+			right: 0;
+			top: 24px;
+			width: 72px;
+			height: 25px;
+		}
+		.container-c .flashover .box-hd .more .switch-pro{
+			display: block;
+			float: left;
+			width: 24px;
+			height: 16px;
+			padding: 3px 5px;
+			border: 1px solid #e0e0e0;
+			font-size: 16px;
+			line-height: 16px;
+			color: #e0e0e0;
+			text-align: center;
+			font-weight: bolder;
+		}
+		.container-c .flashover .box-hd .more .switch-pro.active {
+			color: #b0b0b0;
+		}
+		.container-c .flash-countdown {
+			width: 234px;
+			height: 340px;
+			float: left;
+		}
+		.container-c .flashover .countdown-box {
+			position: absolute;
+			left: 234px;
+			top: 58px;
+			width: 992px;
+			height: 340px;
+			overflow: hidden;	
+		}
+		.container-c .countdown-box .countdown-pro {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 1488px;
+			height: 340px;
+		}
+		.container-c .countdown-pro .countdown-item{
+			float: left;
+			width: 234px;
+			height: 300px;
+			border-top: 1px solid #e53935;
+			background-color: #f1eded;
+			padding-top: 39px;
+			margin-left: 14px;
+		}
+		.container-c .flash-countdown .countdown-item {
+			/*float: left;*/
+			width: 100%;
+			height: 300px;
+			border-top: 1px solid #e53935;
+			background-color: #f1eded;
+			padding-top: 39px;
+		}
+		.container-c .countdown-item .time-title {
+			font-size: 21px;
+			color: #ef3a3b;
+			width: 234px;
+			height: 45px;
+			line-height: 45px;
+			text-align: center;
+			margin-top: 15px;
+		}
+		.container-c .countdown-item img {
+			display: block;
+			width: 34px;
+			height: 53px;
+			margin: 25px auto;
+		}
+		.container-c .countdown-item .text {
+			width: 100%;
+			height: 22px;
+			font-size: 15px;
+			text-align: center;
+			line-height: 22px;
+			color: rgba(0,0,0,.54);
+		}
+		.container-c .countdown-item .countdown-detail {
+			width: 168px;
+			height: 46px;
+			margin: 0 auto;
+			margin-top: 28px;
+		}
+		.container-c .countdown-item .countdown-detail .stamp {
+			float: left;
+			width: 46px;
+			height: 46px;
+			text-align: center;
+			line-height: 46px;
+			background-color: #605751;
+			font-size: 24px;
+			color: #fff;
+		}
+		.container-c .countdown-item .countdown-detail .stamp.dosh {
+			width: 15px;
+			font-size: 28px;
+			color: #605751;
+			background-color: #f1eded;
+		}
+		.container-c .ad-item {
+			width: 1226px;
+			height: 120px;
+			margin: 0 auto;
+			margin-top: 22px;
+			margin-bottom: 28px;
+		}
+		.container-c .ad-item .ad-item-detail {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+		.container-c .ad-item .ad-item-detail img{
+			width: 100%;
+			height: 100%;
+		}
+		.container-c .homeelec {
+			width: 1226px;
+			height: 686px;
+			background-color: #F5F5F5;
+		}
+		.container-c .hot-block{
+			width: 234px;
+			height: 628px;
+			float: left;
+		}
+		.container-c .hot-block .hot-item {
+			display: block;
+			width: 234px;
+			height: 300px;
+			margin-bottom: 14px;
+		}
+		.container-c .hot-block .hot-item img {
+			width: 234px;
+			height: 300px;
+		}
+		/*共有样式*/
+		.container-c .product-list {
+			float: left;
+			width: 992px;
+			height: 628px;
+		}
+		.container-c .product-list .product-item {
+			position: relative;
+			float: left;
+			width: 234px;
+			height: 246px;
+			margin-bottom: 14px;
+			margin-left: 14px;
+			padding: 34px 0 20px;
+			background-color: #fff;
+		}
+		.container-c .product-list .product-item-s {
+			position: relative;
+			width: 234px;
+			height: 93px;
+			padding: 50px 0 0 0;
+		}
+		.container-c .product-list .product-item .pro-img {
+			display: block;
+			width: 150px;
+			height: 150px;
+			margin: 0 auto;
+			margin-bottom: 18px;
+			padding: 0 42px;
+		}
+		.container-c .product-list .product-item img{
+			width: 150px;
+			height: 150px;
+		}
+		.container-c .product-list .product-item .title {
+			display: block;
+			width: 234px;
+			height: 21px;
+			text-align: center;
+			font-size: 14px;
+			line-height: 21px;
+			color: #333;
+			font-weight: 400;
+		}
+		.container-c .product-list .product-item .desc {
+			width: 234px;
+			height: 18px;
+			text-align: center;
+			font-size: 12px;
+			line-height: 18px;
+			color: #b0b0b0;
+		}
+		.container-c .product-list .product-item .price {
+			width: 234px;
+			height: 21px;
+			margin: 10px auto;
+			line-height: 21px;
+			text-align: center;
+			font-size: 14px;
+			color: #ff6700;
+		}
+		.container-c .product-list .product-item .rank {
+			display: none;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 214px;
+			height: 76px;
+			padding: 0 10px;
+			background-color: #ff6700;
+		}
+		.container-c .product-list .product-item .saleoff {
+			position: absolute;
+			left: 50%;
+			top: 0;
+			width: 64px;
+			height: 20px;
+			margin-left: -32px;
+			text-align: center;
+			font-size: 12px;
+			line-height: 20px;
+			color: #fff;
+			background-color: #ff6700;
+			z-index: 2;
+		}
+		.container-c .product-list .product-item:hover .rank{
+			display: block;
+		}
+		.container-c .product-list .product-item-s .title {
+			display: block;
+			width: 94px;
+			font-weight: 400;
+			font-size: 14px;
+			margin-left: 30px;
+			color: #333;
+			text-align: left;
+		}
+		.container-c .product-list .product-item-s .price {
+			width: 94px;
+			font-weight: 400;
+			font-size: 14px;
+			margin-left: 30px;
+			color: #ff6700;
+			text-align: left;
+		}
+		.container-c .product-list .product-item-s .pros-img {
+			display: block;
+			position: absolute;
+			right: 20px;
+			top: 32px;
+			width: 80px;
+			height: 80px;
+		}
+		.container-c .product-item-s .pros-img img {
+			width: 80px;
+			height: 80px;
+		}
+		.container-c .product-list .product-item-s .more {
+			display: block;
+			width: 94px;
+			height: 45px;
+			font-size: 18px;
+			color: #333;
+			margin-left: 30px;
+		}
+		.container-c .product-item-s .more span {
+			display: block;
+			width: 94px;
+			height: 18px;
+			font-size: 12px;
+			color: #757575;
+		}
+		.container-c .product-item-s .more-icon {
+			display: block;
+			position: absolute;
+			right: 35px;
+			top: 48px;
+			width: 48px;
+			height: 48px;
+			line-height: 48px;
+			text-align: center;
+			color: #ff6700;
+		}
+		.container-c .smartelec {
+			width: 1226px;
+			height: 686px;
+			background-color: #F5F5F5;
+		}
+		.container-c .supplement {
+			width: 1226px;
+			height: 686px;
+			background-color: #F5F5F5;
+		}
+		.container-c .partelec {
+			width: 1226px;
+			height: 686px;
+			background-color: #F5F5F5;
+		}
+		.container-c .periphery {
+			width: 1226px;
+			height: 686px;
+			background-color: #F5F5F5;
+		}
+		.container-c .content{
+			margin-bottom: 60px;
+		}
+		.container-c .content .content-list {
+			width: 1226px;
+			height: 420px;
+		}
+		.container-c .content-list .content-item {
+			position: relative;
+			float: left;
+			width: 296px;
+			height: 374px;
+			padding-top: 45px;
+			border-top: 1px solid #ffac13;
+			/*margin-bottom: 14px;*/
+			margin-left: 14px;
+			background-color: #fff;
+			overflow: hidden;
+		}
+		.container-c .content-item .title {
+			width: 276px;
+			height: 24px;
+			font-size: 16px;
+			font-weight: 400;
+			text-align: center;
+			margin: 0 10px 18px;
+		}
+		
+		.container-c .content-item .content-item-list {
+			width: 888px;
+			height: 340px;
+			/*overflow: hidden;*/
+			transition: margin-left 0.5s ease;
+		}
+		.container-c .content-item-list .content-detail {
+			float: left;
+			width: 296px;
+			height: 340px;
+		}
+		.container-c .content-detail .name {
+			display: block;
+			width: 100%;
+			height: 25px;
+			color: #333;
+			font-size: 20px;
+			font-weight: 400;
+			text-align: center;
+			margin-bottom: 5px;
+		}
+		.container-c .content-detail .desc {
+			width: 200px;
+			height: 40px;
+			margin: 0 48px 10px;
+			font-size: 12px;
+			color: #b0b0b0;
+			line-height: 20px;
+			text-align: center;
+
+		}
+		.container-c .content-detail .price {
+			width: 100%;
+			height: 21px;
+			text-align: center;
+			color: #333;
+			margin-bottom: 15px;
+		}
+		.container-c .content-detail .img {
+			display: block;
+			width: 216px;
+			height: 154px;
+			margin: 0 auto;
+		}
+		.container-c .content-detail .img img {
+			width: 216px;
+			height: 154px;
+		}
+		.container-c .content-detail.more .text {
+			display: block;
+			width: 118px;
+			height: 28px;
+			font-size: 12px;
+			line-height: 28px;
+			text-align: center;
+			background-color: #fff;
+			margin: 0 auto;
+		}
+		.container-c .item1 .content-detail.more .text {
+			color: #ffac13;
+			border: 1px solid #ffac13;
+		}
+		.container-c .item1 .content-detail.more .text:hover {
+			background-color: #ffac13;
+			color: #fff;
+		}
+		.container-c .content-item .pagers {
+			position: absolute;
+			left: 103px;
+			bottom: 15px;
+			width: 90px;
+			height: 30px;
+		}
+		.container-c .content-item .pager {
+			float: left;
+			width: 10px;
+			height: 10px;
+			padding: 10px;
+			cursor: pointer;
+		}
+		.container-c .content-item .pager .dot {
+			display: block;
+			width: 6px;
+			height: 6px;
+			border: 2px solid #f5f5f5;
+			border-radius: 6px;
+			background-color: #b0b0b0;
+		}
+		.container-c .content-item .pager.active .dot {
+			border-color: #ffac13;
+			background-color: #fff;
+		}
+		.container-c .content-item .pager:hover .dot{
+			background-color: #ffac13;
+		}
+		.container-c .content-item .control {
+			display: block;
+			position: absolute;
+			left: 0;
+			top: 50%;
+			width: 20px;
+			height: 48px;
+			margin-top: -14px;
+			line-height: 48px;
+			text-align: center;
+			font-size: 18px;
+			color: #fff;
+		}
+		.container-c .content-item:hover .control {
+			background-color: #b0b0b0;
+		}
+		.container-c .content-item .control.next {
+			right: 0;
+			left: auto;
+		}
+		.right-bar {
+			position: fixed;
+			right: 0;
+			bottom: 70px;
+			width: 84px;
+			height: 471px;
+			z-index: 999;
+		}
+		.right-bar .bar-top {
+			width: 84px;
+			height: 365px;
+			border-top: 1px solid #f5f5f5;
+		}
+		.right-bar .bar-sort {
+			width: 82px;
+			height: 90px;
+			background-color: #fff;
+			border: 1px solid #f5f5f5;
+			border-top: none;
+		}
+		.right-bar .bar-sort a {
+			width: 82px;
+			height: 90px;
+			display: block;
+			position: relative;
+			color: #757575;
+		}
+		.right-bar .bar-sort img {
+			display: block;
+			position: absolute;
+			top: 20px;
+			left: 27px;
+			width: 30px;
+			height: 30px;
+		}
+		.right-bar .bar-sort .bar-text {
+			position: absolute;
+			top: 58px;
+			left: 0;
+			width: 82px;
+			height: 21px;
+			text-align: center;
+			font-size: 14px;
+		}
+		.right-bar .bar-sort.bar-totop {
+			margin-top: 14px;
+			border: 1px solid #f5f5f5;
+		}
+		.right-bar .bar-sort .hover-img {
+			display: none;
+		}
+		.right-bar .bar-sort:hover .hover-img{
+			display: block;
+		}
+		.right-bar .bar-sort:hover .original-img{
+			display: none;
+		}
+		.right-bar .bar-sort:hover .bar-text {
+			color: #FF6700;
+		}
+		.footer{
+			width: 100%;
+			height: 400px;
+			background-color: #fff;
+		}
+		.footer .footer-links {
+			position: relative;
+			left: 0;
+			top: 0;
+			width: 1226px;
+			height: 192px;
+			margin: 0 auto;
+			padding: 40px 0;
+		}
+		.footer .footer-links .col-links {
+			float: left;
+			width: 160px;
+			height: 112px;
+		}
+		.footer .footer-links .col-contacts{
+			float: right;
+			width: 251px;
+			height: 112px;
+			text-align: center;
+			border-left: 1px solid #e0e0e0;
+		}
+		.footer .footer-links .col-links dt {
+			width: 100%;
+			height: 18px;
+			font-size: 14px;
+			margin-bottom: 24px;
+			color: #424242;
+		}
+		.footer .footer-links .col-links dd{
+			width: 100%;
+			height: 18px;
+			font-size: 12px;
+			margin-top: 10px;
+		}
+		.footer .footer-links .col-links a{
+			color: #757575
+		}
+		.footer .footer-links .col-links dd:hover a{
+			color: #ffac13;
+		}
+		.footer .footer-links .col-contacts .phone {
+			font-size: 22px;
+			margin-bottom: 5px;
+			line-height: 1;
+			color: #ffac13;
+		}
+		.footer .footer-links .col-contacts .text {
+			width: 251px;
+			height: 36px;
+			margin-bottom: 16px;
+			color: #616161;
+		}
+		.footer .footer-links .col-contacts .contact-btn {
+			display: inline-block;
+			width: 118px;
+			height: 28px;
+			font-size: 12px;
+			color: #ff6700;
+			line-height: 28px;
+			background-color: #fff;
+			border: 1px solid #ff6700;
+		}
+		.footer .footer-links .col-contacts .contact-btn:hover{
+			color: #fff;
+			background-color: #ff6700;
+		}
+	</style>
+</head>
+<body>
+	<div class="nav">
+		<div class="nav-c">
+			<div class="nav-logo">
+				<a class="logo-item" href="#"></a>
+				<a class="logo-ad" href="#"></a>
+			</div>
+			<ul class="nav-list">
+				<li class="nav-item"><a href="">小米手机</a></li>
+				<li class="nav-item"><a href="">红米</a></li>
+				<li class="nav-item"><a href="">电视</a></li>
+				<li class="nav-item"><a href="">笔记本</a></li>
+				<li class="nav-item"><a href="">空调</a></li>
+				<li class="nav-item"><a href="">新品</a></li>
+				<li class="nav-item"><a href="">路由器</a></li>
+				<li class="nav-item"><a href="">智能硬件</a></li>
+				<li class="nav-item"><a href="">服务</a></li>
+				<li class="nav-item"><a href="">社区</a></li>
+			</ul>
+			<div class="search search-border">
+				<input class="search-input" onfocus="searchFocus();" onblur="searchBlur();" type="text">
+				<a class="search-item" href="#"><i class="fa fa-search fa-lg"></i></a>
+				<div class="tips">
+					<a href="#">小米8</a>
+					<a class="r" href="#">小米MIX 2S</a>
+				</div>
+				<ul class="search-list">
+					<li class="search-list-item"><a href="#">小米6X</a></li>
+					<li class="search-list-item"><a href="#">小米MIX 2S</a></li>
+					<li class="search-list-item"><a href="#">小米MIX 2S</a></li>
+				</ul>
+			</div>
+		</div>	
+	</div>
+	<div class="box">
+		<ul class="children-container">
+			
+		</ul>
+	</div>
+	<div class="banner">
+		<img src="img/m1.jpg" alt="" class="img-item">
+		<a href="javascript:;" class="arr arr-r" onclick="swipImg(true)">></a>
+		<a href="javascript:;" class="arr arr-l" onclick="swipImg(false)"><</a>
+		<ul class="dotts">
+			<!-- <li class="dott-item r0"><a href="javascript:;" class="dott active"></a></li> -->
+		</ul>
+		<div class="side-bar">
+			<ul class="column">
+				
+			</ul>
+		</div>
+	</div>
+	<div class="container">
+		<div class="container-c">
+			<!-- 闪购 -->
+			<div class="flashover">
+				<div class="box-hd">
+					<p class="title">小米闪购</p>
+					<div class="more">
+						<a class="switch-pro more-l" href="javascript:;" onclick="switchPro(false);"><</a>
+						<a class="switch-pro more-r active" href="javascript:;" onclick="switchPro(true);">></a>
+					</div>
+				</div>
+				<ul class="flash-countdown">
+					<li class="countdown-item">
+						<p class="time-title">18:00 场</p>
+						<img src="img/flashpurchase.png" alt="">
+						<p class="text">距离开始还有</p>
+						<div class="countdown-detail">
+							<div class="hours stamp"></div>
+							<div class="dosh stamp">:</div>
+							<div class="mins stamp"></div>
+							<div class="dosh stamp">:</div>
+							<div class="secs stamp"></div>
+						</div>
+					</li>
+				</ul>
+				<div class="countdown-box">
+					<ul class="countdown-pro">
+						<li class="countdown-item"></li>
+						<li class="countdown-item"></li>
+						<li class="countdown-item"></li>
+						<li class="countdown-item"></li>
+						<li class="countdown-item"></li>
+						<li class="countdown-item"></li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="ad-item">
+				<a class="ad-item-detail" href="#"><img src="img/helo.jpg" alt=""></a>
+			</div>
+			<!-- 家电 -->
+			<div class="homeelec">
+				<div class="box-hd">
+					<p class="title">家电</p>
+					<ul class="subnav homeelec-subnav">
+						<li class="subnav-item active">热门</li>
+						<li class="subnav-item">电视影音</li>
+						<li class="subnav-item">电脑</li>
+						<li class="subnav-item">家居</li>
+					</ul>
+				</div>
+				<div class="hot-block">
+					<a class="hot-item" href="#"><img src="img/hotdianfanbao.jpg" alt=""></a>
+					<a class="hot-item" href="#"><img src="img/hotsaodi.jpg" alt=""></a>
+				</div>
+				<ul class="homeelec-list product-list">
+
+				</ul>
+			</div>
+			<div class="ad-item">
+				<a class="ad-item-detail" href="#"><img src="img/tooth.jpg" alt=""></a>
+			</div>
+			<!-- 智能 -->
+			<div class="smartelec">
+				<div class="box-hd">
+					<p class="title">智能</p>
+					<ul class="subnav homeelec-subnav">
+						<li class="subnav-item active">热门</li>
+						<li class="subnav-item">出行</li>
+						<li class="subnav-item">健康</li>
+						<li class="subnav-item">酷玩</li>
+						<li class="subnav-item">路由器</li>
+
+					</ul>
+				</div>
+				<div class="hot-block">
+					<a class="hot-item" href="#"><img src="img/shexiang.jpg" alt=""></a>
+					<a class="hot-item" href="#"><img src="img/pingheng.jpg" alt=""></a>
+				</div>
+				<ul class="smartelec-list product-list">
+
+				</ul>
+			</div>
+			<div class="ad-item">
+				<a class="ad-item-detail" href="#"><img src="img/bijibenad.jpg" alt=""></a>
+			</div>
+			<!-- 搭配 -->
+			<div class="supplement">
+				<div class="box-hd">
+					<p class="title">搭配</p>
+				</div>
+				<div class="hot-block">
+					<a class="hot-item" href="#"><img src="img/lanyaerji.jpg" alt=""></a>
+					<a class="hot-item" href="#"><img src="img/vr.jpg" alt=""></a>
+				</div>
+				<ul class="supplement-list product-list">
+			
+				</ul>
+			</div>
+			<div class="ad-item">
+				<a class="ad-item-detail" href="#"><img src="img/xiaomiad.jpg" alt=""></a>
+			</div>
+			<!-- 配件 -->
+			<div class="partelec">
+				<div class="box-hd">
+					<p class="title">配件</p>
+				</div>
+				<div class="hot-block">
+					<a class="hot-item" href="#"><img src="img/duijiangji.jpg" alt=""></a>
+					<a class="hot-item" href="#"><img src="img/xishoujihot.jpg" alt=""></a>
+				</div>
+				<ul class="partelec-list product-list">
+
+				</ul>
+			</div>
+			<div class="ad-item">
+				<a class="ad-item-detail" href="#"><img src="img/yinxiangad.jpg" alt=""></a>
+			</div>
+			<!-- 周边 -->
+			<div class="periphery">
+				<div class="box-hd">
+					<p class="title">周边</p>
+				</div>
+				<div class="hot-block">
+					<a class="hot-item" href="#"><img src="img/duijiangji.jpg" alt=""></a>
+					<a class="hot-item" href="#"><img src="img/xishoujihot.jpg" alt=""></a>
+				</div>
+				<ul class="periphery-list product-list">
+
+				</ul>
+			</div>
+			<!-- 内容 -->
+			<div class="content">
+				<div class="box-hd">
+					<p class="title">内容</p>
+				</div>
+				<ul class="content-list">
+					<li class="content-item item1" style="margin-left: 0;">
+						<p class="title" style="color:#ffac13">图书</p>
+						<ul class="content-item-list">
+							<!-- <li class="content-detail"><a href="#" class="name">哈利波特与被诅咒的孩子</a><p class="desc">哈利波特第八个故事中文版震撼来袭!特别彩排版剧本</p><p class="price">29.37元</p><a class="img" href="#"><img src="img/potter.png" alt=""></a></li>
+							<li class="content-detail"></li>
+							<li class="content-detail more"><p class="desc">海量好书，享受精品阅读时光<br>漂亮的中文排版，千万读者选择！</p><a class="text" href="#">前往多看阅读</a></li> -->
+						</ul>
+						<ul class="pagers">
+							<!-- <li class="pager active" onclick="controlDot(0,0)"><span class="dot"></span></li>
+							<li class="pager" onclick="controlDot(1,0)"><span class="dot"></span></li>
+							<li class="pager" onclick="controlDot(2,0)"><span class="dot"></span></li> -->
+						</ul>
+						<a href="javascript:;" class="control last" onclick="controlFlag(false,0)"><</a>
+						<a href="javascript:;" class="control next" onclick="controlFlag(true,0)">></a>
+					</li>
+					<li class="content-item item2">
+						<p class="title" style="color:#ffac13"></p>
+						<ul class="content-item-list">
+							
+						</ul>
+						<ul class="pagers">
+							
+						</ul>
+						<a href="javascript:;" class="control last" onclick="controlFlag(false,1)"><</a>
+						<a href="javascript:;" class="control next" onclick="controlFlag(true,1)">></a>
+					</li>
+					<li class="content-item">
+						<p class="title" style="color:#ffac13"></p>
+						<ul class="content-item-list">
+							
+						</ul>
+						<ul class="pagers">
+							
+						</ul>
+						<a href="javascript:;" class="control last" onclick="controlFlag(false,2)"><</a>
+						<a href="javascript:;" class="control next" onclick="controlFlag(true,2)">></a>
+					</li>
+					<li class="content-item">
+						<p class="title" style="color:#ffac13"></p>
+						<ul class="content-item-list">
+							
+						</ul>
+						<ul class="pagers">
+							
+						</ul>
+						<a href="javascript:;" class="control last" onclick="controlFlag(false,3)"><</a>
+						<a href="javascript:;" class="control next" onclick="controlFlag(true,3)">></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="right-bar">
+		<ul class="bar-top">
+			<li class="bar-sort">
+				<a href="#">
+					<img src="img/1org.png" alt="" class="original-img">
+					<img src="img/1hover.png" alt="" class="hover-img">
+					<p class="bar-text">手机APP</p>
+				</a>
+			</li>
+			<li class="bar-sort">
+				<a href="#">
+					<img src="img/2org.png" alt="" class="original-img">
+					<img src="img/2hover.png" alt="" class="hover-img">
+					<p class="bar-text">个人中心</p>
+				</a>
+			</li>
+			<li class="bar-sort">
+				<a href="#">
+					<img src="img/3org.png" alt="" class="original-img">
+					<img src="img/3hover.png" alt="" class="hover-img">
+					<p class="bar-text">联系客服</p>
+				</a>
+			</li>
+			<li class="bar-sort">
+				<a href="#">
+					<img src="img/4org.png" alt="" class="original-img">
+					<img src="img/4hover.png" alt="" class="hover-img">
+					<p class="bar-text">购物车</p>
+				</a>
+			</li>
+		</ul>
+		<div class="bar-totop bar-sort">
+			<a href="javascript:;">
+				<img src="img/totop.png" alt="" class="original-img">
+				<img src="img/totop_hover.png" alt="" class="hover-img">
+				<p class="bar-text">回顶部</p>
+			</a>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="footer-links">
+			<dl class="col-links">
+				<dt>帮助中心</dt>
+				<dd><a href="#">账户管理</a></dd>
+				<dd><a href="#">购物指南</a></dd>
+				<dd><a href="#">订单操作</a></dd>
+			</dl>
+			<dl class="col-links">
+				<dt>服务支持</dt>
+				<dd><a href="#">账户管理</a></dd>
+				<dd><a href="#">购物指南</a></dd>
+				<dd><a href="#">订单操作</a></dd>
+			</dl>
+			<dl class="col-links">
+				<dt>线下门店</dt>
+				<dd><a href="#">账户管理</a></dd>
+				<dd><a href="#">购物指南</a></dd>
+				<dd><a href="#">订单操作</a></dd>
+			</dl>
+			<dl class="col-links">
+				<dt>关于小米</dt>
+				<dd><a href="#">账户管理</a></dd>
+				<dd><a href="#">购物指南</a></dd>
+				<dd><a href="#">订单操作</a></dd>
+			</dl>
+			<dl class="col-links">
+				<dt>关注我们</dt>
+				<dd><a href="#">账户管理</a></dd>
+				<dd><a href="#">购物指南</a></dd>
+				<dd><a href="#">订单操作</a></dd>
+			</dl>
+			<dl class="col-links">
+				<dt>特色服务</dt>
+				<dd><a href="#">F 码通道</a></dd>
+				<dd><a href="#">礼物码</a></dd>
+				<dd><a href="#">防伪查询</a></dd>
+			</dl>
+			<div class="col-contacts">
+				<p class="phone">400-100-5678</p>
+				<p class="text"></p>
+				<a href="#" class="contact-btn">
+					<i class="fa fa-commenting-o" aria-hidden="true"></i>
+					联系客服
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		var bannerEl = document.getElementsByClassName('banner')[0];
+		var showPhoto = document.getElementsByClassName('img-item')[0];
+		var imgsArr = ['m1.jpg','m2.jpg','m3.jpg','m4.jpg','m5.jpg','m6.jpg'];
+		var colEl = document.getElementsByClassName('column')[0];
+		var ulEl = document.getElementsByClassName('dotts')[0];
+		initColItem(colEl,data.title);
+		// var columns = document.getElementsByClassName('column-item');
+		initDotts(ulEl,imgsArr);
+		var searchBox = document.getElementsByClassName('search')[0];
+		var searchInput = document.getElementsByClassName('search-input')[0];
+		var tips = document.getElementsByClassName('tips')[0];
+		var searchList = document.getElementsByClassName('search-list')[0];
+		var searchIcon = document.getElementsByClassName('icon-search')[0];
+		var count = 0;
+		var timer = null;
+		// autoPlay();
+
+		bannerEl.onmouseenter = function () {
+			clearInterval(timer);
+		}
+		bannerEl.onmouseleave = function () {
+			autoPlay();
+		}
+		// 自动切换图片
+		function autoPlay () {
+			timer = setInterval(function(){
+				count++;
+				swipDott(count);
+			},3000);
+		}
+		
+		function initDotts(el,arr) {
+			var str = '';
+			for (var i = 0; i < arr.length; i++) {
+				str += '<li class="dott-item'+(i==imgsArr.length-1?' r0':'')+'"><a href="javascript:;" class="dott'+(i==0?' active':'')+'" onclick="swipDott('+i+')"></a></li>';
+			}
+			el.innerHTML = str;
+		}
+
+		var navLis = document.getElementsByClassName('nav-item');
+		var box = document.getElementsByClassName('box')[0];
+		var itemUl = document.getElementsByClassName('children-container')[0];
+
+		// 给导航hover 效果   hover时  给ul 添加内容
+		navHover();
+		function navHover () {
+			for (var i = 0; i < navLis.length-2; i++) {
+				//鼠标进入
+				navLis[i].onmouseover = (function(n){
+					return function(){
+						initNavChildren(itemUl,data.nav[n]);
+						addClass(box,'active');
+						addClass(navLis[n],'active');
+					}
+				})(i);
+				//鼠标离开
+				navLis[i].onmouseout = (function(n){
+					return function(){
+						delClass(box,'active');
+						delClass(navLis[n],'active');
+					}
+				})(i);
+			}
+		}
+		function initNavChildren (el,arr) {	
+			var str = '';
+			for (var j = 0; j < arr.length; j++) {
+				str += '<li class="nav-children"><a class="child-img" href="#"><img class="child-img-item" src="img/'+arr[j].img+'" alt=""></a><a class="child-text" href="#">'+arr[j].model+'</a><p class="price">'+arr[j].price+'</p></li>';
+			}
+			el.innerHTML = str;
+		}
+
+		// 左边栏目 生成
+		function initColItem (el,arr) {
+			var str = '';
+			for (var i = 0; i < arr.length; i++) {
+				str += '<li class="column-item"><a class="col-text" href="#">'+arr[i]+'<span>></span></a><div class="col-children" id="'+i+'"></div></li>';	
+			}
+			el.innerHTML = str;
+		}
+		var colChildren = document.getElementsByClassName('col-children');
+		initColChildren(colChildren,data.pro);
+		function initColChildren (el,arr) {
+			for (var i = 0; i < arr.length; i++) {
+				// var n = arr[i].length;
+				var num = Math.ceil(arr[i].length / 6);
+				var str = '';
+				for (var j = 0; j < num; j++) {
+					str += '<ul class="col-child-list"></ul>';
+				}
+				el[i].innerHTML = str;
+				var tempArr = arr[i];
+				var colChildList = el[i].children;
+				for (var x = 0; x < colChildList.length; x++) {
+					var str = '';
+					for (var y = 0; y < tempArr.length; y++) {
+						if (y >= x*6 && y < (x+1)*6) {
+							str += '<li class="col-children-item"><a href="#"><img class="col-children-icon" src="img/'+tempArr[y].img+'" alt=""><p class="col-children-text">'+tempArr[y].model+'</p></a></li>';
+						}
+					}
+					colChildList[x].innerHTML = str;
+				}
+			}	
+		}
+
+		// 左右点击效果
+		function swipImg (isRight) {
+			if (isRight) {
+				count++;	
+			}else {
+				count--;	
+			}
+			swipDott(count);
+		}
+		// dott切换,图片切换
+		function swipDott (num) {
+			count = num;
+			if (count == imgsArr.length) {
+				count = 0;
+			}
+			if (count == -1) {
+				count = imgsArr.length-1;
+			}	
+			var dotts = document.getElementsByClassName('dott');
+			for (var i = 0; i < dotts.length; i++) {
+				delClass(dotts[i],'active');
+			}
+			addClass(dotts[count],'active');
+			showPhoto.src = 'img/'+imgsArr[count];
+		}
+		// 输入框点击效果
+		function searchFocus(){
+			addClass(searchBox,'active');
+		}
+		function searchBlur () {
+			delClass(searchBox,'active');
+		}
+		// 闪购倒计时
+		var stamps = document.getElementsByClassName('stamp');
+		var endTimeStr = '2019-07-12 18:00:00';
+		var endTime = new Date(endTimeStr);
+		var endTimeStamp = endTime.getTime();
+		var HOURS = 60*60*1000;
+		var MINS = 60*1000;
+		setInterval(function () {
+			var nowTime = new Date();
+			var nowTimeStamp = nowTime.getTime();
+			var cha = endTimeStamp - nowTimeStamp;
+			var hour = Math.floor(cha/HOURS);
+			var min = Math.floor(cha%HOURS/MINS);
+			var sec = Math.floor(cha%MINS/1000);
+			stamps[0].innerText = wrapNum(hour);
+			stamps[2].innerText = wrapNum(min);
+			stamps[4].innerText = wrapNum(sec);
+		},1000)
+		function wrapNum(n){
+			return n<10?('0'+n):n;
+		}
+
+		// 闪购轮播
+		var countdownPro = document.getElementsByClassName('countdown-pro')[0];
+		var countdownLis = countdownPro.children;
+		var moreR = document.getElementsByClassName('more-r')[0];
+		var moreL = document.getElementsByClassName('more-l')[0];
+		var more = document.getElementsByClassName('switch-pro');
+		var mul = 0;
+		var liw = countdownLis[0].offsetWidth;
+		var round = Math.floor(countdownLis.length / 4)-1;
+		var temp = countdownLis.length % 4;
+
+		function switchPro (isRight) {
+			if (isRight) {
+				if (mul<round) {
+					mul++;
+					target = -1*mul*4*liw;
+				}else{
+					target = -1*temp*liw;
+				}
+			}else{
+				if (mul>0) {
+					target = -1*mul*4*liw + 4*liw;
+					mul--;
+				}else{
+					// target = -1*temp*liw + temp*liw;
+					target = 0;
+				}
+			}
+			animate(countdownPro,target,function () {
+				moreHover();
+			});
+			 
+		}
+
+		function moreHover () {	
+			if (target < 0) {
+				addClass(moreL,'active');
+			}else{
+				delClass(moreL,'active');
+			}
+			if (target == -1*(countdownLis.length-4)*liw) {
+				delClass(moreR,'active');
+			}else{
+				addClass(moreR,'active');
+			}
+		}
+		
+		function animate (el,target,fn) {
+			clearInterval(el.timer);
+			el.timer = setInterval(function () {
+				var leader =  el.offsetLeft;
+				var step = (target-leader)/10;
+				if (target == leader) {
+					clearInterval(el.timer);
+				}
+				if (step<1 && step>0) {
+					step = 1;
+				}else if (step<0 && step>-1) {
+					step = -1;
+				}
+				el.style.left = (leader+step) + 'px';
+			},17)
+			if (fn) {
+				fn();
+			} 
+		}
+
+
+		// 产品展示
+		var homeElec = document.getElementsByClassName('homeelec-list')[0];
+		var homeElecSubnav = document.getElementsByClassName('homeelec-subnav')[0];
+		var smartElec = document.getElementsByClassName('smartelec-list')[0];
+		var supplement = document.getElementsByClassName('supplement-list')[0];
+		var partElec = document.getElementsByClassName('partelec-list')[0];
+		var periphery = document.getElementsByClassName('periphery-list')[0];
+		subnavHover(homeElecSubnav,data.homeElec);
+		function subnavHover (el,arr) {
+			for (var i = 0; i < el.children.length; i++) {
+				el.children[i].onmouseover = (function (n) {
+					return function () {
+						delClass(el.children[0],'active');
+						addClass(this,'active');
+			 			initProduct(homeElec,arr[n]);
+					}
+				})(i)
+				el.children[i].onmouseout = (function (n) {
+					return function () {
+						delClass(this,'active');
+					}
+				})(i)
+			 } 
+		}
+		initProduct(homeElec,data.homeElec[0]);
+		initProduct(smartElec,data.homeElec[0]);
+		initProduct(supplement,data.homeElec[0]);
+		initProduct(partElec,data.homeElec[0]);
+		initProduct(periphery,data.homeElec[0]);
+		function initProduct (el,arr) {
+			var str = '';
+			for (var i = 0; i < arr.length; i++) {
+				if (i<7) {
+					str += '<li class="homeelec-item product-item"><a class="pro-img" href="#"><img src="img/'+arr[i].img+'" alt=""></a><a class="title" href="#">'+arr[i].title+'</a><p class="desc">'+arr[i].desc+'</p><p class="price">'+arr[i].price+'</p><p class="rank">'+arr[i].rank+'</p><p class="saleoff">'+arr[i].saleoff+'</p></li>';
+				}else if (i == 7) {
+					str += '<li class="homeelec-item product-item product-item-s"><a class="title" href="#">'+arr[i].title+'</a><p class="price">'+arr[i].price+'</p><a class="pros-img" href="#"><img src="img/'+arr[i].img+'" alt=""></a></li>';
+				}else {
+					str += '<li class="homeelec-item product-item product-item-s"><a class="more" href="#">浏览更多<span>'+arr[i].title+'</span></a><a class="more-icon" href="#"><i class="fa fa-arrow-circle-o-right fa-3x"></i></a></li>';
+				}
+				
+			}
+			el.innerHTML = str;
+		}
+
+		// 内容轮播 
+		var contentList = document.getElementsByClassName('content-item-list');
+		var pagersUls = document.getElementsByClassName('pagers');
+		initContent(contentList,pagersUls,data.content);
+		function initContent (el1,el2,arr) {
+			for (var i = 0; i < arr.length; i++) {
+			 	var str1 = '';
+			 	var str2 = '';
+			 	var temp = arr[i];
+			 	for (var j = 0; j < arr[i].length; j++) {
+			 		if (j<arr[i].length-1) {
+			 			str1 += '<li class="content-detail"><a href="#" class="name">'+temp[j].name+'</a><p class="desc">'+temp[j].desc+'</p><p class="price">'+temp[j].price+'</p><a class="img" href="#"><img src="img/potter.png" alt=""></a></li>';
+			 		}else {
+			 			str1 += '<li class="content-detail more"><p class="desc">'+temp[j].desc1+'<br>'+temp[j].desc2+'</p><a class="text" href="#">'+temp[j].link+'</a></li>';
+			 		}
+			 		if (j == 0) {
+			 			str2 += '<li class="pager active" onclick="controlDot('+j+','+i+')"><span class="dot"></span></li>';
+			 		}else {
+			 			str2 += '<li class="pager" onclick="controlDot('+j+','+i+')"><span class="dot"></span></li>';
+			 		}
+			 			
+			 	}
+			 	el1[i].innerHTML = str1;
+			 	el2[i].innerHTML = str2
+			 } 
+		}
+		var countArr = [{count:0},{count:0},{count:0},{count:0}];
+		function controlFlag (isNext,index) {
+			var contentDetail = contentList[index].children;
+			if (isNext) {
+				countArr[index].count ++;
+				if (countArr[index].count >= contentDetail.length-1) {
+					countArr[index].count = contentDetail.length-1;
+				}
+			} else {
+				countArr[index].count --;
+				if (countArr[index].count <= 0) {
+					countArr[index].count = 0;
+				}	
+			}
+			controlDot(countArr[index].count,index);
+		}
+		function controlDot (num,index) {
+			var dots = pagersUls[index].children;
+			for (var i = 0; i < dots.length; i++) {
+				delClass(dots[i],'active');
+			}
+			addClass(dots[num],'active');
+			contentList[index].style.marginLeft = (-296*num)+'px';	
+		}
+
+
+		// 回到顶部
+		var toTop = document.getElementsByClassName('bar-totop')[0];
+		var timer = null;
+		toTop.onclick = function () {
+			animateTB(toTop,0);
+		}
+		function animateTB (el,target) {
+			clearInterval(el.timer);
+			el.timer = setInterval(function () {
+				var leader = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+				var step = (target - leader)/10;
+				if (target == leader) {
+					clearInterval(el.timer);
+				}
+				if (step>0 && step<1) {
+					step = 1;
+				}else if (step<0 && step>-1) {
+					step = -1;
+				}
+				document.documentElement.scrollTop = leader + step;
+			},17)
+			
+		}
+	</script>
+</body>
+</html>

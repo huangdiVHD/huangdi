@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        不凡学院
+    </div>
+    <button class="btn">触发box的点击事件</button>
+    <script src="lib/jquery-3.4.1.min.js"></script>
+    <script>
+        $('.box').click(function () {
+            console.log('点击了')
+        })
+        $('.btn').click(function () {
+            // 触发box的点击事件
+            $('.box').click();
+            // $('.box').trigger('click');
+            // $('.box').triggerHandler('click');
+        })
+    </script>
+</body>
+
+</html>

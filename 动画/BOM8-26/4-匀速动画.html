@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>匀速动画</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				position: relative;
+				width: 200px;
+				height: 200px;
+				background-color: orange;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+		
+		<button class="btn1">点击跳到400px</button>
+		<button class="btn2">点击跳到800px</button>
+		
+		<script type="text/javascript">
+			var box = document.querySelector(".box");
+			var btn1 = document.querySelectorAll("button")[0];
+			var btn2 = document.querySelectorAll("button")[1];
+			
+			btn1.onclick = function (){
+				var timer = setInterval(function (){
+					// 1. 获取当前的左边距
+					var start = box.offsetLeft;
+					// 2. 声明步长, 判断运动方向,即起点在终点的左侧还是右侧
+					var step = 400 > start ? 11 : -11;
+					// 3. 运动
+					box.style.left = start + step + "px";
+					// 4. 停止条件 终点与起点的距离 小于 步长
+					if(Math.abs(400 - start) <= Math.abs(step)){
+						console.log("stop ...");
+						// 直接到终点
+						box.style.left = 400 + "px";
+						// 停止定时器
+						clearInterval(timer);
+					}
+				},17)
+			}
+			
+			btn2.onclick = function (){
+				/*
+				var timer = setInterval(function (){
+					// 1. 获取当前的左边距
+					var start = box.offsetLeft;
+					// 2. 加上步长
+					start += 11;
+					// 3. 赋值
+					box.style.left = start + "px";
+					// 4. 停止条件 写在赋值后面
+					// 即将抵达条件: 终点与起点之间的距离 小于 步长
+					if(800 - start <= 11 ){
+						box.style.left = "800px";
+						console.log("stop ...");
+						clearInterval(timer);
+					}
+				},17)*/
+				move(box,800);
+			}
+			
+			// 匀速动画封装
+			/**
+			 * @param {Object} ele 运动元素
+			 * @param {Number} target 运动终点
+			 * @return count 两数之和
+			 */
+			function move(ele,target){
+				var timer = setInterval(function (){
+					// 1. 获取当前的左边距
+					var start = ele.offsetLeft;
+					// 2. 声明步长, 判断运动方向,即起点在终点的左侧还是右侧
+					var step = target > start ? 11 : -11;
+					// 3. 运动
+					ele.style.left = start + step + "px";
+					// 4. 停止条件 终点与起点的距离 小于 步长
+					if(Math.abs(target - start) <= Math.abs(step)){
+						console.log("stop ...");
+						// 直接到终点
+						ele.style.left = target + "px";
+						// 停止定时器
+						clearInterval(timer);
+					}
+				},17)
+			}
+			
+			
+		</script>
+	</body>
+</html>

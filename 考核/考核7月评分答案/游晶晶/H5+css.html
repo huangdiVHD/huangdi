@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .nav {
+            width: 600px;
+            height: 100px;
+            margin: 100px auto;
+            background-color: #333;
+            position: relative;
+            /* overflow: hidden; */
+        }
+
+        .item {
+            float: left;
+            height: 70px;
+
+            margin-right: 100px;
+            position: relative;
+            overflow: hidden;
+
+
+        }
+
+
+
+        .item .aa {
+            width: 50px;
+            height: 50px;
+            margin-top: 15px;
+            margin-bottom: 5px;
+
+
+        }
+
+        p {
+            font-size: 12px;
+            text-align: center;
+            color: #fff;
+        }
+        .box1{
+            position: absolute;
+            top: 70px;
+            left: 55px;
+        }
+        .box2{
+            position: absolute;
+            top: 70px;
+            left: 205px;
+        }
+        .box3{
+            position: absolute;
+            top: 70px;
+            left: 365px;
+        }
+        .box4{
+            position: absolute;
+            top: 70px;
+            left: 515px;
+        }
+        .item:nth-child(1) {
+            margin-left: 50px;
+        }
+
+        .item.mm {
+            margin-right: 0px;
+        }
+
+        .cd {
+            display: block;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 100px;
+            left: 0px;
+            transition: all .5s ease;
+            transform: translate(0px, 0px);
+            /* display: none; */
+
+
+        }
+        
+
+        /* .item:hover .cd{
+         
+           transform: translate(0px,-36.5px);
+       } */
+        .item:hover .aa {
+
+            opacity: .3;
+        }
+
+        .active {
+            top: 15px;
+            transition: all .5s ease;
+        }
+        .yuan{
+            display: block;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: mediumturquoise;
+            position: absolute;
+            bottom: 10px;
+            left: 66px;
+            display: none;
+
+        }
+        .special{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="nav">
+        <li class="item">
+
+            <img src="icon/cd-default.svg" alt="" class="aa">
+            <img src="icon/cd-active.svg" alt="" class="cd">
+
+        </li>
+        
+        <li class="item">
+            <img src="icon/camera-default.svg" alt="" class="aa">
+            <img src="icon/camera-active.svg" alt="" class="cd">
+
+        </li>
+       
+        <li class="item">
+            <img src="icon/file-default.svg" alt="" class="aa">
+            <img src="icon/file-active.svg" alt="" class="cd">
+
+        </li>
+        
+        <li class="item mm">
+            <img src="icon/mine-default.svg" alt="" class="aa">
+            <img src="icon/mine-active.svg" alt="" class="cd">
+
+        </li>
+        <div class="box1">
+                <p>Home</p>
+            </div>
+            <div class="box2">
+                    <p>Camera</p>
+                </div>
+                <div class="box3">
+                        <p>Files</p>
+                    </div>
+        <div class="box4">
+            <p>Mine</p>
+        </div>
+        <span class="yuan"></span>
+    </ul>
+    
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        $('.item').click(function () {
+            var $index;
+            $(this).siblings().children().removeClass('active');
+            $(this).children(1).addClass('active');
+            $('.yuan').show();
+            $index=$(this).index();
+            $('p').removeClass('special');
+            $('p').eq($index).addClass('special');
+
+            if($index==0){
+                $('.yuan').css({
+                    left:70,
+                    transition:'all .5s ease'
+                    });
+              
+             
+            }else{
+                var chang = 70+($(this).width()+100)*$index;
+                $('.yuan').css({
+                    left:chang,
+                    transition:'all .5s ease'
+                    });   
+              
+            }
+        })
+    </script>
+</body>
+
+</html>

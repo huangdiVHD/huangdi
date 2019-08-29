@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            position: absolute;
+            left: 20px;
+            top: 50px;
+            width: 100px;
+            height: 200px;
+            background-color: red;
+            margin: 10px 20px 30px 40px;
+        }
+
+        .inner-box {
+            position: absolute;
+            left: 10px;
+            top: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: green;
+        }
+
+        .footer {
+            width: 1000px;
+            height: 2000px;
+
+        }
+
+        .btn {
+            position: fixed;
+            right: 50px;
+            bottom: 50px;
+        }
+        .btn1 {
+            position: fixed;
+            right: 50px;
+            top:50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="inner-box">
+
+        </div>
+    </div>
+    <div class="footer">
+
+    </div>
+    <div class="btn">到达顶部</div>
+    <div class="btn1">到达底部</div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        // width() height() 获取 宽高(不包括border 和 padding) num类型
+        console.log($('.box').width());
+        console.log($('.box').height());
+        // 设置宽度  ,参数 是 数字
+        $('.box').width(1000);
+
+
+
+
+        // offset()  {top: 0, left: 0}
+        // 获取或设置元素相对于文档的位置
+        console.log($('.box').offset());
+        console.log('相对于文档左侧的距离', $('.box').offset().left);
+        // $('.box').offset({
+        //     left: 50,
+        //     top: 20
+        // })
+
+        ///position()  {top: 10, left: 10}
+        // 作用：获取相对于其最近的具有定位的父元素的位置。
+        // 只能获取 不能设置
+        console.log($('.box').position());
+        console.log($('.inner-box').position());
+        console.log($('.inner-box').offset());
+
+
+        // scrollTop()  网页卷进去的高度
+        // 作用：获取或者设置元素垂直方向滚动的位置
+        $('.btn').click(function () {
+            console.log($(document.documentElement).scrollTop());//控制台输出
+            $(document.documentElement).animate({
+                scrollTop: 0
+            })
+        })
+        $('.btn1').click(function () {
+            console.log($(document.documentElement).scrollTop());//控制台输出
+            $(document.documentElement).animate({
+                scrollTop: 1000
+            })
+        })
+    </script>
+</body>
+
+</html>

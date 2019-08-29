@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .d1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /* 指定参与过渡属性 */
+            /* all 所有属性 */
+            transition-property: all;
+            /* 制定过渡时长 */
+            transition-duration: .8s;
+            /* 指定过渡曲线(运动函数) */
+            /* linear|ease|ease-in|ease-out|ease-in-out|cubic-
+bezier(n,n,n,n); */
+            /* 默认 ease */
+            /* https://cubic-bezier.com/#.17,.67,.83,.67 */
+            transition-timing-function: cubic-bezier(.12, 1.16, .46, .96);
+            /* 0.5之后开始过渡,指定过渡的 延迟时间 */
+            transition-delay: .5s;
+            /* 简写属性 */
+            /* transition: 属性 持续时间  运动函数 延迟时间(可以省略) */
+
+            /* 根据实际情况 考虑 把transition属性  赋给  结束状态  还是  初始状态 */
+        }
+
+        /* 指定开始状态  和  结束状态 */
+        /* 过渡效果需要触发 */
+        .d1:hover {
+            width: 300px;
+            height: 300px;
+            background-color: green;
+
+        }
+
+        .d2 {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            margin-left: 100px;
+            transition: all .4s ease;
+
+        }
+
+        .d2:hover {
+            width: 300px;
+            height: 300px;
+            margin-left: 150px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="d1">
+
+    </div>
+    <div class="d2">
+
+    </div>
+</body>
+
+</html>

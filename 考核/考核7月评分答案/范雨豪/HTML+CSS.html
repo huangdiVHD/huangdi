@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .s {
+            display: inline-block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            color: grey;
+        }
+        
+        .s1 {
+            width: 170px;
+        }
+        
+        .s2 {
+            width: 160px;
+        }
+        
+        .s2 {
+            width: 190px;
+        }
+        
+        .bg {
+            width: 320px;
+            position: relative
+        }
+        
+        span {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 2px 1px;
+            border-radius: 2px;
+            margin-right: 3px;
+        }
+        
+        .category {
+            border: 1px solid gainsboro;
+            color: grey;
+        }
+        
+        .state {
+            border: 1px solid red;
+            color: red
+        }
+        
+        .words {
+            border: 1px solid blue;
+            color: blue
+        }
+        
+        .right {
+            display: inline-block;
+            position: absolute;
+            right: 0px;
+            top: 20px
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg">
+        <h3 class="s1 s">这次是一个新的故事崭新的故事即将开始</h3>
+        <div class="right">
+            <span class="category">都市</span><span class="state">连载中</span><span class="words">54.82万字</span>
+        </div>
+    </div>
+    <div class="bg">
+        <h3 class="s2 s">穿越天地复苏的平行世界五彩缤纷</h3>
+        <div class="right">
+            <span class="category">都市</span><span class="state">完本</span><span class="words">1万字</span>
+        </div>
+    </div>
+    <div class="bg">
+        <h3 class="s3 s">修真四万年</h3>
+        <div class="right">
+            <span class="category">科幻</span><span class="state">完本</span><span class="words">1059.98万字</span>
+        </div>
+    </div>
+</body>
+
+</html>

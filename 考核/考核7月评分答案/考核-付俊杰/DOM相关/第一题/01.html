@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+</head>
+<body>
+    <form action="/account/login" id="login-form" method="post" onsubmit="return false;">
+        <p>账号: <input type="text" name="username" required /></p>
+        <p>密码: <input type="password" name="pwd" required /></p>
+        <p><input type="submit" value="登录" /></p>
+    </form>
+    <script>
+        var fm=document.getElementById('login-form');
+        var fm=document.getElementsByTagName('form')[0];
+        var fm=document.forms[0];
+        console.log(fm);
+    </script>
+</body>
+</html>

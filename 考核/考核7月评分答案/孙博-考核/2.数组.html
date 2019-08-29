@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var num = parseInt(prompt('请输入整数'));
+
+        var arr = [0,1,2,3,4,5]
+        // 移位
+       if( num < arr.length){
+            var temp = arr[num];
+            arr[num] = arr[num-1];
+            arr[num-1] = temp;
+       }
+        console.log(arr)
+        // alert(arr);
+
+        var arr = [0,1,2,3,4,5]
+        // splice  删除指定的元素  arr 返回新的
+            if(num<arr.length){
+                // 删掉  
+                var result = arr.splice(num,1);
+                //  开头加上
+                arr.splice(0,0,result[0]);
+            }
+        console.log(arr);
+        
+
+        var arr = [0,1,2,3,4,5]
+        if(num<arr.length){
+            // 获取删除的元素
+            var result1 = arr.splice(num,1);
+            // var result2 = arr.push(result1[0]);
+            arr1 = arr.concat(result1);
+            }
+        console.log(arr1);
+        
+        
+        var num1 = parseInt(prompt('请输入整数'));
+        var num2 = parseInt(prompt('请输入整数'));
+        var arr = [0,1,2,3,4,5]
+        if (num<arr.length){
+            var temp = arr[num1];
+            arr[num1] = arr[num2];
+            arr[num2] = temp;
+            
+        }
+        console.log(arr);
+
+
+    </script>
+</body>
+</html>

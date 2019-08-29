@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li style="color: green;">li1</li>
+        <li style="color: red;">li2</li>
+        <li>li3</li>
+        <li>li4</li>
+        <li>li5</li>
+    </ul>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        $('li').each(function (index, ele) {
+            console.log(index);
+            console.log(ele); // dom对象
+            if (index >= 2) {
+                $(ele).click(function () {
+                    alert('点击事件')
+                })
+            }
+        })
+        //         大部分情况下是不需要使用 each 方法的，因为 jQuery 的隐式迭代特性。
+
+        // 如果要对每个元素做不同的处理，这时候就用到了 each 方法
+
+        // 作用：遍历 jQuery 对象集合，为每个匹配的元素执行一个函数
+
+        // $(selector).each(function(index,element){});
+
+        // Element 是一个 js 对象，需要转换成 jquery 对象
+    </script>
+</body>
+
+</html>

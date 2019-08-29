@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        ul {
+            list-style: none;
+            width: 700px;
+            height: 130px;
+            margin: 200px auto;
+            background-color: black;
+          
+        }
+       ul li {
+           width: 100px;
+           height: 100%;
+           float: left;
+           margin-right: 100px;  
+           position: relative;
+    
+       }
+    
+       li:first-child {
+           background: url('camera-default.svg') no-repeat ;
+           background-size: contain;
+       }
+       li:nth-child(2) {
+           background: url('cd-default.svg') no-repeat ;
+           background-size: contain;
+       }
+       li:nth-child(3) {
+           background: url('file-default.svg') no-repeat ;
+           background-size: contain;
+       }
+       li:last-child {
+           background: url('mine-default.svg') no-repeat ;
+           background-size: contain;
+           margin-right: 0;
+       }
+
+       .dw{
+            position: relative;
+            top: 50px;
+         
+       }
+
+       span {
+         
+           color: white;
+           position: absolute;
+           bottom: 0;
+           width: 60px;
+           text-align: center;
+           margin-left: 20px;
+
+       }
+
+       .yuan {
+           width: 20px;
+           height: 20px;
+           background-color: skyblue;
+           margin: 0 auto;
+           border-radius: 50%;
+           margin-left: 40px;
+           
+       }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><span>Camera</span></li>
+        <li><span>Home</span></li>
+        <li><span>Fiels</span></li>
+        <li><span>mine</span></li>
+    </ul>
+
+
+    <script src="jquery-3.4.1.min.js"></script>
+    <script>
+        var  imgArr =['camera-active.svg','cd-active.svg','file-active.svg','mine-active.svg'];
+        var lis = document.getElementsByTagName('li');
+        var span = document.getElementsByTagName('span');
+        var onoff=0;
+        var text;
+        for(var i =0;i<imgArr.length;i++){
+            lis[i].index=i;
+            lis[i].onclick=function(){
+               if(onoff==0){
+                this.style.background='url('+imgArr[this.index]+')';
+                this.style. backgroundRepeat='no-repeat';
+                this.style.backgroundSize='contain';
+                this.classList.add('dw');          
+                this.style.transform='translateY(-50px)';
+                this.style. transition='all .8s' ;
+                text =  span[this.index].innerText;
+                span[this.index].innerText=''
+                span[this.index].classList.add('yuan')
+                onoff=1;
+               }
+               else {
+                   this.classList.remove('dw');
+                   this.style.background='';
+                   this.style.transform='';
+                   this.style. transition='all .3s';
+                   span[this.index].classList.remove('yuan');
+                 console.log(span[this.index].innerText=text)  ;
+                   onoff=0;
+               }
+            }
+        }
+    </script>
+</body>
+</html>

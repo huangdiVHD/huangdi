@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>h5和c3</title>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        .box {
+            position: relative;
+            width: 650px;
+            height: 200px;
+            margin: 200px auto;
+            /* background-color: aquamarine; */
+        }
+
+        .inner-box {
+            float: left;
+            height: 200px;
+            margin-left: 50px;
+            /* background-color: yellowgreen; */
+        }
+        .trt,
+        .tr {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            /* background-color: blueviolet; */
+        }
+        .trt{
+            position:absolute;
+            top: 60px;
+            transition: all 1s ease;
+            visibility: hidden;
+        }
+
+        .text {
+            width: 100px;
+            height: 20px;
+            text-align: center;
+            margin-top: 20px;
+            color: #fff;
+            /* background-color: brown; */
+
+        }
+        .text1{
+            visibility: hidden;
+        }
+        .cir {
+            position: absolute;
+            bottom: 55px;
+            left: 88px;
+            width: 20px;
+            height: 20px;
+            background-color: blue;
+            border-radius: 50%;
+            margin: 0 auto;
+            margin-top: 25px;
+
+            transition: all 1s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="inner-box">
+            <img class="tr tr1" src="icon/cd-default.svg" alt="">
+            <img class="trt trt1" src="icon/cd-active.svg" alt="">
+
+            <div class="text text1">Home</div>
+           
+        </div>
+
+        <div class="inner-box">
+            <img class="tr tr2" src="icon/camera-default.svg" alt="">
+        <img class="trt trt2" src="icon/camera-active.svg" alt="">
+
+            <div class="text text2">Camera</div>
+        </div>
+        <div class="inner-box">
+            <img class="tr tr3" src="icon/file-default.svg" alt="">
+        <img class="trt trt3" src="icon/file-active.svg" alt="">
+
+            <div class="text text3">Files</div>
+        </div>
+        <div class="inner-box">
+            <img class="tr tr4" src="icon/mine-default.svg" alt="">
+        <img class="trt trt4" src="icon/mine-active.svg" alt="">
+
+            <div class="text text4">Mine</div>
+        </div>
+        <div class="cir"></div>
+    </div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $('.tr1').click(function () {
+            $(".text").css('visibility',' visible');
+            $(".text1").css('visibility',' hidden');  
+            $('.cir').css( 'left', '88px');
+
+            $('.trt').css('top', '60px');
+            $('.trt1').css('top', '0');
+            $('.trt').css('visibility',' hidden');
+            $('.trt1').css('visibility',' visible');
+
+            $('.tr').fadeIn('slow');
+            $('.tr1').fadeOut('slow');
+            
+        })
+        $('.tr2').click(function () {
+             $(".text").css('visibility',' visible');
+            $(".text2").css('visibility',' hidden');
+            $('.cir').css( 'left', '238px')
+
+            $('.trt').css('top', '60px');
+            $('.trt2').css('top', '0');
+            $('.trt').css('visibility',' hidden');
+            $('.trt2').css('visibility',' visible');
+            $('.tr').fadeIn('slow');
+            $('.tr2').fadeOut('slow');
+        })
+        $('.tr3').click(function () {
+            $(".text").css('visibility',' visible');
+            $(".text3").css('visibility',' hidden');  
+            $('.cir').css( 'left', '388px')
+
+            $('.trt').css('top', '60px');
+            $('.trt3').css('top', '0');
+            $('.trt').css('visibility',' hidden');
+            $('.trt3').css('visibility',' visible');
+            $('.tr').fadeIn('slow');
+            $('.tr3').fadeOut('slow');
+        })
+        $('.tr4').click(function () {
+             $(".text").css('visibility',' visible');
+            $(".text4").css('visibility',' hidden');
+            $('.cir').css( 'left', '538px')
+
+            $('.trt').css('top', '60px');
+            $('.trt4').css('top', '0');
+            $('.trt').css('visibility',' hidden');
+            $('.trt4').css('visibility',' visible');
+            $('.tr').fadeIn('slow');
+            $('.tr4').fadeOut('slow');
+        })
+    </script>
+</body>
+
+</html>

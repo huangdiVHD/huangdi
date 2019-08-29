@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>不凡学院</p>
+    <button>删除节点</button>
+    <script>
+        var script = document.getElementsByTagName('script')[0];
+        // 创建一个 节点
+        // document.createElement("标签名")
+        // 把这个节点插入到页面当中
+        var imgEl = document.createElement('img');
+
+        imgEl.src = 'img/m1.jpg';
+        // 父节点.appendChild(新的子节点);
+        // 解释：父节点的最后插入一个新的子节点。
+        document.body.appendChild(imgEl);
+
+
+        //         父节点.insertBefore(新的子节点, 作为参考的子节点);
+        //         在参考节点前插入一个新的节点。
+        // 如果参考节点为 null，那么他将在父节点里面的最后插入一个子节点。
+        document.body.insertBefore(imgEl, script);
+
+
+        // 假如说  重复插入 同一个节点, 剪切的效果,只保留一个
+
+
+        //         父节点.removeChild(子节点);
+        // 解释：用父节点删除子节点。必须要指定是删除哪个子节点。
+        var btn = document.getElementsByTagName('button')[0];
+        var pEl = document.getElementsByTagName('p')[0];
+        btn.onclick = function () {
+            document.body.removeChild(pEl)
+        }
+        // 自己删除自己
+        // node1.parentNode.removeChild(node1);
+
+
+        // 复制节点
+        var cloneNode = pEl.cloneNode();
+        var deepClone = pEl.cloneNode(true);
+        console.log(cloneNode);
+        console.log(deepClone);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+    
+            .nav{
+                width: 1300px;
+                height: 170px;
+                margin: 100px auto;
+                position: relative;
+            }
+            .nav ul {
+                width: 1300px;
+                height: 170px;
+                background-color: #333;
+            }
+    
+            li {
+                list-style: none;
+                float: left;
+                text-align: center;
+                color: aliceblue;
+                font-size: 24px;
+                width: 325px;
+                padding: 20px 0;
+                position: relative;
+            }
+    
+            .img-box {
+                width: 100px;
+                height: 100px;
+                margin: 0 auto;
+                overflow: hidden;
+                position: relative;
+            }
+    
+            img {
+                width: 100px;
+                height: 100px;
+    
+            }
+    
+            .active {
+                position: absolute;
+                bottom: -100px;
+                left: 0px;
+                /* display: none; */
+                transition: bottom .8s ease;
+            }
+            .end{
+               
+                bottom: 120px;
+                
+               
+            }
+    
+            .dots {
+                position: absolute;
+                left: 0px;
+                bottom: 20px;
+                width: 20px;
+                height: 20px;
+                background-color: lightblue;
+                border-radius: 50%;
+                display: none;
+                transition: left 1s ease;
+            }
+            .dots-end{
+                display: block;
+               
+               
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="nav">
+            <ul>
+                <li class="item1" onclick="func(this,150)">
+                    <div class="img-box">
+                        <img class="default d1" src="icon/camera-default.svg" alt="">
+                        <img class="active a1" src="icon/camera-active.svg">
+                    </div>
+    
+                    <p class="p1">camera</p>
+    
+                </li>
+                <li class="item2" onclick="func(this,480)">
+                    <div class="img-box">
+                        <img class="default d2" src="icon/cd-default.svg" alt="">
+                        <img class="active a2" src="icon/cd-active.svg">
+                    </div>
+                    <p class="p2">cd</p>
+    
+                </li>
+                <li class="item3" onclick="func(this,800)">
+                    <div class="img-box">
+                        <img class="default d3" src="icon/file-default.svg" alt="">
+                        <img class="active a3" src="icon/file-active.svg">
+                    </div>
+                    <p class="p3">file </p>
+    
+                </li>
+                <li class="item4" onclick="func(this,1130)">
+                    <div class="img-box">
+                        <img class="default d4" src="icon/mine-default.svg" alt="">
+                        <img class="active a4" src="icon/mine-active.svg">
+                    </div>
+                    <p class="p4">mine</p>
+                </li>
+                      
+            </ul>
+            <div class="dots"></div>  
+        </div>
+        <script src="js/jquery-3.4.1.min.js"></script>
+
+        <script>
+            
+            function func(obj,num){
+                $('.dots').addClass('dots-end');
+                $('.dots').css('left',num+'px');
+               $(obj).addClass('end');
+                
+            }
+        
+        
+        
+        
+        </script>
+</body>
+</html>

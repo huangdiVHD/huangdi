@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>复习-缓动轮播</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				position: relative;
+				width: 600px;
+				height: 270px;
+				margin: 50px auto;
+				border: 1px solid red;
+				/* overflow: hidden; */
+			}
+			ul.list{
+				position: absolute;
+				width: 600%;
+				height: 100%;
+				list-style: none;
+			}
+			.list li{
+				float: left;
+				width: 600px;
+				height: 100%;
+			}
+			img{
+				width: 100%;
+				height: 100%;
+			}
+			button{
+				padding: 20px 50px;
+				margin-left: 100px;
+			}
+			.dotts{
+				position: absolute;
+				bottom: 20px;
+				right: 20px;
+				list-style: none;
+			}
+			.dotts li{
+				float: left;
+				width: 10px;
+				height: 10px;
+				margin-right: 20px;
+				border-radius: 50%;
+				background-color: #0000FF;
+			}
+			.dotts li.active{
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<ul class="list">
+				<li><img src="../BOM8-26/img/m1.jpg" alt=""></li>
+				<li><img src="../BOM8-26/img/m2.jpg" alt=""></li>
+				<li><img src="../BOM8-26/img/m4.jpg" alt=""></li>
+				<li><img src="../BOM8-26/img/m5.jpg" alt=""></li>
+				<li><img src="../BOM8-26/img/m6.jpg" alt=""></li>	
+				<li><img src="../BOM8-26/img/m1.jpg" alt=""></li>
+			</ul>
+			<ul class="dotts">
+				<li class="dot active"></li>
+				<li class="dot"></li>
+				<li class="dot"></li>
+				<li class="dot"></li>
+				<li class="dot"></li>
+			</ul>
+		</div>
+		<button>上一个</button>
+		<button>下一个</button>
+		
+		<script type="text/javascript">
+			// 获取元素
+			var box = document.querySelector(".box");
+			var ulEle = document.querySelector(".list");
+			var btn1 = document.querySelectorAll("button")[0];
+			var btn2 = document.querySelectorAll("button")[1];
+			var dotts = document.querySelector(".dotts").children;
+			
+			// 获取单次移动的距离 一个li的宽度
+			var distance = ulEle.children[0].offsetWidth;
+			// 计数器
+			var count = 0;
+			// 自动轮播的计时器的序数
+			var autoplayTimer = null;
+			
+			autoPlay();
+			
+			// 添加自动轮播
+			function autoPlay(){
+				autoplayTimer = setInterval(function (){
+					btn2.onclick();
+				},2000)
+			}
+			
+			// 进入盒子停止定时器
+			box.onmouseenter = function (){
+				clearInterval(autoplayTimer);
+			}
+			// 离开盒子开启定时器
+			box.onmouseleave = function (){
+				autoPlay();
+			}
+			
+			
+			// 小点的点击事件
+			for(let i = 0; i < dotts.length; i ++){
+				// dotts[i].index = i;
+				/*dotts[i].onclick = function (i){
+					// this.index;
+					return function (){
+						console.log(i);
+					}
+				}(i)*/
+				dotts[i].onclick = function (){
+					// 改变小点的激活样式, 去除当前激活样式,给当前图片对应的小点添加样式
+					document.querySelector(".dot.active").classList.remove("active");
+					this.classList.add("active");
+					// 改变图片显示
+					count = i;
+					move(ulEle,count);
+				}
+			}
+			
+			// 上一张
+			btn1.onclick = function (){
+				// 判断临界条件  当前图片处于第一张,将ulEle瞬间定位到最后一张,重置count为最后一张,往前运动
+				if(count === 0){
+					count = ulEle.children.length - 1;
+					ulEle.style.left = -count * distance + "px";
+				}
+				count --;
+				move(ulEle,count);
+				
+				// 改变小点的激活样式, 去除当前激活样式,给当前图片对应的小点添加样式
+				document.querySelector(".dot.active").classList.remove("active");
+				dotts[count].classList.add("active");
+			}
+			
+			// 下一张
+			btn2.onclick = function (){
+				// 判断临界条件  当图片处于最后一张,将ulEle瞬间定位置第一张,重置count为0,往后运动
+				if(count === ulEle.children.length - 1){
+					count = 0;
+					ulEle.style.left = "0px";
+				}
+				count ++;
+				move(ulEle,count);
+				
+				// 改变小点的激活样式, 去除当前激活样式,给当前图片对应的小点添加样式
+				document.querySelector(".dot.active").classList.remove("active");
+				if(count === ulEle.children.length - 1){
+					dotts[0].classList.add("active");
+				}else{
+					dotts[count].classList.add("active");
+				}
+			}
+			
+			
+			// 封装运动函数: 运动的元素,终点(-distance*count)
+			function move(ele,count){
+				// 设置终点
+				var target = -distance * count;
+				// 消除定时器冲突
+				clearInterval(ele.timer);
+				// 书写定时器
+				ele.timer = setInterval(function (){
+					// 获取起点
+					var start = ele.offsetLeft;
+					// 设置步长
+					var step = (target - start) / 10;
+					// 判断步长临界值 (-1,1)
+					if(Math.abs(step) < 1){
+						// (-1,0] (0,1)
+						step = step > 0 ? 1 : Math.floor(step);
+					}
+					// 运动
+					ele.style.left = start + step + "px";
+					// 判断停止条件
+					if(start + step === target){
+						console.log("stop ...");
+						// 停止定时器
+						clearInterval(ele.timer);
+					}
+				},17)
+			}
+		</script>
+	</body>
+</html>

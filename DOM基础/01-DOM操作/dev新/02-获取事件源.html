@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="p1">我是一个p标签</p>
+    <ul class="nav">
+        <li class="nav-item">li1</li>
+        <!-- <li class="nav-item">li2</li> -->
+    </ul>
+    <div class="d1">
+
+    </div>
+    <div class="d2">
+
+    </div>
+    <script>
+        // 获取事件源
+
+        // 方式一  通过 id  获取
+        // 调用了 document 这个对象  的  getElementById()  方法,,然后把 结果 赋给pEl
+        var pEl = document.getElementById('p1');
+        console.log(pEl);
+
+        // 方式二  通过class 来获取
+        // 获取到的 是 数组(类数组)
+        // 类数组  有下标  有长度  能用for循环遍历
+        // 但是不具备数组的常用方法  pop ,shift ,join ...
+        var lis = document.getElementsByClassName('nav-item');
+        console.log(lis);
+        // var liEl = lis[0];
+        var liEl = document.getElementsByClassName('nav-item')[0];
+        // lis[0].onclick = function () {
+        //     console.log(lis[0]);
+        // }
+
+
+
+        // 方式三  通过标签名
+        var divs = document.getElementsByTagName('div');
+        console.log(divs);
+        var d1El = document.getElementsByTagName('div')[0];
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="reset.css">
+    <title> 标题</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 80px;
+        }
+        .box .box-item,.title{
+            -moz-box-flex:initial;
+            -webkit-box-flex: inherit;
+        }
+        .box .box-item{
+            display: inline-block;
+            width: 10em;
+            height: 30%;
+            color:darkgreen;
+            margin-top: 5px;
+            text-overflow: ellipsis;
+            white-space:nowrap;
+            overflow: hidden; 
+        }
+        .box .title{
+            display:block;
+            float: right;
+        }
+        .title span{
+            font-size: 11px;
+            padding: 1px;
+            border: 1px solid;
+        }
+        .title .title-1{
+            color: darkgray;
+        }
+        .title .title-2{
+            color:red;
+        }
+        .title .title-3{
+            color:cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="box-item">
+            这次是一个新的故事穿越天地
+        </div>
+        <div class="title">
+            <span class="title-1">都市</span>
+            <span class="title-2">连载中</span>
+            <span class="title-3">54.82万字</span>
+        </div>  
+        <div class="box-item" style="width: 12em">
+            穿越天地复苏的平行世界修真四万年
+        </div>
+        <div class="title">
+            <span class="title-1">都市</span>
+            <span class="title-2">完本</span>
+            <span class="title-3">1万字</span>
+        </div>
+        <div class="box-item">
+            修真四万年
+        </div>
+        <div class="title">
+            <span class="title-1">科幻</span>
+            <span class="title-2">完本</span>
+            <span class="title-3">1059.98万字</span>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            background: radial-gradient(circle at 0% 0%, red, blue);
+        }
+
+        a[href^='#'] {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#">111</a>
+    <a href="www">222</a>
+    <a href="#$">333</a>
+    <a href="12">444</a>
+    <a href="123">555</a>
+    <img src="bf.png" alt="">
+    <script src="lib/jquery-3.3.1.min.js"></script>
+    <script>
+        var box = document.createElement("div");
+        box.style.width = '150px';
+        box.style.height = '300px';
+        var bodyEl = document.getElementsByTagName('body');
+        console.log(bodyEl[0]);
+        bodyEl[0].appendChild(box);
+
+        for (var i = 0; i <= 20; i++) {
+            $('body').append('<div class="box"></div>');
+        }
+
+        for (var i = 0; i < $('a').length; i++) {
+            console.log($('a')[i]);
+        }
+
+    </script>
+</body>
+
+</html>

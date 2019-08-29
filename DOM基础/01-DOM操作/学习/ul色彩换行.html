@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>a</li>
+			<li>b</li>
+			<li>c</li>
+			<li>d</li>
+			<li>e</li>
+		</ul>
+	</body>
+	<script >
+		var liEl = document.getElementsByTagName('li');
+		var  cl1 ;
+		for(var i = 0; i<liEl.length; i++){
+			
+			if(i%2==0){
+				liEl[i].style.backgroundColor = 'red';
+			}else {
+				liEl[i].style.backgroundColor = 'green';
+			}
+			
+			liEl[i].onmouseover = function(){
+			   cl1 = this.style.backgroundColor;
+			   this.style.backgroundColor = 'yellow';
+			}
+			
+			liEl[i].onmouseout = function(){
+				 this.style.backgroundColor = cl1;
+			}
+		}
+	</script>
+</html>

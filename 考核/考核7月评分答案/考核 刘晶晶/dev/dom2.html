@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="icon/cd-active.svg" alt="" class="aa">
+    <a href="www.baidu.com">百度</a>
+    <a href="#">发现</a>
+    <a href="#">探索</a>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        var divEl = document.createElement('div');
+        document.body.appendChild(divEl);
+        divEl.style.width = '200px';
+        divEl.style.height = '200px';
+        divEl.style.background = 'linear-gradient(to right bottom,red,blue)';
+        var imgEl = document.querySelector('img');
+        imgEl.onclick = function () {
+            console.log(imgEl.classList.contains('aa'));
+        }
+        for (var i = 1; i <= 20; i++) {
+            var divm = document.createElement('div');
+            document.body.appendChild(divm);
+            divm.classList.add('.box');
+        }
+        $('a[href="#"]').css('background-color', 'red');
+
+    </script>
+</body>
+
+</html>

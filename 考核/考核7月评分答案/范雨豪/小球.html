@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.min.js"></script>
+    <style>
+        .box {
+            width: 600px;
+            height: 220px;
+            background-color: black;
+            position: fixed;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%)
+        }
+        
+        .box .bg {
+            float: left;
+            width: 100px;
+            margin-left: 35px;
+            margin-top: 20px;
+            position: relative;
+            height: 100px;
+            /* overflow: hidden; */
+        }
+        
+        .box .img {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background-size: 90px 90px;
+        }
+        
+        .bg .purple {
+            position: absolute;
+            top: 100px;
+            /* top: 0 */
+        }
+        
+        .small-bg {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 0;
+            z-index: -10;
+            overflow: hidden;
+        }
+        
+        .ball {
+            width: 20px;
+            height: 20px;
+            background-color: rgba(211, 241, 127, 0.5);
+            position: absolute;
+            left: 75px;
+            top: 150px;
+            z-index: 100;
+            border-radius: 50%
+        }
+        
+        .gray p {
+            text-align: center;
+            color: white;
+            width: 100%;
+            margin-top: 130px
+        }
+        
+        .m1 {
+            background: url(img/cd-default.svg) no-repeat center;
+        }
+        
+        .m2 {
+            background: url(img/camera-default.svg) no-repeat center;
+        }
+        
+        .m3 {
+            background: url(img/file-default.svg) no-repeat center;
+        }
+        
+        .m4 {
+            background: url(img/mine-default.svg) no-repeat center;
+        }
+        
+        .z1 {
+            background: url(img/cd-active.svg) no-repeat center;
+        }
+        
+        .z2 {
+            background: url(img/camera-active.svg) no-repeat center;
+        }
+        
+        .z3 {
+            background: url(img/file-active.svg) no-repeat center;
+        }
+        
+        .z4 {
+            background: url(img/mine-active.svg) no-repeat center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="bg">
+            <span class="img m1 gray" name='75'>
+                <p>Home</p>
+            </span>
+            <div class="small-bg">
+                <span class="img z1 purple">
+                </span>
+            </div>
+        </div>
+        <div class="bg">
+            <span class="img m2 gray" name='210'>
+                <p>Carema</p>
+                </span>
+            <div class="small-bg">
+                <span class="img z2 purple"></span>
+            </div>
+        </div>
+        <div class="bg">
+            <span class="img m3 gray" name='345'>
+                <p>Files</p>
+            </span>
+            <div class="small-bg">
+                <span class="img z3 purple"></span>
+            </div>
+        </div>
+        <div class="bg">
+            <span class="img m4 gray" name='480'>
+                <p>Mine</p>
+             </span>
+            <div class="small-bg">
+                <span class="img z4 purple"></span>
+            </div>
+        </div>
+        <div class="ball"></div>
+    </div>
+    <script>
+        var left = 75;
+        $('.gray').click(function() {
+                var $this = $(this);
+                console.log($this.attr('name'));
+                $('.ball').animate({
+                    left: $this.attr('name')
+                }, 500)
+
+                $(this).fadeOut(600);
+                $(this).siblings().children().animate({
+                    top: 0,
+                }, 400);
+                $(this).parent().siblings().children().children().animate({
+                    top: '100px'
+                }, 500);
+                $(this).parent().siblings().children().fadeIn(600);
+            })
+            // $('.m1').click(() => {
+            //     $('.ball').animate({
+            //         left: 75
+            //     }, 500)
+
+        // })
+        // $('.m2').click(() => {
+        //     $('.ball').animate({
+        //         left: 210
+        //     }, 500)
+
+        // })
+        // $('.m3').click(() => {
+        //     $('.ball').animate({
+        //         left: 345
+        //     }, 500)
+
+        // })
+        // $('.m4').click(() => {
+        //     $('.ball').animate({
+        //         left: 480
+        //     }, 500)
+
+        // })
+        // $('.m5').click(() => {
+        //     $('.ball').animate({
+        //         left: 615
+        //     }, 500)
+
+        // })
+    </script>
+</body>
+
+</html>

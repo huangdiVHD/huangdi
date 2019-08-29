@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        不凡学院
+    </div>
+    <ul>
+        <li class="li-item"></li>
+        <li class="li-item"></li>
+        <li class="li-item"></li>
+    </ul>
+    <div class="inner-box">
+        你好
+    </div>
+    <p>不凡学院</p>
+    <script>
+        // 方式一   :通过id 获取
+        var boxEl = document.getElementById('box');
+        console.log(boxEl);
+
+        // 方式二  通过class 获取 ie678   用不了
+        var lis = document.getElementsByClassName('li-item');
+        var innerBox = document.getElementsByClassName('inner-box')[0];
+        // 伪数组 具备length属性
+        console.log(lis);
+        console.log(lis[0]);
+        console.log(innerBox);
+        // lis.onclick
+        innerBox.onclick = function () {
+            alert('你好');
+        }
+
+        // 方式三  通过标签名
+        var pEl = document.getElementsByTagName('p');
+        // 伪数组
+        console.log(pEl);
+    </script>
+</body>
+
+</html>

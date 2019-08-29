@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>不凡学院</p>
+    <div class="box">
+        box
+    </div>
+    <input type="text">
+    <button>获取/设置输入框的值</button>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        // text()  innerText
+        // html()   innerHTML
+        // val()      value
+
+        // 可以获取  可以设置
+        $('p').mouseenter(function () {
+            console.log($(this).text())
+            $('p').text('今天天气很好');
+        })
+        $('.box').click(function () {
+            console.log($(this).html());
+            $(this).html('<p>我是一个盒子</p>');
+        })
+        $('button').click(function () {
+            alert($('input').val());
+            $('input').val('张三');
+        })
+    </script>
+</body>
+
+</html>

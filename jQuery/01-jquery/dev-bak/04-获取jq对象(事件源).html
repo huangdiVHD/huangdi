@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style: none;
+        }
+
+        /* 新增css 选择器 */
+        /* + > */
+        /* .li3的下一个兄弟li标签 */
+        .li3+li {
+            color: red;
+        }
+
+        /* .li3的后边所有兄弟 li */
+        .li3~li {
+            background-color: pink;
+        }
+
+        .wrap {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        .w1 {
+            width: 150px;
+            height: 150px;
+            background-color: green;
+        }
+
+        .w2 {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+        }
+
+        /* 后代选择器 */
+        .wrap .w {
+            background-color: pink;
+        }
+
+        /* 子代选择器 */
+        /* 亲儿子 */
+        .wrap>.w {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>li1</li>
+        <li>li2</li>
+        <li class="li3">li3</li>
+        <li>li4</li>
+        <li>li5</li>
+    </ul>
+    <div class="wrap">
+        我是w
+        <div class="w w1">
+            我是w1
+            <div class="w w2">
+                我是w2
+            </div>
+        </div>
+    </div>
+    <p id="p1">不凡学院</p>
+    <span>天气很好</span>
+    <div class="box">
+        我是一个box
+        <div class="inner-box">
+            我是内部盒子
+        </div>
+    </div>
+    <div class="inner-box active">
+        我是内部盒子2
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        // 通过 class 选择器 获取
+        // id 选择器获取
+        // 标签选择器获取
+
+        // 后代选择器获取
+        // 并集选择器获取
+        // 交集选择其获取
+        $('.box').css('color', 'red');
+        $('#p1').css('color', 'blue');
+        $('span').css('color', 'green');
+        $('.box .inner-box').css('color', 'pink');
+        $('.inner-box.active').css('backgroundColor', 'red');
+        // 子代
+        $('.wrap>.w').css('backgroundColor', 'black')
+        // 兄弟
+        $('.li3+li').css('color', 'blue');
+        $('.li3~li').css('backgroundColor', 'orange');
+    </script>
+</body>
+
+</html>

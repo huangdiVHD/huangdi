@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [0, 1, 2, 3, 4, 5]
+
+        // 1. 指定索引,对应数组项前移一个位置
+
+        function fowardOne(arr, index) {
+            if (Array.isArray(arr) && index > 0 && index < arr.length) {
+                if (index === 0) {
+                    return arr;
+                }
+                var nArr = arr.slice();
+                var temp = nArr[index - 1];
+                nArr[index - 1] = nArr[index];
+                nArr[index] = temp;
+                return nArr;
+            } else {
+                console.error('first argument must be array & index must be legal');
+            }
+        }
+
+        // 2. 移动到最前面
+
+        function fowardToHead(arr, index) {
+            if (Array.isArray(arr) && index > 0 && index < arr.length) {
+                if (index === 0) {
+                    return arr;
+                }
+                var resultArr = [];
+                for (var i = 0; i < arr.length; i++) {
+                    if (i === index) {
+                        continue;
+                    }
+                    resultArr.push(arr[i]);
+                }
+                resultArr.unshift(arr[index]);
+                return resultArr;
+            } else {
+                console.error(
+                    'first argument must be array & second argument must be more than 0 and less than the array length'
+                );
+            }
+        }
+
+        // 3. 移动到最后面
+
+        function backToLast(arr, index) {
+            if (Array.isArray(arr) && index > 0 && index < arr.length) {
+                if (index === arr.length - 1) {
+                    return arr;
+                }
+
+                var resultArr = [];
+                for (var i = 0; i < arr.length; i++) {
+                    if (i === index) {
+                        continue;
+                    }
+                    resultArr.push(arr[i]);
+                }
+                resultArr.push(arr[index]);
+                return resultArr;
+            } else {
+                console.error(
+                    'first argument must be array & second argument must be more than 0 and less than the array length'
+                );
+            }
+        }
+
+        // 4 对换任意两个位置
+        function exchange(arr, exchangePositon1, exchangePositon2) {
+
+            if (Array.isArray(arr) && exchangePositon1 > 0 && exchangePositon1 < arr.length && exchangePositon2 > 0 &&
+                exchangePositon2 < arr.length) {
+                if (exchangePositon1 === exchangePositon2) {
+                    return arr;
+                }
+                var nArr = arr.slice();
+                var temp = nArr[exchangePositon1];
+                nArr[exchangePositon1] = nArr[exchangePositon2];
+                nArr[exchangePositon2] = temp;
+                return nArr;
+            } else {
+                console.error('argument abnormal');
+            }
+        }
+
+        // test 
+        console.log(fowardOne(arr, 2), '前移一位');
+        console.log(fowardToHead(arr, 4), '前移到头');
+        console.log(backToLast(arr, 1), '后移到尾');
+        console.log(exchange(arr, 2, 3), '交换位置');
+    </script>
+</body>
+
+</html>

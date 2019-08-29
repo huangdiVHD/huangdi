@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .box{
+        position: relative;
+        width: 1200px;
+        height: 300px;
+        background-color: black;
+        margin: 100px auto;
+    }
+    .cam{
+        position:absolute;
+        left: 100px;
+        transition: all 1s;
+    }
+    .cd{
+        position:absolute;
+        left: 350px;
+        transition: all 1s;
+    }
+    .file{
+        position:absolute;
+        left: 600px;
+        transition: all 1s;
+    }
+    .mine{
+        position:absolute;
+        left: 850px;
+        transition: all 1s;
+    }
+    .cam1{
+        position:absolute;
+        left: 100px;
+        top: 100px;
+        opacity: 0;
+        transition: all 1s;
+    }
+    .cd1{
+        position:absolute;
+        left: 350px;
+        top: 100px;
+        opacity: 0;
+        transition: all 1s;
+    }
+    .file1{
+        position:absolute;
+        left: 600px;
+        top: 100px;
+        opacity: 0;
+        transition: all 1s;
+    }
+    .mine1{
+        position:absolute;
+        left: 850px;
+        top: 100px;
+        opacity: 0;
+        transition: all 1s;
+    }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img class="cam" src="icon/camera-default.svg" alt="">
+        <img class="cd" src="icon/cd-default.svg" alt="">
+        <img class="file" src="icon/file-default.svg" alt="">
+        <img class="mine" src="icon/mine-default.svg" alt="">
+        <img class="cam1" src="icon/camera-active.svg" alt="">
+        <img class="cd1" src="icon/cd-active.svg" alt="">
+        <img class="file1" src="icon/file-active.svg" alt="">
+        <img class="mine1" src="icon/mine-active.svg" alt="">
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+     $('.cam').click(function(){
+        $('.cam').css("opacity","0");
+        $('.cam1').css("opacity","1").css("transform", "translateY(-100px)");
+     })
+     $('.cd').click(function(){
+        $('.cd').css("opacity","0");
+        $('.cd1').css("opacity","1").css("transform", "translateY(-100px)");
+     })
+     $('.file').click(function(){
+        $('.file').css("opacity","0");
+        $('.file1').css("opacity","1").css("transform", "translateY(-100px)");
+     })
+     $('.mine').click(function(){
+        $('.mine').css("opacity","0");
+        $('.mine1').css("opacity","1").css("transform", "translateY(-100px)");
+     })
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 400px;
+            height: 100px;
+            /* background: linear-gradient(to bottom, red, yellow); */
+            /* 家私有化前缀  需要注意 */
+            /* 方向上  不带 to ,而且 正好相反 */
+            /* background: -webkit-linear-gradient(top, red, yellow); */
+            background: linear-gradient(30deg, red, yellow);
+        }
+
+        .box1 {
+            width: 400px;
+            height: 100px;
+            background: linear-gradient(to right, blue 20%, red 70%);
+        }
+
+        .box2 {
+            width: 400px;
+            height: 100px;
+            background: repeating-linear-gradient(to right, blue 10%, red 20%);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- linear-gradient线性渐变指沿着某条直线朝一个方向产生渐变效果。
+        语法：background: linear-gradient(direction, color-stop1, color-stop2, ...); -->
+    <div class="box">
+
+    </div>
+    <div class="box1">
+
+    </div>
+    <div class="box2">
+
+
+    </div>
+</body>
+
+</html>

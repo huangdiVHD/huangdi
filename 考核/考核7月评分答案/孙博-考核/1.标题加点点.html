@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 800px;
+            height: 120px;
+            /* line-height: 40px; */
+            font-size: 30px;
+        }
+        /* .title {
+            display: block;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space:nowrap;
+        } */
+        .box1 {
+            position: relative;
+            /* display: inline-block; */
+            width: 100%;
+            /* height: 40px; */
+        }
+        .title.top {
+            width: 300px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space:nowrap;
+        }
+        .box1.count {
+            /* display: none;  */
+            position: absolute;
+            right: 0;
+            top: 0;
+            /* float: right;  */
+        }
+        .title.count{
+            display: block;
+        }
+        .title.center{
+            width:360px;
+        }
+        .title.bottom {
+            width: 300px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="box1">
+            <div class="title top">这是一个全新的故事采用了某种</div>
+            <div class="count">54.82万字</div>
+        </div>
+            <!-- <ul>
+                <li class="sort">都市</li>
+                <li class="end">连载中</li>
+                <li class="count">54.82万字</li>
+            </ul> -->
+
+        <div class="title center">穿越天地复苏的平行世界啦啦啦啦</div>
+        <div class="title bottom">修真四万年</div>
+    </div>
+</body>
+</html>

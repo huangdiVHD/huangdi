@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [0, 1, 2, 3, 4, 5];
+        // 四个小题不能同时运行
+        
+        // 1.
+        function Arr(i) {
+            var empy = arr[i - 2];
+            arr[i - 2] = arr[i - 1];
+            arr[i - 1] = empy;
+            alert(arr);
+        }
+        Arr(prompt('请输入要往前移动第几个数字'));
+
+
+
+
+        // 2.
+        // function Arr(i) {
+        //     var empy = arr[0];
+        //     arr[0] = arr[i - 1];
+        //     arr[i - 1] = empy;
+        //     var Array = arr;
+        //     for (var j = i - 1; j > 1 ;j--) {
+        //         if (Array[j] < Array[j - 1]) {
+        //             var empy1 = Array[j - 1];
+        //             Array[j - 1] = Array[j];
+        //             Array[j] = empy1;
+        //         }
+        //     }
+        // alert(Array);
+        // }
+        // Arr(prompt('请输入要移动到最前边第几个数字'));
+
+
+
+
+        // 3.
+        // function Arr(i) {
+        //     var empy = arr[5];
+        //     arr[5] = arr[i - 1];
+        //     arr[i - 1] = empy;
+        //     var Array = arr;
+        //     for (var j = 0; j < arr.length - 1; j++) {
+        //         if (Array[j] < Array[j - 1]) {
+        //             var empy1 = Array[j - 1];
+        //             Array[j - 1] = Array[j];
+        //             Array[j] = empy1;
+        //         }
+        //     }
+        //     alert(Array);
+        // }
+        // Arr(prompt('请输入要移动到最后边第几个数字'));
+
+
+
+
+        // 4.
+        // function Arr(i, j) {
+        //     var empy = arr[i - 1];
+        //     arr[i - 1] = arr[j - 1];
+        //     arr[j - 1] = empy;
+        //     alert(arr);
+        // }
+        // Arr(prompt('请输入要移动的第一个数字'), prompt('请输入要移动的第二个数字'));
+    </script>
+</body>
+
+</html>

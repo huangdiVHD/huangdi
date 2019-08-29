@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        woshi box
+
+        <div class="inner-box">
+            wsohi innerbox
+        </div>
+    </div>
+    <div class="box">
+        我是box1
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        // dom 对象
+        var box = document.getElementsByClassName('inner-box')[0];
+        console.log(box)
+        // jq对象 类数组
+        var $box = $('.inner-box');
+        console.log($box);
+        // 将jq 对象  转换为了 dom 对象  进行原生js操作
+        console.log($box[0]);
+        console.log($box.get(0));
+
+
+        // dom对象 转换为 jq 对象  才能使用jq的方法
+        console.log($(box));
+
+        $('.box').click(function () {
+            alert('123');
+        })
+    </script>
+</body>
+
+</html>

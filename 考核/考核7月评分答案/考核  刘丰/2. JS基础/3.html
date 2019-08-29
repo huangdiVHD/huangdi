@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+    
+            div {
+                width: 500px;
+                height: 500px;
+                margin: 300px auto;
+            }
+        
+        </style>
+</head>
+<body>
+    
+
+        <div> 原数组为:  arr = [0,1,2,3,4,5]    </div> 
+
+    
+
+<script>
+
+var arr = [0,1,2,3,4,5];
+    
+    
+    //指定任意索引，对应数组项移动到最后面。
+    
+    
+    var b = prompt('请输入索引');
+
+        function first(a,arr) {
+            if(a < 0 || a > arr.length -1 ) {
+                alert('输入正确的索引')
+            }  else if (a == 5) {
+                alert ('已经在最后边了')
+            } else {
+                var temp = arr[5];
+                arr[5] = arr[b];
+                arr[b] = temp;
+            }
+            alert(arr);
+        }
+
+
+        first(b, arr);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+</body>
+</html>

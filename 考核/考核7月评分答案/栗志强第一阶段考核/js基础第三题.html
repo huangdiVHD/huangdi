@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>第三题</title>
+</head>
+
+<body>
+    <script>
+        var arr = [0, 1, 2, 3, 4, 5];
+        var num = parseInt(prompt('请输入索引号:'));
+        // 方法1:
+        // function last(num) {
+        //     var newArr=[]; 
+        //     if(num<0 ||num>=arr.length){
+        //         alert('请输入正确的索引号!')
+        //     }else{
+        //         for(var i=0;i<arr.length;i++){
+        //         if(i<num){
+        //             newArr[i]=arr[i]
+        //         }else if(i==num){
+        //             newArr[(arr.length-1)]= arr[i];
+        //         }else if(i>num){
+        //             newArr[i-1]=arr[i];
+        //         }
+        //     }
+        //     console.log(newArr);
+        //     }
+
+        // }
+        last(num);
+        // 方法2:
+        function last(num) {
+            if (num < 0 || num >= arr.length) {
+                alert('请输入正确的索引号!')
+            } else {
+                var temp = arr[num];
+                arr.splice(num, 1);
+                arr.push(temp);
+                console.log(arr);
+            }
+        }
+    </script>
+</body>
+
+</html>

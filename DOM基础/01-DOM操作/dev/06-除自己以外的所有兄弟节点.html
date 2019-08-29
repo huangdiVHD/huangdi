@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li class="li-item">li1</li>
+        <li class="li-item">li2</li>
+        <li class="li-item li3">li3</li>
+        <!-- 注释 -->
+        <li class="li-item">li4</li>
+        <li class="li-item">li5</li>
+        <li class="li-item">li6</li>
+    </ul>
+
+    <script>
+        // 除了自己以外的 所有兄弟元素节点
+        var li3 = document.getElementsByClassName('li3')[0];
+
+        function getSiblings(el) {
+            var elParent = el.parentNode;
+            var elChildren = elParent.children;
+            var result = [];
+            for (var i = 0; i < elChildren.length; i++) {
+                // 不具备数组方法
+                // console.log(elChildren[i].splice);
+                if (elChildren[i] !== li3) {
+                    result.push(elChildren[i]);
+                }
+            }
+            return result;
+        }
+        var siblings = getSiblings(li3);
+        console.log(siblings);
+
+
+        // 实现 获取 li3 后边的 所有兄弟节点
+        // 倒着 遍历
+        function getNextSiblings(el) {
+            var elParent = el.parentNode;
+            var elChildren = elParent.children;
+            var result = [];
+            var lock = false;
+            for (var i = 0; i < elChildren.length; i++) {
+                if (elChildren[i] == li3) {
+                    lock = true;
+                    continue;
+                }
+                if (lock) {
+                    result.push(elChildren[i]);
+                }
+                // console.log(1);
+            }
+            return result;
+        }
+        console.log(getNextSiblings(li3));
+    </script>
+</body>
+
+</html>

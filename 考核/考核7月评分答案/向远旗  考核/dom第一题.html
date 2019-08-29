@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="/account/login" id="login-form" method="post">
+        <p>账号: <input type="text" name="username" required /></p>
+        <p>密码: <input type="password" name="pwd" required /></p>
+        <p><input type="submit" value="登录" /></p>
+    </form>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        //使用getElementById方法
+        var forms = document.getElementById('login-form');
+        //使用getElementTagName方法
+        var form = document.getElementsByTagName('form');
+        //使用querySelector方法
+        var formEl = document.querySelector('#login-form');
+        //使用jq方法
+        var $form = $('form');
+
+        // 阻止默认的表单提交行为
+        var inputs = document.getElementsByTagName('input');
+        // console.log(inputs[2]);
+        inputs[2].onclick = function () {
+            //inputs[2].style.display='none';//填入数据后还是会提交
+            // 更改按钮type 为重置按钮
+            inputs[2].type = 'reset';
+            // console.log(inputs[2]);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [0, 1, 2, 3, 4, 5];
+
+        // /前进一位
+        function sum(a, arr) {
+            for (var i = 0; i < arr.length; i++) {
+                var temp = arr[i]
+                var up = arr[i - 1];
+                if (temp == arr[a]) {
+                    arr[i] = up;
+                    arr[i - 1] = temp;
+                }
+            }
+        }
+        sum(2, arr);
+        console.log(arr)
+
+
+        // 移动到最前面
+        // function first(a, arr) {
+        //     for (var i = 0; i < arr.length; i++) {
+        //         var temp = arr[i]
+        //         if (temp == arr[a]) {
+        //             arr.splice(arr[i], 1);
+        //             arr.unshift(temp)
+        //         }
+        //     }
+        // }
+        // first(5, arr);
+        // console.log(arr)
+
+
+        // 移动到最后面
+        // function fin(a, arr) {
+
+        //     for (var i = 0; i < arr.length; i++) {
+        //         var temp = arr[i]
+        //         if (temp == arr[a]) {
+        //             arr.splice(arr[i], 1);
+        //             arr.push(temp)
+        //         }
+        //     }
+        // }
+        // fin(4, arr);
+        // console.log(arr)
+
+
+        // 交换
+        // function ex(a, b, arr) {
+        //     var temp = arr[a]
+        //     arr[a] = arr[b]
+        //     arr[b] = temp
+        // }
+        // ex(2, 5, arr)
+        // console.log(arr)
+    </script>
+</body>
+
+</html>

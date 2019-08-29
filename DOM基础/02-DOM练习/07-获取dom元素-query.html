@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        <div class="inner-box">
+
+        </div>
+    </div>
+    <ul class="nav">
+        <li class="nav-item active">li1</li>
+        <li class="nav-item">li2</li>
+        <li class="nav-item">li3</li>
+        <li class="nav-item">li4</li>
+        <li class="nav-item">li5</li>
+        <li class="nav-item">li6</li>
+    </ul>
+    <script>
+        // 可以使用 css 选择器 来获取 dom对象
+        var box = document.querySelector('.box'); // class选择器
+        var innerBox = document.querySelector('.box .inner-box'); // 后代选择器
+        var currentLi = document.querySelector('.nav-item.active'); // 交集选择器
+    
+
+        console.log(box);
+        console.log(innerBox);
+        console.log(currentLi);
+        console.dir(currentLi); // 可以查看 dom 对象 的属性方法
+        var li = document.querySelector('li'); // 标签选择器 匹配所有的li(多个) ,只取第一个
+        console.log(li);
+        // 如何拿到多个li
+        var lis = document.querySelectorAll('li');
+        console.log(lis);
+
+        // 不加all 只能获取一个 (只取第一个)
+
+        // 加 all 获取所有
+    </script>
+</body>
+
+</html>

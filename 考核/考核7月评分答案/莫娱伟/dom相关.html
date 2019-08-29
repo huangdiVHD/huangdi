@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="/account/login" id="login-form" method="post" name="form1">
+        <p>账号: <input type="text" name="username" required value="caonamq" /></p>
+        <p>密码: <input type="password" name="pwd" required /></p>
+        <!-- onlick绑定取消默认提交 -->
+        <p><input type="submit" value="登录" id="subbtn" onclick="return false" /></p>
+
+    </form>
+
+    <!-- 获取<form>元素。（尽可能多的方法）
+<form>表单元素提交时，阻止默认的表单提交行为。 -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+
+        var subbtn1 = document.getElementById('subbtn');
+
+
+
+        var form = document.forms[0].username;//方法一
+        var form2 = document.forms[0].pwd;
+        console.log(form);
+        console.log(form2);
+
+        var form3 = document.form1.username;//方法二
+        var form4 = document.form1.pwd;
+        console.log(form3);
+        console.log(form4);
+
+        var form5 = document.forms[0]['username'];//方法三
+        var form6 = document.forms[0]['pwd'];
+        console.log(form5);
+        console.log(form6);
+
+        var form7 = document.form1['username'].value;//方法四
+        var form8 = document.form1['pwd'].value;//方法四
+        subbtn1.onclick(function () {
+            var form = document.forms[0].username.value;
+            var form2 = document.forms[0].pwd.value;
+            console.log(form);
+            console.log(form2);
+        })
+       
+
+        subbtn1.onclick(function () {
+            var form = document.forms[0].username.value;
+            var form2 = document.forms[0].pwd.value;
+            console.log(form);
+            console.log(form2);
+        });
+
+        $("#subbtn").click(function () {//jq方法获取数据
+
+            var data = {};
+
+            var t = $('form').serializeArray();
+            $.each(t, function () {
+                data[this.name] = this.value;
+            });
+            alert(JSON.stringify(data));
+        });
+
+    </script>
+
+</body>
+
+</html>

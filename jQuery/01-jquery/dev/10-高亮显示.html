@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        .box {
+            width: 630px;
+            height: 392px;
+            padding: 0 0 10px 10px;
+            border: 1px solid #fff;
+            margin: 100px auto;
+        }
+
+        .box .item {
+            float: left;
+            width: 200px;
+            height: 186px;
+            margin: 10px 10px 0 0;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 1;
+        }
+
+        .box .item.active {
+            opacity: .4;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="box">
+
+    </ul>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        var imgArr = ['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg'];
+        initItem($('.box'), imgArr);
+
+        $('.item').mouseover(function () {
+            $(this).removeClass('active');
+            $(this).siblings().addClass('active');
+        })
+        $('.box').mouseout(function () {
+            $('.item').removeClass('active');
+        })
+
+        function initItem($el, arr) {
+            var str = '';
+            for (var i = 0; i < arr.length; i++) {
+                str += '<li class="item" style="background-image:url(images/' + arr[i] + ');"></li>';
+            }
+            $el.html(str);
+        }
+    </script>
+</body>
+
+</html>

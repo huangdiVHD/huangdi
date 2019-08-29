@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(0, 0, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+    </div>
+    <!-- 引入依赖库 -->
+    <script src="lib/jquery-3.4.1.min.js"></script>
+    <!-- 引入核心库 -->
+    <script src="lib/jquery.color.js"></script>
+    <script>
+        // 十六进制 预定义颜色  rgb  都可以
+        $('.box').click(function () {
+            console.log($(this));
+            $(this).animate({
+                width: 300,
+                height: 300,
+                backgroundColor: 'rgb(255,255,255)'
+            }, 'slow')
+        })
+    </script>
+</body>
+
+</html>

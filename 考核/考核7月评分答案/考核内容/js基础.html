@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // 请实现，指定任意索引，对应数组项前移一个位置。
+        // var arr = [0, 1, 2, 3, 4, 5];
+        // console.log(arr)
+        // function BeforeMoving(el) {
+        //     var index = prompt('请输入要移动那个数');    
+        //     if (index < el.length && index != 0) {
+        //         var temp = el[index];
+        //         el[index] = el[index - 1];
+        //         el[index - 1] = temp;
+        //         console.log(el);
+        //     } else {
+        //         alert("错误")
+        //     }
+        // }
+        // BeforeMoving(arr);
+
+        // 请实现，指定任意索引，对应数组项移动到最前面。
+        // var arr = [0, 1, 2, 3, 4, 5];
+        // console.log(arr);
+        // function forward(el) {
+        //     var index = prompt('指定一个数字移动到最前面');
+        //     if (index < el.length && index != 0) {
+        //         var temp = el[index];
+        //         el.splice(temp, 1);
+        //     } else {
+        //         alert('超出数组长度')
+        //     }
+        //     arr.unshift(temp);
+        //     console.log(el);
+        // }
+        // forward(arr);
+
+        // 请实现，指定任意索引，对应数组项移动到最后面。
+        // var arr = [0, 1, 2, 3, 4, 5];
+        // console.log(arr);
+        // function moveafter(el) {
+        //     var index = parseInt(prompt('输入数值 把数值移动到最后一位'));
+        //     if (index < el.length && index >= 0) {
+        //         var temp = index;
+        //         el.splice(index, 1);
+        //     }
+        //     el.push(temp)
+        //     console.log(el);
+        // }
+        // moveafter(arr);
+        // 请实现，指定任意两项索引，对应数组项交换位置
+        var arr = [0, 1, 2, 3, 4, 5];
+        console.log(arr);
+        function exchange(el) {
+            var inx = parseInt(prompt('下标数字交换,输入第一个数字下标'));
+            var iny = parseInt(prompt('下边数字交换,第二个数字下标'));
+            if (inx < el.length && inx >= 0 || iny < el.length && iny >= 0) {
+                el.splice(inx, 1, iny);
+                el.splice(iny, 1, inx);
+            } else {
+                alert('超出数组长度')
+            }
+            console.log(el);
+        }
+        exchange(arr);
+
+    </script>
+</body>
+
+</html>

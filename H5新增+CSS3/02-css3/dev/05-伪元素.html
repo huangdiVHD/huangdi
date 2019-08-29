@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        p {
+            position: relative;
+            width: 4em;
+        }
+
+        p::before {
+            content: '前';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+
+        p::after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            position: absolute;
+            right: -8px;
+            top: 0;
+            background-color: brown;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            float: left;
+            width: 100px;
+            height: 50px;
+        }
+
+        ul::after {
+            display: block;
+            content: '';
+            clear: both;
+        }
+
+        .btn {
+            position: relative;
+            width: 2em;
+            margin: 0 auto;
+
+        }
+
+        .btn::before {
+            position: absolute;
+            left: -20px;
+            content: '[';
+            transition: all .4s ease;
+        }
+
+        .btn::after {
+            position: absolute;
+            right: -20px;
+            content: ']';
+            transition: all .4s ease;
+        }
+
+        .btn:hover::before {
+            left: -6px;
+        }
+
+        .btn:hover::after {
+            right: -6px;
+        }
+
+        .text {
+            width: 100px;
+        }
+
+        .text::first-letter {
+            color: red;
+        }
+
+        .text::first-line {
+            color: green;
+        }
+
+        .text::selection {
+            background-color: red;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 任何一个标签都存在 两个伪元素 -->
+    <!-- 伪元素  行内元素 -->
+
+    <!-- 伪元素可以用来清除浮动带来的影响 -->
+    <p>不凡学院</p>
+    <ul>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+    </ul>
+    <div class="btn">按钮</div>
+    <div class="text">
+        不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院
+    </div>
+</body>
+
+</html>

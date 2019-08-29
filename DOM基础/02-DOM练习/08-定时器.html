@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="ads" style="background-color:red">
+        这是一条广告
+    </div>
+    <script>
+        // setTimeout()  多长时间之后 执行  单次
+        // setInterval()  每隔多长时间执行一次  循环定时器
+
+        setTimeout(function () {
+            // 做什么
+            console.log('你好');
+        }, 5000)
+
+        var timer = setInterval(function () {
+            // 做什么
+            console.log('你好吗');
+        }, 1000)
+
+        // 循环定时怎么关闭
+        setTimeout(() => {
+            // 关闭循环定时器
+            clearInterval(timer);
+        }, 8000);
+
+        // 倒计时怎么关闭
+        // 清除setTimeout()
+        // clearTimeout();
+
+        // 3s之后让广告消失
+        var ads = document.querySelector('.ads');
+        setTimeout(function () {
+            ads.style.display = 'none';
+        }, 3000)
+    </script>
+</body>
+
+</html>

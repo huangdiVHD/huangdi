@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.d1{
+			width: 400px;
+			height: 400px;
+			margin: 100px auto;
+			padding: 50px;
+			border: 50px solid rgba(0,128,0,.3);
+			background: url(bg.jpg) no-repeat;
+			/*background-size: 400px 400px;*/
+			/*contain 用的不多 等比缩放  但是会留白*/
+			background-size: cover;
+			background-origin:border-box;
+			background-clip:border-box;
+		}
+	</style>
+</head>
+<body>
+	<div class="d1">
+		<select class="bgSize">
+			<option value="cover">cover</option>
+			<option value="contain">contain</option>
+		</select>
+		<select class="bgOrigin">
+			<option value="border-box">border-box</option>
+			<option value="padding-box">padding-box</option>
+			<option value="content-box">content-box</option>
+		</select>
+	</div>
+	<script src="lib/jquery-3.3.1.min.js"></script>
+	<script>
+		$('.bgSize').on('change',function () {
+			// console.log($(this).val())
+			$('.d1').css('background-size',$(this).val());
+		})
+		$('.bgOrigin').on('change',function () {
+			$('.d1').css('background-origin',$(this).val());
+		})
+	</script>
+</body>
+</html>

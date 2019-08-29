@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 800px;
+            height: 140px;
+            margin: 100px auto;
+            background-color: #333;
+            overflow: hidden;
+        }
+        
+        .box1 {
+            width: 60px;
+            height: 60px;
+            float: left;
+            margin: 0 70px;
+            margin-top: 35px;
+            text-align: center
+        }
+        
+        img {
+            width: 60px;
+            height: 60px;
+        }
+        
+        span {
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box1">
+            <img src="icon/camera-default.svg" alt="">
+            <span>Home</span>
+            <img class="imgEl" src="icon/camera-active.svg" alt="">
+
+        </div>
+        <div class="box1">
+            <img src="icon/cd-default.svg" alt="">
+            <span>Camera</span>
+            <img class="imgEl" src="icon/cd-active.svg" alt="">
+
+        </div>
+        <div class="box1">
+            <img src="icon/file-default.svg" alt="">
+            <span>Files</span>
+            <img class="imgEl" src="icon/file-active.svg" alt="">
+
+        </div>
+        <div class="box1">
+            <img src="icon/mine-default.svg" alt="">
+            <span>Mine</span>
+            <img class="imgEl" src="icon/mine-active.svg" alt="">
+
+        </div>
+    </div>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script>
+        $('.box1').click(function() {
+            var index = $(this).index()
+
+            console.log($('img:odd')[index].addClass('active'))
+
+        })
+    </script>
+</body>
+
+</html>

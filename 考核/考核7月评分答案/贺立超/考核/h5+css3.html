@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 800px;
+            height: 140px;
+            margin: 100px auto;
+            background-color: #333;
+        }
+        .box input {
+            display: none;
+        }
+        
+        label {
+            float: left;
+            width: 60px;
+            height: 60px; 
+            color: aliceblue;
+                cursor: pointer;
+        }
+        .img1 {
+            left: 100px;
+            top:20px;
+            position: relative;
+            background: url('icon/cd-default.svg') no-repeat;
+            background-size: contain;
+        }
+        .img2 {
+            left: 220px;
+            top:20px;
+            position: relative;
+        background: url('icon/camera-default.svg') no-repeat;
+        background-size: contain;
+        }
+        .img3 {
+            left: 340px;
+            top:20px;
+            position: relative;
+        background: url('icon/file-default.svg') no-repeat;
+        background-size: contain;
+        }
+        .img4 {
+            left: 460px;
+            top:20px;
+            position: relative;
+        background: url('icon/mine-default.svg') no-repeat;
+        background-size: contain;
+        }
+        .font {
+            float: left;
+             margin-top : 20px; 
+        }
+       .font span {
+           color: aliceblue;
+           font-size: 16px;
+          margin: 20px 0 0 100px;
+       }
+        
+    </style>
+</head>
+<body>
+    <div class="box">
+        <input id="1" type="radio"  checked>
+        <label for="1" class="img1"></label>
+        <input id="2" type="radio" >
+        <label for="2" class="img2"></label>
+        <input id="3" type="radio" >
+        <label for="3" class="img3"></label>
+        <input id="4" type="radio" >
+        <label for="4" class="img4"></label>
+    
+        <div class="font">
+            <span>Home</span>
+            <span>Camera</span>
+            <span>File</span>
+            <span>Mine</span>
+        </div>
+    </div>
+    
+
+</body>
+</html>

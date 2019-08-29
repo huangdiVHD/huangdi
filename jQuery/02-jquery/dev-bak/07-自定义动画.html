@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        .btn1 {
+            position: fixed;
+            left: 0;
+            bottom: 100px;
+        }
+
+        .btn2 {
+            position: fixed;
+            left: 0;
+            bottom: 60px
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        不凡学院
+    </div>
+
+    <button class="btn1">动画开始</button>
+    <button class="btn2">动画停止</button>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        //         2.4	自定义动画
+        // 注意：所有能够执行动画的属性必须只有一个数字类型的值。
+        // 语法：$(selector).animate(styles,speed,easing,callback)
+        // 	第一个参数表示：要执行动画的CSS属性（必选）
+        //  	第二个参数表示：执行动画时长（可选）
+        // 	第三个参数表示：动画执行完后立即执行的回调函数（可选）
+
+        $('.btn1').click(function () {
+            // opacity  透明度  0-1
+            $('.box').animate({
+                width: 300,
+                left: '800px',
+                opacity: .2
+
+            }, 2000, 'linear', function () {
+                // $('.box').animate({
+                //     left: '100px'
+                // }, 1000)
+            })
+            // 上边动画结束,才会执行下边的动画
+            $('.box').animate({
+                left: '100px'
+            }, 1000)
+        })
+
+
+        // 1.stop()
+        // 作用：停止当前正在执行的动画
+        // 为什么要停止动画？如果多个动画同时作用于一个单位上面，那么多个动画会进入排队。后一个动画的执行必须等前面的执行完毕。
+        $('.btn2').click(function () {
+
+            $('.box').stop(true, true);
+        })
+
+        // 2.stop(stopAll,goToEnd);
+        // stopAll  是否全部停止，默认false 停止队列中所有的动画
+        // goToEnd  是否将停止的动画  停止在当前动画的最后一个状态  
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    .box {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        margin-bottom: 50px;
+        background-color: aqua;
+    }
+    button {
+        width: 100px;
+        height: 30px;
+    }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <button class="bt0">点击100</button>
+    <button class="bt1">点击400</button>
+    <button class="bt2">点击800</button>
+    <button class="bt3">回到最初</button>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script>
+    //  $('.bt0').click(function(){
+    //      console.log('1');
+    //      $('.box').css('left','100px');
+    //  });
+     var box = document.querySelector('.box');
+     var bt0 = document.querySelector('.bt0');
+     var bt1 = document.querySelector('.bt1');
+     var bt2 = document.querySelector('.bt2');
+     var bt3 = document.querySelector('.bt3');
+
+     bt0.onclick = function(){
+        animation(box,100);
+     }
+     bt1.onclick = function(){
+        animation(box,400);
+     }
+     bt2.onclick = function(){
+        animation(box,800);
+     }
+     bt3.onclick = function(){
+        animation(box,0);
+     }
+     function animation(ele,length){
+        var timer = setInterval(function () {
+             var spacing = ele.offsetLeft;
+             var step = length > spacing ? 11:-11;
+             spacing += step;
+             //  console.log(spacing);
+             ele.style.left = spacing + 'px';
+             if(Math.abs(length-spacing)<=Math.abs(step)){
+                ele.style.left = length+'px';
+                clearInterval(timer);
+             }
+         }, 20);
+     }
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    ul{
+        list-style: none;
+    }
+    .box {
+        width: 1000px;
+        height: 460px;
+        margin: 100px auto;
+        overflow: hidden;
+    }
+    .picture {
+       float: left;
+       width: 200px;
+       height: 460px;
+    }
+    img {
+        height: 460px;
+    }
+    </style>
+</head>
+<body>
+    <ul class="box">
+        <li class="picture">
+            <img src="images/m1.jpg" alt="">
+        </li>
+        <li class="picture">
+            <img src="images/m2.jpg" alt="">
+        </li>
+        <li class="picture">
+            <img src="images/m3.jpg" alt="">
+        </li>
+        <li class="picture">
+             <img src="images/m4.jpg" alt="">
+         </li>
+        <li class="picture">
+             <img src="images/m5.jpg" alt="">
+        </li>
+    </ul>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script>
+    var timer;
+    var currentLi;//无法获取点击是那个图片,以此为桥梁
+    //鼠标进入
+    $('.picture').mouseenter(function(){
+          clearTimeout(timer);//清除定时器,因为下面定时器的效果没有发挥,是因为每次点击都有一个定时器,使得定时器不唯一
+           var $replace = $(this); // 回调函数中 this 指向变化了
+            timer = setTimeout(function(){
+                // console.log(this);
+            currentLi = $replace;//将点击的图片是哪个赋予currentLi
+            $replace.siblings().animate({
+                width:100
+            });
+            $replace.animate({
+                width: 600
+            });
+
+            },200);
+     });
+    //鼠标离开
+    $('.box').mouseleave(function(){
+           // 先让 变宽的那个  变成200
+        currentLi.animate({
+            width:200
+        });
+        currentLi.siblings().animate({
+            width:200
+        });
+    });
+    </script>
+</body>
+</html>

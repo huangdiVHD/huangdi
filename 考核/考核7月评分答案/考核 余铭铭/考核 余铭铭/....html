@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+        body {
+            background: #ccc;
+        }
+
+        .content {
+            position: absolute;
+            top: 30%;
+        }
+
+        #box1 {
+            position: absolute;
+            border: 1px solid red;
+            transition: all 1s;
+            /*过渡时间*/
+        }
+
+        #box2 {
+            position: absolute;
+            border: 1px solid red;
+            transition: all 1s;
+            /*过渡时间*/
+        }
+
+        .up {
+            /*图片向上状态*/
+            -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+
+        .down {
+            /*图片向下状态*/
+            -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="fadeInOut()">淡入淡出</button>
+    <div class="content">
+        <!--图片1-->
+        <div id="box1" class=""><img src="https://www.baidu.com/img/superlogo_c4d7df0a003d3db9b65e9ef0fe6da1ec.png" />
+        </div>
+        <!--图片2-->
+        <div id="box2" class="down"><img
+                src="https://ss0.baidu.com/94o3dSag_xI4khGko9WTAnF6hhy/image/w%3D500/sign=c27d4835de3f8794d3ff482ee21a0ead/024f78f0f736afc3290994e8b919ebc4b7451231.jpg" />
+        </div>
+    </div>
+    <script>
+        function fadeInOut() {
+            console.log(1)
+            document.getElementById("box1").className = "up";
+            document.getElementById("box2").className = "";
+        }
+    </script>
+</body>
+
+</html>

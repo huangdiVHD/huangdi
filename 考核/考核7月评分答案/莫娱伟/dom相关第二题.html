@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body id="parent">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        var parent = document.getElementById('parent');
+        var div = document.createElement('div');
+        parent.appendChild(div);
+        div.style.cssFloat = 'left'
+        div.id = 'box';
+        div.style.height = '300px';
+        div.style.width = '150px';
+        div.style.background = 'linear-gradient(125deg, red, blue)';
+        for (var i = 0; i < 20; i++) {
+            var div = document.createElement('div');
+            parent.appendChild(div);
+            div.className = 'box';
+            div.style.height = '300px';
+            div.style.width = '150px';
+            div.style.background = 'linear-gradient(125deg, red, blue)';
+            div.style.cssFloat = 'left'
+        }
+        var box = document.getElementsByClassName('box');
+        for (var i = 0; i < box.length; i++) {
+
+        }
+
+
+
+        $('.box').click(function () {
+            // $(this).css('background','linear-gradient(125deg, red, red)');
+            console.dir(this)
+            // if (this.getElementsByTagName("img").length){
+            //     console.log('是img');
+            // }else{
+            //     console.log('不是img');
+            // }
+
+        })
+    </script>
+</body>
+
+</html>

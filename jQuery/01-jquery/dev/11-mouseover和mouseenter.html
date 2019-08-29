@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style: none;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+
+        li {
+            width: 80px;
+            height: 80px;
+            background-color: yellow;
+        }
+
+        a {
+            display: block;
+            width: 40px;
+            height: 40px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <a href="#">百度</a>
+        </li>
+    </ul>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        $('ul').mouseover(function () {
+            console.log('over');
+            // 在其后代元素间进行切换时  也会触发事件
+            // 相当于 会触发多次
+        })
+        $('ul').mouseout(function () {
+            console.log('out');
+            // 在其后代元素间进行切换时  也会触发事件
+            // 相当于 会触发多次
+        })
+        $('ul').mouseenter(function () {
+            console.log('enter');
+            // 只会触发一次
+        })
+    </script>
+</body>
+
+</html>

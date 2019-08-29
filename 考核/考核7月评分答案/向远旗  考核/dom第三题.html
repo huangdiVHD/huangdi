@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            margin: 200px auto;
+            width: 900px;
+            height: 125px;
+            padding: 25px 90px 30px;
+            background-color: #333;
+        }
+
+        .inner-box {
+            position: relative;
+            float: left;
+            width: 80px;
+            height: 100%;
+            margin-left: 180px;
+        }
+
+        .cd {
+            margin-left: 0;
+        }
+
+        .icons {
+            overflow: hidden;
+            width: 80px;
+            height: 80px;
+        }
+
+        img {
+            width: 80px;
+            height: 80px;
+            transition: all .5s;
+        }
+
+        img.hid {
+            transition: all .5s;
+        }
+
+        .inner-box:hover .hid {
+            transform: translateY(-84px);
+        }
+
+        .inner-box:hover .def {
+            transform: rotateX(90deg);
+            transition: all 0s ease-in-out 1s;
+        }
+
+        .inner-box:hover p {
+            display: none;
+        }
+
+        p {
+            color: #fff;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .dot {
+            width: 20px;
+            height: 20px;
+            background-color: skyblue;
+            border-radius: 50%;
+            position: absolute;
+            left: 32px;
+            bottom: 5px;
+            display: none;
+        }
+
+        .inner-box:hover .dot {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class=" inner-box cd">
+            <div class="icons">
+                <img class="def" src="icon/cd-default.svg" alt="">
+                <img class="hid" src="icon/cd-active.svg" alt="">
+            </div>
+            <div class="dot"></div>
+            <p>Home</p>
+        </div>
+        <div class=" inner-box camera">
+            <div class="icons">
+                <img class="def" src="icon/camera-default.svg" alt="">
+                <img class="hid" src="icon/camera-active.svg" alt="">
+            </div>
+            <p>Camera</p>
+        </div>
+        <div class=" inner-box file">
+            <div class="icons">
+                <img class="def" src="icon/file-default.svg" alt="">
+                <img class="hid" src="icon/file-active.svg" alt="">
+            </div>
+            <p>Files</p>
+        </div>
+        <div class=" inner-box mine">
+            <div class="icons">
+                <img class="def" src="icon/mine-default.svg" alt="">
+                <img class="hid" src="icon/mine-active.svg" alt="">
+            </div>
+            <p>Mine</p>
+        </div>
+
+    </div>
+</body>
+
+</html>

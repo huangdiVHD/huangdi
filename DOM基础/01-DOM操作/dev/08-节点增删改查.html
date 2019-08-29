@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        我是一个盒子
+    </div>
+    <div class="box2">
+        我是box2
+        <p>我是一个p标签</p>
+    </div>
+    <div class="btn1">插入节点</div>
+    <div class="btn2">再次插入同个节点</div>
+    <div class="btn3">insertBefore</div>
+    <div class="btn4">删除节点</div>
+
+    <script>
+        // 新的标签(元素节点) = document.createElement("标签名");
+        var imgEl = document.createElement('img');
+        var boxEl = document.getElementsByClassName('box')[0];
+        var btn1 = document.getElementsByClassName('btn1')[0];
+        var btn2 = document.getElementsByClassName('btn2')[0];
+        var btn3 = document.getElementsByClassName('btn3')[0];
+        var btn4 = document.getElementsByClassName('btn4')[0];
+
+
+
+        var box2 = document.getElementsByClassName('box2')[0];
+        imgEl.src = 'img/m1.jpg';
+        // 创建节点
+        console.log(imgEl);
+
+        //  必须插入到页面中 才会显示
+        // 插入节点
+        // 父节点.appendChild(新的子节点);
+        // 父节点的最后插入一个新的子节点。
+        btn1.onclick = function () {
+            boxEl.appendChild(imgEl);
+        }
+        // 重复插入 同一个节点 具有 剪切的效果
+        btn2.onclick = function () {
+            box2.appendChild(imgEl);
+        }
+
+        // 方式二
+        // 父节点.insertBefore(新的子节点, 作为参考的子节点);
+        // 解释：
+
+        // 在参考节点前插入一个新的节点。
+        // 如果参考节点为 null，那么他将在父节点里面的最后插入一个子节点。
+        var p = document.getElementsByTagName('p')[0];
+        var pEl = document.createElement('p');
+        btn3.onclick = function () {
+            box2.insertBefore(pEl, p)
+        }
+
+        // 父节点.removeChild(子节点);
+        // 解释：用父节点删除子节点。必须要指定是删除哪个子节点。
+        btn4.onclick = function () {
+            box2.removeChild(p);
+        }
+
+        // 如果我想删除自己这个节点，可以这么做：
+        // node1.parentNode.removeChild(node1);
+
+        // 复制节点
+        //  要复制的节点.cloneNode(); //括号里不带参数和带参数false，效果是一样的。
+
+        // 要复制的节点.cloneNode(true);
+        console.log(box2.cloneNode());
+        console.log(box2.cloneNode(true)); // 深复制
+    </script>
+</body>
+
+</html>

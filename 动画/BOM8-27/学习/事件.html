@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .box {
+        width: 300px;
+        height: 200px;
+        background-color: aqua;
+        margin: 50px auto;
+        overflow: hidden;
+    }
+    .box1 {
+        width: 100px;
+        height: 50px;
+        background-color: red;
+        margin: 20px 20px;
+    }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="box1"></div>
+    </div>
+    <input type="text" class="inp1">
+    <button>点击</button>
+<!-- e.pageX/Y	获取鼠标点击的相对于页面的位置
+e.clientX/Y	获取鼠标点击的相对于可视区域的位置
+e.screenX/Y	获取鼠标点击的相对于屏幕的位置
+e.offsetX/Y	表示鼠标指针位置相对于触发事件的对象的位置
+获取鼠标相对于绑定事件的元素的位置 e.pageX/Y - 绑定事件的元素距离页面的左/上边距(offsetLeft/Top)
+event.type	事件的类型
+event.key 键盘按键码
+event.button 鼠标点击的按键(只认识三个键) 可在 onmousedown 事件中测试
+=== 0 您点击了鼠标左键
+=== 1 您点击了鼠标中键
+=== 2 您点击了鼠标右键 -->
+<script>
+var box = document.querySelector('.box');
+var box1 = document.querySelector('.box1');
+var inp1 =document.querySelector('.inp1');
+var button = document.querySelector('button');
+//鼠标
+// 获取事件innerHTML元素的子元素,outerHTML元素的子元素和它自己
+box.onclick = function(e){
+    console.log(this.innerHTML);
+    console.log(this.outerHTML);
+    //e可以写在在参数中代替event.即下面使用event时可以简写成e
+  // e.pageX/Y	获取鼠标点击的相对于页面的位置(即鼠标点击区域和浏览器的距离)
+    // console.log(event.pageX);
+    // console.log(event.pageY);
+    console.log(e.pageX);
+    console.log(e.pageY);
+    // .clientX/Y	获取鼠标点击的相对于可视区域的位置(在一定程度上和page差不多,但是在页面有覆盖的情况下会产生不同)
+    console.log(e.clientX);
+    console.log(e.clientY);
+    // e.screenX/Y	获取鼠标点击的相对于屏幕的位置(会跟着屏幕变化而变化)
+    console.log(e.screenX);
+    console.log(e.screenX);
+    // e.offsetX/Y	表示鼠标指针位置相对于触发事件的对象的位置(就是鼠标点击的地方和鼠标点击区域的盒子的距离)
+    console.log(e.offsetX);
+    console.log(e.offsetY);
+}
+//键盘
+// event.type事件的类型
+// event.key 键盘按键码
+//一定要注意大小写
+inp1.onkeydown = function(){
+   console.log(event.key);
+   console.log(event.keyCode);
+   if(event.keyCode==13){
+        box.style.backgroundColor = 'red';
+   }
+}
+//鼠标左中右三键
+// event.button 鼠标点击的按键(只认识三个键) 可在 onmousedown 事件中测试
+// === 0 您点击了鼠标左键
+// === 1 您点击了鼠标中键
+// === 2 您点击了鼠标右键
+button.onmousedown = function(){
+    console.log(event.button);
+}
+
+</script>
+</body>
+</html>

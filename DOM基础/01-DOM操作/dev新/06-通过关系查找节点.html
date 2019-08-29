@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li class="li-1">li1</li>
+        <li class="li-2">li2</li>
+        <li class="li-3">li3</li>
+        <li class="li-4">li4</li>
+        <li class="li-5">li5</li>
+        <!-- 注释 -->
+        <li class="li-6">li6</li>
+        <li class="li-7">li7</li>
+        <li class="li-8">li8</li>
+        <li class="li-9">li9</li>
+        <li class="li-10">li10</li>
+    </ul>
+    <script>
+        var li2 = document.getElementsByClassName('li-2')[0];
+        var ulEl = document.getElementsByTagName('ul')[0];
+        // 获取父节点  parentNode 这个属性保存的是 父节点
+        var pNode = li2.parentNode;
+        console.log(pNode);
+
+        // 获取下一个兄弟节点 nextSibling;
+        // 嫡出
+        var next = li2.nextSibling;
+        console.log(next); // 换行符节点
+
+        // 衍生 庶出  高级浏览器可用
+        var nextEl = li2.nextElementSibling;
+        console.log(nextEl); // li3元素节点
+
+        // 兼容写法
+        var nextLi = li2.nextElementSibling || li2.nextSibling;
+        console.log(nextLi);
+
+        // 上一个兄弟 节点 
+        // 使用方法同上
+        // previousSibling
+        // previousElementSibling
+
+
+
+        // 孩子节点
+        // 单个孩子节点 
+        // 方法同上 
+        // firstChild 和 firstElementChild
+        // lastChild  和 lastElementChild
+        var fChild = ulEl.firstElementChild || ulEl.firstChild;
+        console.log(fChild);
+
+
+        // 所有子节点
+        // children 和childNodes
+        var childNodes = ulEl.childNodes;
+        var children = ulEl.children;
+        console.log(childNodes); // 把换行付也当做节点
+        console.log(children); // 伪数组
+
+        // var myChildren = ulEl.children || ulEl.childNodes;
+        // 兼容处理
+        // nodeType == 1 表示的是元素节点（ 标签）。 记住： 元素就是标签。
+
+        // nodeType == 2 表示是属性节点。
+
+        // nodeType == 3 是文本节点。
+
+        // nodeType == 8 注释节点
+
+        var myChildren = myChildren(ulEl);
+        console.log(myChildren);
+
+        function myChildren(el) {
+            // el 形参
+            var children = el.children;
+            var myChildren = [];
+            for (var i = 0; i < children.length; i++) {
+                if (children[i].nodeType == 1) {
+                    myChildren.push(children[i])
+                }
+            }
+            return myChildren;
+        }
+
+
+        // 求除了自己以外的 所有兄弟
+        // 从自己找到父亲
+        // 从父亲找到所有孩子
+        // 删除自己
+        // 这里咱们用 children 这个变量
+        function siblings(el) {
+            var pNode = el.parentNode;
+            var children = pNode.children;
+            var siblingsArr = [];
+            for (var i = 0; i < children.length; i++) {
+                // 不考虑兼容容问题
+                if (children[i] != el) {
+                    siblingsArr.push(children[i])
+                }
+            }
+            return siblingsArr;
+        }
+        var siblingsArr = siblings(li2);
+        console.log(siblingsArr);
+
+
+        // 求自己后边的 所有兄弟节点
+        // 所有孩子节点  倒着遍历,遇到自己 break
+
+        // 锁的思想
+        function nextSiblings(el) {
+            var pNode = el.parentNode;
+            var children = pNode.children;
+            var siblingsArr = [];
+            var lock = false;
+            for (var i = 0; i < children.length; i++) {
+                if (children[i] == el) {
+                    lock = true;
+                    continue;
+                }
+                if (lock) {
+                    siblingsArr.push(children[i]);
+                }
+            }
+            return siblingsArr;
+        }
+        console.log(nextSiblings(li2));
+    </script>
+</body>
+
+</html>

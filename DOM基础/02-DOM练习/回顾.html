@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    dom 文档对象
+    操作标签节点 (dom对象)
+
+    事件驱动
+
+    第一步 获取事件源
+    id class 标签名 (类数组)
+    通过关系查找 parentNode 父子关系 , 兄弟关系
+    第二部 绑定相应的事件
+    xx.onclick=function(){}
+    在标签内部绑定 onclick= "foo()"
+    第三步 写逻辑
+
+    样式修改
+    xx.style.width = '';
+
+    节点属性操作
+    xx.属性名;
+
+    getAttribute('属性名')
+    setAttribute('属性名','新值')
+    removeAttribute('属性名')
+
+
+    h5 类名操作
+    xx.classList.add('类名')
+    xx.classList.remove('类名')
+    xx.classList.toogle('类名')
+    xx.classList.contains('类名')
+    xx.classList.item(下标)
+
+    节点的增删改查
+
+    创建节点 document.createElement('标签名')
+
+    插入节点
+    父节点.appendChild(节点)
+    父节点.insertBefore(节点,参考节点)
+
+    复制节点
+    节点.cloneNode()
+    节点.cloneNode(true)
+
+    删除节点
+    父节点.removeChild(节点)
+
+
+    内容操作
+
+    value input输入框的值
+
+    innerText 获取标签里边的 所有文本内容 (不识别标签)
+
+    innerHTML 获取标签里边 所有内容 (识别标签) 动态的生成页面
+
+
+    for循环绑定事件 在绑定的事件里 慎用 i
+
+</body>
+
+</html>

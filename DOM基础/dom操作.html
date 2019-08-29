@@ -1,0 +1,854 @@
+<!DOCTYPE html><html><head>
+      <title>dom&#x64CD;&#x4F5C;</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///C:\Users\Administrator\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.4.3\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+      
+      
+
+      
+      
+      
+      
+      
+      
+
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h2 class="mume-header" id="javascript-%E7%9A%84%E7%BB%84%E6%88%90">JavaScript &#x7684;&#x7EC4;&#x6210;</h2>
+
+<p>JavaScript &#x57FA;&#x7840;&#x5206;&#x4E3A;&#x4E09;&#x4E2A;&#x90E8;&#x5206;&#xFF1A;</p>
+<ul>
+<li>
+<p>ECMAScript&#xFF1A;JavaScript &#x7684;&#x8BED;&#x6CD5;&#x6807;&#x51C6;&#x3002;&#x5305;&#x62EC;&#x53D8;&#x91CF;&#x3001;&#x8868;&#x8FBE;&#x5F0F;&#x3001;&#x8FD0;&#x7B97;&#x7B26;&#x3001;&#x51FD;&#x6570;&#x3001;if &#x8BED;&#x53E5;&#x3001;for &#x8BED;&#x53E5;&#x7B49;&#x3002;</p>
+</li>
+<li>
+<p><strong>DOM</strong>&#xFF1A;&#x6587;&#x6863;&#x5BF9;&#x8C61;&#x6A21;&#x578B;&#xFF0C;&#x64CD;&#x4F5C;<strong>&#x7F51;&#x9875;&#x4E0A;&#x7684;&#x5143;&#x7D20;</strong>&#x7684; API&#x3002;&#x6BD4;&#x5982;&#x8BA9;&#x76D2;&#x5B50;&#x79FB;&#x52A8;&#x3001;&#x53D8;&#x8272;&#x3001;&#x8F6E;&#x64AD;&#x56FE;&#x7B49;&#x3002;</p>
+</li>
+<li>
+<p><strong>BOM</strong>&#xFF1A;&#x6D4F;&#x89C8;&#x5668;&#x5BF9;&#x8C61;&#x6A21;&#x578B;&#xFF0C;&#x64CD;&#x4F5C;<strong>&#x6D4F;&#x89C8;&#x5668;&#x90E8;&#x5206;&#x529F;&#x80FD;</strong>&#x7684; API&#x3002;&#x6BD4;&#x5982;&#x8BA9;&#x6D4F;&#x89C8;&#x5668;&#x81EA;&#x52A8;&#x6EDA;&#x52A8;&#x3002;</p>
+</li>
+</ul>
+<h2 class="mume-header" id="%E4%BA%8B%E4%BB%B6">&#x4E8B;&#x4EF6;</h2>
+
+<blockquote>
+<p>JS &#x662F;&#x4EE5;<strong>&#x4E8B;&#x4EF6;&#x9A71;&#x52A8;&#x4E3A;&#x6838;&#x5FC3;</strong>&#x7684;&#x4E00;&#x95E8;&#x8BED;&#x8A00;&#x3002;</p>
+</blockquote>
+<h3 class="mume-header" id="%E4%BA%8B%E4%BB%B6%E7%9A%84%E4%B8%89%E8%A6%81%E7%B4%A0">&#x4E8B;&#x4EF6;&#x7684;&#x4E09;&#x8981;&#x7D20;</h3>
+
+<p><strong>&#x4E8B;&#x4EF6;&#x7684;&#x4E09;&#x8981;&#x7D20;&#xFF1A;&#x4E8B;&#x4EF6;&#x6E90;&#x3001;&#x4E8B;&#x4EF6;&#x3001;&#x4E8B;&#x4EF6;&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;</strong>&#x3002;</p>
+<p>&#x6BD4;&#x5982;&#xFF0C;&#x6211;&#x7528;&#x624B;&#x53BB;&#x6309;&#x5F00;&#x5173;&#xFF0C;&#x706F;&#x4EAE;&#x4E86;&#x3002;&#x8FD9;&#x4EF6;&#x4E8B;&#x60C5;&#x91CC;&#xFF0C;&#x4E8B;&#x4EF6;&#x6E90;&#x662F;&#xFF1A;&#x624B;&#x3002;&#x4E8B;&#x4EF6;&#x662F;&#xFF1A;&#x6309;&#x5F00;&#x5173;&#x3002;&#x4E8B;&#x4EF6;&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;&#x662F;&#xFF1A;&#x706F;&#x7684;&#x5F00;&#x548C;&#x5173;&#x3002;</p>
+<p>&#x518D;&#x6BD4;&#x5982;&#xFF0C;&#x7F51;&#x9875;&#x4E0A;&#x5F39;&#x51FA;&#x4E00;&#x4E2A;&#x5E7F;&#x544A;&#xFF0C;&#x6211;&#x70B9;&#x51FB;&#x53F3;&#x4E0A;&#x89D2;&#x7684;<code>X</code>&#xFF0C;&#x5E7F;&#x544A;&#x5C31;&#x5173;&#x95ED;&#x4E86;&#x3002;&#x8FD9;&#x4EF6;&#x4E8B;&#x60C5;&#x91CC;&#xFF0C;&#x4E8B;&#x4EF6;&#x6E90;&#x662F;&#xFF1A;<code>X</code>&#x3002;&#x4E8B;&#x4EF6;&#x662F;&#xFF1A;onclick&#x3002;&#x4E8B;&#x4EF6;&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;&#x662F;&#xFF1A;&#x5E7F;&#x544A;&#x5173;&#x95ED;&#x4E86;&#x3002;</p>
+<p>&#x4E8E;&#x662F;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x603B;&#x7ED3;&#x51FA;&#xFF1A;&#x8C01;&#x5F15;&#x53D1;&#x7684;&#x540E;&#x7EED;&#x4E8B;&#x4EF6;&#xFF0C;&#x8C01;&#x5C31;&#x662F;&#x4E8B;&#x4EF6;&#x6E90;&#x3002;</p>
+<p><strong>&#x603B;&#x7ED3;&#x5982;&#x4E0B;&#xFF1A;</strong></p>
+<ul>
+<li>
+<p>&#x4E8B;&#x4EF6;&#x6E90;&#xFF1A;&#x5F15;&#x53D1;&#x540E;&#x7EED;&#x4E8B;&#x4EF6;&#x7684; html &#x6807;&#x7B7E;&#x3002;</p>
+</li>
+<li>
+<p>&#x4E8B;&#x4EF6;&#xFF1A;js &#x5DF2;&#x7ECF;&#x5B9A;&#x4E49;&#x597D;&#x4E86;&#xFF08;&#x89C1;&#x4E0B;&#x56FE;&#xFF09;&#x3002;</p>
+</li>
+<li>
+<p>&#x4E8B;&#x4EF6;&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;&#xFF1A;&#x5BF9;&#x6837;&#x5F0F;&#x548C; html &#x7684;&#x64CD;&#x4F5C;&#x3002;&#x4E5F;&#x5C31;&#x662F; DOM&#x3002;</p>
+</li>
+</ul>
+<p><strong>&#x4EE3;&#x7801;&#x4E66;&#x5199;&#x6B65;&#x9AA4;&#x5982;&#x4E0B;&#xFF1A;</strong>&#xFF08;&#x91CD;&#x8981;&#xFF09;</p>
+<ul>
+<li>
+<p>&#xFF08;1&#xFF09;&#x83B7;&#x53D6;&#x4E8B;&#x4EF6;&#x6E90;&#xFF1A;document.getElementById(&#x201C;box&#x201D;);</p>
+</li>
+<li>
+<p>&#xFF08;2&#xFF09;&#x7ED1;&#x5B9A;&#x4E8B;&#x4EF6;&#xFF1A; &#x4E8B;&#x4EF6;&#x6E90; box.&#x4E8B;&#x4EF6; onclick = function(){ &#x4E8B;&#x4EF6;&#x9A71;&#x52A8;&#x7A0B;&#x5E8F; };</p>
+</li>
+<li>
+<p>&#xFF08;3&#xFF09;&#x4E66;&#x5199;&#x4E8B;&#x4EF6;&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;&#xFF1A;&#x5173;&#x4E8E; DOM &#x7684;&#x64CD;&#x4F5C;&#x3002;</p>
+</li>
+</ul>
+<p>&#x6700;&#x7B80;&#x5355;&#x7684;&#x4EE3;&#x7801;&#x4E3E;&#x4F8B;&#xFF1A;&#xFF08;&#x70B9;&#x51FB; box1&#xFF0C;&#x7136;&#x540E;&#x5F39;&#x6846;&#xFF09;</p>
+<pre data-role="codeBlock" data-info="html" class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>box1<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/javascript<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+		<span class="token comment">// 1&#x3001;&#x83B7;&#x53D6;&#x4E8B;&#x4EF6;&#x6E90;</span>
+		<span class="token keyword">var</span> div <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&quot;box1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token comment">// 2&#x3001;&#x7ED1;&#x5B9A;&#x4E8B;&#x4EF6;</span>
+		div<span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token comment">// 3&#x3001;&#x4E66;&#x5199;&#x4E8B;&#x4EF6;&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;</span>
+			<span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">&quot;&#x6211;&#x662F;&#x5F39;&#x51FA;&#x7684;&#x5185;&#x5BB9;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span><span class="token punctuation">;</span>
+	</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+</pre><p>&#x5E38;&#x89C1;&#x7684;&#x4E8B;&#x4EF6;&#x5982;&#x4E0B;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x5C5E;&#x6027;</th>
+<th>&#x5F53;&#x4E00;&#x4E0B;&#x60C5;&#x51B5;&#x53D1;&#x751F;&#x65F6;,&#x51FA;&#x73B0;&#x6B64;&#x4E8B;&#x4EF6;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>onabort</td>
+<td>&#x56FE;&#x50CF;&#x52A0;&#x8F7D;&#x88AB;&#x4E2D;&#x65AD;</td>
+</tr>
+<tr>
+<td>onblur</td>
+<td>&#x5143;&#x7D20;&#x5931;&#x53BB;&#x7126;&#x70B9;</td>
+</tr>
+<tr>
+<td>onchange</td>
+<td>&#x7528;&#x6237;&#x6539;&#x53D8;&#x57DF;&#x7684;&#x5185;&#x5BB9;</td>
+</tr>
+<tr>
+<td>onclick</td>
+<td>&#x9F20;&#x6807;&#x70B9;&#x51FB;&#x67D0;&#x4E2A;&#x5BF9;&#x8C61;</td>
+</tr>
+<tr>
+<td>ondblclick</td>
+<td>&#x9F20;&#x6807;&#x53CC;&#x51FB;&#x67D0;&#x4E2A;&#x5BF9;&#x8C61;</td>
+</tr>
+<tr>
+<td>onerror</td>
+<td>&#x5F53;&#x52A0;&#x8F7D;&#x6587;&#x6863;&#x6216;&#x56FE;&#x50CF;&#x65F6;&#x53D1;&#x751F;&#x67D0;&#x4E2A;&#x9519;&#x8BEF;</td>
+</tr>
+<tr>
+<td>onfocus</td>
+<td>&#x5143;&#x7D20;&#x83B7;&#x5F97;&#x7126;&#x70B9;</td>
+</tr>
+<tr>
+<td>onkeydown</td>
+<td>&#x67D0;&#x4E2A;&#x952E;&#x76D8;&#x7684;&#x952E;&#x88AB;&#x6309;&#x4E0B;</td>
+</tr>
+<tr>
+<td>onkeypress</td>
+<td>&#x67D0;&#x4E2A;&#x952E;&#x76D8;&#x7684;&#x952E;&#x88AB;&#x6309;&#x4E0B;&#x6216;&#x6309;&#x4F4F;</td>
+</tr>
+<tr>
+<td>onkeyup</td>
+<td>&#x67D0;&#x4E2A;&#x952E;&#x76D8;&#x7684;&#x952E;&#x88AB;&#x677E;&#x5F00;</td>
+</tr>
+<tr>
+<td>onload</td>
+<td>&#x67D0;&#x4E2A;&#x9875;&#x9762;&#x6216;&#x56FE;&#x50CF;&#x88AB;&#x5B8C;&#x6210;&#x52A0;&#x8F7D;</td>
+</tr>
+<tr>
+<td>onmousedown</td>
+<td>&#x67D0;&#x4E2A;&#x9F20;&#x6807;&#x6309;&#x952E;&#x88AB;&#x6309;&#x4E0B;</td>
+</tr>
+<tr>
+<td>onmousemove</td>
+<td>&#x9F20;&#x6807;&#x88AB;&#x79FB;&#x52A8;</td>
+</tr>
+<tr>
+<td>onmouseout</td>
+<td>&#x9F20;&#x6807;&#x4ECE;&#x67D0;&#x5143;&#x7D20;&#x79FB;&#x5F00;</td>
+</tr>
+<tr>
+<td>onmouseover</td>
+<td>&#x9F20;&#x6807;&#x88AB;&#x79FB;&#x5230;&#x67D0;&#x5143;&#x7D20;&#x4E4B;&#x4E0A;</td>
+</tr>
+<tr>
+<td>onmouseup</td>
+<td>&#x67D0;&#x4E2A;&#x9F20;&#x6807;&#x6309;&#x952E;&#x88AB;&#x677E;&#x5F00;</td>
+</tr>
+<tr>
+<td>onreset</td>
+<td>&#x91CD;&#x7F6E;&#x6309;&#x94AE;&#x88AB;&#x70B9;&#x51FB;</td>
+</tr>
+<tr>
+<td>onresize</td>
+<td>&#x7A97;&#x53E3;&#x6216;&#x6846;&#x67B6;&#x88AB;&#x8C03;&#x6574;&#x5C3A;&#x5BF8;</td>
+</tr>
+<tr>
+<td>onselect</td>
+<td>&#x6587;&#x672C;&#x88AB;&#x9009;&#x5B9A;</td>
+</tr>
+<tr>
+<td>onsubmit</td>
+<td>&#x63D0;&#x4EA4;&#x6309;&#x94AE;&#x88AB;&#x70B9;&#x51FB;</td>
+</tr>
+<tr>
+<td>onunload</td>
+<td>&#x7528;&#x6237;&#x9000;&#x51FA;&#x9875;&#x9762;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x4E0B;&#x9762;&#x9488;&#x5BF9;&#x8FD9;&#x4E8B;&#x4EF6;&#x7684;&#x4E09;&#x8981;&#x7D20;&#xFF0C;&#x8FDB;&#x884C;&#x5206;&#x522B;&#x4ECB;&#x7ECD;&#x3002;</p>
+<h3 class="mume-header" id="1-%E8%8E%B7%E5%8F%96%E4%BA%8B%E4%BB%B6%E6%BA%90%E7%9A%84%E6%96%B9%E5%BC%8Fdom-%E8%8A%82%E7%82%B9%E7%9A%84%E8%8E%B7%E5%8F%96">1&#x3001;&#x83B7;&#x53D6;&#x4E8B;&#x4EF6;&#x6E90;&#x7684;&#x65B9;&#x5F0F;&#xFF08;DOM &#x8282;&#x70B9;&#x7684;&#x83B7;&#x53D6;&#xFF09;</h3>
+
+<p>&#x83B7;&#x53D6;&#x4E8B;&#x4EF6;&#x6E90;&#x7684;&#x5E38;&#x89C1;&#x65B9;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token keyword">var</span> div1 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&quot;box1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//&#x65B9;&#x5F0F;&#x4E00;&#xFF1A;&#x901A;&#x8FC7;id&#x83B7;&#x53D6;&#x5355;&#x4E2A;&#x6807;&#x7B7E;</span>
+
+<span class="token keyword">var</span> arr1 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">&quot;div&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//&#x65B9;&#x5F0F;&#x4E8C;&#xFF1A;&#x901A;&#x8FC7; &#x6807;&#x7B7E;&#x540D; &#x83B7;&#x5F97; &#x6807;&#x7B7E;&#x6570;&#x7EC4;&#xFF0C;&#x6240;&#x4EE5;&#x6709;s</span>
+
+<span class="token keyword">var</span> arr2 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByClassName</span><span class="token punctuation">(</span><span class="token string">&quot;hehe&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//&#x65B9;&#x5F0F;&#x4E09;&#xFF1A;&#x901A;&#x8FC7; &#x7C7B;&#x540D; &#x83B7;&#x5F97; &#x6807;&#x7B7E;&#x6570;&#x7EC4;&#xFF0C;&#x6240;&#x4EE5;&#x6709;s</span>
+</pre><h3 class="mume-header" id="2-%E7%BB%91%E5%AE%9A%E4%BA%8B%E4%BB%B6%E7%9A%84%E6%96%B9%E5%BC%8F">2&#x3001;&#x7ED1;&#x5B9A;&#x4E8B;&#x4EF6;&#x7684;&#x65B9;&#x5F0F;</h3>
+
+<p>&#x65B9;&#x5F0F;&#x4E00;&#xFF1A;&#x76F4;&#x63A5;&#x7ED1;&#x5B9A;&#x533F;&#x540D;&#x51FD;&#x6570;</p>
+<pre data-role="codeBlock" data-info="html" class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>box1<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/javascript<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+	<span class="token keyword">var</span> div1 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&quot;box1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token comment">//&#x7ED1;&#x5B9A;&#x4E8B;&#x4EF6;&#x7684;&#x7B2C;&#x4E00;&#x79CD;&#x65B9;&#x5F0F;</span>
+	div1<span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">&quot;&#x6211;&#x662F;&#x5F39;&#x51FA;&#x7684;&#x5185;&#x5BB9;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</pre><p>&#x65B9;&#x5F0F;&#x4E8C;&#xFF1A;&#x884C;&#x5185;&#x7ED1;&#x5B9A;</p>
+<pre data-role="codeBlock" data-info="html" class="language-html"><span class="token comment">&lt;!--&#x884C;&#x5185;&#x7ED1;&#x5B9A;--&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>box1<span class="token punctuation">&quot;</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>fn()<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/javascript<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+	<span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">&quot;&#x6211;&#x662F;&#x5F39;&#x51FA;&#x7684;&#x5185;&#x5BB9;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</pre><p>&#x6CE8;&#x610F;&#x7B2C;&#x4E00;&#x884C;&#x4EE3;&#x7801;&#xFF0C;&#x7ED1;&#x5B9A;&#x65F6;&#xFF0C;&#x662F;&#x5199;&#x7684;<code>&quot;fn()&quot;</code>&#xFF0C;&#x4E0D;&#x662F;&#x5199;&#x7684;<code>&quot;fn&quot;</code>&#x3002;&#x56E0;&#x4E3A;&#x7ED1;&#x5B9A;&#x7684;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x4E0D;&#x662F;&#x5199;&#x5728; js &#x4EE3;&#x7801;&#x91CC;&#x7684;&#xFF0C;&#x800C;&#x662F;&#x88AB;&#x8BC6;&#x522B;&#x6210;&#x4E86;<strong>&#x5B57;&#x7B26;&#x4E32;</strong>&#x3002;</p>
+<h3 class="mume-header" id="3-%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8%E7%A8%8B%E5%BA%8F">3&#x3001;&#x4E8B;&#x4EF6;&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;</h3>
+
+<p>&#x6211;&#x4EEC;&#x5728;&#x4E0A;&#x9762;&#x662F;&#x62FF; alert &#x4E3E;&#x4F8B;&#xFF0C;&#x4E0D;&#x4EC5;&#x5982;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x53EF;&#x4EE5;&#x64CD;&#x4F5C;&#x6807;&#x7B7E;&#x7684;&#x5C5E;&#x6027;&#x548C;&#x6837;&#x5F0F;&#x3002;&#x4E3E;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p>&#x70B9;&#x51FB;&#x9F20;&#x6807;&#x65F6;&#xFF0C;&#x539F;&#x672C;&#x7C89;&#x8272;&#x7684; div &#x53D8;&#x5927;&#x4E86;&#xFF0C;&#x80CC;&#x666F;&#x53D8;&#x7EA2;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="html" class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/javascript<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+	<span class="token keyword">var</span> div1 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&quot;box1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token comment">//&#x70B9;&#x51FB;&#x9F20;&#x6807;&#x65F6;&#xFF0C;&#x539F;&#x672C;&#x7C89;&#x8272;&#x7684;div&#x53D8;&#x5927;&#x4E86;&#xFF0C;&#x80CC;&#x666F;&#x53D8;&#x7EA2;&#x4E86;</span>
+	div1<span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		div1<span class="token punctuation">.</span>style<span class="token punctuation">.</span>width <span class="token operator">=</span> <span class="token string">&quot;200px&quot;</span><span class="token punctuation">;</span> <span class="token comment">//&#x5C5E;&#x6027;&#x503C;&#x8981;&#x5199;&#x5F15;&#x53F7;</span>
+		div1<span class="token punctuation">.</span>style<span class="token punctuation">.</span>height <span class="token operator">=</span> <span class="token string">&quot;200px&quot;</span><span class="token punctuation">;</span>
+		div1<span class="token punctuation">.</span>style<span class="token punctuation">.</span>backgroundColor <span class="token operator">=</span> <span class="token string">&quot;red&quot;</span><span class="token punctuation">;</span> <span class="token comment">//&#x5C5E;&#x6027;&#x540D;&#x662F;backgroundColor&#xFF0C;&#x4E0D;&#x662F;background-color</span>
+	<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</pre><p>&#x4E0A;&#x65B9;&#x4EE3;&#x7801;&#x7684;&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#xFF1A;</p>
+<ul>
+<li>&#x5728; js &#x91CC;&#x5199;&#x5C5E;&#x6027;&#x503C;&#x65F6;&#xFF0C;&#x8981;&#x7528;&#x5F15;&#x53F7;</li>
+<li>&#x5728; js &#x91CC;&#x5199;&#x5C5E;&#x6027;&#x540D;&#x65F6;&#xFF0C;&#x662F;<code>backgroundColor</code>&#xFF0C;&#x4E0D;&#x662F; CSS &#x91CC;&#x9762;&#x7684;<code>background-color</code>&#x3002;</li>
+</ul>
+<h3 class="mume-header" id="onload-%E4%BA%8B%E4%BB%B6">onload &#x4E8B;&#x4EF6;</h3>
+
+<blockquote>
+<p>onload &#x4E8B;&#x4EF6;&#x6BD4;&#x8F83;&#x7279;&#x6B8A;&#xFF0C;&#x8FD9;&#x91CC;&#x5355;&#x72EC;&#x8BB2;&#x4E00;&#x4E0B;&#x3002;</p>
+</blockquote>
+<p><strong>&#x5F53;&#x9875;&#x9762;&#x52A0;&#x8F7D;&#xFF08;&#x6587;&#x672C;&#x548C;&#x56FE;&#x7247;&#xFF09;&#x5B8C;&#x6BD5;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x89E6;&#x53D1; onload &#x4E8B;&#x4EF6;&#x3002;</strong></p>
+<h2 class="mume-header" id="dom-%E7%9A%84%E4%BB%8B%E7%BB%8D">DOM &#x7684;&#x4ECB;&#x7ECD;</h2>
+
+<h3 class="mume-header" id="%E4%BB%80%E4%B9%88%E6%98%AF-dom">&#x4EC0;&#x4E48;&#x662F; DOM</h3>
+
+<p>DOM&#xFF1A;Document Object Model&#xFF0C;&#x6587;&#x6863;&#x5BF9;&#x8C61;&#x6A21;&#x578B;&#x3002;DOM &#x4E3A;&#x6587;&#x6863;&#x63D0;&#x4F9B;&#x4E86;&#x7ED3;&#x6784;&#x5316;&#x8868;&#x793A;&#xFF0C;&#x5E76;&#x5B9A;&#x4E49;&#x4E86;&#x5982;&#x4F55;&#x901A;&#x8FC7;&#x811A;&#x672C;&#x6765;&#x8BBF;&#x95EE;&#x6587;&#x6863;&#x7ED3;&#x6784;&#x3002;&#x76EE;&#x7684;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x4E3A;&#x4E86;&#x80FD;&#x8BA9; js &#x64CD;&#x4F5C; html &#x5143;&#x7D20;&#x800C;&#x5236;&#x5B9A;&#x7684;&#x4E00;&#x4E2A;&#x89C4;&#x8303;&#x3002;</p>
+<p>DOM &#x5C31;&#x662F;&#x7531;&#x8282;&#x70B9;&#x7EC4;&#x6210;&#x7684;&#x3002;</p>
+<h3 class="mume-header" id="%E8%A7%A3%E6%9E%90%E8%BF%87%E7%A8%8B">&#x89E3;&#x6790;&#x8FC7;&#x7A0B;</h3>
+
+<p>HTML &#x52A0;&#x8F7D;&#x5B8C;&#x6BD5;&#xFF0C;&#x6E32;&#x67D3;&#x5F15;&#x64CE;&#x4F1A;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x628A; HTML &#x6587;&#x6863;&#xFF0C;&#x751F;&#x6210;&#x4E00;&#x4E2A; DOM &#x6811;&#xFF0C;getElementById &#x662F;&#x83B7;&#x53D6;&#x5185;&#x4E2D; DOM &#x4E0A;&#x7684;&#x5143;&#x7D20;&#x8282;&#x70B9;&#x3002;&#x7136;&#x540E;&#x64CD;&#x4F5C;&#x7684;&#x65F6;&#x5019;&#x4FEE;&#x6539;&#x7684;&#x662F;&#x8BE5;&#x5143;&#x7D20;&#x7684;<strong>&#x5C5E;&#x6027;</strong>&#x3002;</p>
+<h3 class="mume-header" id="dom-%E6%A0%91%E4%B8%80%E5%88%87%E9%83%BD%E6%98%AF%E8%8A%82%E7%82%B9">DOM &#x6811;&#xFF08;&#x4E00;&#x5207;&#x90FD;&#x662F;&#x8282;&#x70B9;&#xFF09;</h3>
+
+<p>DOM &#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><img src="https://i.loli.net/2019/07/02/5d1ab1acec39997598.png" alt></p>
+<p>&#x4E0A;&#x56FE;&#x53EF;&#x77E5;&#xFF0C;<strong>&#x5728; HTML &#x5F53;&#x4E2D;&#xFF0C;&#x4E00;&#x5207;&#x90FD;&#x662F;&#x8282;&#x70B9;</strong>&#xFF1A;&#xFF08;&#x975E;&#x5E38;&#x91CD;&#x8981;&#xFF09;</p>
+<ul>
+<li>
+<p><strong>&#x5143;&#x7D20;&#x8282;&#x70B9;</strong>&#xFF1A;HMTL &#x6807;&#x7B7E;&#x3002;</p>
+</li>
+<li>
+<p><strong>&#x6587;&#x672C;&#x8282;&#x70B9;</strong>&#xFF1A;&#x6807;&#x7B7E;&#x4E2D;&#x7684;&#x6587;&#x5B57;&#xFF08;&#x6BD4;&#x5982;&#x6807;&#x7B7E;&#x4E4B;&#x95F4;&#x7684;&#x7A7A;&#x683C;&#x3001;&#x6362;&#x884C;&#xFF09;</p>
+</li>
+<li>
+<p><strong>&#x5C5E;&#x6027;&#x8282;&#x70B9;</strong>&#xFF1A;&#xFF1A;&#x6807;&#x7B7E;&#x7684;&#x5C5E;&#x6027;&#x3002;</p>
+</li>
+</ul>
+<p>&#x6574;&#x4E2A; html &#x6587;&#x6863;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x6587;&#x6863;&#x8282;&#x70B9;&#x3002;&#x6240;&#x6709;&#x7684;&#x8282;&#x70B9;&#x90FD;&#x662F; Object&#x3002;</p>
+<h3 class="mume-header" id="dom-%E5%8F%AF%E4%BB%A5%E5%81%9A%E4%BB%80%E4%B9%88">DOM &#x53EF;&#x4EE5;&#x505A;&#x4EC0;&#x4E48;</h3>
+
+<ul>
+<li>
+<p>&#x627E;&#x5BF9;&#x8C61;&#xFF08;&#x5143;&#x7D20;&#x8282;&#x70B9;&#xFF09;</p>
+</li>
+<li>
+<p>&#x8BBE;&#x7F6E;&#x5143;&#x7D20;&#x7684;&#x5C5E;&#x6027;&#x503C;</p>
+</li>
+<li>
+<p>&#x8BBE;&#x7F6E;&#x5143;&#x7D20;&#x7684;&#x6837;&#x5F0F;</p>
+</li>
+<li>
+<p>&#x52A8;&#x6001;&#x521B;&#x5EFA;&#x548C;&#x5220;&#x9664;&#x5143;&#x7D20;</p>
+</li>
+<li>
+<p>&#x4E8B;&#x4EF6;&#x7684;&#x89E6;&#x53D1;&#x54CD;&#x5E94;&#xFF1A;&#x4E8B;&#x4EF6;&#x6E90;&#x3001;&#x4E8B;&#x4EF6;&#x3001;&#x4E8B;&#x4EF6;&#x7684;&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;</p>
+</li>
+</ul>
+<h2 class="mume-header" id="dom-%E8%8A%82%E7%82%B9%E7%9A%84%E8%8E%B7%E5%8F%96">DOM &#x8282;&#x70B9;&#x7684;&#x83B7;&#x53D6;</h2>
+
+<p>DOM &#x8282;&#x70B9;&#x7684;&#x83B7;&#x53D6;&#x65B9;&#x5F0F;&#x5176;&#x5B9E;&#x5C31;&#x662F;<strong>&#x83B7;&#x53D6;&#x4E8B;&#x4EF6;&#x6E90;&#x7684;&#x65B9;&#x5F0F;</strong>&#xFF0C;&#x5728;&#x4E0A;&#x4E00;&#x6BB5;&#x5DF2;&#x7ECF;&#x8BB2;&#x5230;&#x3002;&#x8FD9;&#x91CC;&#x518D;&#x91CD;&#x590D;&#x4E00;&#x4E0B;&#x3002;</p>
+<p>&#x64CD;&#x4F5C;&#x5143;&#x7D20;&#x8282;&#x70B9;&#xFF0C;&#x5FC5;&#x987B;&#x9996;&#x5148;&#x627E;&#x5230;&#x8BE5;&#x8282;&#x70B9;&#x3002;&#x6709;&#x4E09;&#x79CD;&#x65B9;&#x5F0F;&#x53EF;&#x4EE5;&#x83B7;&#x53D6; DOM &#x8282;&#x70B9;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token keyword">var</span> div1 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&quot;box1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//&#x65B9;&#x5F0F;&#x4E00;&#xFF1A;&#x901A;&#x8FC7;id&#x83B7;&#x53D6;&#x5355;&#x4E2A;&#x6807;&#x7B7E;</span>
+
+<span class="token keyword">var</span> arr1 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">&quot;div&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//&#x65B9;&#x5F0F;&#x4E8C;&#xFF1A;&#x901A;&#x8FC7; &#x6807;&#x7B7E;&#x540D; &#x83B7;&#x5F97; &#x6807;&#x7B7E;&#x6570;&#x7EC4;&#xFF0C;&#x6240;&#x4EE5;&#x6709;s</span>
+
+<span class="token keyword">var</span> arr2 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByClassName</span><span class="token punctuation">(</span><span class="token string">&quot;hehe&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//&#x65B9;&#x5F0F;&#x4E09;&#xFF1A;&#x901A;&#x8FC7; &#x7C7B;&#x540D; &#x83B7;&#x5F97; &#x6807;&#x7B7E;&#x6570;&#x7EC4;&#xFF0C;&#x6240;&#x4EE5;&#x6709;s</span>
+</pre><p>&#x65E2;&#x7136;&#x65B9;&#x5F0F;&#x4E8C;&#x3001;&#x65B9;&#x5F0F;&#x4E09;&#x83B7;&#x53D6;&#x7684;&#x662F;&#x6807;&#x7B7E;&#x6570;&#x7EC4;&#xFF0C;&#x90A3;&#x4E48;&#x4E60;&#x60EF;&#x6027;&#x662F;<strong>&#x5148;&#x904D;&#x5386;&#x4E4B;&#x540E;&#x518D;&#x4F7F;&#x7528;</strong>&#x3002;</p>
+<p>&#x7279;&#x6B8A;&#x60C5;&#x51B5;&#xFF1A;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x503C;&#x53EA;&#x6709; 1 &#x4E2A;&#x3002;&#x5373;&#x4FBF;&#x5982;&#x6B64;&#xFF0C;&#x8FD9;&#x4E00;&#x4E2A;&#x503C;&#x4E5F;&#x662F;&#x5305;&#x5728;&#x6570;&#x7EC4;&#x91CC;&#x7684;&#x3002;&#x8FD9;&#x4E2A;&#x503C;&#x7684;&#x83B7;&#x53D6;&#x65B9;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript">document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">&quot;div1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">//&#x53D6;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;</span>
+
+document<span class="token punctuation">.</span><span class="token function">getElementsByClassName</span><span class="token punctuation">(</span><span class="token string">&quot;hehe&quot;</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">//&#x53D6;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;</span>
+</pre><h2 class="mume-header" id="dom-%E8%AE%BF%E9%97%AE%E5%85%B3%E7%B3%BB%E7%9A%84%E8%8E%B7%E5%8F%96">DOM &#x8BBF;&#x95EE;&#x5173;&#x7CFB;&#x7684;&#x83B7;&#x53D6;</h2>
+
+<p>DOM &#x7684;&#x8282;&#x70B9;&#x5E76;&#x4E0D;&#x662F;&#x5B64;&#x7ACB;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; DOM &#x8282;&#x70B9;&#x4E4B;&#x95F4;&#x7684;&#x76F8;&#x5BF9;&#x5173;&#x7CFB;&#x5BF9;&#x5B83;&#x4EEC;&#x8FDB;&#x884C;&#x8BBF;&#x95EE;&#x3002;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><img src="https://i.loli.net/2019/07/02/5d1ab1c45541e57407.png" alt></p>
+<p>&#x8282;&#x70B9;&#x7684;&#x8BBF;&#x95EE;&#x5173;&#x7CFB;&#xFF0C;&#x662F;&#x4EE5;<strong>&#x5C5E;&#x6027;</strong>&#x7684;&#x65B9;&#x5F0F;&#x5B58;&#x5728;&#x7684;&#x3002;</p>
+<p>JS &#x4E2D;&#x7684;<strong>&#x7236;&#x5B50;&#x5144;</strong>&#x8BBF;&#x95EE;&#x5173;&#x7CFB;&#xFF1A;</p>
+<p><img src="https://i.loli.net/2019/07/02/5d1ab1da1184743752.png" alt></p>
+<p>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x8981;&#x91CD;&#x70B9;&#x77E5;&#x9053;<strong>parentNode</strong>&#x548C;<strong>children</strong>&#x8FD9;&#x4E24;&#x4E2A;&#x5C5E;&#x6027;&#x7684;&#x7528;&#x6CD5;&#x3002;&#x4E0B;&#x9762;&#x5206;&#x522B;&#x4ECB;&#x7ECD;&#x3002;</p>
+<h3 class="mume-header" id="%E8%8E%B7%E5%8F%96%E7%88%B6%E8%8A%82%E7%82%B9">&#x83B7;&#x53D6;&#x7236;&#x8282;&#x70B9;</h3>
+
+<p>&#x8C03;&#x7528;&#x8005;&#x5C31;&#x662F;&#x8282;&#x70B9;&#x3002;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x7236;&#x8282;&#x70B9;&#xFF0C;&#x8C03;&#x7528;&#x65B9;&#x5F0F;&#x5C31;&#x662F;</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript">&#x8282;&#x70B9;<span class="token punctuation">.</span>parentNode<span class="token punctuation">;</span>
+</pre><h3 class="mume-header" id="%E8%8E%B7%E5%8F%96%E5%85%84%E5%BC%9F%E8%8A%82%E7%82%B9">&#x83B7;&#x53D6;&#x5144;&#x5F1F;&#x8282;&#x70B9;</h3>
+
+<p><strong>1&#x3001;&#x4E0B;&#x4E00;&#x4E2A;&#x8282;&#x70B9; | &#x4E0B;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x8282;&#x70B9;</strong>&#xFF1A;</p>
+<blockquote>
+<p>Sibling &#x7684;&#x4E2D;&#x6587;&#x662F;<strong>&#x5144;&#x5F1F;</strong>&#x3002;</p>
+</blockquote>
+<p>&#xFF08;1&#xFF09;nextSibling&#xFF1A;</p>
+<ul>
+<li>
+<p>&#x706B;&#x72D0;&#x3001;&#x8C37;&#x6B4C;&#x3001;IE9+&#x7248;&#x672C;&#xFF1A;&#x90FD;&#x6307;&#x7684;&#x662F;&#x4E0B;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#xFF08;&#x5305;&#x62EC;&#x6807;&#x7B7E;&#x3001;&#x7A7A;&#x6587;&#x6863;&#x548C;&#x6362;&#x884C;&#x8282;&#x70B9;&#xFF09;&#x3002;</p>
+</li>
+<li>
+<p>IE678 &#x7248;&#x672C;&#xFF1A;&#x6307;&#x4E0B;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x8282;&#x70B9;&#xFF08;&#x6807;&#x7B7E;&#xFF09;&#x3002;</p>
+</li>
+</ul>
+<p>&#xFF08;2&#xFF09;nextElementSibling&#xFF1A;</p>
+<ul>
+<li>&#x706B;&#x72D0;&#x3001;&#x8C37;&#x6B4C;&#x3001;IE9+&#x7248;&#x672C;&#xFF1A;&#x90FD;&#x6307;&#x7684;&#x662F;&#x4E0B;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x8282;&#x70B9;&#xFF08;&#x6807;&#x7B7E;&#xFF09;&#x3002;</li>
+</ul>
+<p><strong>&#x603B;&#x7ED3;</strong>&#xFF1A;&#x4E3A;&#x4E86;&#x83B7;&#x53D6;&#x4E0B;&#x4E00;&#x4E2A;<strong>&#x5143;&#x7D20;&#x8282;&#x70B9;</strong>&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x505A;&#xFF1A;&#x5728; IE678 &#x4E2D;&#x7528; nextSibling&#xFF0C;&#x5728;&#x706B;&#x72D0;&#x8C37;&#x6B4C; IE9+&#x4EE5;&#x540E;&#x7528; nextElementSibling&#xFF0C;&#x4E8E;&#x662F;&#xFF0C;&#x7EFC;&#x5408;&#x8FD9;&#x4E24;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x5199;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript">&#x4E0B;&#x4E00;&#x4E2A;&#x5144;&#x5F1F;&#x8282;&#x70B9; <span class="token operator">=</span> &#x8282;&#x70B9;<span class="token punctuation">.</span>nextElementSibling <span class="token operator">||</span> &#x8282;&#x70B9;<span class="token punctuation">.</span>nextSibling<span class="token punctuation">;</span>
+</pre><p><strong>2&#x3001;&#x524D;&#x4E00;&#x4E2A;&#x8282;&#x70B9; | &#x524D;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x8282;&#x70B9;</strong>&#xFF1A;</p>
+<blockquote>
+<p>previous &#x7684;&#x4E2D;&#x6587;&#x662F;&#xFF1A;&#x524D;&#x4E00;&#x4E2A;&#x3002;</p>
+</blockquote>
+<p>&#xFF08;1&#xFF09;previousSibling&#xFF1A;</p>
+<ul>
+<li>
+<p>&#x706B;&#x72D0;&#x3001;&#x8C37;&#x6B4C;&#x3001;IE9+&#x7248;&#x672C;&#xFF1A;&#x90FD;&#x6307;&#x7684;&#x662F;&#x524D;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#xFF08;&#x5305;&#x62EC;&#x6807;&#x7B7E;&#x3001;&#x7A7A;&#x6587;&#x6863;&#x548C;&#x6362;&#x884C;&#x8282;&#x70B9;&#xFF09;&#x3002;</p>
+</li>
+<li>
+<p>IE678 &#x7248;&#x672C;&#xFF1A;&#x6307;&#x524D;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x8282;&#x70B9;&#xFF08;&#x6807;&#x7B7E;&#xFF09;&#x3002;</p>
+</li>
+</ul>
+<p>&#xFF08;2&#xFF09;previousElementSibling&#xFF1A;</p>
+<ul>
+<li>&#x706B;&#x72D0;&#x3001;&#x8C37;&#x6B4C;&#x3001;IE9+&#x7248;&#x672C;&#xFF1A;&#x90FD;&#x6307;&#x7684;&#x662F;&#x524D;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x8282;&#x70B9;&#xFF08;&#x6807;&#x7B7E;&#xFF09;&#x3002;</li>
+</ul>
+<p><strong>&#x603B;&#x7ED3;</strong>&#xFF1A;&#x4E3A;&#x4E86;&#x83B7;&#x53D6;&#x524D;&#x4E00;&#x4E2A;<strong>&#x5143;&#x7D20;&#x8282;&#x70B9;</strong>&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x505A;&#xFF1A;&#x5728; IE678 &#x4E2D;&#x7528; previousSibling&#xFF0C;&#x5728;&#x706B;&#x72D0;&#x8C37;&#x6B4C; IE9+&#x4EE5;&#x540E;&#x7528; previousElementSibling&#xFF0C;&#x4E8E;&#x662F;&#xFF0C;&#x7EFC;&#x5408;&#x8FD9;&#x4E24;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x5199;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript">&#x524D;&#x4E00;&#x4E2A;&#x5144;&#x5F1F;&#x8282;&#x70B9; <span class="token operator">=</span> &#x8282;&#x70B9;<span class="token punctuation">.</span>previousElementSibling <span class="token operator">||</span> &#x8282;&#x70B9;<span class="token punctuation">.</span>previousSibling<span class="token punctuation">;</span>
+</pre><h3 class="mume-header" id="%E8%8E%B7%E5%8F%96%E5%8D%95%E4%B8%AA%E7%9A%84%E5%AD%90%E8%8A%82%E7%82%B9">&#x83B7;&#x53D6;&#x5355;&#x4E2A;&#x7684;&#x5B50;&#x8282;&#x70B9;</h3>
+
+<p><strong>1&#x3001;&#x7B2C;&#x4E00;&#x4E2A;&#x5B50;&#x8282;&#x70B9; | &#x7B2C;&#x4E00;&#x4E2A;&#x5B50;&#x5143;&#x7D20;&#x8282;&#x70B9;</strong>&#xFF1A;</p>
+<p>&#xFF08;1&#xFF09;firstChild&#xFF1A;</p>
+<ul>
+<li>
+<p>&#x706B;&#x72D0;&#x3001;&#x8C37;&#x6B4C;&#x3001;IE9+&#x7248;&#x672C;&#xFF1A;&#x90FD;&#x6307;&#x7684;&#x662F;&#x7B2C;&#x4E00;&#x4E2A;&#x5B50;&#x8282;&#x70B9;&#xFF08;&#x5305;&#x62EC;&#x6807;&#x7B7E;&#x3001;&#x7A7A;&#x6587;&#x6863;&#x548C;&#x6362;&#x884C;&#x8282;&#x70B9;&#xFF09;&#x3002;</p>
+</li>
+<li>
+<p>IE678 &#x7248;&#x672C;&#xFF1A;&#x6307;&#x7B2C;&#x4E00;&#x4E2A;&#x5B50;&#x5143;&#x7D20;&#x8282;&#x70B9;&#xFF08;&#x6807;&#x7B7E;&#xFF09;&#x3002;</p>
+</li>
+</ul>
+<p>&#xFF08;2&#xFF09;firstElementChild&#xFF1A;</p>
+<ul>
+<li>&#x706B;&#x72D0;&#x3001;&#x8C37;&#x6B4C;&#x3001;IE9+&#x7248;&#x672C;&#xFF1A;&#x90FD;&#x6307;&#x7684;&#x662F;&#x7B2C;&#x4E00;&#x4E2A;&#x5B50;&#x5143;&#x7D20;&#x8282;&#x70B9;&#xFF08;&#x6807;&#x7B7E;&#xFF09;&#x3002;</li>
+</ul>
+<p><strong>&#x603B;&#x7ED3;</strong>&#xFF1A;&#x4E3A;&#x4E86;&#x83B7;&#x53D6;&#x7B2C;&#x4E00;&#x4E2A;<strong>&#x5B50;&#x5143;&#x7D20;&#x8282;&#x70B9;</strong>&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x505A;&#xFF1A;&#x5728; IE678 &#x4E2D;&#x7528; firstChild&#xFF0C;&#x5728;&#x706B;&#x72D0;&#x8C37;&#x6B4C; IE9+&#x4EE5;&#x540E;&#x7528; firstElementChild&#xFF0C;&#x4E8E;&#x662F;&#xFF0C;&#x7EFC;&#x5408;&#x8FD9;&#x4E24;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x5199;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript">&#x7B2C;&#x4E00;&#x4E2A;&#x5B50;&#x5143;&#x7D20;&#x8282;&#x70B9; <span class="token operator">=</span> &#x8282;&#x70B9;<span class="token punctuation">.</span>firstElementChild <span class="token operator">||</span> &#x8282;&#x70B9;<span class="token punctuation">.</span>firstChild<span class="token punctuation">;</span>
+</pre><p><strong>2&#x3001;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5B50;&#x8282;&#x70B9; | &#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5B50;&#x5143;&#x7D20;&#x8282;&#x70B9;</strong>&#xFF1A;</p>
+<p>&#xFF08;1&#xFF09;lastChild&#xFF1A;</p>
+<ul>
+<li>
+<p>&#x706B;&#x72D0;&#x3001;&#x8C37;&#x6B4C;&#x3001;IE9+&#x7248;&#x672C;&#xFF1A;&#x90FD;&#x6307;&#x7684;&#x662F;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5B50;&#x8282;&#x70B9;&#xFF08;&#x5305;&#x62EC;&#x6807;&#x7B7E;&#x3001;&#x7A7A;&#x6587;&#x6863;&#x548C;&#x6362;&#x884C;&#x8282;&#x70B9;&#xFF09;&#x3002;</p>
+</li>
+<li>
+<p>IE678 &#x7248;&#x672C;&#xFF1A;&#x6307;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5B50;&#x5143;&#x7D20;&#x8282;&#x70B9;&#xFF08;&#x6807;&#x7B7E;&#xFF09;&#x3002;</p>
+</li>
+</ul>
+<p>&#xFF08;2&#xFF09;lastElementChild&#xFF1A;</p>
+<ul>
+<li>&#x706B;&#x72D0;&#x3001;&#x8C37;&#x6B4C;&#x3001;IE9+&#x7248;&#x672C;&#xFF1A;&#x90FD;&#x6307;&#x7684;&#x662F;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5B50;&#x5143;&#x7D20;&#x8282;&#x70B9;&#xFF08;&#x6807;&#x7B7E;&#xFF09;&#x3002;</li>
+</ul>
+<p><strong>&#x603B;&#x7ED3;</strong>&#xFF1A;&#x4E3A;&#x4E86;&#x83B7;&#x53D6;&#x6700;&#x540E;&#x4E00;&#x4E2A;<strong>&#x5B50;&#x5143;&#x7D20;&#x8282;&#x70B9;</strong>&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x505A;&#xFF1A;&#x5728; IE678 &#x4E2D;&#x7528; lastChild&#xFF0C;&#x5728;&#x706B;&#x72D0;&#x8C37;&#x6B4C; IE9+&#x4EE5;&#x540E;&#x7528; lastElementChild&#xFF0C;&#x4E8E;&#x662F;&#xFF0C;&#x7EFC;&#x5408;&#x8FD9;&#x4E24;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x5199;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript">&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5B50;&#x5143;&#x7D20;&#x8282;&#x70B9; <span class="token operator">=</span> &#x8282;&#x70B9;<span class="token punctuation">.</span>lastElementChild <span class="token operator">||</span> &#x8282;&#x70B9;<span class="token punctuation">.</span>lastChild<span class="token punctuation">;</span>
+</pre><h3 class="mume-header" id="%E8%8E%B7%E5%8F%96%E6%89%80%E6%9C%89%E7%9A%84%E5%AD%90%E8%8A%82%E7%82%B9">&#x83B7;&#x53D6;&#x6240;&#x6709;&#x7684;&#x5B50;&#x8282;&#x70B9;</h3>
+
+<p>&#xFF08;1&#xFF09;<strong>childNodes</strong>&#xFF1A;&#x6807;&#x51C6;&#x5C5E;&#x6027;&#x3002;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x6307;&#x5B9A;&#x5143;&#x7D20;&#x7684;<strong>&#x5B50;&#x8282;&#x70B9;</strong>&#x7684;&#x96C6;&#x5408;&#xFF08;&#x5305;&#x62EC;&#x5143;&#x7D20;&#x8282;&#x70B9;&#x3001;&#x6240;&#x6709;&#x5C5E;&#x6027;&#x3001;&#x6587;&#x672C;&#x8282;&#x70B9;&#xFF09;&#x3002;&#x662F; W3C &#x7684;&#x4EB2;&#x513F;&#x5B50;&#x3002;</p>
+<ul>
+<li>&#x706B;&#x72D0; &#x8C37;&#x6B4C;&#x7B49;&#x9AD8;&#x672C;&#x7248;&#x4F1A;&#x628A;&#x6362;&#x884C;&#x4E5F;&#x770B;&#x505A;&#x662F;&#x5B50;&#x8282;&#x70B9;&#x3002;</li>
+</ul>
+<p>&#x7528;&#x6CD5;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript">&#x5B50;&#x8282;&#x70B9;&#x6570;&#x7EC4; <span class="token operator">=</span> &#x7236;&#x8282;&#x70B9;<span class="token punctuation">.</span>childNodes<span class="token punctuation">;</span> <span class="token comment">//&#x83B7;&#x53D6;&#x6240;&#x6709;&#x8282;&#x70B9;&#x3002;</span>
+</pre><p>&#xFF08;2&#xFF09;<strong>children</strong>&#xFF1A;&#x975E;&#x6807;&#x51C6;&#x5C5E;&#x6027;&#x3002;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x6307;&#x5B9A;&#x5143;&#x7D20;&#x7684;<strong>&#x5B50;&#x5143;&#x7D20;&#x8282;&#x70B9;</strong>&#x7684;&#x96C6;&#x5408;&#x3002;&#x3010;&#x91CD;&#x8981;&#x3011;</p>
+<ul>
+<li>&#x5B83;&#x53EA;&#x8FD4;&#x56DE; HTML &#x8282;&#x70B9;&#xFF0C;&#x751A;&#x81F3;&#x4E0D;&#x8FD4;&#x56DE;&#x6587;&#x672C;&#x8282;&#x70B9;&#x3002;</li>
+<li>&#x5728; IE6/7/8 &#x4E2D;&#x5305;&#x542B;&#x6CE8;&#x91CA;&#x8282;&#x70B9;&#xFF08;&#x5728; IE678 &#x4E2D;&#xFF0C;&#x6CE8;&#x91CA;&#x8282;&#x70B9;&#x4E0D;&#x8981;&#x5199;&#x5728;&#x91CC;&#x9762;&#xFF09;&#x3002;</li>
+</ul>
+<p>&#x7528;&#x6CD5;&#xFF1A;&#xFF08;<strong>&#x7528;&#x7684;&#x6700;&#x591A;</strong>&#xFF09;</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript">&#x5B50;&#x8282;&#x70B9;&#x6570;&#x7EC4; <span class="token operator">=</span> &#x7236;&#x8282;&#x70B9;<span class="token punctuation">.</span>children<span class="token punctuation">;</span> <span class="token comment">//&#x83B7;&#x53D6;&#x6240;&#x6709;&#x8282;&#x70B9;&#x3002;&#x7528;&#x7684;&#x6700;&#x591A;&#x3002;</span>
+</pre><p>&#x517C;&#x5BB9;&#x95EE;&#x9898;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token comment">// &#x81EA;&#x5DF1;&#x5C01;&#x88C5;&#x65B9;&#x6CD5; &#x5B9E;&#x73B0;  &#x83B7;&#x53D6;&#x5143;&#x7D20;&#x7684;  &#x7D20;&#x6709;&#x5B50;&#x5143;&#x7D20;&#x8282;&#x70B9;</span>
+<span class="token keyword">function</span> <span class="token function">myChildren</span><span class="token punctuation">(</span><span class="token parameter">el</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">var</span> children <span class="token operator">=</span> el<span class="token punctuation">.</span>children<span class="token punctuation">;</span>
+	<span class="token keyword">var</span> myChildrenArr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>children<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> children<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token comment">// &#x5982;&#x4F55; &#x5224;&#x65AD; &#x4ED6;&#x662F; &#x6CE8;&#x91CA;&#x8282;&#x70B9;  &#x8FD8;&#x662F; &#x5143;&#x7D20;&#x51E0;&#x70B9;</span>
+		<span class="token comment">// nodeType = 8   &#x6CE8;&#x91CA;&#x8282;&#x70B9;</span>
+		<span class="token comment">// nodeType = 1   &#x5143;&#x7D20;&#x8282;&#x70B9;</span>
+		<span class="token comment">// nodeType =  3  &#x662F;&#x6587;&#x672C;&#x8282;&#x70B9;</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span>children<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>nodeType <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			myChildrenArr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>children<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> myChildrenArr<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> ulElChildren <span class="token operator">=</span> <span class="token function">myChildren</span><span class="token punctuation">(</span>ulEl<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><h3 class="mume-header" id="nodetype-%E5%B1%9E%E6%80%A7">nodeType &#x5C5E;&#x6027;</h3>
+
+<p>&#x8FD9;&#x91CC;&#x8BB2;&#x4E00;&#x4E0B; nodeType &#x5C5E;&#x6027;&#x3002;</p>
+<ul>
+<li>
+<p><strong>nodeType == 1 &#x8868;&#x793A;&#x7684;&#x662F;&#x5143;&#x7D20;&#x8282;&#x70B9;</strong>&#xFF08;&#x6807;&#x7B7E;&#xFF09; &#x3002;&#x8BB0;&#x4F4F;&#xFF1A;&#x5143;&#x7D20;&#x5C31;&#x662F;&#x6807;&#x7B7E;&#x3002;</p>
+</li>
+<li>
+<p>nodeType == 2 &#x8868;&#x793A;&#x662F;&#x5C5E;&#x6027;&#x8282;&#x70B9;&#x3002;</p>
+</li>
+<li>
+<p>nodeType == 3 &#x662F;&#x6587;&#x672C;&#x8282;&#x70B9;&#x3002;</p>
+</li>
+<li>
+<p>nodeType == 8 &#x6CE8;&#x91CA;&#x8282;&#x70B9;</p>
+</li>
+</ul>
+<h3 class="mume-header" id="%E8%8E%B7%E5%8F%96%E9%99%A4%E8%87%AA%E5%B7%B1%E4%BB%A5%E5%A4%96%E7%9A%84%E6%89%80%E6%9C%89%E5%85%84%E5%BC%9F%E8%8A%82%E7%82%B9">&#x83B7;&#x53D6;&#x9664;&#x81EA;&#x5DF1;&#x4EE5;&#x5916;&#x7684;&#x6240;&#x6709;&#x5144;&#x5F1F;&#x8282;&#x70B9;</h3>
+
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token keyword">function</span> <span class="token function">getSiblings</span><span class="token punctuation">(</span><span class="token parameter">el</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">var</span> siblings <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token keyword">var</span> pNode <span class="token operator">=</span> el<span class="token punctuation">.</span>parentNode<span class="token punctuation">;</span>
+	<span class="token keyword">var</span> children <span class="token operator">=</span> pNode<span class="token punctuation">.</span>children<span class="token punctuation">;</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> children<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token comment">// &#x517C;&#x5BB9;ie8</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span>children<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>nodeType <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token comment">// &#x4E0D;&#x662F;el&#x518D;push</span>
+			<span class="token keyword">if</span> <span class="token punctuation">(</span>children<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!==</span> el<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+				siblings<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>children<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token punctuation">}</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> siblings<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre><h2 class="mume-header" id="dom-%E8%8A%82%E7%82%B9%E7%9A%84%E6%93%8D%E4%BD%9C%E9%87%8D%E8%A6%81">DOM &#x8282;&#x70B9;&#x7684;&#x64CD;&#x4F5C;&#xFF08;&#x91CD;&#x8981;&#xFF09;</h2>
+
+<p>&#x4E0A;&#x4E00;&#x6BB5;&#x7684;&#x5185;&#x5BB9;&#xFF1A;&#x8282;&#x70B9;&#x7684;<strong>&#x8BBF;&#x95EE;&#x5173;&#x7CFB;</strong>&#x90FD;&#x662F;<strong>&#x5C5E;&#x6027;</strong>&#x3002;</p>
+<p>&#x672C;&#x6BB5;&#x7684;&#x5185;&#x5BB9;&#xFF1A;&#x8282;&#x70B9;&#x7684;<strong>&#x64CD;&#x4F5C;</strong>&#x90FD;&#x662F;<strong>&#x51FD;&#x6570;</strong>&#xFF08;&#x65B9;&#x6CD5;&#xFF09;&#x3002;</p>
+<h3 class="mume-header" id="%E5%88%9B%E5%BB%BA%E8%8A%82%E7%82%B9">&#x521B;&#x5EFA;&#x8282;&#x70B9;</h3>
+
+<p>&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript">	<span class="token function">&#x65B0;&#x7684;&#x6807;&#x7B7E;</span><span class="token punctuation">(</span>&#x5143;&#x7D20;&#x8282;&#x70B9;<span class="token punctuation">)</span> <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">&quot;&#x6807;&#x7B7E;&#x540D;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><p>&#x6BD4;&#x5982;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x60F3;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; li &#x6807;&#x7B7E;&#xFF0C;&#x6216;&#x8005;&#x662F;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4E0D;&#x5B58;&#x5728;&#x7684; adbc &#x6807;&#x7B7E;&#xFF0C;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x505A;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="html" class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/javascript<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+	<span class="token keyword">var</span> a1 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">&quot;li&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//&#x521B;&#x5EFA;&#x4E00;&#x4E2A;li&#x6807;&#x7B7E;</span>
+	<span class="token keyword">var</span> a2 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">&quot;adbc&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x6807;&#x7B7E;</span>
+
+	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> a1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> a2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</pre><p>&#x6253;&#x5370;&#x7ED3;&#x679C;&#xFF1A;</p>
+<p><img src="https://i.loli.net/2019/07/02/5d1ab1fb0b27770044.png" alt></p>
+<h3 class="mume-header" id="%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9">&#x63D2;&#x5165;&#x8282;&#x70B9;</h3>
+
+<p>&#x63D2;&#x5165;&#x8282;&#x70B9;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x5B83;&#x4EEC;&#x7684;&#x542B;&#x4E49;&#x662F;&#x4E0D;&#x540C;&#x7684;&#x3002;</p>
+<p>&#x65B9;&#x5F0F; 1&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript">&#x7236;&#x8282;&#x70B9;<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>&#x65B0;&#x7684;&#x5B50;&#x8282;&#x70B9;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><p>&#x89E3;&#x91CA;&#xFF1A;&#x7236;&#x8282;&#x70B9;&#x7684;&#x6700;&#x540E;&#x63D2;&#x5165;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5B50;&#x8282;&#x70B9;&#x3002;</p>
+<p>&#x65B9;&#x5F0F; 2&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript">&#x7236;&#x8282;&#x70B9;<span class="token punctuation">.</span><span class="token function">insertBefore</span><span class="token punctuation">(</span>&#x65B0;&#x7684;&#x5B50;&#x8282;&#x70B9;<span class="token punctuation">,</span> &#x4F5C;&#x4E3A;&#x53C2;&#x8003;&#x7684;&#x5B50;&#x8282;&#x70B9;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><p>&#x89E3;&#x91CA;&#xFF1A;</p>
+<ul>
+<li>&#x5728;&#x53C2;&#x8003;&#x8282;&#x70B9;&#x524D;&#x63D2;&#x5165;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x8282;&#x70B9;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x53C2;&#x8003;&#x8282;&#x70B9;&#x4E3A; null&#xFF0C;&#x90A3;&#x4E48;&#x4ED6;&#x5C06;&#x5728;&#x7236;&#x8282;&#x70B9;&#x91CC;&#x9762;&#x7684;&#x6700;&#x540E;&#x63D2;&#x5165;&#x4E00;&#x4E2A;&#x5B50;&#x8282;&#x70B9;&#x3002;</li>
+</ul>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript">btn<span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	box<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>imgEl<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token comment">// &#x540C;&#x4E00;&#x4E2A;&#x8282;&#x70B9; &#x53EA;&#x80FD; &#x6DFB;&#x52A0;&#x4E00;&#x6B21;</span>
+	<span class="token comment">// box.appendChild(imgEl);</span>
+	<span class="token comment">// box.appendChild(pEl);</span>
+	<span class="token comment">// &#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#xFF1A;&#x7236;&#x8282;&#x70B9;.insertBefore(&#x8981;&#x63D2;&#x5165;&#x7684;&#x8282;&#x70B9;&#xFF0C;&#x53C2;&#x8003;&#x8282;&#x70B9;)&#xFF1B;</span>
+	box<span class="token punctuation">.</span><span class="token function">insertBefore</span><span class="token punctuation">(</span>pEl<span class="token punctuation">,</span> imgEl<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token comment">// &#x5982;&#x679C;&#x53C2;&#x8003;&#x8282;&#x70B9;&#x4E3A;null&#xFF0C;&#x90A3;&#x4E48;&#x4ED6;&#x5C06;&#x5728;&#x8282;&#x70B9;&#x6700;&#x540E;&#x63D2;&#x5165;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x3002;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</pre><h3 class="mume-header" id="%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9">&#x5220;&#x9664;&#x8282;&#x70B9;</h3>
+
+<p>&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript">&#x7236;&#x8282;&#x70B9;<span class="token punctuation">.</span><span class="token function">removeChild</span><span class="token punctuation">(</span>&#x5B50;&#x8282;&#x70B9;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><p>&#x89E3;&#x91CA;&#xFF1A;<strong>&#x7528;&#x7236;&#x8282;&#x70B9;&#x5220;&#x9664;&#x5B50;&#x8282;&#x70B9;</strong>&#x3002;&#x5FC5;&#x987B;&#x8981;&#x6307;&#x5B9A;&#x662F;&#x5220;&#x9664;&#x54EA;&#x4E2A;&#x5B50;&#x8282;&#x70B9;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x6211;&#x60F3;&#x5220;&#x9664;&#x81EA;&#x5DF1;&#x8FD9;&#x4E2A;&#x8282;&#x70B9;&#xFF0C;&#x53EF;&#x4EE5;&#x8FD9;&#x4E48;&#x505A;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript">node1<span class="token punctuation">.</span>parentNode<span class="token punctuation">.</span><span class="token function">removeChild</span><span class="token punctuation">(</span>node1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><h3 class="mume-header" id="%E5%A4%8D%E5%88%B6%E8%8A%82%E7%82%B9%E5%85%8B%E9%9A%86%E8%8A%82%E7%82%B9">&#x590D;&#x5236;&#x8282;&#x70B9;&#xFF08;&#x514B;&#x9686;&#x8282;&#x70B9;&#xFF09;</h3>
+
+<p>&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript">&#x8981;&#x590D;&#x5236;&#x7684;&#x8282;&#x70B9;<span class="token punctuation">.</span><span class="token function">cloneNode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//&#x62EC;&#x53F7;&#x91CC;&#x4E0D;&#x5E26;&#x53C2;&#x6570;&#x548C;&#x5E26;&#x53C2;&#x6570;false&#xFF0C;&#x6548;&#x679C;&#x662F;&#x4E00;&#x6837;&#x7684;&#x3002;</span>
+
+&#x8981;&#x590D;&#x5236;&#x7684;&#x8282;&#x70B9;<span class="token punctuation">.</span><span class="token function">cloneNode</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><p>&#x62EC;&#x53F7;&#x91CC;&#x5E26;&#x4E0D;&#x5E26;&#x53C2;&#x6570;&#xFF0C;&#x6548;&#x679C;&#x662F;&#x4E0D;&#x540C;&#x7684;&#x3002;&#x89E3;&#x91CA;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li>
+<p>&#x4E0D;&#x5E26;&#x53C2;&#x6570;/&#x5E26;&#x53C2;&#x6570; false&#xFF1A;&#x53EA;&#x590D;&#x5236;&#x8282;&#x70B9;&#x672C;&#x8EAB;&#xFF0C;&#x4E0D;&#x590D;&#x5236;&#x5B50;&#x8282;&#x70B9;&#x3002;</p>
+</li>
+<li>
+<p>&#x5E26;&#x53C2;&#x6570; true&#xFF1A;&#x65E2;&#x590D;&#x5236;&#x8282;&#x70B9;&#x672C;&#x8EAB;&#xFF0C;&#x4E5F;&#x590D;&#x5236;&#x5176;&#x6240;&#x6709;&#x7684;&#x5B50;&#x8282;&#x70B9;&#x3002;</p>
+</li>
+</ul>
+<h2 class="mume-header" id="%E8%AE%BE%E7%BD%AE%E8%8A%82%E7%82%B9%E7%9A%84%E5%B1%9E%E6%80%A7">&#x8BBE;&#x7F6E;&#x8282;&#x70B9;&#x7684;&#x5C5E;&#x6027;</h2>
+
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x8282;&#x70B9;&#x7684;&#x5C5E;&#x6027;&#x503C;&#x3001;&#x8BBE;&#x7F6E;&#x8282;&#x70B9;&#x7684;&#x5C5E;&#x6027;&#x503C;&#x3001;&#x5220;&#x9664;&#x8282;&#x70B9;&#x7684;&#x5C5E;&#x6027;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x5C31;&#x7EDF;&#x4E00;&#x62FF;&#x4E0B;&#x9762;&#x8FD9;&#x4E2A;&#x6807;&#x7B7E;&#x6765;&#x4E3E;&#x4F8B;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="html" class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>images/1.jpg<span class="token punctuation">&quot;</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>image-box<span class="token punctuation">&quot;</span></span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>&#x7F8E;&#x5973;&#x56FE;&#x7247;<span class="token punctuation">&quot;</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>&#x5730;&#x94C1;&#x4E00;&#x77A5;<span class="token punctuation">&quot;</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>a1<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+</pre><p>&#x4E0B;&#x9762;&#x5206;&#x522B;&#x4ECB;&#x7ECD;&#x3002;</p>
+<h3 class="mume-header" id="1-%E8%8E%B7%E5%8F%96%E8%8A%82%E7%82%B9%E7%9A%84%E5%B1%9E%E6%80%A7%E5%80%BC">1&#x3001;&#x83B7;&#x53D6;&#x8282;&#x70B9;&#x7684;&#x5C5E;&#x6027;&#x503C;</h3>
+
+<p>&#x65B9;&#x5F0F; 1&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript">&#x5143;&#x7D20;&#x8282;&#x70B9;<span class="token punctuation">.</span>&#x5C5E;&#x6027;<span class="token punctuation">;</span>
+&#x5143;&#x7D20;&#x8282;&#x70B9;<span class="token punctuation">[</span>&#x5C5E;&#x6027;<span class="token punctuation">]</span><span class="token punctuation">;</span>
+</pre><p>&#x65B9;&#x5F0F; 2&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript">&#x5143;&#x7D20;&#x8282;&#x70B9;<span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">&quot;&#x5C5E;&#x6027;&#x540D;&#x79F0;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><p>&#x4E3E;&#x4F8B;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>myNode<span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">&quot;src&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>myNode<span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">&quot;class&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//&#x6CE8;&#x610F;&#x662F;class&#xFF0C;&#x4E0D;&#x662F;className</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>myNode<span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">&quot;title&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><h3 class="mume-header" id="2-%E8%AE%BE%E7%BD%AE%E8%8A%82%E7%82%B9%E7%9A%84%E5%B1%9E%E6%80%A7%E5%80%BC">2&#x3001;&#x8BBE;&#x7F6E;&#x8282;&#x70B9;&#x7684;&#x5C5E;&#x6027;&#x503C;</h3>
+
+<p>&#x65B9;&#x5F0F; 1 &#x4E3E;&#x4F8B;&#xFF1A;&#xFF08;&#x8BBE;&#x7F6E;&#x8282;&#x70B9;&#x7684;&#x5C5E;&#x6027;&#x503C;&#xFF09;</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript">myNode<span class="token punctuation">.</span>src <span class="token operator">=</span> <span class="token string">&quot;images/2.jpg&quot;</span><span class="token punctuation">;</span> <span class="token comment">//&#x4FEE;&#x6539;src&#x7684;&#x5C5E;&#x6027;&#x503C;</span>
+myNode<span class="token punctuation">.</span>className <span class="token operator">=</span> <span class="token string">&quot;image2-box&quot;</span><span class="token punctuation">;</span> <span class="token comment">//&#x4FEE;&#x6539;class&#x7684;name</span>
+</pre><p>&#x65B9;&#x5F0F; 2&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript">&#x5143;&#x7D20;&#x8282;&#x70B9;<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span>&#x5C5E;&#x6027;&#x540D;<span class="token punctuation">,</span> &#x65B0;&#x7684;&#x5C5E;&#x6027;&#x503C;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><p>&#x65B9;&#x5F0F; 2 &#x4E3E;&#x4F8B;&#xFF1A;&#xFF08;&#x8BBE;&#x7F6E;&#x8282;&#x70B9;&#x7684;&#x5C5E;&#x6027;&#x503C;&#xFF09;</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript">myNode<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">&quot;src&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;images/3.jpg&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+myNode<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">&quot;class&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;image3-box&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+myNode<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">&quot;id&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x4F60;&#x597D;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><h3 class="mume-header" id="3-%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9%E7%9A%84%E5%B1%9E%E6%80%A7">3&#x3001;&#x5220;&#x9664;&#x8282;&#x70B9;&#x7684;&#x5C5E;&#x6027;</h3>
+
+<p>&#x683C;&#x5F0F;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript">&#x5143;&#x7D20;&#x8282;&#x70B9;<span class="token punctuation">.</span><span class="token function">removeAttribute</span><span class="token punctuation">(</span>&#x5C5E;&#x6027;&#x540D;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><p>&#x4E3E;&#x4F8B;&#xFF1A;&#xFF08;&#x5220;&#x9664;&#x8282;&#x70B9;&#x7684;&#x5C5E;&#x6027;&#xFF09;</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript">myNode<span class="token punctuation">.</span><span class="token function">removeAttribute</span><span class="token punctuation">(</span><span class="token string">&quot;class&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+myNode<span class="token punctuation">.</span><span class="token function">removeAttribute</span><span class="token punctuation">(</span><span class="token string">&quot;id&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><p><strong>&#x603B;&#x7ED3;&#xFF1A;</strong></p>
+<p>&#x83B7;&#x53D6;&#x8282;&#x70B9;&#x7684;&#x5C5E;&#x6027;&#x503C;&#x548C;&#x8BBE;&#x7F6E;&#x8282;&#x70B9;&#x7684;&#x5C5E;&#x6027;&#x503C;&#xFF0C;&#x90FD;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x4F46;&#x8FD9;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#x662F;&#x6709;&#x533A;&#x522B;&#x7684;&#x3002;</p>
+<ul>
+<li>
+<p>&#x65B9;&#x5F0F;&#x4E00;&#x7684;<code>&#x5143;&#x7D20;&#x8282;&#x70B9;.&#x5C5E;&#x6027;</code>&#x548C;<code>&#x5143;&#x7D20;&#x8282;&#x70B9;[&#x5C5E;&#x6027;]</code>:&#x7ED1;&#x5B9A;&#x7684;&#x5C5E;&#x6027;&#x503C;&#x4E0D;&#x4F1A;&#x51FA;&#x73B0;&#x5728;&#x6807;&#x7B7E;&#x4E0A;&#x3002;</p>
+</li>
+<li>
+<p>&#x65B9;&#x5F0F;&#x4E8C;&#x7684;<code>get/set/removeAttribut</code>: &#x7ED1;&#x5B9A;&#x7684;&#x5C5E;&#x6027;&#x503C;&#x4F1A;&#x51FA;&#x73B0;&#x5728;&#x6807;&#x7B7E;&#x4E0A;&#x3002;</p>
+</li>
+</ul>
+<p>&#x8FD9;&#x5176;&#x5B9E;&#x5F88;&#x597D;&#x7406;&#x89E3;&#xFF0C;&#x65B9;&#x5F0F;&#x4E00;&#x64CD;&#x4F5C;&#x7684;&#x662F;&#x5C5E;&#x6027;&#x800C;&#x5DF2;&#xFF0C;&#x65B9;&#x5F0F;&#x4E8C;&#x64CD;&#x4F5C;&#x7684;&#x662F;&#x6807;&#x7B7E;&#x672C;&#x8EAB;&#x3002;</p>
+<h2 class="mume-header" id="dom-%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7">DOM &#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;</h2>
+
+<p>DOM &#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x548C; HTML &#x7684;&#x6807;&#x7B7E;&#x5C5E;&#x6027;&#x51E0;&#x4E4E;&#x662F;&#x4E00;&#x81F4;&#x7684;&#x3002;&#x4F8B;&#x5982;&#xFF1A;src&#x3001;title&#x3001;className&#x3001;href &#x7B49;&#x3002;</p>
+<h3 class="mume-header" id="innerhtml-%E5%92%8C-innertext-%E7%9A%84%E5%8C%BA%E5%88%AB">innerHTML &#x548C; innerText &#x7684;&#x533A;&#x522B;</h3>
+
+<ul>
+<li>
+<p>value&#xFF1A;&#x6807;&#x7B7E;&#x7684; value &#x5C5E;&#x6027;&#x3002;</p>
+</li>
+<li>
+<p><strong>innerHTML</strong>&#xFF1A;&#x53CC;&#x95ED;&#x5408;&#x6807;&#x7B7E;&#x91CC;&#x9762;&#x7684;&#x5185;&#x5BB9;&#xFF08;&#x8BC6;&#x522B;&#x6807;&#x7B7E;&#xFF09;&#x3002;</p>
+</li>
+<li>
+<p><strong>innerText</strong>&#xFF1A;&#x53CC;&#x95ED;&#x5408;&#x6807;&#x7B7E;&#x91CC;&#x9762;&#x7684;&#x5185;&#x5BB9;&#xFF08;&#x4E0D;&#x8BC6;&#x522B;&#x6807;&#x7B7E;&#xFF09;&#x3002;&#xFF08;&#x8001;&#x7248;&#x672C;&#x7684;&#x706B;&#x72D0;&#x7528; textContent&#xFF09;</p>
+</li>
+</ul>
+<p><strong>&#x83B7;&#x53D6;&#x5185;&#x5BB9;&#x4E3E;&#x4F8B;&#xFF1A;</strong></p>
+<p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x60F3;&#x83B7;&#x53D6; innerHTML &#x548C; innerText &#x91CC;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x770B;&#x770B;&#x4F1A;&#x5982;&#x4F55;&#xFF1A;&#xFF08;innerHTML &#x4F1A;&#x83B7;&#x53D6;&#x5230;&#x6807;&#x7B7E;&#x672C;&#x8EAB;&#xFF0C;&#x800C; innerText &#x5219;&#x4E0D;&#x4F1A;&#xFF09;</p>
+<p><img src="https://i.loli.net/2019/07/02/5d1ab247b64d732228.png" alt></p>
+<p><strong>&#x4FEE;&#x6539;&#x5185;&#x5BB9;&#x4E3E;&#x4F8B;&#xFF1A;</strong>&#xFF08;innerHTML &#x4F1A;&#x4FEE;&#x6539;&#x6807;&#x7B7E;&#x672C;&#x8EAB;&#xFF0C;&#x800C; innerText &#x5219;&#x4E0D;&#x4F1A;&#xFF09;</p>
+<p><img src="https://i.loli.net/2019/07/02/5d1ab22945e9926206.png" alt></p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript">btn<span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">// inputEl.value = &apos;&#x4E0D;&#x51E1;&#x5B66;&#x9662;&apos;;</span>
+	<span class="token comment">// &#x4FEE;&#x6539;&#x8868;&#x5355;&#x7684;&#x503C;</span>
+	inputEl<span class="token punctuation">.</span>value <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+btn2<span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">// &#x63D2;&#x5165;&#x6587;&#x672C;&#x5185;&#x5BB9;</span>
+	boxEl<span class="token punctuation">.</span>innerText <span class="token operator">=</span> <span class="token string">&quot;&#x4ECA;&#x5929;&#x5929;&#x6C14;&#x5F88;&#x70ED;&quot;</span><span class="token punctuation">;</span>
+	boxEl<span class="token punctuation">.</span>innerText <span class="token operator">=</span> <span class="token string">&quot;&lt;p&gt;&lt;/p&gt;&quot;</span><span class="token punctuation">;</span> <span class="token comment">// &#x5F53;&#x505A;&#x4E86;&#x6587;&#x672C;&#x5904;&#x7406;,&#x5E76;&#x6CA1;&#x6709;&#x89E3;&#x6790;&#x6210;&#x6807;&#x7B7E;</span>
+	<span class="token comment">// &#x6BCF;&#x4E00;&#x6B21;innerText &#x90FD;&#x4F1A;&#x66FF;&#x6362;&#x6389;box&#x91CC;&#x8FB9;  &#x4E4B;&#x524D;&#x7684;&#x6240;&#x6709;&#x5185;&#x5BB9;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+btn3<span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	boxEl<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">&quot;&lt;p&gt;&#x6211;&#x662F;&#x4E00;&#x4E2A;p&#x6807;&#x7B7E;&lt;/p&gt;&quot;</span><span class="token punctuation">;</span>
+	<span class="token comment">//&#x89E3;&#x6790;&#x6210;&#x4E86;  &#x6807;&#x7B7E;</span>
+	<span class="token comment">// &#x6BCF;&#x4E00;&#x6B21;innerHTML &#x90FD;&#x4F1A; &#x66FF;&#x6362;&#x6389; &#x6389; box &#x91CC;&#x8FB9;&#x4E4B;&#x524D;&#x7684;&#x6240;&#x6709;&#x5185;&#x5BB9;</span>
+	<span class="token comment">// &#x53EF;&#x4EE5;&#x52A8;&#x6001;&#x5730;&#x751F;&#x6210;&#x9875;&#x9762;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</pre>
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

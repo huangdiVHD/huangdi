@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+
+        .box.green {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box box1">
+
+    </div>
+    <button>删除box1</button>
+    <button>判断有没有box这个类名</button>
+    <button>切换类名toggle</button>
+    <button>item()</button>
+    <script>
+        var boxEl = document.getElementsByClassName('box')[0];
+        boxEl.onclick = function () {
+            // H5 新增的dom操作
+            // 追加 类名
+            boxEl.classList.add('green');
+            // 可以追加多个  逗号隔开
+        }
+        // 删除类名
+        var btns = document.getElementsByTagName('button');
+        btns[0].onclick = function () {
+            boxEl.classList.remove('box1');;
+        }
+        //判断类名是否存在  true 或者 false
+        btns[1].onclick = function () {
+            console.log(boxEl.classList.contains('box'));
+        }
+
+        // toggle
+        // 有 则删除   无 则添加
+        btns[2].onclick = function () {
+            boxEl.classList.toggle('box2');
+        }
+
+        btns[3].onclick = function () {
+            console.log(boxEl.classList.item(0));
+        }
+    </script>
+</body>
+
+</html>

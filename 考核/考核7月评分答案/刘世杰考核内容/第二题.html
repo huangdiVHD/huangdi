@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 2.通过设置 style 属性实现该div元素从左上角到右下角的 red 到 blue 的渐变。 */
+        div {
+            background: radial-gradient(at left top, red, blue);
+        }
+    </style>
+</head>
+
+<body>
+
+    <script src="jquery-3.4.1.min.js"></script>
+    <script>
+        // 1.使用document.createElement在页面创建一个高宽为 300 像素*150 像素的 div 元素，插入到<body>标签下。
+        var rectangle = document.createElement("div");
+        var style = document.createAttribute('style');
+        rectangle.setAttribute('class', 'rectangle');
+        rectangle.style.width = '150px';
+        rectangle.style.height = '300px';
+        document.body.appendChild(rectangle);
+        var box = document.createElement('div');
+
+        //3. 在<body>元素内append20 个类名为.box的盒子。
+        for (var i = 0; i < 20; i++) {
+            var d = document.createElement('div');
+            document.body.append(d);
+            var myText = document.createTextNode("这是文本");
+            d.setAttribute('class', 'box');
+            d.appendChild(myText);
+        }
+        var img = document.createElement('img');
+        document.body.appendChild(img);
+        img.setAttribute("class", 'a')
+        img.appendChild(myText)
+
+        //4. 点击元素判断当前点击元素是否是img元素。
+        // var bo = document.querySelector("body");
+        // var img = document.querySelector("img");
+        // $(this).click(function () {
+        //     if ($(this) != img) {
+        //         alert('这不是img标签')
+        //     } else {
+        //         alert("这是img标签");
+        //     }
+        // })
+        // 5.获取页面中所有的<a>元素，遍历获取到的元素，对其中href属性以#开头的元素，设置背景色为红色。
+        // var a = document.querySelector('a');
+        // for (var i = 0; i < a.length; i++) {
+        //     $('a[href="#"]') ? backgroundColor = "red" : "";
+        // }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 2.通过设置 style 属性实现该div元素从左上角到右下角的 red 到 blue 的渐变。 */
+        
+        .box {
+            background: linear-gradient(-30deg, blue, red)
+        }
+    </style>
+</head>
+
+<body>
+    <button>点我20个盒子</button>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script>
+        //   <!-- 1 使用document.createElement在页面创建一个高宽为 300 像素*150 像素的 div 元素，插入到<body>标签下。 -->
+        var divEl = document.createElement('div')
+        var body = document.querySelector('body')
+        var script = document.querySelector('script')
+        body.insertBefore(divEl, script)
+        divEl.style.width = '200px';
+        divEl.style.height = '200px';
+        // divEl.style.backgroundColor = 'red';
+        divEl.className = 'box'
+        console.log(divEl)
+
+        // 3 在<body>元素内append20 个类名为.box的盒子。
+        $('button').click(function() {
+            for (var i = 0; i < 20; i++) {
+                $("body").append('<div class=box ></div>')
+            }
+            $('.box').css('width', '100px').css('height', '100px').css('border', '1px solid black');
+        })
+    </script>
+</body>
+
+</html>

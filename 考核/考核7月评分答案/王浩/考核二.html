@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <!-- 已知数组：
+        var arr = [0,1,2,3,4,5];
+        请实现，指定任意索引，对应数组项前移一个位置。
+        请实现，指定任意索引，对应数组项移动到最前面。
+        请实现，指定任意索引，对应数组项移动到最后面。
+        请实现，指定任意两项索引，对应数组项交换位置。
+        方法封装，要考虑到各种情况处理。 -->
+       <script>
+        //    指定任意索引，对应数组项前移一个位置。
+        var arr = [0,1,2,3,4,5];
+        function foo1(index) {
+            if (index > 0 && index < arr.length) {
+                var temp = arr[index - 1];
+                arr[index - 1] = arr[index];
+                arr[index] = temp;
+            }
+        }
+        foo1(3);
+        console.log(arr);
+        // 指定任意索引，对应数组项移动到最前面
+        var arr = [0,1,2,3,4,5];
+        function foo2(index){
+            while(index > 0 && index < arr.length){
+                var temp = arr[index - 1];
+                arr[index - 1] = arr[ index ];
+                arr[ index ] = temp; 
+                index--;
+            }
+        }
+        foo2(2)
+        console.log(arr);
+        // 指定任意索引，对应数组项移动到最后面。
+        var arr = [0,1,2,3,4,5];
+        function foo3(index){
+            while(index > 0 && index < arr.length){
+                var temp = arr[index - 1];
+                arr[index - 1] = arr[ index ];
+                arr[ index ] = temp; 
+                index++;
+            }
+        }
+        foo3(2)
+        console.log(arr);
+        // 指定任意两项索引，对应数组项交换位置
+        var arr = [0,1,2,3,4,5];
+        function foo4(index){
+            if(index > 0 && index < arr.length){
+                var temp = arr[index - 1];
+                arr[index - 1] = arr[ index ];
+                arr[ index ] = temp; 
+            }
+        }
+        foo4(4,5)
+        console.log(arr);
+
+
+       
+       </script>
+</body>
+</html>

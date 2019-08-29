@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+				width: 3000px;
+				height: 3000px;
+			}
+        .box {
+            width: 200px;
+            height: 200px;
+            padding: 50px;
+            margin: 100px;
+            background-color: red;
+            border: 20px solid black;
+            overflow: auto;
+            /* overflow: auto;滚动条属性 */
+        }
+    
+        .box1 {
+            width: 400px;
+            height: 400px;
+            background-color: #800080;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="box1"></div>
+    </div>
+    <script>
+    var box = document.querySelector('.box');
+    var box1 = document.querySelector('.box1');
+//     家族成员: scrollWidth , scrollHeight , scrollTop , scrollLeft
+// scrollWidth 和 scrollWidth
+// 检测盒子的宽高 内容高度 + padding。（调用者：节点元素。属性。）
+// 盒子内容的宽高。（如果有内容超出了，显示内容的宽/高度）
+
+    // onscroll滑动事件
+    //scrollWidth/scrollWidth获取元素的宽高(在具有滚动效果的情况下才能使用,没有的话不能使用)  
+    /* overflow: auto;滚动条属性 */
+    // 目标盒子的宽高 = 内容高度(里面盒子的宽高) + padding
+    // 里面盒子的宽高 = 本身
+     //实时获取页面卷入的宽度 指定的元素卷入的宽度scrollLeft,即被覆盖的宽度
+     //实时获取页面卷入的高度 指定的元素卷入的高度scrollTop,即被覆盖的高度
+    box.onscroll = function(){
+        // console.log('111');
+        // console.log(box.scrollWidth);
+        // console.log(box.scrollHeight);
+        // console.log(box1.scrollWidth);
+        //  console.log(box1.scrollHeight);
+
+    }
+        
+        var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+        //实时获取页面卷入的高度 指定的元素卷入的高度scrollTop,即被覆盖的高度
+        function sct() {
+            return document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+        }
+        //实时获取页面卷入的宽度 指定的元素卷入的宽度scrollLeft,即被覆盖的宽度
+        function scl() {
+            return document.documentElement.scrollLeft || window.pageXOffset || document.body.scrollLeft
+        }
+        box.onscroll = function () {
+            console.log("current scrollTop ===>" + this.scrollTop + " current scrllLeft ===> " + this.scrollLeft);
+        }
+        // // 滚动获取左边距和上边距
+        window.onscroll = function () {
+            // console.log("current scrollTop ===> " + sct() + " current scrollLeft ===> " + scl());
+           
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li class="li-item">li1</li>
+        <li class="li-item">li2</li>
+        <li class="li-item">li3</li>
+        <li class="li-item">li4</li>
+        <li class="li-item active">li5</li>
+        <li class="li-item">li6</li>
+        <li class="li-item">li7</li>
+        <li class="li-item">li8</li>
+        <li class="li-item li9">li9</li>
+        <li class="li-item">li10</li>
+        <p>今天</p>
+    </ul>
+    <div class="box">
+        <div class="inner-box">
+            <p>不凡学院</p>
+        </div>
+        <p>天气很好</p>
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        // eq(index);
+        // find();
+        // siblings(); 除了自己以外的所有兄弟节点
+        // children(); 所有孩子节点
+        // next(); 下一个兄弟节点
+        // nextAll(); 后面的所有兄弟节点
+        // nextUntil();后面的兄弟节点,直到...
+        // prev();上一个兄弟节点
+        // prevAll();
+        // prevUntil();
+        // parent(); 父节点
+        // parents(); 所有父节点
+        // parentsUntil();
+
+        // .eq()  jq对象的一个方法
+        $('li').eq(0).css('color', 'red');
+        // find()  查找指定元素的 符合条件的后代
+        $('.box').find('p').css('color', 'yellow');
+
+        $('ul').children().css('color', 'orange');
+        $('ul').children('li').css('color', 'red');
+
+        $('.li-item.active').siblings().css('background-color', 'black');
+        $('.active').next().css('color', '#fff');
+        $('.active').prev().css('color', 'pink');
+        // nextAll(); 后面的所有兄弟节点
+        // prevAll();
+        //查找当前元素之后所有的同辈元素，直到遇到匹配的那个元素为止。
+        $('.active').nextUntil('.li9').css('background-color', 'pink');
+
+        console.log($('.inner-box').parents());
+    </script>
+</body>
+
+</html>

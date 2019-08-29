@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    ul{
+        list-style: none;
+    }
+    .box0 {
+        position: relative;
+        width: 400px;
+        height: 200px;
+        margin: 50px auto;
+        border: 1px solid red;
+        overflow: hidden;
+    }
+    .box {
+        position:absolute;
+        width: 400%;
+        height:100%;
+    }
+    li {
+        font-size: 30px;
+        align-content: center;
+        line-height: 200px;
+       
+    }
+    .box1 {
+        float: left;
+        width: 400px;
+        height:100%;
+        opacity: 0.8;
+        /* background-color: aqua; */
+    }
+    .box2 {
+        float: left;
+        width: 400px;
+        height:100%;
+        /* background-color: gray; */
+    }
+    button {
+        position: absolute;
+        top: 300px;
+        left: 500px;
+        width: 100px;
+        height: 20px;
+        opacity: 0;
+    }
+    .active {
+        opacity: 1;
+        color: red;
+    }
+    </style>
+</head>
+<body>
+    <div class="box0">
+        <ul class="box">
+            <li class="box1" id="blank">跑马灯啊!好好玩啊!一起来</li>
+            <li class="box2" id="blank1">跑马灯啊!好好玩啊!一起来</li>
+            <li class="box1" id="blank2">跑马灯啊!好好玩啊!一起来</li>
+        </ul>
+    </div>
+    <button class="bt1">开启跑马灯</button>
+    <script>
+        var bt1 = document.querySelector('.bt1');
+        var box = document.querySelector('.box');
+        var box1 = document.querySelector('.box1');
+        var box2 = document.querySelector('.box2');
+
+        var li = document.querySelectorAll('li');
+        var count = 0;
+        bt1.onclick = function () {
+            if (count == 2) {
+                box.style.left = '0px';
+                count = 0;
+            }
+            // for(var i = 0;i<li.length;i++){
+            //            li[i].classList.remove('active');
+            //     }
+            li[count].classList.add('active');
+            count++;
+            var length = count * 400;
+            distance(box, length);
+        }
+        a();
+        var timer1 = null;
+        function a() {
+            timer1 = setInterval(function () {
+                bt1.onclick();
+            }, 1000);
+        }
+        changeColor();
+        function changeColor() {
+            var color = "#FFC|#DE990A|#F93|#FC0|#F96|#CC6";
+            color = color.split("|");
+            document.getElementById("blank").style.color = color[parseInt(Math.random() * color.length)];
+            document.getElementById("blank1").style.color = color[parseInt(Math.random() * color.length)];
+            document.getElementById("blank2").style.color = color[parseInt(Math.random() * color.length)];
+        }
+        function distance(ele, length) {
+            clearInterval(ele.timer);
+            ele.timer = setInterval(function () {
+                var initial = ele.offsetLeft;
+                var rep = -length - initial;
+                var step = (rep) / 10;
+                if (Math.abs(step) < 1) {
+                    step = step > 0 ? 1 : Math.floor(step);
+                }
+                initial += step;
+                ele.style.left = initial + 'px';
+                if (initial == -length) {
+                    console.log('1111');
+                    clearInterval(ele.timer);
+                    // var step = -length > initial? 20:-20;
+                    //   initial+=step;
+
+                    ele.style.left = initial + 'px';
+                    //   if(Math.abs(-length - initial)<Math.abs(step)){
+                    //     clearInterval(ele.timer);
+                    //   }
+                }
+            }, 200);
+        }
+    </script>
+</body>
+</html>

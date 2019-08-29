@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .box {
+            width: 1000px;
+            height: 400px;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+
+        .box .img {
+            float: left;
+            width: 200px;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="img">
+            <img src="img/m1.jpg" alt="">
+        </div>
+        <div class="img">
+            <img src="img/m2.jpg" alt="">
+        </div>
+        <div class="img">
+            <img src="img/m3.jpg" alt="">
+        </div>
+        <div class="img">
+            <img src="img/m4.jpg" alt="">
+        </div>
+        <div class="img">
+            <img src="img/m5.jpg" alt="">
+        </div>
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        // 先实现基本功能
+        // 优化   分析bug  产生的原因
+        // 防抖
+        var currentLi;
+        var timer;
+        $('.img').mouseenter(function () {
+            // 清除之前没有开始的定时器
+            clearTimeout(timer);
+            // currentLi = this;
+            var $that = $(this);
+            // 鼠标停留200ms  才会触发动画
+            // 延迟hover
+            timer = setTimeout(function () {
+                currentLi = $that;
+                $that.siblings().animate({
+                    width: 100
+                }, 400);
+                $that.animate({
+                    width: 600
+                }, 400)
+            }, 200)
+        })
+        $('.box').mouseleave(function () {
+            clearTimeout(timer);
+            $(currentLi).animate({
+                width: 200
+            }, 400)
+            $(currentLi).siblings().animate({
+                width: 200
+            }, 400);
+        })
+    </script>
+</body>
+
+</html>

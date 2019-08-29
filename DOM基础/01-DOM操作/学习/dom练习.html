@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>d</title>
+		<style type="text/css">
+			.wx{
+				 display: none;
+                 position: fixed;
+                 width: 100%;
+                 height:100%;
+			     background: rgba(0, 0, 0, .5) url('wx.jpg') no-repeat center;
+			}
+			.btn{
+				position: fixed;
+				/*位置固定*/
+				right: 20px;
+                bottom: 50px;
+		     	background-color: gray;
+                border-radius: 4px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wx"></div>
+		<div class="btn">点击</div>
+		<script>
+			var btnEl = document.getElementsByClassName('btn')[0];
+			var wxEl = document.getElementsByClassName('wx')[0];
+			 btnEl.onclick = function(){
+					wxEl.style.display = 'block';
+					this.style.display = 'none';
+			 }
+			 wxEl.onclick = function(){
+				       btnEl.style.display = 'block';
+					   this.style.display = 'none';
+			 }
+			</script>
+	</body>
+</html>

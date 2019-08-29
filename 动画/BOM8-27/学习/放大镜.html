@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    .box,.box1 {
+        position: relative;
+        float: left;
+        width: 450px;
+        height: 450px;
+        margin-left: 50px;
+        border: 1px solid red;
+        overflow: hidden;
+    }
+    .box2 {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100px;
+        height: 100px;
+        cursor: move;
+        background-color: rgba(0, 0, 255, 0.5);
+    }
+    .box .img0 {
+        width: 100%;
+        height: 100%;
+        user-select: none;
+    }
+    .box1 {
+        display: none;
+    }
+    .box1 .img1 {
+        position: absolute;
+        width: 200%;
+        height: 200%;
+    }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="box2"></div>
+        <img class="img0" src="img/1.jpg" alt="">
+    </div>
+    <div class="box1">
+        <img class="img1" src="img/1.jpg" alt="">
+    </div>
+    <script>
+
+        var box = document.querySelector('.box');
+        var box2 = document.querySelector('.box2');
+        var img1 = document.querySelector('.img1');
+        var box1 = document.querySelector('.box1');
+        console.log(img1);
+        var minX = 0;
+        var maxX = box.offsetWidth - box2.offsetWidth;
+        var minY = 0
+        var maxY = box.offsetHeight - box2.offsetHeight;
+        box2.onmousedown = function () {
+            box1.style.display = 'block';
+            //固定距离
+            var originalX = event.pageX - box2.offsetLeft;
+            var originalY = event.pageY - box2.offsetTop;
+
+            box.onmousemove = function () {
+                //移动距离
+                var nowX = event.pageX - originalX;
+                var nowY = event.pageY - originalY;
+
+                if (nowX >= maxX) {
+                    nowX = maxX;
+                } else if (nowX <= minX) {
+                    nowX = minX;
+                }
+
+                if (nowY >= maxY) {
+                    nowY = maxY;
+                } else if (nowY <= minY) {
+                    nowY = minY;
+                }
+                box2.style.left = nowX + 'px';
+                box2.style.top = nowY + 'px';
+                // 放大的图片往相反的方向移动两倍距离
+                // img1.style.left = -2 * targetX + "px";
+                // img1.style.top = -2 * targetY + "px";
+                img1.style.marginLeft = -2 * nowX + 'px';
+                img1.style.marginTop = -2 * nowY + 'px';
+            }
+            box2.onmouseup = function () {
+                box.onmousemove = null;
+            }
+        }
+    </script>
+</body>
+</html>
